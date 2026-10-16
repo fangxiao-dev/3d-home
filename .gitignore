@@ -1,0 +1,7 @@
+/work/
+/references/house-photos/
+**/.godot/
+*.blend1
+outputs/web/
+__pycache__/
+*.py[cod]

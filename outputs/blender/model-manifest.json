@@ -1,0 +1,29 @@
+{
+  "source_photos": [
+    "IMG_0447.HEIC",
+    "IMG_0448.HEIC",
+    "IMG_0449.HEIC",
+    "IMG_0450.HEIC"
+  ],
+  "dimensions_are_estimates": true,
+  "width": 4.3,
+  "depth": 5.8,
+  "height": 2.85,
+  "mesh_count": 296,
+  "categories": [
+    "Architecture",
+    "Ceiling",
+    "Chairs",
+    "Decor",
+    "Dresser",
+    "Lamps",
+    "PetBed",
+    "SideTables",
+    "Sofa",
+    "TV",
+    "TVConsole",
+    "TeaTable",
+    "Wall_Sofa",
+    "Wall_TV"
+  ]
+}
