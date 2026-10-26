@@ -6,3 +6,33 @@
 outputs/web/
 __pycache__/
 *.py[cod]
+
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+!.env.*.example
+*.pem
+*.key
+outputs/godot/export_credentials.cfg
+
+# Editor backups and temporary logs
+*.blend[0-9]*
+*.log
+*.tmp
+*.temp
+**/.DS_Store
+**/Thumbs.db
+
+# Generated visual checks and archived browser/build artifacts
+/outputs/previews/
+/outputs/verification/**/*.png
+/outputs/verification/**/*.jpg
+/outputs/verification/**/*.jpeg
+/outputs/verification/**/*.webp
+/outputs/verification/**/*.mp4
+/outputs/verification/**/*.webm
+/outputs/verification/**/*.pck
+/outputs/verification/**/*.wasm
+/outputs/verification/**/*.zip
+/outputs/verification/**/package/
