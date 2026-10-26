@@ -1,0 +1,180 @@
+{
+  "generated_at": "2026-10-25T21:54:23.990995+00:00",
+  "scope": "Fixed-scene transition and Esc layer builder verification; owner native UI and final independent acceptance are separate",
+  "build": {
+    "seats": "d3e330117ac37938c5905f79ebaa270dfe298cd2a1066f2ddc4ed32b0e045d2e",
+    "checks_run": true,
+    "runtime": "2f5d1c1da226f28c001be81fb5a3a51fbf11aea4650da085d0852f49cd3044a9",
+    "sha256": "4315d056df8368c0b0307e94e5f7e51f58da362711ae69e205573654ebba9287",
+    "pack": "scene-4315d056df83.pck",
+    "exported_at": "2026-10-25T22:26:50.9539183+01:00",
+    "character": "b48319f3e1c9b393c6f1019b80ef1c257c06a5b8a50a3b4009d6cebc943b697e",
+    "model": "15d0db1e2c7ab27b5d2923f4f14d257f7a5df5ab497415ad0be25c3633f83fb2"
+  },
+  "package_archive": "outputs/verification/fixed-scene-transition-20261025/package/scene-4315d056df83.pck",
+  "builder_validation_pass": true,
+  "owner_native_ui": "EVIDENCE_GAP",
+  "owner_native_ui_reason": "Parent reports Computer Use stopped because current browser URL could not be reliably verified; no native input or screenshot acceptance claimed. Parent independent known-URL headless check remains separate.",
+  "core_browser_cases": 14,
+  "core_composition": {
+    "1366": "6 accepted cycles from original false prefix + 1 same-package study completion; not a single uninterrupted passing campaign",
+    "1920": "7 completed passing cycles"
+  },
+  "additional_browser_cases": {
+    "initial_smoke": 1,
+    "clean_permission_boundary": 2,
+    "real_transition_focus": 2
+  },
+  "carrier_failed_completed_seat_attempts": 1,
+  "failed_attempt_note": "Original 1366 study return moved about94.5mm in positive X rather than required120mm; screenshot/location consistent with desk boundary, no per-slide collider trace. Negative-X completion used same180ms/120mm test and real spawn route. Original false report retained.",
+  "engine": {
+    "build_checks": 4,
+    "seat_yaw_zoom_cases": 30,
+    "capture_denial_and_interrupted_exit_cases": 2,
+    "fade_phase_blur_lost_keyup_cases": 3,
+    "permission_scope": "explicit external native-state simulation, never browser permission proof"
+  },
+  "permission_boundary": "Only permission-smoke-1366/1920 establish final inactive userActivation immediately before real Escape using CDP userGesture:false exclusively after the wait. Earlier matrix activation observations were followed by Playwright evaluate and are not final permission-boundary proof.",
+  "real_repeat": "1920 clean permission smoke records a trusted initial press in SEATED and trusted repeats in STAND_UP/EXPLORE; held repeat after EXPLORE preserves capture, release plus fresh Escape pauses.",
+  "focus_observations": {
+    "1366": {
+      "last_submitted_phase_when_hidden_read": "fade_out",
+      "last_submitted_alpha_when_hidden_read": 0.466814815998077,
+      "hidden_dom": {
+        "hidden": true,
+        "focus": false,
+        "locked": false,
+        "activation": true
+      }
+    },
+    "1920": {
+      "last_submitted_phase_when_hidden_read": "fade_in",
+      "last_submitted_alpha_when_hidden_read": 0.489015161991119,
+      "hidden_dom": {
+        "hidden": true,
+        "focus": false,
+        "locked": false,
+        "activation": true
+      }
+    }
+  },
+  "focus_scope": "DOM and frame reads are not atomic; these are last drawn frames before/while hidden, not exact alpha at the focus-out event. Black-window interruption is engine simulation only.",
+  "capture_refusal_scope": "Actual sandbox permission errors and real retry on each resolution; recovery navigates to a new unrestricted document, not an in-place sandbox permission change. Exit capture denial is separately engine-simulated.",
+  "transition_timing": {
+    "scope": "Actual frame_pre_draw submission timestamps: first fade_out sample through first revealed SitDown; excludes later seated PNG screenshot costs. Nominal Tween durations remain 150ms/200ms. Capture JPEG timestamps are retained separately, not assumed to share engine clock.",
+    "all_trace_attempts": 16,
+    "observed_span_ms": [
+      346,
+      410
+    ],
+    "max_submission_gap_ms": 58,
+    "nominal_fade_ms": [
+      150,
+      200
+    ],
+    "performance_acceptance": "Not a new sustained FPS or long-tour gate; old performance results unchanged."
+  },
+  "continuous_capture_sets": [
+    {
+      "directory": "outputs/verification/fixed-scene-transition-20261025/smoke-1366/entry_stool-0-0.85-frames",
+      "frame_count": 165,
+      "black_images": [
+        "outputs/verification/fixed-scene-transition-20261025/smoke-1366/entry_stool-0-0.85-frames/0044.jpg"
+      ]
+    },
+    {
+      "directory": "outputs/verification/fixed-scene-transition-20261025/campaign-1366-prefix/entry_stool-0-0.85-frames",
+      "frame_count": 77,
+      "black_images": [
+        "outputs/verification/fixed-scene-transition-20261025/campaign-1366-prefix/entry_stool-0-0.85-frames/0020.jpg"
+      ]
+    },
+    {
+      "directory": "outputs/verification/fixed-scene-transition-20261025/study-completion-1366/study_chair-0-1-frames",
+      "frame_count": 82,
+      "black_images": [
+        "outputs/verification/fixed-scene-transition-20261025/study-completion-1366/study_chair-0-1-frames/0029.jpg"
+      ]
+    },
+    {
+      "directory": "outputs/verification/fixed-scene-transition-20261025/campaign-1920/entry_stool-0-0.85-frames",
+      "frame_count": 68,
+      "black_images": [
+        "outputs/verification/fixed-scene-transition-20261025/campaign-1920/entry_stool-0-0.85-frames/0021.jpg"
+      ]
+    }
+  ],
+  "reports": {
+    "smoke-1366": {
+      "path": "outputs/verification/fixed-scene-transition-20261025/smoke-1366/report.json",
+      "sha256": "e2f8011d76c65915875cd91d8027d5eba628362a86e7028846f5f57d9a94fbae",
+      "raw_pass": true,
+      "runner_sha256": "c294923732348cd7ed823b1724c4a7c33e1a20a62fb093076a1e1fb69796f3aa"
+    },
+    "campaign-1366-prefix": {
+      "path": "outputs/verification/fixed-scene-transition-20261025/campaign-1366-prefix/report.json",
+      "sha256": "31413a015150be5e86898c309d59d4bd8fd85a75bc612e8f3be5c4b67a11ecad",
+      "raw_pass": false,
+      "runner_sha256": "c294923732348cd7ed823b1724c4a7c33e1a20a62fb093076a1e1fb69796f3aa"
+    },
+    "study-completion-1366": {
+      "path": "outputs/verification/fixed-scene-transition-20261025/study-completion-1366/report.json",
+      "sha256": "9ef1679194c17d71c8ab54c16ded599589876117feb278f1cebfe356f25eb850",
+      "raw_pass": true,
+      "runner_sha256": "7c21271a0e3fb08287c2c336e764f0a13db0f87e503e2d35ea75b32b26c503e6"
+    },
+    "campaign-1920": {
+      "path": "outputs/verification/fixed-scene-transition-20261025/campaign-1920/report.json",
+      "sha256": "d390ce697d0a3ed92917ba8eed928e437020175d1cb21bbb4a197c0739514634",
+      "raw_pass": true,
+      "runner_sha256": "7c21271a0e3fb08287c2c336e764f0a13db0f87e503e2d35ea75b32b26c503e6"
+    },
+    "permission-smoke-1366": {
+      "path": "outputs/verification/fixed-scene-transition-20261025/permission-smoke-1366/report.json",
+      "sha256": "9f091c273c78332daaec612a9d0fa8c6ab7aa5adc4be5a9be068ec2bf8a7b6cd",
+      "raw_pass": true,
+      "runner_sha256": "12c47510483404baf5a67f0af2c6fc9e83c390d81001f187475ed90bfdb97349"
+    },
+    "permission-smoke-1920": {
+      "path": "outputs/verification/fixed-scene-transition-20261025/permission-smoke-1920/report.json",
+      "sha256": "f34e76b95cea64505f5e2aa368a289b858d6410f81080d6b5ce1940d5399817e",
+      "raw_pass": true,
+      "runner_sha256": "b9728d034424f763ca661e68aff56dbeed41478fc59a97735daef008c2cdf443"
+    },
+    "focus-1366": {
+      "path": "outputs/verification/fixed-scene-transition-20261025/focus-1366/report.json",
+      "sha256": "70fb132901181d42f96ee0b7c8d244628e3fea9a258d0feae99146f2ddc41b21",
+      "raw_pass": true,
+      "runner_sha256": "e8d5941037776ed13d5631c956a2f0dbac7d6650d1ee1e3e714d974a580d4cf0"
+    },
+    "focus-1920": {
+      "path": "outputs/verification/fixed-scene-transition-20261025/focus-1920/report.json",
+      "sha256": "d9f73e51c5705292de4c084aa376c3c1f16e11ccaafb5a4c0a2eec6c7e3f200c",
+      "raw_pass": true,
+      "runner_sha256": "e8d5941037776ed13d5631c956a2f0dbac7d6650d1ee1e3e714d974a580d4cf0"
+    },
+    "refusal-1366": {
+      "path": "outputs/verification/fixed-scene-transition-20261025/refusal-1366/report.json",
+      "sha256": "4514da56917f850d8a83637d4d45cbdd89906f4151239b6f657f72a4487190d3",
+      "raw_pass": true,
+      "runner_sha256": "64a0587d2dc3fd02d7625dc967f899e96498aea444469e3ddf5d424b7c0ba379"
+    },
+    "refusal-1920": {
+      "path": "outputs/verification/fixed-scene-transition-20261025/refusal-1920/report.json",
+      "sha256": "592db45f2ac10e475179c52c9eb46504001b37ea885fd3bac4b3694dbeed8ea5",
+      "raw_pass": true,
+      "runner_sha256": "64a0587d2dc3fd02d7625dc967f899e96498aea444469e3ddf5d424b7c0ba379"
+    }
+  },
+  "protection": {
+    "count": 1115,
+    "changed": [],
+    "missing": []
+  },
+  "cleanup": "All builder browser/Node and temporary refusal servers closed; existing8767 preview retained. No commit/push/deploy. Parent independently owns any further known-URL headless check; native UI remains an evidence gap.",
+  "limitations": [
+    "Builder browser evidence is actual installed headless Chrome with Intel UHD and ?test observation bridge. Owner native foreground check remains EVIDENCE_GAP after tool URL-verification stop; parent headless evidence is separate.",
+    "Continuous JPEGs plus frame_pre_draw traces establish observed covered cuts; no claim of watching every frame as video.",
+    "Historical reports and prior performance failures were not rewritten."
+  ]
+}

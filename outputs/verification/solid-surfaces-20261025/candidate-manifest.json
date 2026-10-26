@@ -1,0 +1,34 @@
+[
+  {
+    "path": "outputs/blender/environment_v2.py",
+    "sha256": "991f7728aa40adaefd82470a5e67a5231528835deb83ee759db33009e9703d94"
+  },
+  {
+    "path": "outputs/godot/playroom.gd",
+    "sha256": "181ecd08f2c24f5a0d4422e4a70e8bce4485e97af44b5393d4a65b3b308c31ef"
+  },
+  {
+    "path": "outputs/godot/scene_environment.gd",
+    "sha256": "a734c8de35c9c9d30e6af003e559644e6c9d92dc3e68a95388485d139c0d07d8"
+  },
+  {
+    "path": "outputs/godot/project.godot",
+    "sha256": "2ae4aa49e1ffe45c856e2ee2c10efd01425bb4c06685ad7d3f4c4da415c3a99f"
+  },
+  {
+    "path": "outputs/godot/assets/living-room.glb",
+    "sha256": "15d0db1e2c7ab27b5d2923f4f14d257f7a5df5ab497415ad0be25c3633f83fb2"
+  },
+  {
+    "path": "outputs/blender/living-room.blend",
+    "sha256": "47fc0fd526003b6a975383b79711b791bd898968ce77fc4d9e5b180cfef5969f"
+  },
+  {
+    "path": "outputs/godot/baked/bake-manifest.json",
+    "sha256": "65196c43defdf21e50b29b7aae7bce8745e827e3d60573cfb970239da8bfe910"
+  },
+  {
+    "path": "outputs/web/scene-2072e5899240.pck",
+    "sha256": "2072e5899240e289a17f833d5098f928702b3f5c8f9047f5dffa43703c8b115d"
+  }
+]

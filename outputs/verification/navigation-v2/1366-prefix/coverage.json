@@ -1,0 +1,79 @@
+{
+  "status": "passed-prefix-only",
+  "build": {
+    "exported_at": "2026-10-25T12:37:56.1686592+01:00",
+    "runtime": "2a72963e2be7f4e85101f6a5be73433c5bdcbb841104b7a4e98dbed67fa88aca",
+    "checks_run": true,
+    "pack": "scene-c4235921928f.pck",
+    "seats": "69ad391c4d484b6255cc0d86f81027459ca909c629e73dc9d903476fada1c73b",
+    "character": "b48319f3e1c9b393c6f1019b80ef1c257c06a5b8a50a3b4009d6cebc943b697e",
+    "model": "dbc32350082c450d69feeb9cc21443c527b427fd1e3b0a2a94c7961250599ca9",
+    "sha256": "c4235921928f4c072bfa749051019f032d3b1a9d3db4f16488d9f2301292b853"
+  },
+  "seats": [
+    {
+      "id": "entry_stool",
+      "iteration": 1
+    },
+    {
+      "id": "entry_stool",
+      "iteration": 2
+    },
+    {
+      "id": "entry_stool",
+      "iteration": 3
+    },
+    {
+      "id": "sofa_middle",
+      "iteration": 1
+    },
+    {
+      "id": "sofa_middle",
+      "iteration": 2
+    },
+    {
+      "id": "sofa_middle",
+      "iteration": 3
+    },
+    {
+      "id": "window_seat",
+      "iteration": 1
+    },
+    {
+      "id": "window_seat",
+      "iteration": 2
+    },
+    {
+      "id": "window_seat",
+      "iteration": 3
+    }
+  ],
+  "views": [
+    "living",
+    "balcony"
+  ],
+  "controls": {
+    "initial_disarmed": true,
+    "central_stationary": true,
+    "left_right": true,
+    "stop_without_drift": true,
+    "leave_and_reentry": true,
+    "focus_and_rearm": false,
+    "panel_excluded": true,
+    "qe_removed": true,
+    "full_orbit": true,
+    "resize": true,
+    "walk_and_turn": true
+  },
+  "seam": {
+    "rooms": [
+      "living",
+      "hallway",
+      "dining"
+    ],
+    "samples": 255,
+    "max_focus_step": 0.06295142697501716
+  },
+  "failed_case": "hallway angle 45 camera-controller timeout; must be rerun",
+  "whole_attempt_pass": false
+}

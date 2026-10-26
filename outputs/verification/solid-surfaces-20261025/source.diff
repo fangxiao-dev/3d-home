@@ -1,0 +1,42 @@
+--- before/environment_v2.py
++++ after/environment_v2.py
+@@ -20,21 +20,16 @@
+         rng=random.Random(41)
+         for y in range(256):
+             for x in range(256):
+-                if kind=='wood':
+-                    v=.035*math.sin(x*.34+math.sin(y*.025)*1.8)+.018*math.sin(x*1.8+y*.012)+rng.uniform(-.008,.008)
+-                elif kind=='fabric': v=((x%3==0)+(y%3==0)-.66)*.012+rng.uniform(-.006,.006)
+-                else: v=rng.uniform(-.008,.008)
++                if kind=='fabric': v=((x%3==0)+(y%3==0)-.66)*.012+rng.uniform(-.006,.006)
++                else: v=0.0
+                 pixels.extend([max(0,min(1,c+v)) for c in color]+[1])
+         image.pixels=pixels; image.filepath_raw=str(folder/(key+'.png')); image.file_format='PNG'; image.save()
+         tex=mat.node_tree.nodes.new('ShaderNodeTexImage'); tex.image=image
+         mat.node_tree.links.new(tex.outputs['Color'],p.inputs['Base Color'])
+     stone=bpy.data.images.new('v2 limestone',256,256); pixels=[]
+-    rng=random.Random(18)
+     for y in range(256):
+         for x in range(256):
+-            vein=math.sin(x*.055+y*.022+2*math.sin(y*.041))
+-            v=.018*vein+.018*math.sin(y*.12+x*.03)+rng.uniform(-.006,.006)
+-            pixels.extend([.57+v,.56+v,.52+v,1])
++            pixels.extend([.57,.56,.52,1])
+     stone.pixels=pixels; stone.filepath_raw=str(folder/'limestone.png'); stone.file_format='PNG'; stone.save()
+     for i,mat in enumerate(env['tilemats']):
+         c=(.56+i*.008,.55+i*.008,.50+i*.008)
+@@ -43,13 +38,9 @@
+         mat.node_tree.links.new(tex.outputs['Color'],p.inputs['Base Color'])
+     # Four 0.8 m tiles per repeat; grout is color, never a lightmap chart boundary.
+     image=bpy.data.images.new('v2 floor finish',1024,1024);pixels=[]
+-    rng=random.Random(23)
+-    tones=[rng.uniform(-.008,.008) for _ in range(16)]
+     for y in range(1024):
+         for x in range(1024):
+-            vein=.007*math.sin(x*math.tau/256+2*math.sin(y*math.tau/512))
+-            v=vein+tones[(y//256)*4+x//256]+rng.uniform(-.003,.003)
+-            if x%256<2 or y%256<2:v-=.035
++            v=-.035 if x%256<2 or y%256<2 else 0.0
+             pixels.extend([.57+v,.56+v,.52+v,1])
+     image.pixels=pixels;image.filepath_raw=str(folder/'floor-finish.png');image.file_format='PNG';image.save()
+     mat=bpy.data.materials.new('Continuous limestone floor');mat.use_nodes=True

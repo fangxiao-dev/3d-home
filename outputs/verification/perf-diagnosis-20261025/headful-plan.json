@@ -1,0 +1,43 @@
+{
+  "name": "headful-confirm",
+  "headful": true,
+  "no_probe": true,
+  "warmup_frames": 120,
+  "measure_frames": 180,
+  "blocks": [
+    {
+      "label": "baseline",
+      "config": {},
+      "probe": false,
+      "screenshot": true
+    },
+    {
+      "label": "msaa-off",
+      "config": {
+        "msaa": 0
+      },
+      "probe": false,
+      "screenshot": true
+    },
+    {
+      "label": "baseline-return",
+      "config": {},
+      "probe": false,
+      "screenshot": true
+    },
+    {
+      "label": "shadows-off",
+      "config": {
+        "shadows": false
+      },
+      "probe": false,
+      "screenshot": true
+    },
+    {
+      "label": "baseline-final",
+      "config": {},
+      "probe": false,
+      "screenshot": true
+    }
+  ]
+}

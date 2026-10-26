@@ -1,0 +1,446 @@
+[
+  {
+    "path": "outputs/godot/export_presets.cfg",
+    "sha256": "1b7f6d0f546f326d04bb3f0bbab9ed380c3f83309350e5ccdc981372f1c1bea9"
+  },
+  {
+    "path": "outputs/godot/main.gd",
+    "sha256": "2ecacb30e02cbfb4da67b9ea05a09e69025a363296c75ad7beae39628a3d9456"
+  },
+  {
+    "path": "outputs/godot/main.gd.uid",
+    "sha256": "b294859ef22e75a29194665066ca5709a9c37acea10442b0cf0d874b1ed59147"
+  },
+  {
+    "path": "outputs/godot/main.tscn",
+    "sha256": "79b669b3b0d7a954b4d941d7e0a90bbb54e26b59e2769a0c765e702f08d264ba"
+  },
+  {
+    "path": "outputs/godot/playroom.gd",
+    "sha256": "181ecd08f2c24f5a0d4422e4a70e8bce4485e97af44b5393d4a65b3b308c31ef"
+  },
+  {
+    "path": "outputs/godot/playroom.gd.uid",
+    "sha256": "4a7416b31f838d8869bdfe9278ef0e3de63bc12db7c4c8ba8b48bffc74e97e44"
+  },
+  {
+    "path": "outputs/godot/playroom.tscn",
+    "sha256": "bc26ee22cd8a95b71afac057fe7ebe74df730128f2a028e9baf6c750936721da"
+  },
+  {
+    "path": "outputs/godot/project.godot",
+    "sha256": "2ae4aa49e1ffe45c856e2ee2c10efd01425bb4c06685ad7d3f4c4da415c3a99f"
+  },
+  {
+    "path": "outputs/godot/scene_environment.gd",
+    "sha256": "a734c8de35c9c9d30e6af003e559644e6c9d92dc3e68a95388485d139c0d07d8"
+  },
+  {
+    "path": "outputs/godot/scene_environment.gd.uid",
+    "sha256": "6c536ca986faf53e64663a499fe2085fccfa2c46a424f6b414239f9e582a8593"
+  },
+  {
+    "path": "outputs/godot/assets/character-contract.json",
+    "sha256": "8d102d63a212b6c0bd9f26a38130b31856143a666444a0c29b31903a15a52af5"
+  },
+  {
+    "path": "outputs/godot/assets/character.glb",
+    "sha256": "b48319f3e1c9b393c6f1019b80ef1c257c06a5b8a50a3b4009d6cebc943b697e"
+  },
+  {
+    "path": "outputs/godot/assets/character.glb.import",
+    "sha256": "e918b1fdef89ed22af9afff29f76b2092dc7fee8ec94d23c4d8b9f30dfc53965"
+  },
+  {
+    "path": "outputs/godot/assets/house-layout.json",
+    "sha256": "e2362a44bbc866feabc5f39bbf8ca03e27052468b6e580e58f2d198b9e5228e9"
+  },
+  {
+    "path": "outputs/godot/assets/living-room.glb",
+    "sha256": "910d5f5c9838b3c11df1c9a6e66ca04658137dbf6c2be2e9129ca4b19501a9d4"
+  },
+  {
+    "path": "outputs/godot/assets/living-room.glb.import",
+    "sha256": "2b345611388f62925d1115df5bbe8e9669e314ba69c256ed38e172a4f3abda36"
+  },
+  {
+    "path": "outputs/godot/assets/living-room.glb.unwrap_cache",
+    "sha256": "60d7d8843c35fb9fecaa01592780b5ab9f01ddb0e1f723819baf7eb6dec0682c"
+  },
+  {
+    "path": "outputs/godot/assets/living-room_cream.png",
+    "sha256": "44f5e0f6e16570e99a413db1c535c322196e7cfa2f0c208ed5c27628445148a9"
+  },
+  {
+    "path": "outputs/godot/assets/living-room_cream.png.import",
+    "sha256": "dd8bd907c910468bcabda24e31211b12e012376e00e5eb9ac7c2cae98918d846"
+  },
+  {
+    "path": "outputs/godot/assets/living-room_curtain.png",
+    "sha256": "6fb15ce0830f92e08dfdbfe60d962bf947c891571f455c5cf903932f47539c03"
+  },
+  {
+    "path": "outputs/godot/assets/living-room_curtain.png.import",
+    "sha256": "3b177a5424bdf541630918ef352e466c95e90bd3d152cca8e08f3281eb2529a9"
+  },
+  {
+    "path": "outputs/godot/assets/living-room_cushion.png",
+    "sha256": "afee5fa340d49cc159c24f1bc8b072137d39b6bf6304d11f6f4d3694425233ab"
+  },
+  {
+    "path": "outputs/godot/assets/living-room_cushion.png.import",
+    "sha256": "57e98afc52011a18d2123ee96afc80d18ac70fa856707de94ef2296f81db661b"
+  },
+  {
+    "path": "outputs/godot/assets/living-room_floor-finish.png",
+    "sha256": "e7e4facaa4e27478028a0bccea2580c24c7e97cb37fe6bd0a4657141a0a8e472"
+  },
+  {
+    "path": "outputs/godot/assets/living-room_floor-finish.png.import",
+    "sha256": "ab431338032f7bf6b68863391fd31731ab8b020bda9d3cc615feb2b790cd3bcc"
+  },
+  {
+    "path": "outputs/godot/assets/living-room_limestone.png",
+    "sha256": "28b7ec0ba26fd08259d934decee226e3902ea9b1db720227963f53938582a528"
+  },
+  {
+    "path": "outputs/godot/assets/living-room_limestone.png.import",
+    "sha256": "3426ac8c4cdd5b4a46d1dd25d0ea754265aa389c8bf8b056d716fbdb63c41c44"
+  },
+  {
+    "path": "outputs/godot/assets/living-room_tablewood.png",
+    "sha256": "03903f079cbfbdddea6ecfa9befd53acc7310cf5d917be1be4a6b55a8a9445fd"
+  },
+  {
+    "path": "outputs/godot/assets/living-room_tablewood.png.import",
+    "sha256": "41833af19fe31b6f4d351c0cd48e236adc90af4ea2840fb57923f89d01544df8"
+  },
+  {
+    "path": "outputs/godot/assets/living-room_throw.png",
+    "sha256": "d499c1ff5964f18b8056361463055569fd086edb203fb4a704a23c4774e45667"
+  },
+  {
+    "path": "outputs/godot/assets/living-room_throw.png.import",
+    "sha256": "0a7ee671958bc279e8faa1b3d49ba76ef751a0b70bbc4455df608309785aa34a"
+  },
+  {
+    "path": "outputs/godot/assets/living-room_trim.png",
+    "sha256": "b622322e504218f8a4c4b6929064e9761e4c25249f3bf6d13685811236d75da6"
+  },
+  {
+    "path": "outputs/godot/assets/living-room_trim.png.import",
+    "sha256": "a6bd42811e7e13bbec7747b58225cb99e27d213159d71cab69221febb18a6606"
+  },
+  {
+    "path": "outputs/godot/assets/living-room_wall.png",
+    "sha256": "1f9b7eea0b9a0aeb95d8758b745142060a4bfbf07a47ee4aa40c2bff2056d368"
+  },
+  {
+    "path": "outputs/godot/assets/living-room_wall.png.import",
+    "sha256": "2c5fefca25c1009e347a5896b123dcce38943c8de1306bb42e1f2c1ac785a5ce"
+  },
+  {
+    "path": "outputs/godot/assets/living-room_wood.png",
+    "sha256": "9dfc52269174ab4ccae119c5af33ea49be9edb7fd3a5483e5f462690f51aa9e7"
+  },
+  {
+    "path": "outputs/godot/assets/living-room_wood.png.import",
+    "sha256": "be5d0ad3c262ed92fd25a135921b5a858f28b8769336bc84097ddb4f865cc05c"
+  },
+  {
+    "path": "outputs/godot/assets/NotoSansSC-OFL.txt",
+    "sha256": "e35ffdebb2225b49814c31889cbb3ce69cb3509e6a9f431edaba5e1a6de8cd15"
+  },
+  {
+    "path": "outputs/godot/assets/NotoSansSC-Play.ttf",
+    "sha256": "19365789e7913fc1d8032643f108c1721ab2994f1100e67e6457fce886ef9b68"
+  },
+  {
+    "path": "outputs/godot/assets/NotoSansSC-Play.ttf.import",
+    "sha256": "eebfb26705c6428ec50f7acce82768c07a7bd2e75a3098639d87f9f064646bdb"
+  },
+  {
+    "path": "outputs/godot/assets/NotoSansSC-Preview.ttf",
+    "sha256": "bb3d334654c2eebf304cc543cd917794574a70d898038b44b3fa3705af062de1"
+  },
+  {
+    "path": "outputs/godot/assets/NotoSansSC-Preview.ttf.import",
+    "sha256": "70399c78592e49d97776e978f5906973f38edde91098ecc49d04358c93aa1ec2"
+  },
+  {
+    "path": "outputs/godot/assets/scene-v2-data.json",
+    "sha256": "d3e330117ac37938c5905f79ebaa270dfe298cd2a1066f2ddc4ed32b0e045d2e"
+  },
+  {
+    "path": "outputs/godot/baked/bake-manifest.json",
+    "sha256": "fa950a08191e4454a56896251a58795d61965dd84f2cd598081b881244c4788c"
+  },
+  {
+    "path": "outputs/godot/baked/house.exr",
+    "sha256": "9e08d1770870808872bbfbc72c45643f2e75ebb239473917f1e0e39bb7cd3f7f"
+  },
+  {
+    "path": "outputs/godot/baked/house.exr.import",
+    "sha256": "176dc51e9099b13c37ffa44dc58f8a028ceecd2db34126e04b4c3222cec0bab5"
+  },
+  {
+    "path": "outputs/godot/baked/house.lmbake",
+    "sha256": "fcd15a12bf226838f25878f5c63287a57958564e71f384b653d9c84566430ea8"
+  },
+  {
+    "path": "outputs/godot/baked/house.scn",
+    "sha256": "96db2d11008553c9f9a372c3a15017b02008d6fdd13a5681a38f146bd02c2be4"
+  },
+  {
+    "path": "outputs/godot/baked/house_shadow.png",
+    "sha256": "f95945450209ac177ad231bb6d323e921e94ba616f6bf9d5ae47c77c9c388c6f"
+  },
+  {
+    "path": "outputs/godot/baked/house_shadow.png.import",
+    "sha256": "cd06613c5480864c4a15baf5030884e8180a8d0f821215a5fb31acb69eeaac58"
+  },
+  {
+    "path": "outputs/godot/assets/environment-textures/cream.png",
+    "sha256": "44f5e0f6e16570e99a413db1c535c322196e7cfa2f0c208ed5c27628445148a9"
+  },
+  {
+    "path": "outputs/godot/assets/environment-textures/cream.png.import",
+    "sha256": "14cd6675c786d3d1f7638079dc120b32b4afe97570a2e98feed66f1b3cc3fa65"
+  },
+  {
+    "path": "outputs/godot/assets/environment-textures/curtain.png",
+    "sha256": "6fb15ce0830f92e08dfdbfe60d962bf947c891571f455c5cf903932f47539c03"
+  },
+  {
+    "path": "outputs/godot/assets/environment-textures/curtain.png.import",
+    "sha256": "3dad01779b6f801922a0d04905805943a0ed7822944b0d79d9e08bce9f848b6d"
+  },
+  {
+    "path": "outputs/godot/assets/environment-textures/cushion.png",
+    "sha256": "afee5fa340d49cc159c24f1bc8b072137d39b6bf6304d11f6f4d3694425233ab"
+  },
+  {
+    "path": "outputs/godot/assets/environment-textures/cushion.png.import",
+    "sha256": "5327327b4789a02f14426870ba17cfc5964bf21476df1777716bfffa2f08403a"
+  },
+  {
+    "path": "outputs/godot/assets/environment-textures/floor-finish.png",
+    "sha256": "e7e4facaa4e27478028a0bccea2580c24c7e97cb37fe6bd0a4657141a0a8e472"
+  },
+  {
+    "path": "outputs/godot/assets/environment-textures/floor-finish.png.import",
+    "sha256": "f8410d1248e6942f56ea5a2dde9ad0775d11f104601b1753d8b58752b2ce0d27"
+  },
+  {
+    "path": "outputs/godot/assets/environment-textures/limestone.png",
+    "sha256": "28b7ec0ba26fd08259d934decee226e3902ea9b1db720227963f53938582a528"
+  },
+  {
+    "path": "outputs/godot/assets/environment-textures/limestone.png.import",
+    "sha256": "8c6cc5e7df33f63a6bdc99cf94476705bf42a808e8bb5d0ee709b1a20fe554d5"
+  },
+  {
+    "path": "outputs/godot/assets/environment-textures/tablewood.png",
+    "sha256": "03903f079cbfbdddea6ecfa9befd53acc7310cf5d917be1be4a6b55a8a9445fd"
+  },
+  {
+    "path": "outputs/godot/assets/environment-textures/tablewood.png.import",
+    "sha256": "282395eceed15a8a638ab90461569de1e4c6b8d5f2fa73466c718767e7c4dd5b"
+  },
+  {
+    "path": "outputs/godot/assets/environment-textures/throw.png",
+    "sha256": "d499c1ff5964f18b8056361463055569fd086edb203fb4a704a23c4774e45667"
+  },
+  {
+    "path": "outputs/godot/assets/environment-textures/throw.png.import",
+    "sha256": "0d4cafadf81b5d9808ba8f96a6decbb9c6b5312353ffba6f542c1947e9225242"
+  },
+  {
+    "path": "outputs/godot/assets/environment-textures/trim.png",
+    "sha256": "b622322e504218f8a4c4b6929064e9761e4c25249f3bf6d13685811236d75da6"
+  },
+  {
+    "path": "outputs/godot/assets/environment-textures/trim.png.import",
+    "sha256": "1324101d829d7938692c1893aa7dc59f8d5eccf77fcdb4b1629c721816cdec09"
+  },
+  {
+    "path": "outputs/godot/assets/environment-textures/wall.png",
+    "sha256": "1f9b7eea0b9a0aeb95d8758b745142060a4bfbf07a47ee4aa40c2bff2056d368"
+  },
+  {
+    "path": "outputs/godot/assets/environment-textures/wall.png.import",
+    "sha256": "b9f98aea5189db934586501751e81166a3df9d886381bc09d928e5c42d6d8f48"
+  },
+  {
+    "path": "outputs/godot/assets/environment-textures/wood.png",
+    "sha256": "9dfc52269174ab4ccae119c5af33ea49be9edb7fd3a5483e5f462690f51aa9e7"
+  },
+  {
+    "path": "outputs/godot/assets/environment-textures/wood.png.import",
+    "sha256": "e2ccf1dc13da646453c7e09cc2a7ff0df8b3d59af51d49c9617a8fa7b0010ede"
+  },
+  {
+    "path": "outputs/godot/addons/scene_baker/plugin.cfg",
+    "sha256": "4e653055215528f38ce3c88bde7179139ea38caf1c7dc5f27860bf5b483de4a1"
+  },
+  {
+    "path": "outputs/godot/addons/scene_baker/plugin.gd",
+    "sha256": "d1576fd9a165b2c99ea37c200c408faa8dd4edb664af987adc0dded083590633"
+  },
+  {
+    "path": "outputs/godot/addons/scene_baker/plugin.gd.uid",
+    "sha256": "46a918b86465e48458c3df9c77605086f3fe9c6bc53721e7cac8d2a62fc10710"
+  },
+  {
+    "path": "outputs/web/index.apple-touch-icon.png",
+    "sha256": "01d4f63e525941e06ce74f5187dad030d20a8d52a07ce365ae4e94af97a3b1f5"
+  },
+  {
+    "path": "outputs/web/index.audio.position.worklet.js",
+    "sha256": "be33985bc7160d6bf9646f259cd86b259cd67b02ccb297ee5c44f8ac84327bc8"
+  },
+  {
+    "path": "outputs/web/index.audio.worklet.js",
+    "sha256": "5b476a9c9ce642c0ee4256436d1bc31d9c38f868aca0f9a8e2a57c18d2dec2a3"
+  },
+  {
+    "path": "outputs/web/index.html",
+    "sha256": "194cc21e0bb0d52fb2ede9de5702ba533903d406a5b9cb3442f019d1712aedd8"
+  },
+  {
+    "path": "outputs/web/index.icon.png",
+    "sha256": "ad3c35ad0facf487c618204bd98db543034fc95224eadc7f08c7a9ff38d5b3b5"
+  },
+  {
+    "path": "outputs/web/index.js",
+    "sha256": "33c94cb3175f3333b82e2a3be5e8e86f77986f0aa2042b1631f6367a4e5bb6ba"
+  },
+  {
+    "path": "outputs/web/index.pck",
+    "sha256": "1a42f717cba2c77ebd190af10f496393673c5a5832bd378fbc12293df6867e80"
+  },
+  {
+    "path": "outputs/web/index.png",
+    "sha256": "3cb4495c0b98dfbe4b663cbf2b6836473572339beb66d902367893162a70be0e"
+  },
+  {
+    "path": "outputs/web/index.wasm",
+    "sha256": "fc74679e3b97f76878947fcd4fbe1268cbfa6188182a2e33bbc3f5dc9bfa57d0"
+  },
+  {
+    "path": "outputs/web/scene-0493f47fe6dd.pck",
+    "sha256": "0493f47fe6dd0cb0a793fbee12de9e43efc3264b4d01977773d0315f04743644"
+  },
+  {
+    "path": "outputs/web/scene-0a1645538686.pck",
+    "sha256": "0a1645538686807169d71cce0787d92bea7d90b9693a6a786ae690bbb61770f1"
+  },
+  {
+    "path": "outputs/web/scene-0df83debd1d8.pck",
+    "sha256": "0df83debd1d830418dda58ca90842fbdd1873f0e8ae4c7748c429fe3755a758c"
+  },
+  {
+    "path": "outputs/web/scene-15f84425cd66.pck",
+    "sha256": "15f84425cd661fcd8e1ad29287a6d34aae7285b18219abc3d99a7b8b6f81b810"
+  },
+  {
+    "path": "outputs/web/scene-1a42f717cba2.pck",
+    "sha256": "1a42f717cba2c77ebd190af10f496393673c5a5832bd378fbc12293df6867e80"
+  },
+  {
+    "path": "outputs/web/scene-1df4613e2169.pck",
+    "sha256": "1df4613e2169bcd19a21fd9419ae42b09bb4c6ad2622724585d6a05bbfe48d95"
+  },
+  {
+    "path": "outputs/web/scene-2389c410014a.pck",
+    "sha256": "2389c410014affa579a573c2b74a391c122af58464420e0b65fa51ae132bdaca"
+  },
+  {
+    "path": "outputs/web/scene-279d98a422dc.pck",
+    "sha256": "279d98a422dc064f1624d1cf08d5817448c1710a5dd22f5db4f8962d7f60a650"
+  },
+  {
+    "path": "outputs/web/scene-28897ab5b148.pck",
+    "sha256": "28897ab5b148a2f4ed0c4a0f416ce9a70a77a46d5969cc0e648cc82ad32feb4c"
+  },
+  {
+    "path": "outputs/web/scene-2bc0fdac818f.pck",
+    "sha256": "2bc0fdac818fdf77e84bb25ae10f6c5f5c1e3d9286c3bcd3f48975a436aa8663"
+  },
+  {
+    "path": "outputs/web/scene-3c27f9bfe5b4.pck",
+    "sha256": "3c27f9bfe5b48a0e7c85f24ea8fa375b6ed72af2c69d26006464a79bb1550eea"
+  },
+  {
+    "path": "outputs/web/scene-62af3ac9b67f.pck",
+    "sha256": "62af3ac9b67fba07b2fa74a4147e5f7d7b8307cc142c298ce5f105ded56b1e10"
+  },
+  {
+    "path": "outputs/web/scene-63cbbb777cc8.pck",
+    "sha256": "63cbbb777cc859521f74819486b9b2fd4fe74c93a4188f8aa67548da9911f1eb"
+  },
+  {
+    "path": "outputs/web/scene-73effcf27186.pck",
+    "sha256": "73effcf27186c7796d4ab64e51e48ad310135af8dea0191d16cfc2a27070d687"
+  },
+  {
+    "path": "outputs/web/scene-76edbca45168.pck",
+    "sha256": "76edbca45168c45146f979b26eee62292faea3ba53f59e93d5cce78b4c68a56c"
+  },
+  {
+    "path": "outputs/web/scene-81ca3de296c2.pck",
+    "sha256": "81ca3de296c27194d10106563da12f6890b18b1a02a76d49b5619544abd6180a"
+  },
+  {
+    "path": "outputs/web/scene-8825c269eef3.pck",
+    "sha256": "8825c269eef33f8090abb4c94773430990a0da024bfd9d7d4ad1bd606c64fd4b"
+  },
+  {
+    "path": "outputs/web/scene-8f68e808fcb8.pck",
+    "sha256": "8f68e808fcb83304db3189fb3533b9f53a5437e29f78077f451d11390478ed2c"
+  },
+  {
+    "path": "outputs/web/scene-98276ac01c26.pck",
+    "sha256": "98276ac01c26af1602d6da2097a17e9d8c019f9a6684cb8ae65543cd5d8ecf13"
+  },
+  {
+    "path": "outputs/web/scene-a65c7ebd3ee1.pck",
+    "sha256": "a65c7ebd3ee16a85273767f2c0fc8ec95641d9406188c5bbdad95c274daffcca"
+  },
+  {
+    "path": "outputs/web/scene-b75753ee7fec.pck",
+    "sha256": "b75753ee7fec781fa1bc4a6e18a50760105d81f52d75e80f48075399f1b5edae"
+  },
+  {
+    "path": "outputs/web/scene-c4235921928f.pck",
+    "sha256": "c4235921928f4c072bfa749051019f032d3b1a9d3db4f16488d9f2301292b853"
+  },
+  {
+    "path": "outputs/web/scene-c839a6bb23f1.pck",
+    "sha256": "c839a6bb23f177512801bc91603bf7da45e9164514e92618cf301a9fb41e40b1"
+  },
+  {
+    "path": "outputs/web/scene-c9d1b55e856e.pck",
+    "sha256": "c9d1b55e856e3c137fb4bc734459f82495cba51431a3350f1092828dea444cc7"
+  },
+  {
+    "path": "outputs/web/scene-e615f883f0f0.pck",
+    "sha256": "e615f883f0f0d8580f746afcfd8567f83646828f12da336317ac9ae0f8262fe3"
+  },
+  {
+    "path": "outputs/web/scene-e6beaacd182c.pck",
+    "sha256": "e6beaacd182cc38ce6a9d7e9c1d9c154d36e884a6798bee6fce3165509e5c81c"
+  },
+  {
+    "path": "outputs/web/scene-ef0f25604a58.pck",
+    "sha256": "ef0f25604a58bd3cfc2f909d2af65920d321b258f072140a1eacb31e9528608e"
+  },
+  {
+    "path": "outputs/web/scene-f279a3639fc7.pck",
+    "sha256": "f279a3639fc790b5ac62bdc79c3d99bc50bb94e8d3da66c6b670f1edcea29dc3"
+  },
+  {
+    "path": "outputs/web/scene-fd212380b6cf.pck",
+    "sha256": "fd212380b6cf0667530fb9591701c5d1f1d1c14f67e3d3a8df823e0c7f45af10"
+  }
+]

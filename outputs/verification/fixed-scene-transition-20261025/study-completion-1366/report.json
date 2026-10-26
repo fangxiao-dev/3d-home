@@ -1,0 +1,3987 @@
+{
+  "started_at": "2026-10-25T21:35:12.421Z",
+  "build": {
+    "seats": "d3e330117ac37938c5905f79ebaa270dfe298cd2a1066f2ddc4ed32b0e045d2e",
+    "checks_run": true,
+    "runtime": "2f5d1c1da226f28c001be81fb5a3a51fbf11aea4650da085d0852f49cd3044a9",
+    "sha256": "4315d056df8368c0b0307e94e5f7e51f58da362711ae69e205573654ebba9287",
+    "pack": "scene-4315d056df83.pck",
+    "exported_at": "2026-10-25T22:26:50.9539183+01:00",
+    "character": "b48319f3e1c9b393c6f1019b80ef1c257c06a5b8a50a3b4009d6cebc943b697e",
+    "model": "15d0db1e2c7ab27b5d2923f4f14d257f7a5df5ab497415ad0be25c3633f83fb2"
+  },
+  "runner_sha256": "7c21271a0e3fb08287c2c336e764f0a13db0f87e503e2d35ea75b32b26c503e6",
+  "width": 1366,
+  "height": 768,
+  "browser_mode": "headless",
+  "cycles": [
+    {
+      "id": "study_chair",
+      "yaw": 0,
+      "amount": 1,
+      "before": {
+        "active_room": "study",
+        "animation": "Idle",
+        "app_focused": true,
+        "avatar_scale": [
+          1,
+          1,
+          1
+        ],
+        "avatar_yaw": 0.460445284843445,
+        "body_obstructions": [],
+        "bones": {
+          "Foot.L": [
+            8.16771602630615,
+            0.0862131789326668,
+            4.00524520874023
+          ],
+          "Foot.R": [
+            8.33792781829834,
+            0.0862131789326668,
+            3.92081904411316
+          ],
+          "Hand.L": [
+            7.99968910217285,
+            0.804896533489227,
+            4.10533046722412
+          ],
+          "Hand.R": [
+            8.51928520202637,
+            0.804896533489227,
+            3.84760904312134
+          ],
+          "Hips": [
+            8.25282192230225,
+            0.871786177158356,
+            3.96303200721741
+          ],
+          "Shin.L": [
+            8.16771602630615,
+            0.481497824192047,
+            4.00524520874023
+          ],
+          "Shin.R": [
+            8.33792781829834,
+            0.481497824192047,
+            3.92081904411316
+          ]
+        },
+        "camera": [
+          8.25278949737549,
+          7.55011510848999,
+          12.0064449310303
+        ],
+        "camera_blending": false,
+        "camera_facing_dot": 1,
+        "camera_focus": [
+          8.25278949737549,
+          0.800844967365265,
+          3.96297860145569
+        ],
+        "camera_fov": 35,
+        "camera_pitch_degrees": 39.9999961853027,
+        "camera_yaw": 0,
+        "capture_requested": false,
+        "clip": "Idle",
+        "cycles": {
+          "dining_chair": 0,
+          "entry_stool": 0,
+          "sofa_middle": 0,
+          "study_chair": 0,
+          "window_seat": 0
+        },
+        "draw_calls": 119,
+        "escape_held": false,
+        "explore_target": [
+          8.25282192230225,
+          0.800844848155975,
+          3.96303200721741
+        ],
+        "fade_alpha": 0,
+        "frame_mean_ms": 82.7559440559441,
+        "frame_p95_ms": 38.2,
+        "frame_samples": 572,
+        "house_rooms": [
+          "living",
+          "balcony",
+          "hallway",
+          "dining",
+          "wash",
+          "study",
+          "kitchen"
+        ],
+        "input_locked": false,
+        "interaction_restore_allowed": false,
+        "lightmap": {
+          "probe_points": 112,
+          "shadowmasks": 1,
+          "textures": 1,
+          "users": 14
+        },
+        "mode": "EXPLORE",
+        "navigation_active": true,
+        "navigation_scheme": "captured_horizontal_mouse",
+        "objects": 157,
+        "occlusion_hidden_groups": [],
+        "physics_ms": 1.8,
+        "player_screen": [
+          640.003540039062,
+          360.003723144531
+        ],
+        "pointer_locked": true,
+        "process_ms": 32.8,
+        "rendered_body_obstructions": [],
+        "resume_button": [
+          525,
+          328,
+          230,
+          64
+        ],
+        "room_meshes": 219,
+        "seat_id": "",
+        "seats": [
+          {
+            "approach": [
+              -1.45,
+              0,
+              -3.35
+            ],
+            "camera_position": [
+              0.485,
+              2.25,
+              -0.75
+            ],
+            "camera_target": [
+              -2.035,
+              0.85,
+              -3.35
+            ],
+            "exit": [
+              -1.45,
+              0,
+              -3.35
+            ],
+            "furniture_id": "sofa",
+            "id": "sofa_middle",
+            "label": "长沙发",
+            "room_id": "living",
+            "root": [
+              -2.215,
+              0,
+              -3.35
+            ],
+            "surface_height": 0.45,
+            "yaw": 1.5707963267949
+          },
+          {
+            "approach": [
+              -1.35,
+              0,
+              -4.35
+            ],
+            "camera_position": [
+              0.485,
+              2.25,
+              -1.61
+            ],
+            "camera_target": [
+              -2.035,
+              0.85,
+              -4.21
+            ],
+            "exit": [
+              -1.35,
+              0,
+              -4.35
+            ],
+            "furniture_id": "sofa",
+            "id": "window_seat",
+            "label": "窗边坐位",
+            "room_id": "living",
+            "root": [
+              -2.215,
+              0,
+              -4.21
+            ],
+            "surface_height": 0.45,
+            "yaw": 1.5707963267949
+          },
+          {
+            "approach": [
+              -0.65,
+              0,
+              -1.5
+            ],
+            "camera_position": [
+              1.365,
+              2.25,
+              0.93
+            ],
+            "camera_target": [
+              -1.155,
+              0.85,
+              -1.67
+            ],
+            "exit": [
+              -0.65,
+              0,
+              -1.5
+            ],
+            "furniture_id": "entry_stool",
+            "id": "entry_stool",
+            "label": "入口软墩",
+            "room_id": "living",
+            "root": [
+              -1.335,
+              0,
+              -1.67
+            ],
+            "surface_height": 0.45,
+            "yaw": 1.5707963267949
+          },
+          {
+            "approach": [
+              -1.98,
+              0,
+              3.4
+            ],
+            "camera_position": [
+              0.25,
+              2.25,
+              6.78
+            ],
+            "camera_target": [
+              -2.27,
+              0.85,
+              4.18
+            ],
+            "exit": [
+              -1.98,
+              0,
+              3.4
+            ],
+            "furniture_id": "dining_chair",
+            "id": "dining_chair",
+            "label": "餐椅",
+            "room_id": "dining",
+            "root": [
+              -2.45,
+              0,
+              4.18
+            ],
+            "surface_height": 0.45,
+            "yaw": 1.5707963267949
+          },
+          {
+            "approach": [
+              8.16,
+              0,
+              4
+            ],
+            "camera_position": [
+              10.48,
+              2.25,
+              7.36
+            ],
+            "camera_target": [
+              7.96,
+              0.85,
+              4.76
+            ],
+            "exit": [
+              8.16,
+              0,
+              4
+            ],
+            "furniture_id": "study_chair",
+            "id": "study_chair",
+            "label": "书房椅",
+            "room_id": "study",
+            "root": [
+              7.78,
+              0,
+              4.76
+            ],
+            "surface_height": 0.45,
+            "yaw": 1.5707963267949
+          }
+        ],
+        "target": "study_chair",
+        "target_camera_yaw": 0,
+        "target_zoom": 1,
+        "transition_collisions": [],
+        "transition_phase": "none",
+        "triangles": 55444,
+        "version": 2,
+        "viewport": [
+          1280,
+          720
+        ],
+        "x": 8.25282192230225,
+        "y": 0.000844842230435461,
+        "z": 3.96303200721741,
+        "zoom": 1
+      },
+      "seated": {
+        "active_room": "study",
+        "animation": "SitIdle",
+        "app_focused": true,
+        "avatar_scale": [
+          1,
+          1,
+          1
+        ],
+        "avatar_yaw": 1.57079637050629,
+        "body_obstructions": [],
+        "bones": {
+          "Foot.L": [
+            8.15969944000244,
+            0.0847394466400146,
+            4.85500001907349
+          ],
+          "Foot.R": [
+            8.15969944000244,
+            0.0847394466400146,
+            4.66500043869019
+          ],
+          "Hand.L": [
+            8.02999019622803,
+            0.60925966501236,
+            4.88016366958618
+          ],
+          "Hand.R": [
+            8.02999019622803,
+            0.60925966501236,
+            4.63983678817749
+          ],
+          "Hips": [
+            7.78000020980835,
+            0.556050539016724,
+            4.76000022888184
+          ],
+          "Shin.L": [
+            8.16280937194824,
+            0.480012059211731,
+            4.85500001907349
+          ],
+          "Shin.R": [
+            8.16280937194824,
+            0.480012059211731,
+            4.66500043869019
+          ]
+        },
+        "camera": [
+          10.4799995422363,
+          2.25,
+          7.3600001335144
+        ],
+        "camera_blending": false,
+        "camera_facing_dot": 0.999482870101929,
+        "camera_focus": [
+          7.78001499176025,
+          0.800000131130219,
+          4.75999927520752
+        ],
+        "camera_fov": 35,
+        "camera_pitch_degrees": 21.1390857696533,
+        "camera_yaw": 0,
+        "capture_requested": false,
+        "clip": "SitIdle",
+        "cycles": {
+          "dining_chair": 0,
+          "entry_stool": 0,
+          "sofa_middle": 0,
+          "study_chair": 0,
+          "window_seat": 0
+        },
+        "draw_calls": 161,
+        "escape_held": false,
+        "explore_target": [
+          7.78000020980835,
+          0.800000011920929,
+          4.76000022888184
+        ],
+        "fade_alpha": 0,
+        "frame_mean_ms": 28.7403333333334,
+        "frame_p95_ms": 38.8,
+        "frame_samples": 600,
+        "house_rooms": [
+          "living",
+          "balcony",
+          "hallway",
+          "dining",
+          "wash",
+          "study",
+          "kitchen"
+        ],
+        "input_locked": true,
+        "interaction_restore_allowed": true,
+        "lightmap": {
+          "probe_points": 112,
+          "shadowmasks": 1,
+          "textures": 1,
+          "users": 14
+        },
+        "mode": "SEATED",
+        "navigation_active": false,
+        "navigation_scheme": "captured_horizontal_mouse",
+        "objects": 185,
+        "occlusion_hidden_groups": [],
+        "physics_ms": 0.5,
+        "player_screen": [
+          603.261413574219,
+          360.414154052734
+        ],
+        "pointer_locked": false,
+        "process_ms": 35,
+        "rendered_body_obstructions": [],
+        "resume_button": [
+          525,
+          328,
+          230,
+          64
+        ],
+        "room_meshes": 219,
+        "seat_id": "study_chair",
+        "seats": [
+          {
+            "approach": [
+              -1.45,
+              0,
+              -3.35
+            ],
+            "camera_position": [
+              0.485,
+              2.25,
+              -0.75
+            ],
+            "camera_target": [
+              -2.035,
+              0.85,
+              -3.35
+            ],
+            "exit": [
+              -1.45,
+              0,
+              -3.35
+            ],
+            "furniture_id": "sofa",
+            "id": "sofa_middle",
+            "label": "长沙发",
+            "room_id": "living",
+            "root": [
+              -2.215,
+              0,
+              -3.35
+            ],
+            "surface_height": 0.45,
+            "yaw": 1.5707963267949
+          },
+          {
+            "approach": [
+              -1.35,
+              0,
+              -4.35
+            ],
+            "camera_position": [
+              0.485,
+              2.25,
+              -1.61
+            ],
+            "camera_target": [
+              -2.035,
+              0.85,
+              -4.21
+            ],
+            "exit": [
+              -1.35,
+              0,
+              -4.35
+            ],
+            "furniture_id": "sofa",
+            "id": "window_seat",
+            "label": "窗边坐位",
+            "room_id": "living",
+            "root": [
+              -2.215,
+              0,
+              -4.21
+            ],
+            "surface_height": 0.45,
+            "yaw": 1.5707963267949
+          },
+          {
+            "approach": [
+              -0.65,
+              0,
+              -1.5
+            ],
+            "camera_position": [
+              1.365,
+              2.25,
+              0.93
+            ],
+            "camera_target": [
+              -1.155,
+              0.85,
+              -1.67
+            ],
+            "exit": [
+              -0.65,
+              0,
+              -1.5
+            ],
+            "furniture_id": "entry_stool",
+            "id": "entry_stool",
+            "label": "入口软墩",
+            "room_id": "living",
+            "root": [
+              -1.335,
+              0,
+              -1.67
+            ],
+            "surface_height": 0.45,
+            "yaw": 1.5707963267949
+          },
+          {
+            "approach": [
+              -1.98,
+              0,
+              3.4
+            ],
+            "camera_position": [
+              0.25,
+              2.25,
+              6.78
+            ],
+            "camera_target": [
+              -2.27,
+              0.85,
+              4.18
+            ],
+            "exit": [
+              -1.98,
+              0,
+              3.4
+            ],
+            "furniture_id": "dining_chair",
+            "id": "dining_chair",
+            "label": "餐椅",
+            "room_id": "dining",
+            "root": [
+              -2.45,
+              0,
+              4.18
+            ],
+            "surface_height": 0.45,
+            "yaw": 1.5707963267949
+          },
+          {
+            "approach": [
+              8.16,
+              0,
+              4
+            ],
+            "camera_position": [
+              10.48,
+              2.25,
+              7.36
+            ],
+            "camera_target": [
+              7.96,
+              0.85,
+              4.76
+            ],
+            "exit": [
+              8.16,
+              0,
+              4
+            ],
+            "furniture_id": "study_chair",
+            "id": "study_chair",
+            "label": "书房椅",
+            "room_id": "study",
+            "root": [
+              7.78,
+              0,
+              4.76
+            ],
+            "surface_height": 0.45,
+            "yaw": 1.5707963267949
+          }
+        ],
+        "target": "",
+        "target_camera_yaw": 0,
+        "target_zoom": 1,
+        "transition_collisions": [],
+        "transition_phase": "none",
+        "triangles": 110122,
+        "version": 2,
+        "viewport": [
+          1280,
+          720
+        ],
+        "x": 7.78000020980835,
+        "y": 0,
+        "z": 4.76000022888184,
+        "zoom": 1
+      },
+      "activation_before_escape": {
+        "locked": false,
+        "focused": true,
+        "hidden": false,
+        "activation": false
+      },
+      "returned": {
+        "active_room": "study",
+        "animation": "Idle",
+        "app_focused": true,
+        "avatar_scale": [
+          1,
+          1,
+          1
+        ],
+        "avatar_yaw": -3.1415913105011,
+        "body_obstructions": [],
+        "bones": {
+          "Foot.L": [
+            8.25500011444092,
+            0.0859370678663254,
+            4.01749610900879
+          ],
+          "Foot.R": [
+            8.0649995803833,
+            0.0859370678663254,
+            4.01749610900879
+          ],
+          "Hand.L": [
+            8.44999980926514,
+            0.805777311325073,
+            4.00249576568604
+          ],
+          "Hand.R": [
+            7.86999988555908,
+            0.805777311325073,
+            4.00249671936035
+          ],
+          "Hips": [
+            8.15999984741211,
+            0.871510088443756,
+            4.01749610900879
+          ],
+          "Shin.L": [
+            8.25500011444092,
+            0.481221735477448,
+            4.01749610900879
+          ],
+          "Shin.R": [
+            8.0649995803833,
+            0.481221735477448,
+            4.01749610900879
+          ]
+        },
+        "camera": [
+          8.15993976593018,
+          7.55011129379272,
+          12.0890760421753
+        ],
+        "camera_blending": false,
+        "camera_facing_dot": 1,
+        "camera_focus": [
+          8.15993976593018,
+          0.800841212272644,
+          4.04560947418213
+        ],
+        "camera_fov": 35,
+        "camera_pitch_degrees": 39.9999961853027,
+        "camera_yaw": 0,
+        "capture_requested": false,
+        "clip": "Idle",
+        "cycles": {
+          "dining_chair": 0,
+          "entry_stool": 0,
+          "sofa_middle": 0,
+          "study_chair": 1,
+          "window_seat": 0
+        },
+        "draw_calls": 118,
+        "escape_held": true,
+        "explore_target": [
+          8.15999984741211,
+          0.800844848155975,
+          4.01749610900879
+        ],
+        "fade_alpha": 0,
+        "frame_mean_ms": 30.2356666666667,
+        "frame_p95_ms": 40.6,
+        "frame_samples": 600,
+        "house_rooms": [
+          "living",
+          "balcony",
+          "hallway",
+          "dining",
+          "wash",
+          "study",
+          "kitchen"
+        ],
+        "input_locked": true,
+        "interaction_restore_allowed": false,
+        "lightmap": {
+          "probe_points": 112,
+          "shadowmasks": 1,
+          "textures": 1,
+          "users": 14
+        },
+        "mode": "EXPLORE",
+        "navigation_active": true,
+        "navigation_scheme": "captured_horizontal_mouse",
+        "objects": 149,
+        "occlusion_hidden_groups": [],
+        "physics_ms": 0.7,
+        "player_screen": [
+          640.006530761719,
+          358.038696289062
+        ],
+        "pointer_locked": true,
+        "process_ms": 30.4,
+        "rendered_body_obstructions": [],
+        "resume_button": [
+          525,
+          328,
+          230,
+          64
+        ],
+        "room_meshes": 219,
+        "seat_id": "",
+        "seats": [
+          {
+            "approach": [
+              -1.45,
+              0,
+              -3.35
+            ],
+            "camera_position": [
+              0.485,
+              2.25,
+              -0.75
+            ],
+            "camera_target": [
+              -2.035,
+              0.85,
+              -3.35
+            ],
+            "exit": [
+              -1.45,
+              0,
+              -3.35
+            ],
+            "furniture_id": "sofa",
+            "id": "sofa_middle",
+            "label": "长沙发",
+            "room_id": "living",
+            "root": [
+              -2.215,
+              0,
+              -3.35
+            ],
+            "surface_height": 0.45,
+            "yaw": 1.5707963267949
+          },
+          {
+            "approach": [
+              -1.35,
+              0,
+              -4.35
+            ],
+            "camera_position": [
+              0.485,
+              2.25,
+              -1.61
+            ],
+            "camera_target": [
+              -2.035,
+              0.85,
+              -4.21
+            ],
+            "exit": [
+              -1.35,
+              0,
+              -4.35
+            ],
+            "furniture_id": "sofa",
+            "id": "window_seat",
+            "label": "窗边坐位",
+            "room_id": "living",
+            "root": [
+              -2.215,
+              0,
+              -4.21
+            ],
+            "surface_height": 0.45,
+            "yaw": 1.5707963267949
+          },
+          {
+            "approach": [
+              -0.65,
+              0,
+              -1.5
+            ],
+            "camera_position": [
+              1.365,
+              2.25,
+              0.93
+            ],
+            "camera_target": [
+              -1.155,
+              0.85,
+              -1.67
+            ],
+            "exit": [
+              -0.65,
+              0,
+              -1.5
+            ],
+            "furniture_id": "entry_stool",
+            "id": "entry_stool",
+            "label": "入口软墩",
+            "room_id": "living",
+            "root": [
+              -1.335,
+              0,
+              -1.67
+            ],
+            "surface_height": 0.45,
+            "yaw": 1.5707963267949
+          },
+          {
+            "approach": [
+              -1.98,
+              0,
+              3.4
+            ],
+            "camera_position": [
+              0.25,
+              2.25,
+              6.78
+            ],
+            "camera_target": [
+              -2.27,
+              0.85,
+              4.18
+            ],
+            "exit": [
+              -1.98,
+              0,
+              3.4
+            ],
+            "furniture_id": "dining_chair",
+            "id": "dining_chair",
+            "label": "餐椅",
+            "room_id": "dining",
+            "root": [
+              -2.45,
+              0,
+              4.18
+            ],
+            "surface_height": 0.45,
+            "yaw": 1.5707963267949
+          },
+          {
+            "approach": [
+              8.16,
+              0,
+              4
+            ],
+            "camera_position": [
+              10.48,
+              2.25,
+              7.36
+            ],
+            "camera_target": [
+              7.96,
+              0.85,
+              4.76
+            ],
+            "exit": [
+              8.16,
+              0,
+              4
+            ],
+            "furniture_id": "study_chair",
+            "id": "study_chair",
+            "label": "书房椅",
+            "room_id": "study",
+            "root": [
+              7.78,
+              0,
+              4.76
+            ],
+            "surface_height": 0.45,
+            "yaw": 1.5707963267949
+          }
+        ],
+        "target": "study_chair",
+        "target_camera_yaw": 0,
+        "target_zoom": 1,
+        "transition_collisions": [],
+        "transition_phase": "none",
+        "triangles": 53926,
+        "version": 2,
+        "viewport": [
+          1280,
+          720
+        ],
+        "x": 8.15999984741211,
+        "y": 0.000844823895022273,
+        "z": 4.01749610900879,
+        "zoom": 1
+      },
+      "turned": {
+        "active_room": "study",
+        "animation": "Idle",
+        "app_focused": true,
+        "avatar_scale": [
+          1,
+          1,
+          1
+        ],
+        "avatar_yaw": -3.1415913105011,
+        "body_obstructions": [],
+        "bones": {
+          "Foot.L": [
+            8.25500011444092,
+            0.0861975401639938,
+            4.01749610900879
+          ],
+          "Foot.R": [
+            8.0649995803833,
+            0.0861975401639938,
+            4.01749610900879
+          ],
+          "Hand.L": [
+            8.44999980926514,
+            0.804901957511902,
+            4.00249576568604
+          ],
+          "Hand.R": [
+            7.86999988555908,
+            0.804901957511902,
+            4.00249671936035
+          ],
+          "Hips": [
+            8.15999984741211,
+            0.871770560741425,
+            4.01749610900879
+          ],
+          "Shin.L": [
+            8.25500011444092,
+            0.481482207775116,
+            4.01749610900879
+          ],
+          "Shin.R": [
+            8.0649995803833,
+            0.481482207775116,
+            4.01749610900879
+          ]
+        },
+        "camera": [
+          6.47119283676147,
+          7.55011463165283,
+          11.8817453384399
+        ],
+        "camera_blending": false,
+        "camera_facing_dot": 1,
+        "camera_focus": [
+          8.15999794006348,
+          0.800844728946686,
+          4.01756763458252
+        ],
+        "camera_fov": 35,
+        "camera_pitch_degrees": 40,
+        "camera_yaw": -0.211533905341713,
+        "capture_requested": false,
+        "clip": "Idle",
+        "cycles": {
+          "dining_chair": 0,
+          "entry_stool": 0,
+          "sofa_middle": 0,
+          "study_chair": 1,
+          "window_seat": 0
+        },
+        "draw_calls": 112,
+        "escape_held": false,
+        "explore_target": [
+          8.15999984741211,
+          0.800844848155975,
+          4.01749610900879
+        ],
+        "fade_alpha": 0,
+        "frame_mean_ms": 30.2063333333333,
+        "frame_p95_ms": 41.2,
+        "frame_samples": 600,
+        "house_rooms": [
+          "living",
+          "balcony",
+          "hallway",
+          "dining",
+          "wash",
+          "study",
+          "kitchen"
+        ],
+        "input_locked": false,
+        "interaction_restore_allowed": false,
+        "lightmap": {
+          "probe_points": 112,
+          "shadowmasks": 1,
+          "textures": 1,
+          "users": 14
+        },
+        "mode": "EXPLORE",
+        "navigation_active": true,
+        "navigation_scheme": "captured_horizontal_mouse",
+        "objects": 150,
+        "occlusion_hidden_groups": [],
+        "physics_ms": 1.3,
+        "player_screen": [
+          639.998596191406,
+          359.995086669922
+        ],
+        "pointer_locked": true,
+        "process_ms": 27.7,
+        "rendered_body_obstructions": [],
+        "resume_button": [
+          525,
+          328,
+          230,
+          64
+        ],
+        "room_meshes": 219,
+        "seat_id": "",
+        "seats": [
+          {
+            "approach": [
+              -1.45,
+              0,
+              -3.35
+            ],
+            "camera_position": [
+              0.485,
+              2.25,
+              -0.75
+            ],
+            "camera_target": [
+              -2.035,
+              0.85,
+              -3.35
+            ],
+            "exit": [
+              -1.45,
+              0,
+              -3.35
+            ],
+            "furniture_id": "sofa",
+            "id": "sofa_middle",
+            "label": "长沙发",
+            "room_id": "living",
+            "root": [
+              -2.215,
+              0,
+              -3.35
+            ],
+            "surface_height": 0.45,
+            "yaw": 1.5707963267949
+          },
+          {
+            "approach": [
+              -1.35,
+              0,
+              -4.35
+            ],
+            "camera_position": [
+              0.485,
+              2.25,
+              -1.61
+            ],
+            "camera_target": [
+              -2.035,
+              0.85,
+              -4.21
+            ],
+            "exit": [
+              -1.35,
+              0,
+              -4.35
+            ],
+            "furniture_id": "sofa",
+            "id": "window_seat",
+            "label": "窗边坐位",
+            "room_id": "living",
+            "root": [
+              -2.215,
+              0,
+              -4.21
+            ],
+            "surface_height": 0.45,
+            "yaw": 1.5707963267949
+          },
+          {
+            "approach": [
+              -0.65,
+              0,
+              -1.5
+            ],
+            "camera_position": [
+              1.365,
+              2.25,
+              0.93
+            ],
+            "camera_target": [
+              -1.155,
+              0.85,
+              -1.67
+            ],
+            "exit": [
+              -0.65,
+              0,
+              -1.5
+            ],
+            "furniture_id": "entry_stool",
+            "id": "entry_stool",
+            "label": "入口软墩",
+            "room_id": "living",
+            "root": [
+              -1.335,
+              0,
+              -1.67
+            ],
+            "surface_height": 0.45,
+            "yaw": 1.5707963267949
+          },
+          {
+            "approach": [
+              -1.98,
+              0,
+              3.4
+            ],
+            "camera_position": [
+              0.25,
+              2.25,
+              6.78
+            ],
+            "camera_target": [
+              -2.27,
+              0.85,
+              4.18
+            ],
+            "exit": [
+              -1.98,
+              0,
+              3.4
+            ],
+            "furniture_id": "dining_chair",
+            "id": "dining_chair",
+            "label": "餐椅",
+            "room_id": "dining",
+            "root": [
+              -2.45,
+              0,
+              4.18
+            ],
+            "surface_height": 0.45,
+            "yaw": 1.5707963267949
+          },
+          {
+            "approach": [
+              8.16,
+              0,
+              4
+            ],
+            "camera_position": [
+              10.48,
+              2.25,
+              7.36
+            ],
+            "camera_target": [
+              7.96,
+              0.85,
+              4.76
+            ],
+            "exit": [
+              8.16,
+              0,
+              4
+            ],
+            "furniture_id": "study_chair",
+            "id": "study_chair",
+            "label": "书房椅",
+            "room_id": "study",
+            "root": [
+              7.78,
+              0,
+              4.76
+            ],
+            "surface_height": 0.45,
+            "yaw": 1.5707963267949
+          }
+        ],
+        "target": "study_chair",
+        "target_camera_yaw": -0.211533905341713,
+        "target_zoom": 1,
+        "transition_collisions": [],
+        "transition_phase": "none",
+        "triangles": 50024,
+        "version": 2,
+        "viewport": [
+          1280,
+          720
+        ],
+        "x": 8.15999984741211,
+        "y": 0.000844823895022273,
+        "z": 4.01749610900879,
+        "zoom": 1
+      },
+      "moved": {
+        "active_room": "study",
+        "animation": "Idle",
+        "app_focused": true,
+        "avatar_scale": [
+          1,
+          1,
+          1
+        ],
+        "avatar_yaw": -1.65925335884094,
+        "body_obstructions": [],
+        "bones": {
+          "Foot.L": [
+            7.9284029006958,
+            0.0848736315965652,
+            3.92597270011902
+          ],
+          "Foot.R": [
+            7.87191152572632,
+            0.133098259568214,
+            4.11170816421509
+          ],
+          "Hand.L": [
+            7.89568853378296,
+            0.800689160823822,
+            3.72696542739868
+          ],
+          "Hand.R": [
+            7.84428215026855,
+            0.800393342971802,
+            4.30544281005859
+          ],
+          "Hips": [
+            7.88499879837036,
+            0.866987824440002,
+            4.01749610900879
+          ],
+          "Shin.L": [
+            7.87859153747559,
+            0.476982355117798,
+            3.92155504226685
+          ],
+          "Shin.R": [
+            7.73473262786865,
+            0.503616750240326,
+            4.09954214096069
+          ]
+        },
+        "camera": [
+          7.96284866333008,
+          7.55011463165283,
+          12.0609645843506
+        ],
+        "camera_blending": false,
+        "camera_facing_dot": 1,
+        "camera_focus": [
+          7.96284866333008,
+          0.800844728946686,
+          4.01749753952026
+        ],
+        "camera_fov": 35,
+        "camera_pitch_degrees": 39.9999961853027,
+        "camera_yaw": -2.77555756156289e-17,
+        "capture_requested": false,
+        "clip": "Idle",
+        "cycles": {
+          "dining_chair": 0,
+          "entry_stool": 0,
+          "sofa_middle": 0,
+          "study_chair": 1,
+          "window_seat": 0
+        },
+        "draw_calls": 122,
+        "escape_held": false,
+        "explore_target": [
+          7.88499879837036,
+          0.800844848155975,
+          4.01749610900879
+        ],
+        "fade_alpha": 0,
+        "frame_mean_ms": 30.0421666666667,
+        "frame_p95_ms": 41.2,
+        "frame_samples": 600,
+        "house_rooms": [
+          "living",
+          "balcony",
+          "hallway",
+          "dining",
+          "wash",
+          "study",
+          "kitchen"
+        ],
+        "input_locked": false,
+        "interaction_restore_allowed": false,
+        "lightmap": {
+          "probe_points": 112,
+          "shadowmasks": 1,
+          "textures": 1,
+          "users": 14
+        },
+        "mode": "EXPLORE",
+        "navigation_active": true,
+        "navigation_scheme": "captured_horizontal_mouse",
+        "objects": 160,
+        "occlusion_hidden_groups": [],
+        "physics_ms": 1.3,
+        "player_screen": [
+          631.534545898438,
+          359.999847412109
+        ],
+        "pointer_locked": true,
+        "process_ms": 27.7,
+        "rendered_body_obstructions": [],
+        "resume_button": [
+          525,
+          328,
+          230,
+          64
+        ],
+        "room_meshes": 219,
+        "seat_id": "",
+        "seats": [
+          {
+            "approach": [
+              -1.45,
+              0,
+              -3.35
+            ],
+            "camera_position": [
+              0.485,
+              2.25,
+              -0.75
+            ],
+            "camera_target": [
+              -2.035,
+              0.85,
+              -3.35
+            ],
+            "exit": [
+              -1.45,
+              0,
+              -3.35
+            ],
+            "furniture_id": "sofa",
+            "id": "sofa_middle",
+            "label": "长沙发",
+            "room_id": "living",
+            "root": [
+              -2.215,
+              0,
+              -3.35
+            ],
+            "surface_height": 0.45,
+            "yaw": 1.5707963267949
+          },
+          {
+            "approach": [
+              -1.35,
+              0,
+              -4.35
+            ],
+            "camera_position": [
+              0.485,
+              2.25,
+              -1.61
+            ],
+            "camera_target": [
+              -2.035,
+              0.85,
+              -4.21
+            ],
+            "exit": [
+              -1.35,
+              0,
+              -4.35
+            ],
+            "furniture_id": "sofa",
+            "id": "window_seat",
+            "label": "窗边坐位",
+            "room_id": "living",
+            "root": [
+              -2.215,
+              0,
+              -4.21
+            ],
+            "surface_height": 0.45,
+            "yaw": 1.5707963267949
+          },
+          {
+            "approach": [
+              -0.65,
+              0,
+              -1.5
+            ],
+            "camera_position": [
+              1.365,
+              2.25,
+              0.93
+            ],
+            "camera_target": [
+              -1.155,
+              0.85,
+              -1.67
+            ],
+            "exit": [
+              -0.65,
+              0,
+              -1.5
+            ],
+            "furniture_id": "entry_stool",
+            "id": "entry_stool",
+            "label": "入口软墩",
+            "room_id": "living",
+            "root": [
+              -1.335,
+              0,
+              -1.67
+            ],
+            "surface_height": 0.45,
+            "yaw": 1.5707963267949
+          },
+          {
+            "approach": [
+              -1.98,
+              0,
+              3.4
+            ],
+            "camera_position": [
+              0.25,
+              2.25,
+              6.78
+            ],
+            "camera_target": [
+              -2.27,
+              0.85,
+              4.18
+            ],
+            "exit": [
+              -1.98,
+              0,
+              3.4
+            ],
+            "furniture_id": "dining_chair",
+            "id": "dining_chair",
+            "label": "餐椅",
+            "room_id": "dining",
+            "root": [
+              -2.45,
+              0,
+              4.18
+            ],
+            "surface_height": 0.45,
+            "yaw": 1.5707963267949
+          },
+          {
+            "approach": [
+              8.16,
+              0,
+              4
+            ],
+            "camera_position": [
+              10.48,
+              2.25,
+              7.36
+            ],
+            "camera_target": [
+              7.96,
+              0.85,
+              4.76
+            ],
+            "exit": [
+              8.16,
+              0,
+              4
+            ],
+            "furniture_id": "study_chair",
+            "id": "study_chair",
+            "label": "书房椅",
+            "room_id": "study",
+            "root": [
+              7.78,
+              0,
+              4.76
+            ],
+            "surface_height": 0.45,
+            "yaw": 1.5707963267949
+          }
+        ],
+        "target": "study_chair",
+        "target_camera_yaw": -2.77555756156289e-17,
+        "target_zoom": 1,
+        "transition_collisions": [],
+        "transition_phase": "none",
+        "triangles": 56598,
+        "version": 2,
+        "viewport": [
+          1280,
+          720
+        ],
+        "x": 7.88499879837036,
+        "y": 0.000844819820486009,
+        "z": 4.01749610900879,
+        "zoom": 1
+      },
+      "render_frames": 146,
+      "cut_frame": {
+        "animation": "Idle",
+        "camera": [
+          10.4799995422363,
+          2.25,
+          7.3600001335144
+        ],
+        "fade_alpha": 1,
+        "fixed_camera": true,
+        "focus": [
+          8.16070747375488,
+          0.80084490776062,
+          4.74730825424194
+        ],
+        "mode": "SCENE_TRANSITION",
+        "navigation_active": false,
+        "player": [
+          8.16041660308838,
+          0.000844839843921363,
+          4.75227785110474
+        ],
+        "pointer_locked": false,
+        "resume_visible": false,
+        "room": "study",
+        "seat_id": "study_chair",
+        "t": 57122,
+        "transition_phase": "black",
+        "yaw": 0,
+        "zoom": 1
+      },
+      "first_sit_frame": {
+        "animation": "SitDown",
+        "camera": [
+          10.4799995422363,
+          2.25,
+          7.3600001335144
+        ],
+        "fade_alpha": 0,
+        "fixed_camera": true,
+        "focus": [
+          8.16046047210693,
+          0.80084490776062,
+          4.75153732299805
+        ],
+        "mode": "SIT_DOWN",
+        "navigation_active": false,
+        "player": [
+          8.16041660308838,
+          0.000844839843921363,
+          4.75227785110474
+        ],
+        "pointer_locked": false,
+        "resume_visible": false,
+        "room": "study",
+        "seat_id": "study_chair",
+        "t": 57355,
+        "transition_phase": "none",
+        "yaw": 0,
+        "zoom": 1
+      },
+      "transition_observed_ms": 371,
+      "frame_peak_ms": 58,
+      "screencast_frames": 82,
+      "exit_trace": [
+        {
+          "animation": "SitIdle",
+          "camera": [
+            10.4799995422363,
+            2.25,
+            7.3600001335144
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            7.78000068664551,
+            0.800000071525574,
+            4.75999975204468
+          ],
+          "mode": "SEATED",
+          "navigation_active": false,
+          "player": [
+            7.78000020980835,
+            0,
+            4.76000022888184
+          ],
+          "pointer_locked": false,
+          "resume_visible": false,
+          "room": "study",
+          "seat_id": "study_chair",
+          "t": 67739,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 1
+        },
+        {
+          "animation": "SitIdle",
+          "camera": [
+            10.4799995422363,
+            2.25,
+            7.3600001335144
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            7.78000068664551,
+            0.800000071525574,
+            4.75999975204468
+          ],
+          "mode": "SEATED",
+          "navigation_active": false,
+          "player": [
+            7.78000020980835,
+            0,
+            4.76000022888184
+          ],
+          "pointer_locked": false,
+          "resume_visible": false,
+          "room": "study",
+          "seat_id": "study_chair",
+          "t": 67775,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 1
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            10.4799995422363,
+            2.25,
+            7.3600001335144
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            7.78000068664551,
+            0.800000071525574,
+            4.75999975204468
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            7.78091382980347,
+            0,
+            4.76000022888184
+          ],
+          "pointer_locked": false,
+          "resume_visible": false,
+          "room": "study",
+          "seat_id": "study_chair",
+          "t": 67811,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 1
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            10.4799995422363,
+            2.25,
+            7.3600001335144
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            7.78025960922241,
+            0.800000071525574,
+            4.75999975204468
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            7.78437614440918,
+            0,
+            4.76000022888184
+          ],
+          "pointer_locked": false,
+          "resume_visible": false,
+          "room": "study",
+          "seat_id": "study_chair",
+          "t": 67846,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 1
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            10.4799995422363,
+            2.25,
+            7.3600001335144
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            7.78121900558472,
+            0.800000071525574,
+            4.75999975204468
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            7.78885746002197,
+            0,
+            4.76000022888184
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "study",
+          "seat_id": "study_chair",
+          "t": 67873,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 1
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            10.4799995422363,
+            2.25,
+            7.3600001335144
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            7.78343963623047,
+            0.800000071525574,
+            4.75999975204468
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            7.79676055908203,
+            0,
+            4.76000022888184
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "study",
+          "seat_id": "study_chair",
+          "t": 67933,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 1
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            10.4799995422363,
+            2.25,
+            7.3600001335144
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            7.78700113296509,
+            0.800000071525574,
+            4.75999975204468
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            7.80580520629883,
+            0,
+            4.76000022888184
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "study",
+          "seat_id": "study_chair",
+          "t": 67962,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 1
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            10.4799995422363,
+            2.25,
+            7.3600001335144
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            7.79097509384155,
+            0.800000071525574,
+            4.75999975204468
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            7.81381416320801,
+            0,
+            4.76000022888184
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "study",
+          "seat_id": "study_chair",
+          "t": 67984,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 1
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            10.4799995422363,
+            2.25,
+            7.3600001335144
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            7.79757118225098,
+            0.800000071525574,
+            4.75999975204468
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            7.82683420181274,
+            0,
+            4.76000022888184
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "study",
+          "seat_id": "study_chair",
+          "t": 68030,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 1
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            10.4799995422363,
+            2.25,
+            7.3600001335144
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            7.80539512634277,
+            0.800000071525574,
+            4.75999975204468
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            7.84013319015503,
+            0,
+            4.76000022888184
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "study",
+          "seat_id": "study_chair",
+          "t": 68080,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 1
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            10.4799995422363,
+            2.25,
+            7.3600001335144
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            7.81456518173218,
+            0.800000071525574,
+            4.75999975204468
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            7.85439777374268,
+            0,
+            4.76000022888184
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "study",
+          "seat_id": "study_chair",
+          "t": 68107,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 1
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            10.4799995422363,
+            2.25,
+            7.3600001335144
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            7.8223032951355,
+            0.800000071525574,
+            4.75999975204468
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            7.86506366729736,
+            0,
+            4.76000022888184
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "study",
+          "seat_id": "study_chair",
+          "t": 68133,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 1
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            10.4799995422363,
+            2.25,
+            7.3600001335144
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            7.83118391036987,
+            0.800000071525574,
+            4.75999975204468
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            7.87705850601196,
+            0,
+            4.76000022888184
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "study",
+          "seat_id": "study_chair",
+          "t": 68163,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 1
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            10.4799995422363,
+            2.25,
+            7.3600001335144
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            7.8403902053833,
+            0.800000071525574,
+            4.75999975204468
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            7.88902997970581,
+            0,
+            4.76000022888184
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "study",
+          "seat_id": "study_chair",
+          "t": 68194,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 1
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            10.4799995422363,
+            2.25,
+            7.3600001335144
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            7.85024452209473,
+            0.800000071525574,
+            4.75999975204468
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            7.90149784088135,
+            0,
+            4.76000022888184
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "study",
+          "seat_id": "study_chair",
+          "t": 68218,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 1
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            10.4799995422363,
+            2.25,
+            7.3600001335144
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            7.86079168319702,
+            0.800000071525574,
+            4.75999975204468
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            7.91450548171997,
+            0,
+            4.76000022888184
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "study",
+          "seat_id": "study_chair",
+          "t": 68247,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 1
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            10.4799995422363,
+            2.25,
+            7.3600001335144
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            7.87122631072998,
+            0.800000071525574,
+            4.75999975204468
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            7.92693662643433,
+            0,
+            4.76000022888184
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "study",
+          "seat_id": "study_chair",
+          "t": 68273,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 1
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            10.4799995422363,
+            2.25,
+            7.3600001335144
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            7.8807373046875,
+            0.800000071525574,
+            4.75999975204468
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            7.93785429000854,
+            0,
+            4.76000022888184
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "study",
+          "seat_id": "study_chair",
+          "t": 68303,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 1
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            10.4799995422363,
+            2.25,
+            7.3600001335144
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            7.89211845397949,
+            0.800000071525574,
+            4.75999975204468
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            7.9509391784668,
+            0,
+            4.76000022888184
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "study",
+          "seat_id": "study_chair",
+          "t": 68328,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 1
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            10.4799995422363,
+            2.25,
+            7.3600001335144
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            7.90383911132812,
+            0.800000071525574,
+            4.75999975204468
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            7.96410608291626,
+            0,
+            4.76000022888184
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "study",
+          "seat_id": "study_chair",
+          "t": 68352,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 1
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            10.4799995422363,
+            2.25,
+            7.3600001335144
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            7.91414594650269,
+            0.800000071525574,
+            4.75999975204468
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            7.97524070739746,
+            0,
+            4.76000022888184
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "study",
+          "seat_id": "study_chair",
+          "t": 68376,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 1
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            10.4799995422363,
+            2.25,
+            7.3600001335144
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            7.92473793029785,
+            0.800000071525574,
+            4.75999975204468
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            7.98652791976929,
+            0,
+            4.76000022888184
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "study",
+          "seat_id": "study_chair",
+          "t": 68404,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 1
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            10.4799995422363,
+            2.25,
+            7.3600001335144
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            7.93729591369629,
+            0.800000071525574,
+            4.75999975204468
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            7.99992513656616,
+            0,
+            4.76000022888184
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "study",
+          "seat_id": "study_chair",
+          "t": 68428,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 1
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            10.4799995422363,
+            2.25,
+            7.3600001335144
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            7.94659852981567,
+            0.800000071525574,
+            4.75999975204468
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            8.0093297958374,
+            0,
+            4.76000022888184
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "study",
+          "seat_id": "study_chair",
+          "t": 68449,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 1
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            10.4799995422363,
+            2.25,
+            7.3600001335144
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            7.95772266387939,
+            0.800000071525574,
+            4.75999975204468
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            8.0206241607666,
+            0,
+            4.76000022888184
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "study",
+          "seat_id": "study_chair",
+          "t": 68473,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 1
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            10.4799995422363,
+            2.25,
+            7.3600001335144
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            7.96912479400635,
+            0.800000071525574,
+            4.75999975204468
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            8.03202056884766,
+            0,
+            4.76000022888184
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "study",
+          "seat_id": "study_chair",
+          "t": 68500,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 1
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            10.4799995422363,
+            2.25,
+            7.3600001335144
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            7.98011207580566,
+            0.800000071525574,
+            4.75999975204468
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            8.04275512695312,
+            0,
+            4.76000022888184
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "study",
+          "seat_id": "study_chair",
+          "t": 68521,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 1
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            10.4799995422363,
+            2.25,
+            7.3600001335144
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            7.98945951461792,
+            0.800000071525574,
+            4.75999975204468
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            8.05160808563232,
+            0,
+            4.76000022888184
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "study",
+          "seat_id": "study_chair",
+          "t": 68541,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 1
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            10.4799995422363,
+            2.25,
+            7.3600001335144
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            7.99958181381226,
+            0.800000071525574,
+            4.75999975204468
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            8.06112575531006,
+            0,
+            4.76000022888184
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "study",
+          "seat_id": "study_chair",
+          "t": 68567,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 1
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            10.4799995422363,
+            2.25,
+            7.3600001335144
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            8.01006126403809,
+            0.800000071525574,
+            4.75999975204468
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            8.07083892822266,
+            0,
+            4.76000022888184
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "study",
+          "seat_id": "study_chair",
+          "t": 68599,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 1
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            10.4799995422363,
+            2.25,
+            7.3600001335144
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            8.02070999145508,
+            0.800000071525574,
+            4.75999975204468
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            8.08052730560303,
+            0,
+            4.76000022888184
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "study",
+          "seat_id": "study_chair",
+          "t": 68627,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 1
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            10.4799995422363,
+            2.25,
+            7.3600001335144
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            8.0308952331543,
+            0.800000071525574,
+            4.75999975204468
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            8.08955574035645,
+            0,
+            4.76000022888184
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "study",
+          "seat_id": "study_chair",
+          "t": 68655,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 1
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            10.4799995422363,
+            2.25,
+            7.3600001335144
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            8.0426549911499,
+            0.800000071525574,
+            4.75999975204468
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            8.09986400604248,
+            0,
+            4.76000022888184
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "study",
+          "seat_id": "study_chair",
+          "t": 68679,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 1
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            10.4799995422363,
+            2.25,
+            7.3600001335144
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            8.05365753173828,
+            0.800000071525574,
+            4.75999975204468
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            8.10913181304932,
+            0,
+            4.76000022888184
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "study",
+          "seat_id": "study_chair",
+          "t": 68707,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 1
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            10.4799995422363,
+            2.25,
+            7.3600001335144
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            8.06389427185059,
+            0.800000071525574,
+            4.75999975204468
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            8.1174144744873,
+            0,
+            4.76000022888184
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "study",
+          "seat_id": "study_chair",
+          "t": 68732,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 1
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            10.4799995422363,
+            2.25,
+            7.3600001335144
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            8.07326984405518,
+            0.800000071525574,
+            4.75999975204468
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            8.12468338012695,
+            0,
+            4.76000022888184
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "study",
+          "seat_id": "study_chair",
+          "t": 68760,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 1
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            10.4799995422363,
+            2.25,
+            7.3600001335144
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            8.08300018310547,
+            0.800000071525574,
+            4.75999975204468
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            8.13194942474365,
+            0,
+            4.76000022888184
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "study",
+          "seat_id": "study_chair",
+          "t": 68782,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 1
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            10.4799995422363,
+            2.25,
+            7.3600001335144
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            8.09291744232178,
+            0.800000071525574,
+            4.75999975204468
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            8.13897323608398,
+            0,
+            4.76000022888184
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "study",
+          "seat_id": "study_chair",
+          "t": 68810,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 1
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            10.4799995422363,
+            2.25,
+            7.3600001335144
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            8.10286045074463,
+            0.800000071525574,
+            4.75999975204468
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            8.1455078125,
+            0,
+            4.76000022888184
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "study",
+          "seat_id": "study_chair",
+          "t": 68842,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 1
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            10.4799995422363,
+            2.25,
+            7.3600001335144
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            8.11128234863281,
+            0.800000071525574,
+            4.75999975204468
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            8.15045642852783,
+            0,
+            4.76000022888184
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "study",
+          "seat_id": "study_chair",
+          "t": 68872,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 1
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            10.4799995422363,
+            2.25,
+            7.3600001335144
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            8.11971473693848,
+            0.800000071525574,
+            4.75999975204468
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            8.15478229522705,
+            0,
+            4.76000022888184
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "study",
+          "seat_id": "study_chair",
+          "t": 68899,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 1
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            10.4799995422363,
+            2.25,
+            7.3600001335144
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            8.12670230865479,
+            0.800000071525574,
+            4.75999975204468
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            8.15764999389648,
+            0,
+            4.76000022888184
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "study",
+          "seat_id": "study_chair",
+          "t": 68925,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 1
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            10.4799995422363,
+            2.25,
+            7.3600001335144
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            8.13297653198242,
+            0.800000071525574,
+            4.75999975204468
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            8.15943050384521,
+            0,
+            4.76000022888184
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "study",
+          "seat_id": "study_chair",
+          "t": 68954,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 1
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            10.4799995422363,
+            2.25,
+            7.3600001335144
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            8.1388692855835,
+            0.800000071525574,
+            4.75999975204468
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            8.16000080108643,
+            0,
+            4.76000022888184
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "study",
+          "seat_id": "study_chair",
+          "t": 68991,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 1
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            10.4799995422363,
+            2.25,
+            7.3600001335144
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            8.14275932312012,
+            0.800000071525574,
+            4.75999975204468
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            8.16000080108643,
+            0,
+            4.76000022888184
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "study",
+          "seat_id": "study_chair",
+          "t": 69012,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 1
+        },
+        {
+          "animation": "Walk",
+          "camera": [
+            10.4799995422363,
+            2.25,
+            7.3600001335144
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            8.14619445800781,
+            0.800000071525574,
+            4.75999975204468
+          ],
+          "mode": "EXITING",
+          "navigation_active": false,
+          "player": [
+            8.16000080108643,
+            0,
+            4.76000022888184
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "study",
+          "seat_id": "study_chair",
+          "t": 69033,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 1
+        },
+        {
+          "animation": "Walk",
+          "camera": [
+            10.4544496536255,
+            2.30808591842651,
+            7.41954469680786
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": false,
+          "focus": [
+            8.14894580841064,
+            0.800168395042419,
+            4.74904012680054
+          ],
+          "mode": "EXITING",
+          "navigation_active": false,
+          "player": [
+            8.16000080108643,
+            0.000844777503516525,
+            4.70499992370605
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "study",
+          "seat_id": "study_chair",
+          "t": 69054,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 1
+        },
+        {
+          "animation": "Walk",
+          "camera": [
+            10.3859395980835,
+            2.46403765678406,
+            7.5788516998291
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": false,
+          "focus": [
+            8.1510705947876,
+            0.800298392772675,
+            4.73529100418091
+          ],
+          "mode": "EXITING",
+          "navigation_active": false,
+          "player": [
+            8.16000080108643,
+            0.000844824826344848,
+            4.67749977111816
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "study",
+          "seat_id": "study_chair",
+          "t": 69079,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 1
+        },
+        {
+          "animation": "Walk",
+          "camera": [
+            10.2815990447998,
+            2.70180726051331,
+            7.82012891769409
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": false,
+          "focus": [
+            8.15277099609375,
+            0.800402402877808,
+            4.71381664276123
+          ],
+          "mode": "EXITING",
+          "navigation_active": false,
+          "player": [
+            8.16000080108643,
+            0.000844840309582651,
+            4.62249946594238
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "study",
+          "seat_id": "study_chair",
+          "t": 69105,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 1
+        },
+        {
+          "animation": "Walk",
+          "camera": [
+            10.1780567169189,
+            2.93793225288391,
+            8.05823993682861
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": false,
+          "focus": [
+            8.15387439727783,
+            0.800469934940338,
+            4.69568347930908
+          ],
+          "mode": "EXITING",
+          "navigation_active": false,
+          "player": [
+            8.16000080108643,
+            0.000844836176838726,
+            4.59499931335449
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "study",
+          "seat_id": "study_chair",
+          "t": 69124,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 1
+        },
+        {
+          "animation": "Walk",
+          "camera": [
+            10.0596132278442,
+            3.20818257331848,
+            8.32902431488037
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": false,
+          "focus": [
+            8.15480136871338,
+            0.80052661895752,
+            4.67629480361938
+          ],
+          "mode": "EXITING",
+          "navigation_active": false,
+          "player": [
+            8.16000080108643,
+            0.000844832044094801,
+            4.5674991607666
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "study",
+          "seat_id": "study_chair",
+          "t": 69146,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 1
+        },
+        {
+          "animation": "Walk",
+          "camera": [
+            9.89759159088135,
+            3.57802867889404,
+            8.69560050964355
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": false,
+          "focus": [
+            8.15574359893799,
+            0.800584316253662,
+            4.64660358428955
+          ],
+          "mode": "EXITING",
+          "navigation_active": false,
+          "player": [
+            8.16000080108643,
+            0.000844823662191629,
+            4.51249885559082
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "study",
+          "seat_id": "study_chair",
+          "t": 69176,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 1
+        },
+        {
+          "animation": "Walk",
+          "camera": [
+            9.72074127197266,
+            3.98187947273254,
+            9.09216499328613
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": false,
+          "focus": [
+            8.15651512145996,
+            0.800631523132324,
+            4.6173095703125
+          ],
+          "mode": "EXITING",
+          "navigation_active": false,
+          "player": [
+            8.16000080108643,
+            0.000844819471240044,
+            4.48499870300293
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "study",
+          "seat_id": "study_chair",
+          "t": 69205,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 1
+        },
+        {
+          "animation": "Walk",
+          "camera": [
+            9.5338306427002,
+            4.40882873535156,
+            9.50533866882324
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": false,
+          "focus": [
+            8.15714740753174,
+            0.800670206546783,
+            4.58335590362549
+          ],
+          "mode": "EXITING",
+          "navigation_active": false,
+          "player": [
+            8.16000080108643,
+            0.000844835012685508,
+            4.42999839782715
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "study",
+          "seat_id": "study_chair",
+          "t": 69230,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 1
+        },
+        {
+          "animation": "Walk",
+          "camera": [
+            9.34162425994873,
+            4.84797048568726,
+            9.92565059661865
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": false,
+          "focus": [
+            8.15766429901123,
+            0.800701856613159,
+            4.55057191848755
+          ],
+          "mode": "EXITING",
+          "navigation_active": false,
+          "player": [
+            8.16000080108643,
+            0.000844830879941583,
+            4.40249824523926
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "study",
+          "seat_id": "study_chair",
+          "t": 69256,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 1
+        },
+        {
+          "animation": "Walk",
+          "camera": [
+            9.14888668060303,
+            5.28839874267578,
+            10.3394823074341
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": false,
+          "focus": [
+            8.15808773040771,
+            0.800727784633636,
+            4.51376104354858
+          ],
+          "mode": "EXITING",
+          "navigation_active": false,
+          "player": [
+            8.16000080108643,
+            0.000844822498038411,
+            4.34749794006348
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "study",
+          "seat_id": "study_chair",
+          "t": 69282,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 1
+        },
+        {
+          "animation": "Walk",
+          "camera": [
+            8.96038436889648,
+            5.71920728683472,
+            10.7389335632324
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": false,
+          "focus": [
+            8.15843486785889,
+            0.800749003887177,
+            4.4786376953125
+          ],
+          "mode": "EXITING",
+          "navigation_active": false,
+          "player": [
+            8.16000080108643,
+            0.000844818307086825,
+            4.31999778747559
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "study",
+          "seat_id": "study_chair",
+          "t": 69314,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 1
+        },
+        {
+          "animation": "Walk",
+          "camera": [
+            8.7633810043335,
+            6.16949367523193,
+            11.1462535858154
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": false,
+          "focus": [
+            8.15874481201172,
+            0.800767958164215,
+            4.43640184402466
+          ],
+          "mode": "EXITING",
+          "navigation_active": false,
+          "player": [
+            8.16000080108643,
+            0.000844823778606951,
+            4.2649974822998
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "study",
+          "seat_id": "study_chair",
+          "t": 69339,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 1
+        },
+        {
+          "animation": "Walk",
+          "camera": [
+            8.5993070602417,
+            6.54455041885376,
+            11.4752960205078
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": false,
+          "focus": [
+            8.15897274017334,
+            0.800781905651093,
+            4.39536142349243
+          ],
+          "mode": "EXITING",
+          "navigation_active": false,
+          "player": [
+            8.16000080108643,
+            0.000844839261844754,
+            4.20999717712402
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "study",
+          "seat_id": "study_chair",
+          "t": 69363,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 1
+        },
+        {
+          "animation": "Walk",
+          "camera": [
+            8.45425128936768,
+            6.87616491317749,
+            11.7593803405762
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": false,
+          "focus": [
+            8.15915870666504,
+            0.800793290138245,
+            4.35677576065063
+          ],
+          "mode": "EXITING",
+          "navigation_active": false,
+          "player": [
+            8.16000080108643,
+            0.000844835129100829,
+            4.18249702453613
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "study",
+          "seat_id": "study_chair",
+          "t": 69386,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 1
+        },
+        {
+          "animation": "Walk",
+          "camera": [
+            8.32973098754883,
+            7.16086912155151,
+            11.9905586242676
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": false,
+          "focus": [
+            8.15931510925293,
+            0.800802886486053,
+            4.31408023834229
+          ],
+          "mode": "EXITING",
+          "navigation_active": false,
+          "player": [
+            8.16000080108643,
+            0.000844826805405319,
+            4.12749671936035
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "study",
+          "seat_id": "study_chair",
+          "t": 69412,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 1
+        },
+        {
+          "animation": "Walk",
+          "camera": [
+            8.23568153381348,
+            7.37595319747925,
+            12.1548023223877
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": false,
+          "focus": [
+            8.15944290161133,
+            0.800810694694519,
+            4.27421426773071
+          ],
+          "mode": "EXITING",
+          "navigation_active": false,
+          "player": [
+            8.16000080108643,
+            0.000844822614453733,
+            4.09999656677246
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "study",
+          "seat_id": "study_chair",
+          "t": 69435,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 1
+        },
+        {
+          "animation": "Walk",
+          "camera": [
+            8.17783546447754,
+            7.50831174850464,
+            12.2367601394653
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": false,
+          "focus": [
+            8.1595458984375,
+            0.80081695318222,
+            4.23203754425049
+          ],
+          "mode": "EXITING",
+          "navigation_active": false,
+          "player": [
+            8.16000080108643,
+            0.000844828085973859,
+            4.04499626159668
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "study",
+          "seat_id": "study_chair",
+          "t": 69458,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 1
+        },
+        {
+          "animation": "Walk",
+          "camera": [
+            8.15962791442871,
+            7.55009174346924,
+            12.2366142272949
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": false,
+          "focus": [
+            8.15962791442871,
+            0.800822019577026,
+            4.19314765930176
+          ],
+          "mode": "EXITING",
+          "navigation_active": false,
+          "player": [
+            8.15999984741211,
+            0.000844823895022273,
+            4.01749610900879
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "study",
+          "seat_id": "study_chair",
+          "t": 69482,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 1
+        },
+        {
+          "animation": "Idle",
+          "camera": [
+            8.15969562530518,
+            7.55009603500366,
+            12.2047739028931
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": false,
+          "focus": [
+            8.15969562530518,
+            0.800826132297516,
+            4.1613073348999
+          ],
+          "mode": "EXPLORE",
+          "navigation_active": true,
+          "player": [
+            8.15999984741211,
+            0.000844823895022273,
+            4.01749610900879
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "study",
+          "seat_id": "",
+          "t": 69510,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 1
+        },
+        {
+          "animation": "Idle",
+          "camera": [
+            8.15975189208984,
+            7.55009937286377,
+            12.1779937744141
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": false,
+          "focus": [
+            8.15975189208984,
+            0.800829589366913,
+            4.1345272064209
+          ],
+          "mode": "EXPLORE",
+          "navigation_active": true,
+          "player": [
+            8.15999984741211,
+            0.000844823895022273,
+            4.01749610900879
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "study",
+          "seat_id": "",
+          "t": 69534,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 1
+        },
+        {
+          "animation": "Idle",
+          "camera": [
+            8.15979766845703,
+            7.55010223388672,
+            12.1562004089355
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": false,
+          "focus": [
+            8.15979766845703,
+            0.800832450389862,
+            4.11273431777954
+          ],
+          "mode": "EXPLORE",
+          "navigation_active": true,
+          "player": [
+            8.15999984741211,
+            0.000844823895022273,
+            4.01749610900879
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "study",
+          "seat_id": "",
+          "t": 69561,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 1
+        },
+        {
+          "animation": "Idle",
+          "camera": [
+            8.15983486175537,
+            7.55010461807251,
+            12.1384658813477
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": false,
+          "focus": [
+            8.15983486175537,
+            0.800834774971008,
+            4.09499931335449
+          ],
+          "mode": "EXPLORE",
+          "navigation_active": true,
+          "player": [
+            8.15999984741211,
+            0.000844823895022273,
+            4.01749610900879
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "study",
+          "seat_id": "",
+          "t": 69585,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 1
+        },
+        {
+          "animation": "Idle",
+          "camera": [
+            8.15986442565918,
+            7.55010652542114,
+            12.1244163513184
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": false,
+          "focus": [
+            8.15986442565918,
+            0.800836622714996,
+            4.08095026016235
+          ],
+          "mode": "EXPLORE",
+          "navigation_active": true,
+          "player": [
+            8.15999984741211,
+            0.000844823895022273,
+            4.01749610900879
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "study",
+          "seat_id": "",
+          "t": 69613,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 1
+        },
+        {
+          "animation": "Idle",
+          "camera": [
+            8.15989017486572,
+            7.55010795593262,
+            12.1121883392334
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": false,
+          "focus": [
+            8.15989017486572,
+            0.800838232040405,
+            4.06872129440308
+          ],
+          "mode": "EXPLORE",
+          "navigation_active": true,
+          "player": [
+            8.15999984741211,
+            0.000844823895022273,
+            4.01749610900879
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "study",
+          "seat_id": "",
+          "t": 69637,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 1
+        },
+        {
+          "animation": "Idle",
+          "camera": [
+            8.15991020202637,
+            7.55010938644409,
+            12.1029024124146
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": false,
+          "focus": [
+            8.15991020202637,
+            0.800839424133301,
+            4.05943584442139
+          ],
+          "mode": "EXPLORE",
+          "navigation_active": true,
+          "player": [
+            8.15999984741211,
+            0.000844823895022273,
+            4.01749610900879
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "study",
+          "seat_id": "",
+          "t": 69660,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 1
+        },
+        {
+          "animation": "Idle",
+          "camera": [
+            8.15992641448975,
+            7.55011034011841,
+            12.0953006744385
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": false,
+          "focus": [
+            8.15992641448975,
+            0.800840377807617,
+            4.05183362960815
+          ],
+          "mode": "EXPLORE",
+          "navigation_active": true,
+          "player": [
+            8.15999984741211,
+            0.000844823895022273,
+            4.01749610900879
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "study",
+          "seat_id": "",
+          "t": 69683,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 1
+        },
+        {
+          "animation": "Idle",
+          "camera": [
+            8.15993976593018,
+            7.55011129379272,
+            12.0890760421753
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": false,
+          "focus": [
+            8.15993976593018,
+            0.800841212272644,
+            4.04560947418213
+          ],
+          "mode": "EXPLORE",
+          "navigation_active": true,
+          "player": [
+            8.15999984741211,
+            0.000844823895022273,
+            4.01749610900879
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "study",
+          "seat_id": "",
+          "t": 69710,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 1
+        },
+        {
+          "animation": "Idle",
+          "camera": [
+            8.15995025634766,
+            7.55011177062988,
+            12.0839805603027
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": false,
+          "focus": [
+            8.15995025634766,
+            0.800841867923737,
+            4.04051351547241
+          ],
+          "mode": "EXPLORE",
+          "navigation_active": true,
+          "player": [
+            8.15999984741211,
+            0.000844823895022273,
+            4.01749610900879
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "study",
+          "seat_id": "",
+          "t": 69734,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 1
+        },
+        {
+          "animation": "Idle",
+          "camera": [
+            8.1599588394165,
+            7.55011224746704,
+            12.0798072814941
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": false,
+          "focus": [
+            8.1599588394165,
+            0.80084240436554,
+            4.03634119033813
+          ],
+          "mode": "EXPLORE",
+          "navigation_active": true,
+          "player": [
+            8.15999984741211,
+            0.000844823895022273,
+            4.01749610900879
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "study",
+          "seat_id": "",
+          "t": 69758,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 1
+        },
+        {
+          "animation": "Idle",
+          "camera": [
+            8.15996646881104,
+            7.5501127243042,
+            12.0763912200928
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": false,
+          "focus": [
+            8.15996646881104,
+            0.800842821598053,
+            4.03292512893677
+          ],
+          "mode": "EXPLORE",
+          "navigation_active": true,
+          "player": [
+            8.15999984741211,
+            0.000844823895022273,
+            4.01749610900879
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "study",
+          "seat_id": "",
+          "t": 69784,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 1
+        },
+        {
+          "animation": "Idle",
+          "camera": [
+            8.15997219085693,
+            7.55011320114136,
+            12.0735950469971
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": false,
+          "focus": [
+            8.15997219085693,
+            0.800843179225922,
+            4.03012847900391
+          ],
+          "mode": "EXPLORE",
+          "navigation_active": true,
+          "player": [
+            8.15999984741211,
+            0.000844823895022273,
+            4.01749610900879
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "study",
+          "seat_id": "",
+          "t": 69815,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 1
+        },
+        {
+          "animation": "Idle",
+          "camera": [
+            8.15997695922852,
+            7.55011367797852,
+            12.0712432861328
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": false,
+          "focus": [
+            8.15997695922852,
+            0.800843477249146,
+            4.02777624130249
+          ],
+          "mode": "EXPLORE",
+          "navigation_active": true,
+          "player": [
+            8.15999984741211,
+            0.000844823895022273,
+            4.01749610900879
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "study",
+          "seat_id": "",
+          "t": 69839,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "packs": [
+    "scene-4315d056df83.pck"
+  ],
+  "environment": {
+    "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x0000A78B) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "canvas": [
+      1366,
+      768
+    ],
+    "buffer": [
+      1366,
+      768
+    ],
+    "dpr": 1,
+    "visible": "visible",
+    "focus": true
+  },
+  "pass": true,
+  "ending_build": {
+    "seats": "d3e330117ac37938c5905f79ebaa270dfe298cd2a1066f2ddc4ed32b0e045d2e",
+    "checks_run": true,
+    "runtime": "2f5d1c1da226f28c001be81fb5a3a51fbf11aea4650da085d0852f49cd3044a9",
+    "sha256": "4315d056df8368c0b0307e94e5f7e51f58da362711ae69e205573654ebba9287",
+    "pack": "scene-4315d056df83.pck",
+    "exported_at": "2026-10-25T22:26:50.9539183+01:00",
+    "character": "b48319f3e1c9b393c6f1019b80ef1c257c06a5b8a50a3b4009d6cebc943b697e",
+    "model": "15d0db1e2c7ab27b5d2923f4f14d257f7a5df5ab497415ad0be25c3633f83fb2"
+  },
+  "version_consistent": true,
+  "finished_at": "2026-10-25T21:36:26.170Z"
+}

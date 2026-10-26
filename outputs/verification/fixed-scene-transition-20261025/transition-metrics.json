@@ -1,0 +1,211 @@
+{
+  "timing_scope": "Actual frame_pre_draw submission timestamps: first fade_out sample through first revealed SitDown; excludes later seated PNG screenshot costs. Nominal Tween durations remain 150ms/200ms. Capture JPEG timestamps are retained separately, not assumed to share engine clock.",
+  "metrics": [
+    {
+      "run": "smoke-1366",
+      "trace": "entry_stool-0-0.85-trace.json",
+      "accepted_complete_case": true,
+      "fade_out_first_to_black_ms": 149,
+      "black_to_revealed_sit_ms": 218,
+      "transition_first_submitted_to_sit_ms": 367,
+      "transition_render_frame_peak_ms": 18,
+      "black_submitted_frames": 1,
+      "all_sit_revealed": true
+    },
+    {
+      "run": "campaign-1366-prefix",
+      "trace": "dining_chair-0-1-trace.json",
+      "accepted_complete_case": true,
+      "fade_out_first_to_black_ms": 162,
+      "black_to_revealed_sit_ms": 189,
+      "transition_first_submitted_to_sit_ms": 351,
+      "transition_render_frame_peak_ms": 34,
+      "black_submitted_frames": 1,
+      "all_sit_revealed": true
+    },
+    {
+      "run": "campaign-1366-prefix",
+      "trace": "entry_stool-0-0.85-trace.json",
+      "accepted_complete_case": true,
+      "fade_out_first_to_black_ms": 170,
+      "black_to_revealed_sit_ms": 201,
+      "transition_first_submitted_to_sit_ms": 371,
+      "transition_render_frame_peak_ms": 38,
+      "black_submitted_frames": 1,
+      "all_sit_revealed": true
+    },
+    {
+      "run": "campaign-1366-prefix",
+      "trace": "entry_stool-120-1.15-trace.json",
+      "accepted_complete_case": true,
+      "fade_out_first_to_black_ms": 177,
+      "black_to_revealed_sit_ms": 199,
+      "transition_first_submitted_to_sit_ms": 376,
+      "transition_render_frame_peak_ms": 34,
+      "black_submitted_frames": 1,
+      "all_sit_revealed": true
+    },
+    {
+      "run": "campaign-1366-prefix",
+      "trace": "entry_stool-240-0.85-trace.json",
+      "accepted_complete_case": true,
+      "fade_out_first_to_black_ms": 151,
+      "black_to_revealed_sit_ms": 195,
+      "transition_first_submitted_to_sit_ms": 346,
+      "transition_render_frame_peak_ms": 34,
+      "black_submitted_frames": 1,
+      "all_sit_revealed": true
+    },
+    {
+      "run": "campaign-1366-prefix",
+      "trace": "sofa_middle-0-1-trace.json",
+      "accepted_complete_case": true,
+      "fade_out_first_to_black_ms": 149,
+      "black_to_revealed_sit_ms": 216,
+      "transition_first_submitted_to_sit_ms": 365,
+      "transition_render_frame_peak_ms": 36,
+      "black_submitted_frames": 1,
+      "all_sit_revealed": true
+    },
+    {
+      "run": "campaign-1366-prefix",
+      "trace": "study_chair-0-1-trace.json",
+      "accepted_complete_case": false,
+      "fade_out_first_to_black_ms": 152,
+      "black_to_revealed_sit_ms": 228,
+      "transition_first_submitted_to_sit_ms": 380,
+      "transition_render_frame_peak_ms": 30,
+      "black_submitted_frames": 1,
+      "all_sit_revealed": true
+    },
+    {
+      "run": "campaign-1366-prefix",
+      "trace": "window_seat-0-1-trace.json",
+      "accepted_complete_case": true,
+      "fade_out_first_to_black_ms": 184,
+      "black_to_revealed_sit_ms": 220,
+      "transition_first_submitted_to_sit_ms": 404,
+      "transition_render_frame_peak_ms": 32,
+      "black_submitted_frames": 1,
+      "all_sit_revealed": true
+    },
+    {
+      "run": "study-completion-1366",
+      "trace": "study_chair-0-1-trace.json",
+      "accepted_complete_case": true,
+      "fade_out_first_to_black_ms": 177,
+      "black_to_revealed_sit_ms": 233,
+      "transition_first_submitted_to_sit_ms": 410,
+      "transition_render_frame_peak_ms": 58,
+      "black_submitted_frames": 1,
+      "all_sit_revealed": true
+    },
+    {
+      "run": "campaign-1920",
+      "trace": "dining_chair-0-1-trace.json",
+      "accepted_complete_case": true,
+      "fade_out_first_to_black_ms": 182,
+      "black_to_revealed_sit_ms": 221,
+      "transition_first_submitted_to_sit_ms": 403,
+      "transition_render_frame_peak_ms": 35,
+      "black_submitted_frames": 1,
+      "all_sit_revealed": true
+    },
+    {
+      "run": "campaign-1920",
+      "trace": "entry_stool-0-0.85-trace.json",
+      "accepted_complete_case": true,
+      "fade_out_first_to_black_ms": 174,
+      "black_to_revealed_sit_ms": 212,
+      "transition_first_submitted_to_sit_ms": 386,
+      "transition_render_frame_peak_ms": 41,
+      "black_submitted_frames": 1,
+      "all_sit_revealed": true
+    },
+    {
+      "run": "campaign-1920",
+      "trace": "entry_stool-120-1.15-trace.json",
+      "accepted_complete_case": true,
+      "fade_out_first_to_black_ms": 193,
+      "black_to_revealed_sit_ms": 193,
+      "transition_first_submitted_to_sit_ms": 386,
+      "transition_render_frame_peak_ms": 40,
+      "black_submitted_frames": 1,
+      "all_sit_revealed": true
+    },
+    {
+      "run": "campaign-1920",
+      "trace": "entry_stool-240-0.85-trace.json",
+      "accepted_complete_case": true,
+      "fade_out_first_to_black_ms": 193,
+      "black_to_revealed_sit_ms": 215,
+      "transition_first_submitted_to_sit_ms": 408,
+      "transition_render_frame_peak_ms": 37,
+      "black_submitted_frames": 1,
+      "all_sit_revealed": true
+    },
+    {
+      "run": "campaign-1920",
+      "trace": "sofa_middle-0-1-trace.json",
+      "accepted_complete_case": true,
+      "fade_out_first_to_black_ms": 172,
+      "black_to_revealed_sit_ms": 210,
+      "transition_first_submitted_to_sit_ms": 382,
+      "transition_render_frame_peak_ms": 37,
+      "black_submitted_frames": 1,
+      "all_sit_revealed": true
+    },
+    {
+      "run": "campaign-1920",
+      "trace": "study_chair-0-1-trace.json",
+      "accepted_complete_case": true,
+      "fade_out_first_to_black_ms": 178,
+      "black_to_revealed_sit_ms": 202,
+      "transition_first_submitted_to_sit_ms": 380,
+      "transition_render_frame_peak_ms": 39,
+      "black_submitted_frames": 1,
+      "all_sit_revealed": true
+    },
+    {
+      "run": "campaign-1920",
+      "trace": "window_seat-0-1-trace.json",
+      "accepted_complete_case": true,
+      "fade_out_first_to_black_ms": 174,
+      "black_to_revealed_sit_ms": 205,
+      "transition_first_submitted_to_sit_ms": 379,
+      "transition_render_frame_peak_ms": 35,
+      "black_submitted_frames": 1,
+      "all_sit_revealed": true
+    }
+  ],
+  "continuous_screencasts": [
+    {
+      "directory": "outputs/verification/fixed-scene-transition-20261025/smoke-1366/entry_stool-0-0.85-frames",
+      "frame_count": 165,
+      "black_images": [
+        "outputs/verification/fixed-scene-transition-20261025/smoke-1366/entry_stool-0-0.85-frames/0044.jpg"
+      ]
+    },
+    {
+      "directory": "outputs/verification/fixed-scene-transition-20261025/campaign-1366-prefix/entry_stool-0-0.85-frames",
+      "frame_count": 77,
+      "black_images": [
+        "outputs/verification/fixed-scene-transition-20261025/campaign-1366-prefix/entry_stool-0-0.85-frames/0020.jpg"
+      ]
+    },
+    {
+      "directory": "outputs/verification/fixed-scene-transition-20261025/study-completion-1366/study_chair-0-1-frames",
+      "frame_count": 82,
+      "black_images": [
+        "outputs/verification/fixed-scene-transition-20261025/study-completion-1366/study_chair-0-1-frames/0029.jpg"
+      ]
+    },
+    {
+      "directory": "outputs/verification/fixed-scene-transition-20261025/campaign-1920/entry_stool-0-0.85-frames",
+      "frame_count": 68,
+      "black_images": [
+        "outputs/verification/fixed-scene-transition-20261025/campaign-1920/entry_stool-0-0.85-frames/0021.jpg"
+      ]
+    }
+  ]
+}

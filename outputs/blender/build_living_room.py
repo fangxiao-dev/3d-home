@@ -4,13 +4,45 @@ Coordinates: X sofa -> TV, Y hall -> balcony, Z up. All dimensions approximate.
 Source observations: ../LIVING_ROOM.md. No original photographs are embedded.
 """
 from pathlib import Path
+import argparse
 import bpy
+import importlib.util
 import math
 import json
 import random
+import sys
 from mathutils import Vector
 
-OUT = Path(__file__).resolve().parents[1]
+SOURCE_DIR = Path(__file__).resolve().parent
+OUT = SOURCE_DIR.parent
+ROOM_MODULE_DIR = SOURCE_DIR / 'rooms'
+SPEC = json.loads((SOURCE_DIR/'scene-v2-spec.json').read_text(encoding='utf-8'))
+
+if str(SOURCE_DIR) not in sys.path:
+    sys.path.insert(0, str(SOURCE_DIR))
+
+try:
+    from room_api import ROOMS, RoomBuilder
+except ImportError as error:
+    raise RuntimeError(
+        f'Missing room_api.py beside the build script: {SOURCE_DIR / "room_api.py"}'
+    ) from error
+
+# The order is part of the build contract so module loading and object creation
+# stay deterministic across Blender runs.
+ROOM_ORDER = ('balcony', 'hallway', 'dining', 'wash', 'study', 'kitchen')
+
+
+def parse_script_args():
+    raw_args = sys.argv[1:]
+    if '--' in raw_args:
+        raw_args = raw_args[raw_args.index('--') + 1:]
+    parser = argparse.ArgumentParser(add_help=False)
+    parser.add_argument('--skip-renders', action='store_true')
+    return parser.parse_known_args(raw_args)[0]
+
+
+SCRIPT_ARGS = parse_script_args()
 random.seed(19)
 bpy.ops.object.select_all(action='SELECT')
 bpy.ops.object.delete(use_global=False)
@@ -27,11 +59,8 @@ def left_x(x):
 def right_x(x):
     return x + RIGHT_SHIFT
 
-# Structural heights derive from the single room height above. Window bottoms
-# and the middle transom stay fixed while the upper edges follow the taller room.
-WINDOW_BOTTOM = .035
-WINDOW_MIDDLE = .96
-WINDOW_BACK_TOP = H - .245
+# Structural heights derive from the single room height above. Curtains retain
+# the accepted living-room height while the balcony worker owns the real window.
 WINDOW_FRAME_TOP = H - .23
 BALCONY_OPENING_TOP = H - .05
 RETURN_ANCHOR_X = -.31
@@ -71,6 +100,9 @@ red = material('Chicken comb', (.34, .045, .025))
 bulb = material('Warm lamp diffuser', (.95, .73, .41), .65, emission=1.2)
 tilemats = [material(f'Grey stone tile {i}', (.235+i*.006, .226+i*.006, .208+i*.006), .32) for i in range(5)]
 
+from environment_v2 import surfaces, finish_assets
+surfaces(globals())
+
 def finish(obj, name, mat):
     obj.name = name
     obj['category'] = category
@@ -86,7 +118,7 @@ def box(name, loc, size, mat, bevel=0.015):
     if bevel:
         b = o.modifiers.new('Soft edges', 'BEVEL')
         b.width = bevel
-        b.segments = 2
+        b.segments = 3
         o.modifiers.new('Weighted normals', 'WEIGHTED_NORMAL')
     return finish(o, name, mat)
 
@@ -100,11 +132,14 @@ def ellipsoid(name, loc, scale, mat):
     return finish(o, name, mat)
 
 def cylinder(name, loc, radius, depth, mat, r2=None):
-    bpy.ops.mesh.primitive_cone_add(vertices=24, radius1=radius,
+    bpy.ops.mesh.primitive_cone_add(vertices=64, radius1=radius,
         radius2=radius if r2 is None else r2, depth=depth, location=loc)
     o = bpy.context.object
     for poly in o.data.polygons:
         poly.use_smooth = len(poly.vertices) == 4
+    if radius > .06 and depth > .04:
+        b=o.modifiers.new('Turned edge bevel','BEVEL'); b.width=min(radius*.08,.008); b.segments=3
+        o.modifiers.new('Turned weighted normals','WEIGHTED_NORMAL')
     return finish(o, name, mat)
 
 def rod(name, start, end, radius, mat):
@@ -130,14 +165,7 @@ def panel(side, yc, width, bottom, top):
         box('Wall panel horizontal', (x,yc,z), (.025,width,.025), trim, .005)
 
 # Open at the hallway; balcony is only a boundary opening, not a new room.
-box('Floor foundation', (0,D/2,-.12), (W+.22,D+.22,.20), tilemats[2])
-for ix in range(math.ceil(W/.8)):
-    for iy in range(8):
-        x0, x1 = -W/2+ix*.8, min(-W/2+(ix+1)*.8, W/2)
-        y0, y1 = iy*.8, min((iy+1)*.8,D)
-        if x1>x0 and y1>y0:
-            box('Stone floor tile', ((x0+x1)/2,(y0+y1)/2,-.012),
-                (x1-x0-.006,y1-y0-.006,.025), random.choice(tilemats), .002)
+RoomBuilder(globals(),'living').floor()
 category = 'Wall_Sofa'
 box('Sofa side wall', (-W/2-.08,D/2,H/2), (.16,D,H), wall)
 category = 'Wall_TV'
@@ -164,18 +192,11 @@ box('Door handle', (left_x(-2.055),.94,1.0), (.05,.025,.16), brass)
 
 # Balcony-facing opening and distant glazing, kept shallow.
 balcony_pier_x = W/2-.17
-window_half_width = W/2-.37
 for x in (-balcony_pier_x,balcony_pier_x):
     box('Balcony opening pier', (x,5.8,BALCONY_OPENING_TOP/2), (.34,.20,BALCONY_OPENING_TOP), wall)
 box('Balcony lintel', (0,5.8,H-.19), (W,.30,.38), wall)
-window_back_height = WINDOW_BACK_TOP - WINDOW_BOTTOM
-box('Window daylight backing', (0,5.91,(WINDOW_BACK_TOP+WINDOW_BOTTOM)/2), (W-.75,.025,window_back_height), window, 0)
-for x in (-window_half_width,-window_half_width/3,window_half_width/3,window_half_width):
-    frame_height = WINDOW_FRAME_TOP - .02
-    box('Window vertical frame', (x,5.87,(WINDOW_FRAME_TOP+.02)/2), (.045,.045,frame_height), frame, .002)
-for z in (.04,WINDOW_MIDDLE,H-.25):
-    box('Window horizontal frame', (0,5.87,z), (W-.70,.045,.045), frame, .002)
-box('Balcony threshold', (0,5.77,.035), (W-.60,.24,.07), wood)
+threshold = box('Balcony threshold', (0,5.77,.035), (W-.60,.24,.07), wood)
+threshold['collision'] = False
 curtain_bottom = .04
 curtain_top = WINDOW_FRAME_TOP
 curtain_height = curtain_top - curtain_bottom
@@ -250,14 +271,14 @@ cabinet('Balcony side cabinet',left_x(-1.48),5.18,1.1,.63,.48,1,1)
 
 category = 'Decor'
 # A few simple observed accents, without adding story content.
-cylinder('Vase',(right_x(1.80),4.95,1.57),.105,.35,throw,r2=.075)
+cylinder('Vase',(right_x(1.80),4.95,1.57),.105,.35,throw,r2=.075)['furniture_id']='living_chest'
 for i in range(7):
     a=i*2.4
     end=(right_x(1.80)+math.cos(a)*.13,4.95+math.sin(a)*.13,1.88+(i%3)*.04)
-    rod('Flower stem',(right_x(1.80),4.95,1.70),end,.008,green)
-    ellipsoid('Flower',end,(.055,.055,.042),cushion if i%2 else throw)
+    rod('Flower stem',(right_x(1.80),4.95,1.70),end,.008,green)['furniture_id']='living_chest'
+    ellipsoid('Flower',end,(.055,.055,.042),cushion if i%2 else throw)['furniture_id']='living_chest'
 for yy,hh in ((2.32,.18),(2.50,.26)):
-    ellipsoid('Cactus',(right_x(1.80),yy,.68+hh/2),(.055,.06,hh/2),green)
+    ellipsoid('Cactus',(right_x(1.80),yy,.68+hh/2),(.055,.06,hh/2),green)['furniture_id']='tv_console'
 
 # Simplified chicken-shaped pet bed beside TV, visible in IMG_0449.
 category = 'PetBed'
@@ -305,6 +326,70 @@ for y in (.18,5.61):
     box('Ceiling end border',(0,y,H-.16),(W,.36,.19),trim)
     box('Warm end cove strip',(0,y+(.19 if y<1 else -.19),H-.06),(W-.72,.025,.025),bulb,.002)
 
+
+def tag_existing_living_meshes():
+    """Mark the original model before independent room modules are loaded."""
+    for obj in bpy.context.scene.objects:
+        if obj.type == 'MESH':
+            obj['room_id'] = 'living'
+
+
+def load_room_module(room_id):
+    module_path = ROOM_MODULE_DIR / f'{room_id}.py'
+    if not module_path.is_file():
+        raise FileNotFoundError(
+            f'Required room module is missing for {room_id}: {module_path}'
+        )
+    module_name = f'_house_room_{room_id}'
+    spec = importlib.util.spec_from_file_location(module_name, module_path)
+    if spec is None or spec.loader is None:
+        raise ImportError(f'Cannot load room module {room_id}: {module_path}')
+    module = importlib.util.module_from_spec(spec)
+    try:
+        spec.loader.exec_module(module)
+    except Exception as error:
+        raise RuntimeError(
+            f'Failed to import room module {room_id} from {module_path}: {error}'
+        ) from error
+    build = getattr(module, 'build', None)
+    if not callable(build):
+        raise TypeError(
+            f'Room module {module_path} must define callable build(api)'
+        )
+    return build
+
+
+def build_independent_rooms():
+    missing = [
+        str(ROOM_MODULE_DIR / f'{room_id}.py')
+        for room_id in ROOM_ORDER
+        if not (ROOM_MODULE_DIR / f'{room_id}.py').is_file()
+    ]
+    if missing:
+        joined = ', '.join(missing)
+        raise FileNotFoundError(
+            f'Missing required room module(s): {joined}. '
+            f'Expected one build(api) module for each room in {ROOM_ORDER}.'
+        )
+
+    tag_existing_living_meshes()
+    for room_id in ROOM_ORDER:
+        build = load_room_module(room_id)
+        api = RoomBuilder(globals(), room_id)
+        module_path = ROOM_MODULE_DIR / f'{room_id}.py'
+        try:
+            build(api)
+        except Exception as error:
+            raise RuntimeError(
+                f'Failed to build room {room_id} with {module_path}: {error}'
+            ) from error
+
+
+# The living room stays the first-class source model; the six room modules add
+# adjacent spaces after all accepted living furniture and materials exist.
+build_independent_rooms()
+finish_assets(globals())
+
 # Blender-only lights are intentionally not exported; Godot owns runtime light.
 area('Window soft daylight',(0,5.55,H-.75),(0,1.5,.8),400,(.78,.88,1.0),3)
 area('Ceiling warm bounce',(0,3,H-.18),(0,3,0),170,(1.0,.80,.58),3.3)
@@ -317,7 +402,9 @@ scene=bpy.context.scene
 scene.world.color=(.16,.16,.16)
 scene.unit_settings.system='METRIC'
 scene.render.engine='CYCLES'
-scene.cycles.samples=32
+scene.cycles.samples=48
+scene.render.threads_mode='FIXED'
+scene.render.threads=4
 scene.cycles.use_denoising=True
 try:
     prefs=bpy.context.preferences.addons['cycles'].preferences
@@ -350,6 +437,7 @@ def camera(name,loc,target,lens=26,ortho=None):
 
 entry=camera('View from hallway',(0,-.72,1.88),(0,3.2,1.24),23)
 overview=camera('Cutaway overview',(0,-8,11),(0,2.9,.7),ortho=9.1)
+house_overview=camera('Whole house overview',(4.5,-10,28),(4.5,-.6,.5),ortho=24)
 scene.camera=entry
 for space in [a.spaces.active for s in bpy.data.screens for a in s.areas if a.type=='VIEW_3D']:
     space.region_3d.view_perspective='CAMERA'
@@ -359,21 +447,72 @@ for space in [a.spaces.active for s in bpy.data.screens for a in s.areas if a.ty
 meshes=[o for o in scene.objects if o.type=='MESH']
 assert len(meshes)>50
 assert all(all(math.isfinite(v) for v in o.location) for o in meshes)
+living_meshes=[o for o in meshes if o.get('room_id') == 'living']
 bpy.ops.wm.save_as_mainfile(filepath=str(OUT/'blender/living-room.blend'))
 bpy.ops.export_scene.gltf(filepath=str(OUT/'godot/assets/living-room.glb'),
     export_format='GLB',export_apply=True,export_cameras=False,export_lights=False,
     export_animations=False,export_extras=True)
+room_entries={
+    room_id: {
+        'bounds': list(ROOMS[room_id]),
+        'mesh_count': sum(1 for obj in meshes if obj.get('room_id') == room_id),
+    }
+    for room_id in ROOMS
+}
 manifest={'source_photos':['IMG_0447.HEIC','IMG_0448.HEIC','IMG_0449.HEIC','IMG_0450.HEIC'],
-    'dimensions_are_estimates':True,'width':W,'depth':D,'height':H,
-    'mesh_count':len(meshes),'categories':sorted(set(o['category'] for o in meshes))}
+    'dimensions_are_estimates':True,'width':W,'depth':D,'height':SPEC['wall_height'],
+    'mesh_count':len(living_meshes),
+    'categories':sorted(set(o['category'] for o in living_meshes)),
+    'total_mesh_count':len(meshes),
+    'rooms':room_entries}
 (OUT/'blender/model-manifest.json').write_text(json.dumps(manifest,indent=2),encoding='utf-8')
-scene.render.filepath=str(OUT/'previews/living-room-entry.png')
-bpy.ops.render.render(write_still=True)
-for obj in scene.objects:
-    if obj.get('category') == 'Ceiling':
-        obj.hide_render=True
-scene.camera=overview
-area('Overview fill',(2,-2,7),(0,3,0),650,(1,.93,.83),5)
-scene.render.filepath=str(OUT/'previews/living-room-overview.png')
-bpy.ops.render.render(write_still=True)
+layout={room_id:list(bounds) for room_id,bounds in ROOMS.items()}
+(OUT/'godot/assets/house-layout.json').write_text(
+    json.dumps(layout,indent=2)+'\n',encoding='utf-8')
+
+
+def add_whole_house_fill_lights():
+    """Add warm, broad render-only fill lights at every room center."""
+    for room_id, (x0, x1, y0, y1) in ROOMS.items():
+        center=( (x0+x1)/2, (y0+y1)/2 )
+        light=area(
+            f'Whole house warm fill {room_id}',
+            (center[0],center[1],7.5),
+            (center[0],center[1],0),
+            520,
+            (1.0,.90,.78),
+            max(x1-x0,y1-y0)*1.35,
+        )
+        light['blender_only']=True
+
+
+def hide_whole_house_cutaway():
+    """Open the overview without changing the saved model or game camera."""
+    legacy_shell_prefixes=(
+        'Sofa side wall', 'TV side wall', 'Wall panel', 'Baseboard',
+        'Crown moulding', 'Entrance door', 'Door casing', 'Door centre seam',
+        'Door handle', 'Balcony opening', 'Balcony lintel', 'Balcony threshold',
+        'Curtain fold',
+    )
+    for obj in scene.objects:
+        name=obj.name
+        lower_name=name.lower()
+        legacy_shell=(
+            name.startswith(legacy_shell_prefixes)
+            or obj.get('category') in ('Wall_Sofa','Wall_TV')
+            or 'window' in lower_name
+        )
+        if (
+            obj.get('cutaway') in ('south','top')
+            or obj.get('category') == 'Ceiling'
+            or name.startswith('Chandelier')
+            or legacy_shell
+        ):
+            obj.hide_render=True
+
+
+if not SCRIPT_ARGS.skip_renders:
+    from environment_preview import render_previews
+    render_previews(globals())
 print('LIVING_ROOM_BUILD_OK',json.dumps(manifest))
+

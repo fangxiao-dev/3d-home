@@ -1,0 +1,58 @@
+{
+  "recorded_at": "2026-10-25T21:57:35.7490547Z",
+  "scope": "Fixed scene transitions and layered Escape only",
+  "control_change_complete": true,
+  "project_wide_acceptance_complete": false,
+  "owner_headless_browser_pass": true,
+  "owner_native_visible_manual_pass": false,
+  "native_gap": "Computer Use stopped: unable to verify current Windows browser URL confidently; no successful native screenshot/input acceptance",
+  "pack": "scene-4315d056df83.pck",
+  "runtime": "2f5d1c1da226f28c001be81fb5a3a51fbf11aea4650da085d0852f49cd3044a9",
+  "builder_summary_sha256": "bc3b87aed91944709a96e1fde788db6fdca04b4cd275d3df1c8bfe3d226bb41a",
+  "builder_manifest_sha256": "9909082ff9b4546d2c9fcb009d40c52f2af64e3280a1846998cc86ae46f4684e",
+  "builder_manifest_entries_verified": 505,
+  "owner_files": [
+    {
+      "path": "outputs/verification/fixed-scene-transition-20261025/owner-check.cjs",
+      "sha256": "18eedc914620a41acadb2a44d2a54baabdbdecdf09d6d3ee2d7ed8dbe6092ce0"
+    },
+    {
+      "path": "outputs/verification/fixed-scene-transition-20261025/owner-check/runner.cjs",
+      "sha256": "18eedc914620a41acadb2a44d2a54baabdbdecdf09d6d3ee2d7ed8dbe6092ce0"
+    },
+    {
+      "path": "outputs/verification/fixed-scene-transition-20261025/owner-check/report.json",
+      "sha256": "0fed23da3ebc351015ceb3f329c868187b7d9a5b8723cde253b7c74fec75df6c"
+    },
+    {
+      "path": "outputs/verification/fixed-scene-transition-20261025/owner-check/seated.png",
+      "sha256": "d663766e080119e3d2aff9ea13526c4d2662ed96473ca21d0f6c98c3cdaeb966"
+    },
+    {
+      "path": "outputs/verification/fixed-scene-transition-20261025/owner-check/returned-active.png",
+      "sha256": "89bac33ab08ab7b8fa14c29f36bef5d011e3d826e5e9215655dba8bd9366019b"
+    },
+    {
+      "path": "outputs/verification/fixed-scene-transition-20261025/owner-check/outer-paused.png",
+      "sha256": "d9ba21066fcb8b3b0dff868266f70ede9b490f49c337ea60a26383e133655a9e"
+    },
+    {
+      "path": "outputs/verification/fixed-scene-transition-20261025/owner-native/README.md",
+      "sha256": "4c265a6077b78363b1b82546b7340bb69b184af881a79be0171513232ef7dc02"
+    },
+    {
+      "path": "outputs/verification/fixed-scene-transition-20261025/owner-native/helpers.js",
+      "sha256": "649de0272c72c41da5866fe81c4297189728cd7b220cd480fd02f402bf26988e"
+    },
+    {
+      "path": "outputs/verification/fixed-scene-transition-20261025/review.md",
+      "sha256": "4ba7df89a6746c07e5ed8c9380615f3a66afe1da0fb27a5f777fb4077385744e"
+    }
+  ],
+  "owner_transition_observed_ms": 909,
+  "owner_max_sample_gap_ms": 299,
+  "performance_acceptance": "No new sustained performance gate; prior failures unchanged",
+  "preview_url": "http://127.0.0.1:8767/?v=4315d056df83",
+  "commit_push_deploy": false,
+  "independent_final_review": "PASSED: exact frozen code, 505 manifest files,1115 protected files, owner artifacts,16 timing traces and final documentation reviewed; native manual gap and old performance limits retained"
+}

@@ -1,0 +1,109 @@
+{
+  "name": "detail-no-probe-v1",
+  "no_probe": true,
+  "warmup_frames": 120,
+  "measure_frames": 240,
+  "blocks": [
+    {
+      "label": "msaa0-base",
+      "config": {
+        "msaa": 0
+      },
+      "probe": false,
+      "screenshot": false
+    },
+    {
+      "label": "msaa0-scale720",
+      "config": {
+        "msaa": 0,
+        "scale": 0.6666666666666666
+      },
+      "probe": false,
+      "screenshot": true
+    },
+    {
+      "label": "msaa0-return",
+      "config": {
+        "msaa": 0
+      },
+      "probe": false,
+      "screenshot": false
+    },
+    {
+      "label": "baseline-0",
+      "config": {},
+      "probe": false,
+      "screenshot": false
+    },
+    {
+      "label": "flat-material",
+      "config": {
+        "flat": true
+      },
+      "probe": false,
+      "screenshot": true
+    },
+    {
+      "label": "baseline-1",
+      "config": {},
+      "probe": false,
+      "screenshot": false
+    },
+    {
+      "label": "environment-hidden",
+      "config": {
+        "hide_environment": true
+      },
+      "probe": false,
+      "screenshot": true
+    },
+    {
+      "label": "baseline-2",
+      "config": {},
+      "probe": false,
+      "screenshot": false
+    },
+    {
+      "label": "test-path",
+      "config": {
+        "test": true
+      },
+      "probe": false,
+      "screenshot": false
+    },
+    {
+      "label": "baseline-3",
+      "config": {},
+      "probe": false,
+      "screenshot": false
+    },
+    {
+      "label": "visibility-update-off",
+      "config": {
+        "skip_visibility": true
+      },
+      "probe": false,
+      "screenshot": false
+    },
+    {
+      "label": "baseline-4",
+      "config": {},
+      "probe": false,
+      "screenshot": false
+    },
+    {
+      "label": "process-update-off",
+      "config": {
+        "skip_process": true
+      },
+      "probe": false,
+      "screenshot": false
+    },
+    {
+      "label": "baseline-5",
+      "config": {},
+      "probe": false,
+      "screenshot": false
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "name": "final-path-isolation",
+  "no_probe": true,
+  "blit_probe": true,
+  "warmup_frames": 120,
+  "measure_frames": 180,
+  "blocks": [
+    {
+      "label": "full1080",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "config": {},
+      "probe": false
+    },
+    {
+      "label": "true720",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "config": {},
+      "screenshot": true,
+      "probe": false
+    },
+    {
+      "label": "full1080-return",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "config": {},
+      "probe": false
+    },
+    {
+      "label": "internal720-copy",
+      "config": {
+        "scale": 0.6666666666666666
+      },
+      "probe": false
+    },
+    {
+      "label": "internal720-skip-depth-copy",
+      "config": {
+        "scale": 0.6666666666666666
+      },
+      "skip_depth_blit": true,
+      "screenshot": true,
+      "probe": false
+    },
+    {
+      "label": "internal720-copy-return",
+      "config": {
+        "scale": 0.6666666666666666
+      },
+      "probe": false
+    }
+  ]
+}

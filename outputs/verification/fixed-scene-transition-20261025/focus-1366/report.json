@@ -1,0 +1,1364 @@
+{
+  "started_at": "2026-10-25T21:44:00.774Z",
+  "build": {
+    "seats": "d3e330117ac37938c5905f79ebaa270dfe298cd2a1066f2ddc4ed32b0e045d2e",
+    "checks_run": true,
+    "runtime": "2f5d1c1da226f28c001be81fb5a3a51fbf11aea4650da085d0852f49cd3044a9",
+    "sha256": "4315d056df8368c0b0307e94e5f7e51f58da362711ae69e205573654ebba9287",
+    "pack": "scene-4315d056df83.pck",
+    "exported_at": "2026-10-25T22:26:50.9539183+01:00",
+    "character": "b48319f3e1c9b393c6f1019b80ef1c257c06a5b8a50a3b4009d6cebc943b697e",
+    "model": "15d0db1e2c7ab27b5d2923f4f14d257f7a5df5ab497415ad0be25c3633f83fb2"
+  },
+  "runner_sha256": "e8d5941037776ed13d5631c956a2f0dbac7d6650d1ee1e3e714d974a580d4cf0",
+  "browser_mode": "headless",
+  "focus_emulation": "none: own Chrome + connectOverCDP noDefaults",
+  "packs": [
+    "http://127.0.0.1:8767/scene-4315d056df83.pck"
+  ],
+  "errors": [],
+  "environment": {
+    "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x0000A78B) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "canvas": [
+      1366,
+      768
+    ],
+    "buffer": [
+      1366,
+      768
+    ],
+    "dpr": 1,
+    "visibility": "visible",
+    "focus": true
+  },
+  "before": {
+    "dom": {
+      "hidden": false,
+      "focus": true,
+      "locked": true,
+      "activation": true
+    },
+    "state": {
+      "active_room": "living",
+      "animation": "Idle",
+      "app_focused": true,
+      "avatar_scale": [
+        1,
+        1,
+        1
+      ],
+      "avatar_yaw": 0,
+      "body_obstructions": [],
+      "bones": {
+        "Foot.L": [
+          -0.0950000137090683,
+          0.0855640918016434,
+          -0.649999976158142
+        ],
+        "Foot.R": [
+          0.0950000137090683,
+          0.0855640918016434,
+          -0.649999976158142
+        ],
+        "Hand.L": [
+          -0.289993464946747,
+          0.805562138557434,
+          -0.634997367858887
+        ],
+        "Hand.R": [
+          0.289993464946747,
+          0.805562138557434,
+          -0.634997367858887
+        ],
+        "Hips": [
+          0,
+          0.869474709033966,
+          -0.649999976158142
+        ],
+        "Shin.L": [
+          -0.0950000137090683,
+          0.480022817850113,
+          -0.624461233615875
+        ],
+        "Shin.R": [
+          0.0950000137090683,
+          0.480022817850113,
+          -0.624461233615875
+        ]
+      },
+      "camera": [
+        0,
+        7.54934787750244,
+        7.39346647262573
+      ],
+      "camera_blending": false,
+      "camera_facing_dot": 1,
+      "camera_focus": [
+        0,
+        0.800078153610229,
+        -0.649999976158142
+      ],
+      "camera_fov": 35,
+      "camera_pitch_degrees": 39.9999961853027,
+      "camera_yaw": 0,
+      "capture_requested": false,
+      "clip": "Idle",
+      "cycles": {
+        "dining_chair": 0,
+        "entry_stool": 0,
+        "sofa_middle": 0,
+        "study_chair": 0,
+        "window_seat": 0
+      },
+      "draw_calls": 159,
+      "escape_held": false,
+      "explore_target": [
+        0,
+        0.800078153610229,
+        -0.649999976158142
+      ],
+      "fade_alpha": 0,
+      "frame_mean_ms": 556.757746478873,
+      "frame_p95_ms": 60.8,
+      "frame_samples": 71,
+      "house_rooms": [
+        "living",
+        "balcony",
+        "hallway",
+        "dining",
+        "wash",
+        "study",
+        "kitchen"
+      ],
+      "input_locked": false,
+      "interaction_restore_allowed": false,
+      "lightmap": {
+        "probe_points": 112,
+        "shadowmasks": 1,
+        "textures": 1,
+        "users": 14
+      },
+      "mode": "EXPLORE",
+      "navigation_active": true,
+      "navigation_scheme": "captured_horizontal_mouse",
+      "objects": 179,
+      "occlusion_hidden_groups": [],
+      "physics_ms": 1.2,
+      "player_screen": [
+        640,
+        360
+      ],
+      "pointer_locked": true,
+      "process_ms": 38.9,
+      "rendered_body_obstructions": [],
+      "resume_button": [
+        525,
+        328,
+        230,
+        64
+      ],
+      "room_meshes": 219,
+      "seat_id": "",
+      "seats": [
+        {
+          "approach": [
+            -1.45,
+            0,
+            -3.35
+          ],
+          "camera_position": [
+            0.485,
+            2.25,
+            -0.75
+          ],
+          "camera_target": [
+            -2.035,
+            0.85,
+            -3.35
+          ],
+          "exit": [
+            -1.45,
+            0,
+            -3.35
+          ],
+          "furniture_id": "sofa",
+          "id": "sofa_middle",
+          "label": "长沙发",
+          "room_id": "living",
+          "root": [
+            -2.215,
+            0,
+            -3.35
+          ],
+          "surface_height": 0.45,
+          "yaw": 1.5707963267949
+        },
+        {
+          "approach": [
+            -1.35,
+            0,
+            -4.35
+          ],
+          "camera_position": [
+            0.485,
+            2.25,
+            -1.61
+          ],
+          "camera_target": [
+            -2.035,
+            0.85,
+            -4.21
+          ],
+          "exit": [
+            -1.35,
+            0,
+            -4.35
+          ],
+          "furniture_id": "sofa",
+          "id": "window_seat",
+          "label": "窗边坐位",
+          "room_id": "living",
+          "root": [
+            -2.215,
+            0,
+            -4.21
+          ],
+          "surface_height": 0.45,
+          "yaw": 1.5707963267949
+        },
+        {
+          "approach": [
+            -0.65,
+            0,
+            -1.5
+          ],
+          "camera_position": [
+            1.365,
+            2.25,
+            0.93
+          ],
+          "camera_target": [
+            -1.155,
+            0.85,
+            -1.67
+          ],
+          "exit": [
+            -0.65,
+            0,
+            -1.5
+          ],
+          "furniture_id": "entry_stool",
+          "id": "entry_stool",
+          "label": "入口软墩",
+          "room_id": "living",
+          "root": [
+            -1.335,
+            0,
+            -1.67
+          ],
+          "surface_height": 0.45,
+          "yaw": 1.5707963267949
+        },
+        {
+          "approach": [
+            -1.98,
+            0,
+            3.4
+          ],
+          "camera_position": [
+            0.25,
+            2.25,
+            6.78
+          ],
+          "camera_target": [
+            -2.27,
+            0.85,
+            4.18
+          ],
+          "exit": [
+            -1.98,
+            0,
+            3.4
+          ],
+          "furniture_id": "dining_chair",
+          "id": "dining_chair",
+          "label": "餐椅",
+          "room_id": "dining",
+          "root": [
+            -2.45,
+            0,
+            4.18
+          ],
+          "surface_height": 0.45,
+          "yaw": 1.5707963267949
+        },
+        {
+          "approach": [
+            8.16,
+            0,
+            4
+          ],
+          "camera_position": [
+            10.48,
+            2.25,
+            7.36
+          ],
+          "camera_target": [
+            7.96,
+            0.85,
+            4.76
+          ],
+          "exit": [
+            8.16,
+            0,
+            4
+          ],
+          "furniture_id": "study_chair",
+          "id": "study_chair",
+          "label": "书房椅",
+          "room_id": "study",
+          "root": [
+            7.78,
+            0,
+            4.76
+          ],
+          "surface_height": 0.45,
+          "yaw": 1.5707963267949
+        }
+      ],
+      "target": "entry_stool",
+      "target_camera_yaw": 0,
+      "target_zoom": 1,
+      "transition_collisions": [],
+      "transition_phase": "none",
+      "triangles": 81280,
+      "version": 2,
+      "viewport": [
+        1280,
+        720
+      ],
+      "x": 0,
+      "y": 0.0000781230628490448,
+      "z": -0.649999976158142,
+      "zoom": 1
+    }
+  },
+  "phase_requested": "fade_out",
+  "before_blur_frame": {
+    "animation": "Idle",
+    "camera": [
+      -0.927188456058502,
+      7.55011415481567,
+      6.39122581481934
+    ],
+    "fade_alpha": 0.240814805030823,
+    "fixed_camera": false,
+    "focus": [
+      -0.927188456058502,
+      0.800844252109528,
+      -1.65224075317383
+    ],
+    "mode": "SCENE_TRANSITION",
+    "navigation_active": false,
+    "player": [
+      -0.942280113697052,
+      0.000844827445689589,
+      -1.66245651245117
+    ],
+    "pointer_locked": false,
+    "resume_visible": false,
+    "room": "living",
+    "seat_id": "entry_stool",
+    "t": 46711,
+    "transition_phase": "fade_out",
+    "yaw": 0,
+    "zoom": 1
+  },
+  "hidden": {
+    "dom": {
+      "hidden": true,
+      "focus": false,
+      "locked": false,
+      "activation": true
+    },
+    "frame": {
+      "animation": "Idle",
+      "camera": [
+        -0.930773258209229,
+        7.55011415481567,
+        6.38879919052124
+      ],
+      "fade_alpha": 0.466814815998077,
+      "fixed_camera": false,
+      "focus": [
+        -0.930773258209229,
+        0.800844371318817,
+        -1.65466737747192
+      ],
+      "mode": "SCENE_TRANSITION",
+      "navigation_active": false,
+      "player": [
+        -0.942280113697052,
+        0.000844827445689589,
+        -1.66245651245117
+      ],
+      "pointer_locked": false,
+      "resume_visible": false,
+      "room": "living",
+      "seat_id": "entry_stool",
+      "t": 46743,
+      "transition_phase": "fade_out",
+      "yaw": 0,
+      "zoom": 1
+    }
+  },
+  "returned": {
+    "dom": {
+      "hidden": false,
+      "focus": true,
+      "locked": false,
+      "activation": true
+    },
+    "state": {
+      "active_room": "living",
+      "animation": "SitIdle",
+      "app_focused": true,
+      "avatar_scale": [
+        1,
+        1,
+        1
+      ],
+      "avatar_yaw": -4.71238899230957,
+      "body_obstructions": [],
+      "bones": {
+        "Foot.L": [
+          -0.954994440078735,
+          0.0849562287330627,
+          -1.57499992847443
+        ],
+        "Foot.R": [
+          -0.954994440078735,
+          0.0849562287330627,
+          -1.76499998569489
+        ],
+        "Hand.L": [
+          -1.08500015735626,
+          0.609946489334106,
+          -1.54999041557312
+        ],
+        "Hand.R": [
+          -1.08500015735626,
+          0.609946489334106,
+          -1.79000949859619
+        ],
+        "Hips": [
+          -1.33500003814697,
+          0.555459260940552,
+          -1.66999995708466
+        ],
+        "Shin.L": [
+          -0.952030658721924,
+          0.480229943990707,
+          -1.57499992847443
+        ],
+        "Shin.R": [
+          -0.952030658721924,
+          0.480229943990707,
+          -1.76499998569489
+        ]
+      },
+      "camera": [
+        1.36500000953674,
+        2.25,
+        0.930000007152557
+      ],
+      "camera_blending": false,
+      "camera_facing_dot": 0.99950510263443,
+      "camera_focus": [
+        -1.33083975315094,
+        0.800008893013,
+        -1.66991996765137
+      ],
+      "camera_fov": 35,
+      "camera_pitch_degrees": 21.1390819549561,
+      "camera_yaw": 0,
+      "capture_requested": false,
+      "clip": "SitIdle",
+      "cycles": {
+        "dining_chair": 0,
+        "entry_stool": 0,
+        "sofa_middle": 0,
+        "study_chair": 0,
+        "window_seat": 0
+      },
+      "draw_calls": 91,
+      "escape_held": false,
+      "explore_target": [
+        -1.33500003814697,
+        0.800000011920929,
+        -1.66999995708466
+      ],
+      "fade_alpha": 0,
+      "frame_mean_ms": 236.432044198895,
+      "frame_p95_ms": 46.3,
+      "frame_samples": 181,
+      "house_rooms": [
+        "living",
+        "balcony",
+        "hallway",
+        "dining",
+        "wash",
+        "study",
+        "kitchen"
+      ],
+      "input_locked": true,
+      "interaction_restore_allowed": false,
+      "lightmap": {
+        "probe_points": 112,
+        "shadowmasks": 1,
+        "textures": 1,
+        "users": 14
+      },
+      "mode": "SEATED",
+      "navigation_active": false,
+      "navigation_scheme": "captured_horizontal_mouse",
+      "objects": 116,
+      "occlusion_hidden_groups": [],
+      "physics_ms": 0.8,
+      "player_screen": [
+        603.261352539062,
+        360.414154052734
+      ],
+      "pointer_locked": false,
+      "process_ms": 42.6,
+      "rendered_body_obstructions": [],
+      "resume_button": [
+        525,
+        328,
+        230,
+        64
+      ],
+      "room_meshes": 219,
+      "seat_id": "entry_stool",
+      "seats": [
+        {
+          "approach": [
+            -1.45,
+            0,
+            -3.35
+          ],
+          "camera_position": [
+            0.485,
+            2.25,
+            -0.75
+          ],
+          "camera_target": [
+            -2.035,
+            0.85,
+            -3.35
+          ],
+          "exit": [
+            -1.45,
+            0,
+            -3.35
+          ],
+          "furniture_id": "sofa",
+          "id": "sofa_middle",
+          "label": "长沙发",
+          "room_id": "living",
+          "root": [
+            -2.215,
+            0,
+            -3.35
+          ],
+          "surface_height": 0.45,
+          "yaw": 1.5707963267949
+        },
+        {
+          "approach": [
+            -1.35,
+            0,
+            -4.35
+          ],
+          "camera_position": [
+            0.485,
+            2.25,
+            -1.61
+          ],
+          "camera_target": [
+            -2.035,
+            0.85,
+            -4.21
+          ],
+          "exit": [
+            -1.35,
+            0,
+            -4.35
+          ],
+          "furniture_id": "sofa",
+          "id": "window_seat",
+          "label": "窗边坐位",
+          "room_id": "living",
+          "root": [
+            -2.215,
+            0,
+            -4.21
+          ],
+          "surface_height": 0.45,
+          "yaw": 1.5707963267949
+        },
+        {
+          "approach": [
+            -0.65,
+            0,
+            -1.5
+          ],
+          "camera_position": [
+            1.365,
+            2.25,
+            0.93
+          ],
+          "camera_target": [
+            -1.155,
+            0.85,
+            -1.67
+          ],
+          "exit": [
+            -0.65,
+            0,
+            -1.5
+          ],
+          "furniture_id": "entry_stool",
+          "id": "entry_stool",
+          "label": "入口软墩",
+          "room_id": "living",
+          "root": [
+            -1.335,
+            0,
+            -1.67
+          ],
+          "surface_height": 0.45,
+          "yaw": 1.5707963267949
+        },
+        {
+          "approach": [
+            -1.98,
+            0,
+            3.4
+          ],
+          "camera_position": [
+            0.25,
+            2.25,
+            6.78
+          ],
+          "camera_target": [
+            -2.27,
+            0.85,
+            4.18
+          ],
+          "exit": [
+            -1.98,
+            0,
+            3.4
+          ],
+          "furniture_id": "dining_chair",
+          "id": "dining_chair",
+          "label": "餐椅",
+          "room_id": "dining",
+          "root": [
+            -2.45,
+            0,
+            4.18
+          ],
+          "surface_height": 0.45,
+          "yaw": 1.5707963267949
+        },
+        {
+          "approach": [
+            8.16,
+            0,
+            4
+          ],
+          "camera_position": [
+            10.48,
+            2.25,
+            7.36
+          ],
+          "camera_target": [
+            7.96,
+            0.85,
+            4.76
+          ],
+          "exit": [
+            8.16,
+            0,
+            4
+          ],
+          "furniture_id": "study_chair",
+          "id": "study_chair",
+          "label": "书房椅",
+          "room_id": "study",
+          "root": [
+            7.78,
+            0,
+            4.76
+          ],
+          "surface_height": 0.45,
+          "yaw": 1.5707963267949
+        }
+      ],
+      "target": "",
+      "target_camera_yaw": 0,
+      "target_zoom": 1,
+      "transition_collisions": [],
+      "transition_phase": "none",
+      "triangles": 80826,
+      "version": 2,
+      "viewport": [
+        1280,
+        720
+      ],
+      "x": -1.33500003814697,
+      "y": 0,
+      "z": -1.66999995708466,
+      "zoom": 1
+    }
+  },
+  "exited": {
+    "dom": {
+      "hidden": false,
+      "focus": true,
+      "locked": false,
+      "activation": true
+    },
+    "state": {
+      "active_room": "living",
+      "animation": "Idle",
+      "app_focused": true,
+      "avatar_scale": [
+        1,
+        1,
+        1
+      ],
+      "avatar_yaw": 1.06230688095093,
+      "body_obstructions": [],
+      "bones": {
+        "Foot.L": [
+          -0.713002622127533,
+          0.0862420201301575,
+          -1.42635607719421
+        ],
+        "Foot.R": [
+          -0.620499551296234,
+          0.0862420201301575,
+          -1.59231746196747
+        ],
+        "Hand.L": [
+          -0.794843196868896,
+          0.805776298046112,
+          -1.24871873855591
+        ],
+        "Hand.R": [
+          -0.512457966804504,
+          0.805776298046112,
+          -1.75535082817078
+        ],
+        "Hips": [
+          -0.666751086711884,
+          0.871815025806427,
+          -1.5093367099762
+        ],
+        "Shin.L": [
+          -0.713002622127533,
+          0.481526672840118,
+          -1.42635607719421
+        ],
+        "Shin.R": [
+          -0.620499551296234,
+          0.481526672840118,
+          -1.59231746196747
+        ]
+      },
+      "camera": [
+        -0.677400946617126,
+        7.5501012802124,
+        6.52832221984863
+      ],
+      "camera_blending": false,
+      "camera_facing_dot": 1,
+      "camera_focus": [
+        -0.677400946617126,
+        0.800831317901611,
+        -1.51514458656311
+      ],
+      "camera_fov": 35,
+      "camera_pitch_degrees": 39.9999961853027,
+      "camera_yaw": 0,
+      "capture_requested": false,
+      "clip": "Idle",
+      "cycles": {
+        "dining_chair": 0,
+        "entry_stool": 1,
+        "sofa_middle": 0,
+        "study_chair": 0,
+        "window_seat": 0
+      },
+      "draw_calls": 141,
+      "escape_held": false,
+      "explore_target": [
+        -0.666751086711884,
+        0.800844848155975,
+        -1.5093367099762
+      ],
+      "fade_alpha": 0,
+      "frame_mean_ms": 182.251020408163,
+      "frame_p95_ms": 43.9,
+      "frame_samples": 245,
+      "house_rooms": [
+        "living",
+        "balcony",
+        "hallway",
+        "dining",
+        "wash",
+        "study",
+        "kitchen"
+      ],
+      "input_locked": true,
+      "interaction_restore_allowed": false,
+      "lightmap": {
+        "probe_points": 112,
+        "shadowmasks": 1,
+        "textures": 1,
+        "users": 14
+      },
+      "mode": "EXPLORE",
+      "navigation_active": false,
+      "navigation_scheme": "captured_horizontal_mouse",
+      "objects": 161,
+      "occlusion_hidden_groups": [],
+      "physics_ms": 0.7,
+      "player_screen": [
+        641.158569335938,
+        360.404968261719
+      ],
+      "pointer_locked": false,
+      "process_ms": 35,
+      "rendered_body_obstructions": [],
+      "resume_button": [
+        525,
+        328,
+        230,
+        64
+      ],
+      "room_meshes": 219,
+      "seat_id": "",
+      "seats": [
+        {
+          "approach": [
+            -1.45,
+            0,
+            -3.35
+          ],
+          "camera_position": [
+            0.485,
+            2.25,
+            -0.75
+          ],
+          "camera_target": [
+            -2.035,
+            0.85,
+            -3.35
+          ],
+          "exit": [
+            -1.45,
+            0,
+            -3.35
+          ],
+          "furniture_id": "sofa",
+          "id": "sofa_middle",
+          "label": "长沙发",
+          "room_id": "living",
+          "root": [
+            -2.215,
+            0,
+            -3.35
+          ],
+          "surface_height": 0.45,
+          "yaw": 1.5707963267949
+        },
+        {
+          "approach": [
+            -1.35,
+            0,
+            -4.35
+          ],
+          "camera_position": [
+            0.485,
+            2.25,
+            -1.61
+          ],
+          "camera_target": [
+            -2.035,
+            0.85,
+            -4.21
+          ],
+          "exit": [
+            -1.35,
+            0,
+            -4.35
+          ],
+          "furniture_id": "sofa",
+          "id": "window_seat",
+          "label": "窗边坐位",
+          "room_id": "living",
+          "root": [
+            -2.215,
+            0,
+            -4.21
+          ],
+          "surface_height": 0.45,
+          "yaw": 1.5707963267949
+        },
+        {
+          "approach": [
+            -0.65,
+            0,
+            -1.5
+          ],
+          "camera_position": [
+            1.365,
+            2.25,
+            0.93
+          ],
+          "camera_target": [
+            -1.155,
+            0.85,
+            -1.67
+          ],
+          "exit": [
+            -0.65,
+            0,
+            -1.5
+          ],
+          "furniture_id": "entry_stool",
+          "id": "entry_stool",
+          "label": "入口软墩",
+          "room_id": "living",
+          "root": [
+            -1.335,
+            0,
+            -1.67
+          ],
+          "surface_height": 0.45,
+          "yaw": 1.5707963267949
+        },
+        {
+          "approach": [
+            -1.98,
+            0,
+            3.4
+          ],
+          "camera_position": [
+            0.25,
+            2.25,
+            6.78
+          ],
+          "camera_target": [
+            -2.27,
+            0.85,
+            4.18
+          ],
+          "exit": [
+            -1.98,
+            0,
+            3.4
+          ],
+          "furniture_id": "dining_chair",
+          "id": "dining_chair",
+          "label": "餐椅",
+          "room_id": "dining",
+          "root": [
+            -2.45,
+            0,
+            4.18
+          ],
+          "surface_height": 0.45,
+          "yaw": 1.5707963267949
+        },
+        {
+          "approach": [
+            8.16,
+            0,
+            4
+          ],
+          "camera_position": [
+            10.48,
+            2.25,
+            7.36
+          ],
+          "camera_target": [
+            7.96,
+            0.85,
+            4.76
+          ],
+          "exit": [
+            8.16,
+            0,
+            4
+          ],
+          "furniture_id": "study_chair",
+          "id": "study_chair",
+          "label": "书房椅",
+          "room_id": "study",
+          "root": [
+            7.78,
+            0,
+            4.76
+          ],
+          "surface_height": 0.45,
+          "yaw": 1.5707963267949
+        }
+      ],
+      "target": "entry_stool",
+      "target_camera_yaw": 0,
+      "target_zoom": 1,
+      "transition_collisions": [],
+      "transition_phase": "none",
+      "triangles": 78016,
+      "version": 2,
+      "viewport": [
+        1280,
+        720
+      ],
+      "x": -0.666751086711884,
+      "y": 0.000844835420139134,
+      "z": -1.5093367099762,
+      "zoom": 1
+    }
+  },
+  "resumed": {
+    "dom": {
+      "hidden": false,
+      "focus": true,
+      "locked": true,
+      "activation": true
+    },
+    "state": {
+      "active_room": "living",
+      "animation": "Idle",
+      "app_focused": true,
+      "avatar_scale": [
+        1,
+        1,
+        1
+      ],
+      "avatar_yaw": 1.06230688095093,
+      "body_obstructions": [],
+      "bones": {
+        "Foot.L": [
+          -0.713002622127533,
+          0.0865486860275269,
+          -1.42635607719421
+        ],
+        "Foot.R": [
+          -0.620499551296234,
+          0.0865486860275269,
+          -1.59231746196747
+        ],
+        "Hand.L": [
+          -0.794837832450867,
+          0.805225372314453,
+          -1.24872434139252
+        ],
+        "Hand.R": [
+          -0.512459933757782,
+          0.805225372314453,
+          -1.75534331798553
+        ],
+        "Hips": [
+          -0.666751086711884,
+          0.872121691703796,
+          -1.5093367099762
+        ],
+        "Shin.L": [
+          -0.713002622127533,
+          0.481833338737488,
+          -1.42635607719421
+        ],
+        "Shin.R": [
+          -0.620499551296234,
+          0.481833338737488,
+          -1.59231746196747
+        ]
+      },
+      "camera": [
+        -0.667430520057678,
+        7.55011415481567,
+        6.53375911712646
+      ],
+      "camera_blending": false,
+      "camera_facing_dot": 1,
+      "camera_focus": [
+        -0.667430520057678,
+        0.800844013690948,
+        -1.50970721244812
+      ],
+      "camera_fov": 35,
+      "camera_pitch_degrees": 39.9999961853027,
+      "camera_yaw": 0,
+      "capture_requested": false,
+      "clip": "Idle",
+      "cycles": {
+        "dining_chair": 0,
+        "entry_stool": 1,
+        "sofa_middle": 0,
+        "study_chair": 0,
+        "window_seat": 0
+      },
+      "draw_calls": 139,
+      "escape_held": false,
+      "explore_target": [
+        -0.666751086711884,
+        0.800844848155975,
+        -1.5093367099762
+      ],
+      "fade_alpha": 0,
+      "frame_mean_ms": 176.392156862745,
+      "frame_p95_ms": 44,
+      "frame_samples": 255,
+      "house_rooms": [
+        "living",
+        "balcony",
+        "hallway",
+        "dining",
+        "wash",
+        "study",
+        "kitchen"
+      ],
+      "input_locked": false,
+      "interaction_restore_allowed": false,
+      "lightmap": {
+        "probe_points": 112,
+        "shadowmasks": 1,
+        "textures": 1,
+        "users": 14
+      },
+      "mode": "EXPLORE",
+      "navigation_active": true,
+      "navigation_scheme": "captured_horizontal_mouse",
+      "objects": 178,
+      "occlusion_hidden_groups": [],
+      "physics_ms": 0.7,
+      "player_screen": [
+        640.073913574219,
+        360.02587890625
+      ],
+      "pointer_locked": true,
+      "process_ms": 35,
+      "rendered_body_obstructions": [],
+      "resume_button": [
+        525,
+        328,
+        230,
+        64
+      ],
+      "room_meshes": 219,
+      "seat_id": "",
+      "seats": [
+        {
+          "approach": [
+            -1.45,
+            0,
+            -3.35
+          ],
+          "camera_position": [
+            0.485,
+            2.25,
+            -0.75
+          ],
+          "camera_target": [
+            -2.035,
+            0.85,
+            -3.35
+          ],
+          "exit": [
+            -1.45,
+            0,
+            -3.35
+          ],
+          "furniture_id": "sofa",
+          "id": "sofa_middle",
+          "label": "长沙发",
+          "room_id": "living",
+          "root": [
+            -2.215,
+            0,
+            -3.35
+          ],
+          "surface_height": 0.45,
+          "yaw": 1.5707963267949
+        },
+        {
+          "approach": [
+            -1.35,
+            0,
+            -4.35
+          ],
+          "camera_position": [
+            0.485,
+            2.25,
+            -1.61
+          ],
+          "camera_target": [
+            -2.035,
+            0.85,
+            -4.21
+          ],
+          "exit": [
+            -1.35,
+            0,
+            -4.35
+          ],
+          "furniture_id": "sofa",
+          "id": "window_seat",
+          "label": "窗边坐位",
+          "room_id": "living",
+          "root": [
+            -2.215,
+            0,
+            -4.21
+          ],
+          "surface_height": 0.45,
+          "yaw": 1.5707963267949
+        },
+        {
+          "approach": [
+            -0.65,
+            0,
+            -1.5
+          ],
+          "camera_position": [
+            1.365,
+            2.25,
+            0.93
+          ],
+          "camera_target": [
+            -1.155,
+            0.85,
+            -1.67
+          ],
+          "exit": [
+            -0.65,
+            0,
+            -1.5
+          ],
+          "furniture_id": "entry_stool",
+          "id": "entry_stool",
+          "label": "入口软墩",
+          "room_id": "living",
+          "root": [
+            -1.335,
+            0,
+            -1.67
+          ],
+          "surface_height": 0.45,
+          "yaw": 1.5707963267949
+        },
+        {
+          "approach": [
+            -1.98,
+            0,
+            3.4
+          ],
+          "camera_position": [
+            0.25,
+            2.25,
+            6.78
+          ],
+          "camera_target": [
+            -2.27,
+            0.85,
+            4.18
+          ],
+          "exit": [
+            -1.98,
+            0,
+            3.4
+          ],
+          "furniture_id": "dining_chair",
+          "id": "dining_chair",
+          "label": "餐椅",
+          "room_id": "dining",
+          "root": [
+            -2.45,
+            0,
+            4.18
+          ],
+          "surface_height": 0.45,
+          "yaw": 1.5707963267949
+        },
+        {
+          "approach": [
+            8.16,
+            0,
+            4
+          ],
+          "camera_position": [
+            10.48,
+            2.25,
+            7.36
+          ],
+          "camera_target": [
+            7.96,
+            0.85,
+            4.76
+          ],
+          "exit": [
+            8.16,
+            0,
+            4
+          ],
+          "furniture_id": "study_chair",
+          "id": "study_chair",
+          "label": "书房椅",
+          "room_id": "study",
+          "root": [
+            7.78,
+            0,
+            4.76
+          ],
+          "surface_height": 0.45,
+          "yaw": 1.5707963267949
+        }
+      ],
+      "target": "entry_stool",
+      "target_camera_yaw": 0,
+      "target_zoom": 1,
+      "transition_collisions": [],
+      "transition_phase": "none",
+      "triangles": 77946,
+      "version": 2,
+      "viewport": [
+        1280,
+        720
+      ],
+      "x": -0.666751086711884,
+      "y": 0.000844835420139134,
+      "z": -1.5093367099762,
+      "zoom": 1
+    }
+  },
+  "pass": true,
+  "ending_build": {
+    "seats": "d3e330117ac37938c5905f79ebaa270dfe298cd2a1066f2ddc4ed32b0e045d2e",
+    "checks_run": true,
+    "runtime": "2f5d1c1da226f28c001be81fb5a3a51fbf11aea4650da085d0852f49cd3044a9",
+    "sha256": "4315d056df8368c0b0307e94e5f7e51f58da362711ae69e205573654ebba9287",
+    "pack": "scene-4315d056df83.pck",
+    "exported_at": "2026-10-25T22:26:50.9539183+01:00",
+    "character": "b48319f3e1c9b393c6f1019b80ef1c257c06a5b8a50a3b4009d6cebc943b697e",
+    "model": "15d0db1e2c7ab27b5d2923f4f14d257f7a5df5ab497415ad0be25c3633f83fb2"
+  },
+  "version_consistent": true,
+  "finished_at": "2026-10-25T21:44:53.837Z"
+}

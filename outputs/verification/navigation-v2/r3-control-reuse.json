@@ -1,0 +1,29 @@
+{
+  "old_pack": "scene-c4235921928f.pck",
+  "new_pack": "scene-1a42f717cba2.pck",
+  "old_runtime": "2a72963e2be7f4e85101f6a5be73433c5bdcbb841104b7a4e98dbed67fa88aca",
+  "new_runtime": "181ecd08f2c24f5a0d4422e4a70e8bce4485e97af44b5393d4a65b3b308c31ef",
+  "unchanged_functions": {
+    "_movement": "4bb7d671cfb7d1de7adaf2545d1cf63f23de8e8b90d93dd2ef1808b4c615baa3",
+    "_physics_process": "0d2bf676fbe96d69ec4c01a55da83b41ede7aa39b283695499b29ccd4d8d8940",
+    "_walk_stage": "fc3e75330b88a8fbedbcaafc187913fb92b1e3be339a0ab800ec87b051a006d7",
+    "_rollback_walk": "38bc315326d30c09d032dc0c17f4f46ec9a5b4bcb9e3867a7c2604576ad4ca58",
+    "_cancel_explore": "5ca2eb63b53f4fa88d67d9f82f1d8e8f02416f86b03717aacfad44c74b02b5a7",
+    "_set_seat_exceptions": "94b7a43aeba0334bfdf67b5e44fa8c692b8ee62d4b1e658abc0bfa02c8f25fd7",
+    "_sample_transition_collision": "7182e2ca9f23256a77931a3d4019e524c10e8f030427ef3e9da660e2b68443e1",
+    "_root_motion": "06ae3c6fe4192f045463be341d0aab72cad3b83f62a0a6f83527ff7507ee0a88",
+    "_align_and_sit": "b77f04b48e5073ffaac5dcf03361359ad484c8c2012f5dbb367bb61ae0c2129e",
+    "_perform_sit": "05d0bc6cf6012c65ec757cc8a554ee4f26a80bb44601feeb55bf32fdd4c0facd",
+    "_enter_target_action": "5c3bd8c78e0a721d6a0b7694e59df4d337b5284b669d6aeddd7169af03efdc8e",
+    "_exit_target_action": "28b15db986d3099f3c70ee784f09e475d217f739c1faec619a247460efbdf6df",
+    "_nearest_seat": "5fa093a001bc24e0022c622feb3dd165ee63f518e422dfdcd5b566a568cccb32",
+    "_input": "bb24c340bf49d8b0f288ce35201d873d2a0c0740cca54b9f075ef62fe71a825d",
+    "_update_edge": "f3d48a5fdbea908e468aca6e53cc13fbd0a1936e6216aa9a5a972bd5b2cacb5c",
+    "_unhandled_input": "ad261201af666d003676bbad1e37b38ffd9d08895cec70960bbf18b8b73c795c",
+    "_notification": "84f47b3180a5ada78a3f2a1a2ad03ec0843e16a8b96eda41d8e0355d5d1ec40b",
+    "_update_camera": "4b3ee5096af0ad5bbf4e7c5cb2cb085a7146ccfcb8bd6dc77bc000993e633aab",
+    "_explore_target": "86407c996f6b6a8d5a71f55c292ff64b9075fa136091f826ce61cbd5e8ab2680"
+  },
+  "changed_functions": [],
+  "scope": "R3 visibility only; old controls/seat regression remains old-pack evidence, new-pack representative cycles and view/soak required."
+}

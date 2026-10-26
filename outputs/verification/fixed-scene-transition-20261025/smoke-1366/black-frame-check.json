@@ -1,0 +1,27 @@
+{
+  "frames": 165,
+  "black": [
+    {
+      "file": "outputs/verification/fixed-scene-transition-20261025/smoke-1366/entry_stool-0-0.85-frames/0044.jpg",
+      "mean_rgb": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "extrema": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    }
+  ]
+}

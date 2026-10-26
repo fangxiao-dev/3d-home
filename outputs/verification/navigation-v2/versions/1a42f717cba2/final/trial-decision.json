@@ -1,0 +1,278 @@
+{
+  "decision": "ROLLED_BACK",
+  "retained_pack": "scene-1a42f717cba2.pck",
+  "retained_runtime": "181ecd08f2c24f5a0d4422e4a70e8bce4485e97af44b5393d4a65b3b308c31ef",
+  "trial_pack": "scene-e33ba67657c7.pck",
+  "reason": "A-B-A does not establish a consistent whole-frame benefit. Restored baseline normal 28.142 ms is faster than trial 32.065 ms, while test results also vary by phase. Keep the previously validated implementation.",
+  "phases": [
+    {
+      "name": "A_original",
+      "report": "performance-comparison-study/report.json",
+      "report_sha256": "73e3534f37f74e488b90b8e94ce20f818b875875439892840c71956eb26e095d",
+      "runner_sha256": "8bb834132b850ca583d29a9e732986b13202543a393f083139c458abaa2b85ad",
+      "pack": "scene-1a42f717cba2.pck",
+      "runtime": "181ecd08f2c24f5a0d4422e4a70e8bce4485e97af44b5393d4a65b3b308c31ef",
+      "started_at": "2026-10-25T15:35:19.264Z",
+      "finished_at": "2026-10-25T15:38:46.119Z",
+      "cases": [
+        {
+          "mode": "normal",
+          "raf_mean_ms": 37.71066666666668,
+          "raf_p95_ms": 45.90000000000873,
+          "game_mean_ms_at_end": null,
+          "game_frames_per_raf": null,
+          "route": [
+            {
+              "key": "ArrowDown",
+              "requested_ms": 1000,
+              "actual_command_ms": 1076
+            },
+            {
+              "key": "ArrowRight",
+              "requested_ms": 4150,
+              "actual_command_ms": 4222
+            },
+            {
+              "key": "ArrowDown",
+              "requested_ms": 1636,
+              "actual_command_ms": 1662
+            }
+          ],
+          "actual_test_pose": null
+        },
+        {
+          "mode": "test",
+          "raf_mean_ms": 40.78666666666667,
+          "raf_p95_ms": 45.90000000000873,
+          "game_mean_ms_at_end": 40.7805,
+          "game_frames_per_raf": 1,
+          "route": [
+            {
+              "key": "ArrowDown",
+              "requested_ms": 1000,
+              "actual_command_ms": 1066
+            },
+            {
+              "key": "ArrowRight",
+              "requested_ms": 4150,
+              "actual_command_ms": 4210
+            },
+            {
+              "key": "ArrowDown",
+              "requested_ms": 1636,
+              "actual_command_ms": 1680
+            }
+          ],
+          "actual_test_pose": {
+            "x": 6.90249490737915,
+            "z": 3.77764487266541,
+            "camera_yaw": 0,
+            "zoom": 1
+          }
+        }
+      ]
+    },
+    {
+      "name": "B_cache",
+      "report": "perf-trial/performance-comparison-study/report.json",
+      "report_sha256": "a85b0ce23db0f843f584264c029459974fb1d3bc37d48a2a75617081baf9c481",
+      "runner_sha256": "3b94b2f34b47fa56385153eb2f4fab64d657d1fd45269ddf1a5c991915221ea0",
+      "pack": "scene-e33ba67657c7.pck",
+      "runtime": "36dcb2c3ff393d50b62f6227d770dc563f796283541a811e72d86927a1ba15e2",
+      "started_at": "2026-10-25T15:56:45.289Z",
+      "finished_at": "2026-10-25T15:59:35.652Z",
+      "cases": [
+        {
+          "mode": "normal",
+          "raf_mean_ms": 32.06516666666668,
+          "raf_p95_ms": 41.69999999999709,
+          "game_mean_ms_at_end": null,
+          "game_frames_per_raf": null,
+          "route": [
+            {
+              "key": "ArrowDown",
+              "requested_ms": 1000,
+              "actual_command_ms": 1047
+            },
+            {
+              "key": "ArrowRight",
+              "requested_ms": 4150,
+              "actual_command_ms": 4182
+            },
+            {
+              "key": "ArrowDown",
+              "requested_ms": 1636,
+              "actual_command_ms": 1668
+            }
+          ],
+          "actual_test_pose": null
+        },
+        {
+          "mode": "test",
+          "raf_mean_ms": 29.273833333333325,
+          "raf_p95_ms": 40.60000000000582,
+          "game_mean_ms_at_end": 29.2798333333333,
+          "game_frames_per_raf": 1,
+          "route": [
+            {
+              "key": "ArrowDown",
+              "requested_ms": 1000,
+              "actual_command_ms": 1047
+            },
+            {
+              "key": "ArrowRight",
+              "requested_ms": 4150,
+              "actual_command_ms": 4203
+            },
+            {
+              "key": "ArrowDown",
+              "requested_ms": 1636,
+              "actual_command_ms": 1706
+            }
+          ],
+          "actual_test_pose": {
+            "x": 6.90249443054199,
+            "z": 3.78834629058838,
+            "camera_yaw": 0,
+            "zoom": 1
+          }
+        }
+      ]
+    },
+    {
+      "name": "A_restored",
+      "report": "perf-trial/baseline-repeat-study/report.json",
+      "report_sha256": "23f9b9b83e6b664017b52f24eb06f309429971ecfe03dda2d4fd0ff4ee5a95eb",
+      "runner_sha256": "c698f3a6142e1dffb9b435f26a70e6adb95da586d2d3abbfab6045d36647a4de",
+      "pack": "scene-1a42f717cba2.pck",
+      "runtime": "181ecd08f2c24f5a0d4422e4a70e8bce4485e97af44b5393d4a65b3b308c31ef",
+      "started_at": "2026-10-25T16:07:22.281Z",
+      "finished_at": "2026-10-25T16:10:12.513Z",
+      "cases": [
+        {
+          "mode": "normal",
+          "raf_mean_ms": 28.14183333333334,
+          "raf_p95_ms": 33.5,
+          "game_mean_ms_at_end": null,
+          "game_frames_per_raf": null,
+          "route": [
+            {
+              "key": "ArrowDown",
+              "requested_ms": 1000,
+              "actual_command_ms": 1054
+            },
+            {
+              "key": "ArrowRight",
+              "requested_ms": 4150,
+              "actual_command_ms": 4196
+            },
+            {
+              "key": "ArrowDown",
+              "requested_ms": 1636,
+              "actual_command_ms": 1718
+            }
+          ],
+          "actual_test_pose": null
+        },
+        {
+          "mode": "test",
+          "raf_mean_ms": 30.69716666666666,
+          "raf_p95_ms": 41.200000000004366,
+          "game_mean_ms_at_end": 30.6878333333333,
+          "game_frames_per_raf": 1,
+          "route": [
+            {
+              "key": "ArrowDown",
+              "requested_ms": 1000,
+              "actual_command_ms": 1053
+            },
+            {
+              "key": "ArrowRight",
+              "requested_ms": 4150,
+              "actual_command_ms": 4190
+            },
+            {
+              "key": "ArrowDown",
+              "requested_ms": 1636,
+              "actual_command_ms": 1660
+            }
+          ],
+          "actual_test_pose": {
+            "x": 6.87500047683716,
+            "z": 3.74847936630249,
+            "camera_yaw": 0,
+            "zoom": 1
+          }
+        }
+      ]
+    }
+  ],
+  "measurement_body_sha256": "d66e7b1824ada13eacc908cb173109defe197b424932a101ebcd6a364e313621",
+  "measurement_semantics_equal": true,
+  "microbenchmark_and_equivalence": {
+    "baseline_mean_usec": 375.532738095238,
+    "baseline_median_usec": 357,
+    "bone_rays_executed_in_both_paths": true,
+    "cached_mean_usec": 290.857142857143,
+    "cached_median_usec": 274,
+    "cases": 336,
+    "failures": [],
+    "meshes_per_case": 219
+  },
+  "equivalence_limit": "336 Explore poses only; source invokes bone rays in both paths, but those calls were not separately instrumented. No new browser seat-cycle claim is made for the rejected trial.",
+  "trial_visual_cases": 20,
+  "control_functions_unchanged": 19,
+  "restored_product_files": [
+    {
+      "path": "outputs/godot/playroom.gd",
+      "sha256": "181ecd08f2c24f5a0d4422e4a70e8bce4485e97af44b5393d4a65b3b308c31ef"
+    },
+    {
+      "path": "work/scene-v2-build-receipt.json",
+      "sha256": "c3ae4f5a14e60c948570d80ae4076add912b3fff6fe32185c3b71629a6356aff"
+    },
+    {
+      "path": "outputs/web/index.apple-touch-icon.png",
+      "sha256": "01d4f63e525941e06ce74f5187dad030d20a8d52a07ce365ae4e94af97a3b1f5"
+    },
+    {
+      "path": "outputs/web/index.audio.position.worklet.js",
+      "sha256": "be33985bc7160d6bf9646f259cd86b259cd67b02ccb297ee5c44f8ac84327bc8"
+    },
+    {
+      "path": "outputs/web/index.audio.worklet.js",
+      "sha256": "5b476a9c9ce642c0ee4256436d1bc31d9c38f868aca0f9a8e2a57c18d2dec2a3"
+    },
+    {
+      "path": "outputs/web/index.html",
+      "sha256": "194cc21e0bb0d52fb2ede9de5702ba533903d406a5b9cb3442f019d1712aedd8"
+    },
+    {
+      "path": "outputs/web/index.icon.png",
+      "sha256": "ad3c35ad0facf487c618204bd98db543034fc95224eadc7f08c7a9ff38d5b3b5"
+    },
+    {
+      "path": "outputs/web/index.js",
+      "sha256": "33c94cb3175f3333b82e2a3be5e8e86f77986f0aa2042b1631f6367a4e5bb6ba"
+    },
+    {
+      "path": "outputs/web/index.pck",
+      "sha256": "1a42f717cba2c77ebd190af10f496393673c5a5832bd378fbc12293df6867e80"
+    },
+    {
+      "path": "outputs/web/index.png",
+      "sha256": "3cb4495c0b98dfbe4b663cbf2b6836473572339beb66d902367893162a70be0e"
+    },
+    {
+      "path": "outputs/web/index.wasm",
+      "sha256": "fc74679e3b97f76878947fcd4fbe1268cbfa6188182a2e33bbc3f5dc9bfa57d0"
+    },
+    {
+      "path": "outputs/web/scene-1a42f717cba2.pck",
+      "sha256": "1a42f717cba2c77ebd190af10f496393673c5a5832bd378fbc12293df6867e80"
+    }
+  ],
+  "restored_product_hashes_match": true,
+  "performance_acceptance_unchanged": "Original retained-package 1920 soak still has 19 of 52 means above 40 ms. Short windows do not replace it.",
+  "owner_UI_check": "EVIDENCE_GAP"
+}

@@ -1,0 +1,55 @@
+{
+  "scope": "minimal browser input feasibility fixture, not game acceptance",
+  "before": {
+    "locked": false,
+    "activation": false
+  },
+  "after": {
+    "locked": true,
+    "events": [
+      {
+        "type": "motion",
+        "x": 683,
+        "dx": 0,
+        "dy": 0,
+        "trusted": true
+      },
+      {
+        "type": "lock",
+        "locked": true
+      },
+      {
+        "type": "key",
+        "key": "f",
+        "locked": true
+      },
+      {
+        "type": "lock",
+        "locked": false
+      },
+      {
+        "type": "key",
+        "key": "Escape",
+        "locked": false
+      },
+      {
+        "type": "lock",
+        "locked": true
+      },
+      {
+        "type": "motion",
+        "x": 683,
+        "dx": 100,
+        "dy": 0,
+        "trusted": true
+      },
+      {
+        "type": "motion",
+        "x": 683,
+        "dx": 100,
+        "dy": 0,
+        "trusted": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,659 @@
+{
+  "version": 2,
+  "seats": [
+    {
+      "id": "sofa_middle",
+      "room_id": "living",
+      "label": "长沙发",
+      "furniture_id": "sofa",
+      "approach": [
+        -1.45,
+        0,
+        -3.35
+      ],
+      "root": [
+        -2.215,
+        0,
+        -3.35
+      ],
+      "exit": [
+        -1.45,
+        0,
+        -3.35
+      ],
+      "yaw": 1.5707963267948966,
+      "surface_height": 0.45,
+      "camera_position": [
+        0.485,
+        2.25,
+        -0.75
+      ],
+      "camera_target": [
+        -2.035,
+        0.85,
+        -3.35
+      ]
+    },
+    {
+      "id": "window_seat",
+      "room_id": "living",
+      "label": "窗边坐位",
+      "furniture_id": "sofa",
+      "approach": [
+        -1.35,
+        0,
+        -4.35
+      ],
+      "root": [
+        -2.215,
+        0,
+        -4.21
+      ],
+      "exit": [
+        -1.35,
+        0,
+        -4.35
+      ],
+      "yaw": 1.5707963267948966,
+      "surface_height": 0.45,
+      "camera_position": [
+        0.485,
+        2.25,
+        -1.61
+      ],
+      "camera_target": [
+        -2.035,
+        0.85,
+        -4.21
+      ]
+    },
+    {
+      "id": "entry_stool",
+      "room_id": "living",
+      "label": "入口软墩",
+      "furniture_id": "entry_stool",
+      "approach": [
+        -0.65,
+        0,
+        -1.5
+      ],
+      "root": [
+        -1.335,
+        0,
+        -1.67
+      ],
+      "exit": [
+        -0.65,
+        0,
+        -1.5
+      ],
+      "yaw": 1.5707963267948966,
+      "surface_height": 0.45,
+      "camera_position": [
+        1.365,
+        2.25,
+        0.93
+      ],
+      "camera_target": [
+        -1.155,
+        0.85,
+        -1.67
+      ]
+    },
+    {
+      "id": "dining_chair",
+      "room_id": "dining",
+      "label": "餐椅",
+      "furniture_id": "dining_chair",
+      "approach": [
+        -1.98,
+        0,
+        3.4
+      ],
+      "root": [
+        -2.45,
+        0,
+        4.18
+      ],
+      "exit": [
+        -1.98,
+        0,
+        3.4
+      ],
+      "yaw": 1.5707963267948966,
+      "surface_height": 0.45,
+      "camera_position": [
+        0.25,
+        2.25,
+        6.78
+      ],
+      "camera_target": [
+        -2.27,
+        0.85,
+        4.18
+      ]
+    },
+    {
+      "id": "study_chair",
+      "room_id": "study",
+      "label": "书房椅",
+      "furniture_id": "study_chair",
+      "approach": [
+        8.16,
+        0,
+        4.0
+      ],
+      "root": [
+        7.78,
+        0,
+        4.76
+      ],
+      "exit": [
+        8.16,
+        0,
+        4.0
+      ],
+      "yaw": 1.5707963267948966,
+      "surface_height": 0.45,
+      "camera_position": [
+        10.48,
+        2.25,
+        7.36
+      ],
+      "camera_target": [
+        7.96,
+        0.85,
+        4.76
+      ]
+    }
+  ],
+  "furniture": [
+    {
+      "id": "living_door",
+      "room_id": "living",
+      "kind": "living_door",
+      "bounds_min": [
+        -2.9025,
+        -0.0,
+        -1.3025
+      ],
+      "bounds_max": [
+        -2.78,
+        1.9897,
+        -0.1375
+      ]
+    },
+    {
+      "id": "sofa",
+      "room_id": "living",
+      "kind": "sofa",
+      "bounds_min": [
+        -2.845,
+        0.0,
+        -4.85
+      ],
+      "bounds_max": [
+        -1.91,
+        1.21534,
+        -1.89
+      ]
+    },
+    {
+      "id": "entry_stool",
+      "room_id": "living",
+      "kind": "entry_stool",
+      "bounds_min": [
+        -1.92,
+        0.06,
+        -2.075
+      ],
+      "bounds_max": [
+        -1.06,
+        0.45,
+        -1.205
+      ]
+    },
+    {
+      "id": "coffee_table",
+      "room_id": "living",
+      "kind": "coffee_table",
+      "bounds_min": [
+        -1.35775,
+        0.0288,
+        -3.126
+      ],
+      "bounds_max": [
+        -0.48225,
+        0.5796,
+        -2.174
+      ]
+    },
+    {
+      "id": "tv_console",
+      "room_id": "living",
+      "kind": "tv_console",
+      "bounds_min": [
+        2.243,
+        0.0,
+        -4.185
+      ],
+      "bounds_max": [
+        2.905,
+        0.94,
+        -1.755
+      ]
+    },
+    {
+      "id": "television",
+      "room_id": "living",
+      "kind": "television",
+      "bounds_min": [
+        2.7,
+        0.815,
+        -4.04
+      ],
+      "bounds_max": [
+        2.7875,
+        1.985,
+        -2.0
+      ]
+    },
+    {
+      "id": "living_chest",
+      "room_id": "living",
+      "kind": "living_chest",
+      "bounds_min": [
+        2.143,
+        0.0,
+        -5.475
+      ],
+      "bounds_max": [
+        2.905,
+        2.002,
+        -4.305
+      ]
+    },
+    {
+      "id": "living_side_cabinet",
+      "room_id": "living",
+      "kind": "living_side_cabinet",
+      "bounds_min": [
+        -2.815,
+        0.0,
+        -5.53
+      ],
+      "bounds_max": [
+        -1.613,
+        0.605,
+        -4.83
+      ]
+    },
+    {
+      "id": "pet_bed",
+      "room_id": "living",
+      "kind": "pet_bed",
+      "bounds_min": [
+        2.06,
+        0.0,
+        -1.27
+      ],
+      "bounds_max": [
+        2.9,
+        0.78,
+        -0.31
+      ]
+    },
+    {
+      "id": "balcony_wash_basin",
+      "room_id": "balcony",
+      "kind": "balcony_wash_basin",
+      "bounds_min": [
+        -2.87,
+        0.0352,
+        -7.61
+      ],
+      "bounds_max": [
+        -2.03,
+        1.21,
+        -5.95
+      ]
+    },
+    {
+      "id": "balcony_washing_machine",
+      "room_id": "balcony",
+      "kind": "balcony_washing_machine",
+      "bounds_min": [
+        -2.82,
+        0.0264,
+        -7.57
+      ],
+      "bounds_max": [
+        -1.998,
+        0.9064,
+        -6.81
+      ]
+    },
+    {
+      "id": "balcony_upper_cabinet",
+      "room_id": "balcony",
+      "kind": "balcony_upper_cabinet",
+      "bounds_min": [
+        -2.79,
+        2.11,
+        -7.61
+      ],
+      "bounds_max": [
+        -2.06,
+        2.81,
+        -5.95
+      ]
+    },
+    {
+      "id": "balcony_laundry_shelf",
+      "room_id": "balcony",
+      "kind": "balcony_laundry_shelf",
+      "bounds_min": [
+        -2.83,
+        1.49333,
+        -7.59
+      ],
+      "bounds_max": [
+        -2.15,
+        1.8497,
+        -5.97
+      ]
+    },
+    {
+      "id": "hallway_door",
+      "room_id": "hallway",
+      "kind": "hallway_door",
+      "bounds_min": [
+        5.025,
+        -0.0,
+        0.025
+      ],
+      "bounds_max": [
+        11.375,
+        1.98545,
+        1.975
+      ]
+    },
+    {
+      "id": "dining_table",
+      "room_id": "dining",
+      "kind": "dining_table",
+      "bounds_min": [
+        -1.74,
+        0.0018,
+        3.6349
+      ],
+      "bounds_max": [
+        -0.36,
+        0.75,
+        4.7251
+      ]
+    },
+    {
+      "id": "dining_chair",
+      "room_id": "dining",
+      "kind": "dining_chair",
+      "bounds_min": [
+        -2.71991,
+        0.02253,
+        3.93003
+      ],
+      "bounds_max": [
+        -2.205,
+        0.9,
+        4.42997
+      ]
+    },
+    {
+      "id": "dining_sideboard",
+      "room_id": "dining",
+      "kind": "dining_sideboard",
+      "bounds_min": [
+        1.338,
+        0.0,
+        2.55
+      ],
+      "bounds_max": [
+        1.975,
+        2.4225,
+        4.81
+      ]
+    },
+    {
+      "id": "refrigerator",
+      "room_id": "dining",
+      "kind": "refrigerator",
+      "bounds_min": [
+        1.087,
+        0.0,
+        4.875
+      ],
+      "bounds_max": [
+        1.97,
+        1.9,
+        6.125
+      ]
+    },
+    {
+      "id": "dining_pendant",
+      "room_id": "dining",
+      "kind": "dining_pendant",
+      "bounds_min": [
+        -1.29726,
+        2.014,
+        3.93274
+      ],
+      "bounds_max": [
+        -0.80274,
+        2.74,
+        4.42726
+      ]
+    },
+    {
+      "id": "wash_door",
+      "room_id": "wash",
+      "kind": "wash_door",
+      "bounds_min": [
+        3.095,
+        -0.0,
+        4.23
+      ],
+      "bounds_max": [
+        4.345,
+        1.98545,
+        4.375
+      ]
+    },
+    {
+      "id": "wash_vanity",
+      "room_id": "wash",
+      "kind": "wash_vanity",
+      "bounds_min": [
+        2.0,
+        0.0078,
+        2.43
+      ],
+      "bounds_max": [
+        2.92,
+        1.17482,
+        3.91
+      ]
+    },
+    {
+      "id": "wash_mirror",
+      "room_id": "wash",
+      "kind": "wash_mirror",
+      "bounds_min": [
+        2.0175,
+        1.2303,
+        2.36
+      ],
+      "bounds_max": [
+        2.0805,
+        2.24848,
+        3.8
+      ]
+    },
+    {
+      "id": "study_desk",
+      "room_id": "study",
+      "kind": "study_desk",
+      "bounds_min": [
+        8.48,
+        0.07181,
+        3.37
+      ],
+      "bounds_max": [
+        9.48,
+        1.17,
+        6.27
+      ]
+    },
+    {
+      "id": "study_bookcase",
+      "room_id": "study",
+      "kind": "study_bookcase",
+      "bounds_min": [
+        8.9,
+        0.64909,
+        3.295
+      ],
+      "bounds_max": [
+        9.62,
+        2.46061,
+        6.345
+      ]
+    },
+    {
+      "id": "guzheng",
+      "room_id": "study",
+      "kind": "guzheng",
+      "bounds_min": [
+        5.05,
+        0.07537,
+        3.71
+      ],
+      "bounds_max": [
+        5.59,
+        1.1618,
+        5.53
+      ]
+    },
+    {
+      "id": "kitchen_cabinet",
+      "room_id": "kitchen",
+      "kind": "kitchen_cabinet",
+      "bounds_min": [
+        -2.9,
+        0.0088,
+        7.18
+      ],
+      "bounds_max": [
+        2.0,
+        1.2452,
+        9.2
+      ]
+    },
+    {
+      "id": "kitchen_west_upper_cabinet",
+      "room_id": "kitchen",
+      "kind": "kitchen_west_upper_cabinet",
+      "bounds_min": [
+        -2.85,
+        1.95,
+        7.21
+      ],
+      "bounds_max": [
+        -2.16,
+        2.71,
+        8.31
+      ]
+    },
+    {
+      "id": "kitchen_east_upper_cabinet",
+      "room_id": "kitchen",
+      "kind": "kitchen_east_upper_cabinet",
+      "bounds_min": [
+        1.26,
+        1.95,
+        7.21
+      ],
+      "bounds_max": [
+        1.95,
+        2.71,
+        8.31
+      ]
+    },
+    {
+      "id": "kitchen_range_hood",
+      "room_id": "kitchen",
+      "kind": "kitchen_range_hood",
+      "bounds_min": [
+        -1.51,
+        1.71,
+        8.63
+      ],
+      "bounds_max": [
+        -0.33,
+        2.45,
+        9.22
+      ]
+    },
+    {
+      "id": "study_chair",
+      "room_id": "study",
+      "kind": "study_chair",
+      "bounds_min": [
+        7.51009,
+        0.02253,
+        4.51003
+      ],
+      "bounds_max": [
+        8.025,
+        0.9,
+        5.00997
+      ]
+    }
+  ],
+  "room_targets": {
+    "living": [
+      0.0,
+      0.6,
+      -2.9
+    ],
+    "balcony": [
+      0.0,
+      0.6,
+      -6.9
+    ],
+    "hallway": [
+      4.5,
+      0.6,
+      1.0
+    ],
+    "dining": [
+      -0.45,
+      0.6,
+      4.3
+    ],
+    "wash": [
+      3.3,
+      0.6,
+      3.2
+    ],
+    "study": [
+      7.1,
+      0.6,
+      4.3
+    ],
+    "kitchen": [
+      -0.45,
+      0.6,
+      7.9
+    ]
+  }
+}

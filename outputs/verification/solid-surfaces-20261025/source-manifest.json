@@ -1,0 +1,318 @@
+[
+  {
+    "path": "outputs/Bake.ps1",
+    "sha256": "51ff2aec1d2c8ae20d5f5b36579f3e93cad0a9dfc5de5882d5dfbe9fa9a49ee0"
+  },
+  {
+    "path": "outputs/blender/environment_v2.py",
+    "sha256": "991f7728aa40adaefd82470a5e67a5231528835deb83ee759db33009e9703d94"
+  },
+  {
+    "path": "outputs/blender/living-room.blend",
+    "sha256": "47fc0fd526003b6a975383b79711b791bd898968ce77fc4d9e5b180cfef5969f"
+  },
+  {
+    "path": "outputs/blender/model-manifest.json",
+    "sha256": "93847bb8fa7188f999009188e4c2b48cceaa27c08e32b8366d33b3df399b6383"
+  },
+  {
+    "path": "outputs/Build.ps1",
+    "sha256": "5d5dc0353c1c417bdfe70bcdbe81eddce564b94893b0706fdf31b865aa66c132"
+  },
+  {
+    "path": "outputs/godot/assets/character.glb",
+    "sha256": "b48319f3e1c9b393c6f1019b80ef1c257c06a5b8a50a3b4009d6cebc943b697e"
+  },
+  {
+    "path": "outputs/godot/assets/environment-textures/cream.png",
+    "sha256": "44f5e0f6e16570e99a413db1c535c322196e7cfa2f0c208ed5c27628445148a9"
+  },
+  {
+    "path": "outputs/godot/assets/environment-textures/cream.png.import",
+    "sha256": "14cd6675c786d3d1f7638079dc120b32b4afe97570a2e98feed66f1b3cc3fa65"
+  },
+  {
+    "path": "outputs/godot/assets/environment-textures/curtain.png",
+    "sha256": "6fb15ce0830f92e08dfdbfe60d962bf947c891571f455c5cf903932f47539c03"
+  },
+  {
+    "path": "outputs/godot/assets/environment-textures/curtain.png.import",
+    "sha256": "3dad01779b6f801922a0d04905805943a0ed7822944b0d79d9e08bce9f848b6d"
+  },
+  {
+    "path": "outputs/godot/assets/environment-textures/cushion.png",
+    "sha256": "afee5fa340d49cc159c24f1bc8b072137d39b6bf6304d11f6f4d3694425233ab"
+  },
+  {
+    "path": "outputs/godot/assets/environment-textures/cushion.png.import",
+    "sha256": "5327327b4789a02f14426870ba17cfc5964bf21476df1777716bfffa2f08403a"
+  },
+  {
+    "path": "outputs/godot/assets/environment-textures/floor-finish.png",
+    "sha256": "bbf9eb7758d70036a065cb1256deda1dd3085d312ab6cfad1e721550e4ec9230"
+  },
+  {
+    "path": "outputs/godot/assets/environment-textures/floor-finish.png.import",
+    "sha256": "f8410d1248e6942f56ea5a2dde9ad0775d11f104601b1753d8b58752b2ce0d27"
+  },
+  {
+    "path": "outputs/godot/assets/environment-textures/limestone.png",
+    "sha256": "a55ad3dbf3bdc2bafd4d0f12b698745f02dcc58455620ff8bc69071052de2eef"
+  },
+  {
+    "path": "outputs/godot/assets/environment-textures/limestone.png.import",
+    "sha256": "8c6cc5e7df33f63a6bdc99cf94476705bf42a808e8bb5d0ee709b1a20fe554d5"
+  },
+  {
+    "path": "outputs/godot/assets/environment-textures/tablewood.png",
+    "sha256": "f3911706e57da65ebdce4656a131baf3a51d0784d511ea8865b24cb1cf30c003"
+  },
+  {
+    "path": "outputs/godot/assets/environment-textures/tablewood.png.import",
+    "sha256": "282395eceed15a8a638ab90461569de1e4c6b8d5f2fa73466c718767e7c4dd5b"
+  },
+  {
+    "path": "outputs/godot/assets/environment-textures/throw.png",
+    "sha256": "d499c1ff5964f18b8056361463055569fd086edb203fb4a704a23c4774e45667"
+  },
+  {
+    "path": "outputs/godot/assets/environment-textures/throw.png.import",
+    "sha256": "0d4cafadf81b5d9808ba8f96a6decbb9c6b5312353ffba6f542c1947e9225242"
+  },
+  {
+    "path": "outputs/godot/assets/environment-textures/trim.png",
+    "sha256": "b3fd3d5f734ab036e31d41651a7d541a567ed8c0852127dd0951c5e7e0a34b01"
+  },
+  {
+    "path": "outputs/godot/assets/environment-textures/trim.png.import",
+    "sha256": "1324101d829d7938692c1893aa7dc59f8d5eccf77fcdb4b1629c721816cdec09"
+  },
+  {
+    "path": "outputs/godot/assets/environment-textures/wall.png",
+    "sha256": "a4a07753e40d61de5ae9c54dca42620ea16f24aa491e6af181f417a9def01751"
+  },
+  {
+    "path": "outputs/godot/assets/environment-textures/wall.png.import",
+    "sha256": "b9f98aea5189db934586501751e81166a3df9d886381bc09d928e5c42d6d8f48"
+  },
+  {
+    "path": "outputs/godot/assets/environment-textures/wood.png",
+    "sha256": "8127af2d0a6c149efd07d54c086adea0533d560db0d88bd37cdb671a80f67603"
+  },
+  {
+    "path": "outputs/godot/assets/environment-textures/wood.png.import",
+    "sha256": "e2ccf1dc13da646453c7e09cc2a7ff0df8b3d59af51d49c9617a8fa7b0010ede"
+  },
+  {
+    "path": "outputs/godot/assets/house-layout.json",
+    "sha256": "e2362a44bbc866feabc5f39bbf8ca03e27052468b6e580e58f2d198b9e5228e9"
+  },
+  {
+    "path": "outputs/godot/assets/living-room.glb",
+    "sha256": "15d0db1e2c7ab27b5d2923f4f14d257f7a5df5ab497415ad0be25c3633f83fb2"
+  },
+  {
+    "path": "outputs/godot/assets/scene-v2-data.json",
+    "sha256": "d3e330117ac37938c5905f79ebaa270dfe298cd2a1066f2ddc4ed32b0e045d2e"
+  },
+  {
+    "path": "outputs/godot/baked/bake-manifest.json",
+    "sha256": "65196c43defdf21e50b29b7aae7bce8745e827e3d60573cfb970239da8bfe910"
+  },
+  {
+    "path": "outputs/godot/baked/house.exr",
+    "sha256": "dd2171ca9986ffc519ccb58479185248a9f2cf1ae03bb855e02e69da5ceec586"
+  },
+  {
+    "path": "outputs/godot/baked/house.exr.import",
+    "sha256": "176dc51e9099b13c37ffa44dc58f8a028ceecd2db34126e04b4c3222cec0bab5"
+  },
+  {
+    "path": "outputs/godot/baked/house.lmbake",
+    "sha256": "b13bd28187b312cc228f22e436893d86a6035070b4219aef113dc3940434c068"
+  },
+  {
+    "path": "outputs/godot/baked/house.scn",
+    "sha256": "f37128bd5a95775fd81e9217d60aeda4114bf1b3403e0550be03ab7d1b8ae495"
+  },
+  {
+    "path": "outputs/godot/baked/house_shadow.png",
+    "sha256": "2e1b426f79ca2c2911b9700ff96a4318fe05d46e7f33f17d3c2a9901aead9315"
+  },
+  {
+    "path": "outputs/godot/baked/house_shadow.png.import",
+    "sha256": "cd06613c5480864c4a15baf5030884e8180a8d0f821215a5fb31acb69eeaac58"
+  },
+  {
+    "path": "outputs/godot/playroom.gd",
+    "sha256": "181ecd08f2c24f5a0d4422e4a70e8bce4485e97af44b5393d4a65b3b308c31ef"
+  },
+  {
+    "path": "outputs/godot/project.godot",
+    "sha256": "2ae4aa49e1ffe45c856e2ee2c10efd01425bb4c06685ad7d3f4c4da415c3a99f"
+  },
+  {
+    "path": "outputs/godot/scene_environment.gd",
+    "sha256": "a734c8de35c9c9d30e6af003e559644e6c9d92dc3e68a95388485d139c0d07d8"
+  },
+  {
+    "path": "outputs/HOUSE.md",
+    "sha256": "3e51b1f980767cc36c4f84436092ca79bd25c28b13d3ea6acad74c9fabf28116"
+  },
+  {
+    "path": "outputs/PLAYROOM.md",
+    "sha256": "0a8e3322ae973d551e4a8697e5abc3b3200f3b3d4bd60d44d6f5df17c9d7f70e"
+  },
+  {
+    "path": "outputs/PROJECT.md",
+    "sha256": "aabcc2099046310e4a2a28fa50fecf9eea0666d181c756db36ea74c78b5a40cd"
+  },
+  {
+    "path": "outputs/README.md",
+    "sha256": "50ae55fb1f7a3df2b5f110a563f73afca589a7f561f4076414252dce13186736"
+  },
+  {
+    "path": "outputs/verification/solid-surfaces-20261025/after/entry_stool.png",
+    "sha256": "ead1977ee7d83e5488e4b6e562ce50f80ec0f30ed7159fde57ef762a9750bbb0"
+  },
+  {
+    "path": "outputs/verification/solid-surfaces-20261025/after/progress.json",
+    "sha256": "6dcf565d936437e393e45d42c07a2ff622947297563fbfdfbda7c56635a79c94"
+  },
+  {
+    "path": "outputs/verification/solid-surfaces-20261025/after/report.json",
+    "sha256": "b56aad59dc1e5cd4b1cf5dbb8dc78682f75ffc1a42813dba2907bbc7a4df34ec"
+  },
+  {
+    "path": "outputs/verification/solid-surfaces-20261025/after/runner.cjs",
+    "sha256": "7662c21d17560fbda6a2567b809b03582e60cbab7dd8782219c4acccbebfd453"
+  },
+  {
+    "path": "outputs/verification/solid-surfaces-20261025/after/surface-135.png",
+    "sha256": "60d245fd41a2a9446b4062e11cde975f39a92fdd0f780a7ea377a0247b55d17b"
+  },
+  {
+    "path": "outputs/verification/solid-surfaces-20261025/after/surface-225.png",
+    "sha256": "bb53a1256eeb9f9cf15e3f283def69508fa6260c60d6d8759a21a924e682aec6"
+  },
+  {
+    "path": "outputs/verification/solid-surfaces-20261025/after/surface-45.png",
+    "sha256": "c66b0c14ae47a36d30b4316a3446a0b7b61013bd897140041be203795d49dd0f"
+  },
+  {
+    "path": "outputs/verification/solid-surfaces-20261025/asset-comparison.json",
+    "sha256": "c2ea580ee727a25fe82595895399a2405e6a182211281e94e5b90a510ff6df69"
+  },
+  {
+    "path": "outputs/verification/solid-surfaces-20261025/before/progress.json",
+    "sha256": "19871402d09b1a64f541dc58509e9cd49a7206f64801f45af4e964078dc7b660"
+  },
+  {
+    "path": "outputs/verification/solid-surfaces-20261025/before/report.json",
+    "sha256": "5bff0bf81dcb0fd9e5683039a03f52651c1cffd6120577557c52b6ade89098bc"
+  },
+  {
+    "path": "outputs/verification/solid-surfaces-20261025/before/runner.cjs",
+    "sha256": "7662c21d17560fbda6a2567b809b03582e60cbab7dd8782219c4acccbebfd453"
+  },
+  {
+    "path": "outputs/verification/solid-surfaces-20261025/before/surface-135.png",
+    "sha256": "20491aaba94a5bd838ebcf40304476c4626f3f4d27aa80628d8ba948dc8cf559"
+  },
+  {
+    "path": "outputs/verification/solid-surfaces-20261025/before/surface-225.png",
+    "sha256": "e23bb1779d1f93a20a0bacf1abde582ad41f875fb6e76765dd62f13839c0fbe8"
+  },
+  {
+    "path": "outputs/verification/solid-surfaces-20261025/before/surface-45.png",
+    "sha256": "171293cfa22717a21efac6cb8115f494f47307c93b7d306d94b606622ae5a6cf"
+  },
+  {
+    "path": "outputs/verification/solid-surfaces-20261025/build-receipt.json",
+    "sha256": "a3567d8ba9ae557c07dfd2f77f9133909332047e213600012db68828aa445983"
+  },
+  {
+    "path": "outputs/verification/solid-surfaces-20261025/candidate-manifest.json",
+    "sha256": "8aa23a2cb8c694bad21b4e509a5a94e02d201c77f3f81354d2a0fb910bdeac71"
+  },
+  {
+    "path": "outputs/verification/solid-surfaces-20261025/owner-smoke/current.png",
+    "sha256": "5edfb0daad112b9900f8dd8aec38e87fd7b065ac4278d0cc162d9a27b4ac1016"
+  },
+  {
+    "path": "outputs/verification/solid-surfaces-20261025/owner-smoke/report.json",
+    "sha256": "ae35a21f6f2794daaadfcc8c43f3c2c5f143d67dd15f3a017f9860eaca43f518"
+  },
+  {
+    "path": "outputs/verification/solid-surfaces-20261025/owner-smoke.cjs",
+    "sha256": "77e3b65af256c96aea5f668d58149797fc939f6783488cb2df3b1d0f0406fc4b"
+  },
+  {
+    "path": "outputs/verification/solid-surfaces-20261025/README.md",
+    "sha256": "9e53fc209b7a3b68f0187a41ef623146dab1463d601d3a9c5f0c55e81fb9c49b"
+  },
+  {
+    "path": "outputs/verification/solid-surfaces-20261025/source.diff",
+    "sha256": "be6b3a4dd20f8d03a256f3aa96ecde1ab4c5feb1d202b7d70b4a2aea6a18e228"
+  },
+  {
+    "path": "outputs/verification/solid-surfaces-20261025/summary.json",
+    "sha256": "ba93d74abb00ef792181bedd374a1c4fd1356e3603ed1c0de941e663f993d613"
+  },
+  {
+    "path": "outputs/verification/solid-surfaces-20261025/surface-check.cjs",
+    "sha256": "7662c21d17560fbda6a2567b809b03582e60cbab7dd8782219c4acccbebfd453"
+  },
+  {
+    "path": "outputs/verification/solid-surfaces-20261025/texture-check.json",
+    "sha256": "6f3b5cf8eb07f1d68f7a2f4857e060f2f5485b98bd6d8ec1b69eb8184f19101a"
+  },
+  {
+    "path": "outputs/Verify-Camera.gd",
+    "sha256": "8590315cb76aaafdfc0c0d0f8acbe19f7a8c13e94afd8f60c2b1287b1677e5c1"
+  },
+  {
+    "path": "outputs/Verify-House.gd",
+    "sha256": "5bf47ce5f0c9ebe6ab74f1555f644ddc7796eba333b770553095027304238d9f"
+  },
+  {
+    "path": "outputs/Verify-Playroom.gd",
+    "sha256": "d67aad3a6f032625f0b2c8b0742308a5dc636e3e91ed557d419caab8670dd5a1"
+  },
+  {
+    "path": "outputs/Verify-Scene.gd",
+    "sha256": "fb06ffb79bb08d4ed9f6c9ff7ee47ef0296a82d772f97acbe9839cfab4d4653e"
+  },
+  {
+    "path": "outputs/web/index.html",
+    "sha256": "11dbfa44c8ee8b0a6f0abc298541e4d11fe953f2d096db98063dac89fc06abb8"
+  },
+  {
+    "path": "outputs/web/scene-2072e5899240.pck",
+    "sha256": "2072e5899240e289a17f833d5098f928702b3f5c8f9047f5dffa43703c8b115d"
+  },
+  {
+    "path": "README.md",
+    "sha256": "2108afe809def7823d6c681ebfec6e0e863e252e2ac8385dfbd904fdc5c1380c"
+  },
+  {
+    "path": "work/scene-v2-build-receipt.json",
+    "sha256": "a3567d8ba9ae557c07dfd2f77f9133909332047e213600012db68828aa445983"
+  },
+  {
+    "path": "work/solid-surfaces-20261025/bake-build.log",
+    "sha256": "202cb28eacded82651e4b4cf8f3f50c2719d5379ef32993ef8202d217ef90d9d"
+  },
+  {
+    "path": "work/solid-surfaces-20261025/check-textures.py",
+    "sha256": "ace9912a49de8ddc77764ea010b65a8b2e6e05023ed84d31e3f1b8eca0cca6f0"
+  },
+  {
+    "path": "work/solid-surfaces-20261025/compare-assets.py",
+    "sha256": "f4752723636b0aeb28ca68634a252c00be9dace6b8d4bdcb78fc999fc6c8125d"
+  },
+  {
+    "path": "work/solid-surfaces-20261025/model-build.log",
+    "sha256": "6fa8092de62c3a869d561dcea0465c2e78be61c6839e55235566fb6b327d2dfb"
+  }
+]

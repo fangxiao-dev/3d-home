@@ -1,0 +1,72 @@
+[
+  {
+    "seat": "entry_stool",
+    "phase": "sitdown-mid",
+    "raw_video_seconds": 45.120999999999995,
+    "demo_seconds": 3.1089999999999947,
+    "path": "outputs/verification/scene-v2/video-keyframes/entry_stool-sitdown-mid.png"
+  },
+  {
+    "seat": "entry_stool",
+    "phase": "standup-mid",
+    "raw_video_seconds": 48.017,
+    "demo_seconds": 6.005000000000003,
+    "path": "outputs/verification/scene-v2/video-keyframes/entry_stool-standup-mid.png"
+  },
+  {
+    "seat": "sofa_middle",
+    "phase": "sitdown-mid",
+    "raw_video_seconds": 55.2485,
+    "demo_seconds": 13.2365,
+    "path": "outputs/verification/scene-v2/video-keyframes/sofa_middle-sitdown-mid.png"
+  },
+  {
+    "seat": "sofa_middle",
+    "phase": "standup-mid",
+    "raw_video_seconds": 58.185,
+    "demo_seconds": 16.173000000000002,
+    "path": "outputs/verification/scene-v2/video-keyframes/sofa_middle-standup-mid.png"
+  },
+  {
+    "seat": "window_seat",
+    "phase": "sitdown-mid",
+    "raw_video_seconds": 62.56,
+    "demo_seconds": 20.548000000000002,
+    "path": "outputs/verification/scene-v2/video-keyframes/window_seat-sitdown-mid.png"
+  },
+  {
+    "seat": "window_seat",
+    "phase": "standup-mid",
+    "raw_video_seconds": 65.34299999999999,
+    "demo_seconds": 23.33099999999999,
+    "path": "outputs/verification/scene-v2/video-keyframes/window_seat-standup-mid.png"
+  },
+  {
+    "seat": "dining_chair",
+    "phase": "sitdown-mid",
+    "raw_video_seconds": 81.386,
+    "demo_seconds": 39.373999999999995,
+    "path": "outputs/verification/scene-v2/video-keyframes/dining_chair-sitdown-mid.png"
+  },
+  {
+    "seat": "dining_chair",
+    "phase": "standup-mid",
+    "raw_video_seconds": 87.288,
+    "demo_seconds": 45.275999999999996,
+    "path": "outputs/verification/scene-v2/video-keyframes/dining_chair-standup-mid.png"
+  },
+  {
+    "seat": "study_chair",
+    "phase": "sitdown-mid",
+    "raw_video_seconds": 130.00650000000002,
+    "demo_seconds": 87.99450000000002,
+    "path": "outputs/verification/scene-v2/video-keyframes/study_chair-sitdown-mid.png"
+  },
+  {
+    "seat": "study_chair",
+    "phase": "standup-mid",
+    "raw_video_seconds": 132.819,
+    "demo_seconds": 90.80699999999999,
+    "path": "outputs/verification/scene-v2/video-keyframes/study_chair-standup-mid.png"
+  }
+]

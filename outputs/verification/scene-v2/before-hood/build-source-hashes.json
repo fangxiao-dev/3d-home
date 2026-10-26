@@ -1,0 +1,22 @@
+[
+  {
+    "Path": "D:\\vibe-code-life\\3d-home\\outputs\\Build.ps1",
+    "Hash": "DF86B1348AC2E70C8DC8D43F972BA623FF1802115639B39E94C1D6D209BFF6D7"
+  },
+  {
+    "Path": "D:\\vibe-code-life\\3d-home\\outputs\\Verify-Playroom.gd",
+    "Hash": "512FC096DB65A91954739777D96995CED4DE0857F14D635F79539C1BDF9CD09D"
+  },
+  {
+    "Path": "D:\\vibe-code-life\\3d-home\\outputs\\godot\\scene_environment.gd",
+    "Hash": "1F0CFA9DA1F28D0C6C495ED4C4152144DD6D22527E688981ED95DE0EC1F4CB21"
+  },
+  {
+    "Path": "D:\\vibe-code-life\\3d-home\\outputs\\Prepare-Bake.gd",
+    "Hash": "0A0F49ED713203FC2EFC61DEBAE9399FA82E2CBA70FD01469719C3BB24011AAF"
+  },
+  {
+    "Path": "D:\\vibe-code-life\\3d-home\\outputs\\godot\\baked\\house.lmbake",
+    "Hash": "A74D6916DA1EC4F4656BA8B319970CDC51C9E36AE44817A9C9730441266B9592"
+  }
+]

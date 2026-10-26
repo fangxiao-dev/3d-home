@@ -1,0 +1,4130 @@
+{
+  "started_at": "2026-10-25T21:42:38.873Z",
+  "build": {
+    "seats": "d3e330117ac37938c5905f79ebaa270dfe298cd2a1066f2ddc4ed32b0e045d2e",
+    "checks_run": true,
+    "runtime": "2f5d1c1da226f28c001be81fb5a3a51fbf11aea4650da085d0852f49cd3044a9",
+    "sha256": "4315d056df8368c0b0307e94e5f7e51f58da362711ae69e205573654ebba9287",
+    "pack": "scene-4315d056df83.pck",
+    "exported_at": "2026-10-25T22:26:50.9539183+01:00",
+    "character": "b48319f3e1c9b393c6f1019b80ef1c257c06a5b8a50a3b4009d6cebc943b697e",
+    "model": "15d0db1e2c7ab27b5d2923f4f14d257f7a5df5ab497415ad0be25c3633f83fb2"
+  },
+  "runner_sha256": "b9728d034424f763ca661e68aff56dbeed41478fc59a97735daef008c2cdf443",
+  "width": 1920,
+  "height": 1080,
+  "browser_mode": "headless",
+  "cycles": [
+    {
+      "id": "entry_stool",
+      "yaw": 0,
+      "amount": 0.85,
+      "before": {
+        "active_room": "living",
+        "animation": "Idle",
+        "app_focused": true,
+        "avatar_scale": [
+          1,
+          1,
+          1
+        ],
+        "avatar_yaw": -3.14131140708923,
+        "body_obstructions": [],
+        "bones": {
+          "Foot.L": [
+            -0.482500076293945,
+            0.0856867358088493,
+            -1.47499024868011
+          ],
+          "Foot.R": [
+            -0.672500133514404,
+            0.0856867358088493,
+            -1.4749368429184
+          ],
+          "Hand.L": [
+            -0.287518590688705,
+            0.805682837963104,
+            -1.49008786678314
+          ],
+          "Hand.R": [
+            -0.86749005317688,
+            0.805682837963104,
+            -1.48992466926575
+          ],
+          "Hips": [
+            -0.577500104904175,
+            0.869343757629395,
+            -1.47500061988831
+          ],
+          "Shin.L": [
+            -0.482507795095444,
+            0.480018228292465,
+            -1.5024242401123
+          ],
+          "Shin.R": [
+            -0.67250782251358,
+            0.480018228292465,
+            -1.50237083435059
+          ]
+        },
+        "camera": [
+          -0.57750004529953,
+          6.53792428970337,
+          5.36242055892944
+        ],
+        "camera_blending": false,
+        "camera_facing_dot": 1,
+        "camera_focus": [
+          -0.57750004529953,
+          0.800646901130676,
+          -1.47500038146973
+        ],
+        "camera_fov": 35,
+        "camera_pitch_degrees": 39.9999961853027,
+        "camera_yaw": 0,
+        "capture_requested": false,
+        "clip": "Idle",
+        "cycles": {
+          "dining_chair": 0,
+          "entry_stool": 0,
+          "sofa_middle": 0,
+          "study_chair": 0,
+          "window_seat": 0
+        },
+        "draw_calls": 135,
+        "escape_held": false,
+        "explore_target": [
+          -0.577500104904175,
+          0.800646960735321,
+          -1.47500061988831
+        ],
+        "fade_alpha": 0,
+        "frame_mean_ms": 227.52722513089,
+        "frame_p95_ms": 40.5,
+        "frame_samples": 191,
+        "house_rooms": [
+          "living",
+          "balcony",
+          "hallway",
+          "dining",
+          "wash",
+          "study",
+          "kitchen"
+        ],
+        "input_locked": false,
+        "interaction_restore_allowed": false,
+        "lightmap": {
+          "probe_points": 112,
+          "shadowmasks": 1,
+          "textures": 1,
+          "users": 14
+        },
+        "mode": "EXPLORE",
+        "navigation_active": true,
+        "navigation_scheme": "captured_horizontal_mouse",
+        "objects": 174,
+        "occlusion_hidden_groups": [],
+        "physics_ms": 1.2,
+        "player_screen": [
+          640,
+          359.999938964844
+        ],
+        "pointer_locked": true,
+        "process_ms": 41.7,
+        "rendered_body_obstructions": [],
+        "resume_button": [
+          525,
+          328,
+          230,
+          64
+        ],
+        "room_meshes": 219,
+        "seat_id": "",
+        "seats": [
+          {
+            "approach": [
+              -1.45,
+              0,
+              -3.35
+            ],
+            "camera_position": [
+              0.485,
+              2.25,
+              -0.75
+            ],
+            "camera_target": [
+              -2.035,
+              0.85,
+              -3.35
+            ],
+            "exit": [
+              -1.45,
+              0,
+              -3.35
+            ],
+            "furniture_id": "sofa",
+            "id": "sofa_middle",
+            "label": "长沙发",
+            "room_id": "living",
+            "root": [
+              -2.215,
+              0,
+              -3.35
+            ],
+            "surface_height": 0.45,
+            "yaw": 1.5707963267949
+          },
+          {
+            "approach": [
+              -1.35,
+              0,
+              -4.35
+            ],
+            "camera_position": [
+              0.485,
+              2.25,
+              -1.61
+            ],
+            "camera_target": [
+              -2.035,
+              0.85,
+              -4.21
+            ],
+            "exit": [
+              -1.35,
+              0,
+              -4.35
+            ],
+            "furniture_id": "sofa",
+            "id": "window_seat",
+            "label": "窗边坐位",
+            "room_id": "living",
+            "root": [
+              -2.215,
+              0,
+              -4.21
+            ],
+            "surface_height": 0.45,
+            "yaw": 1.5707963267949
+          },
+          {
+            "approach": [
+              -0.65,
+              0,
+              -1.5
+            ],
+            "camera_position": [
+              1.365,
+              2.25,
+              0.93
+            ],
+            "camera_target": [
+              -1.155,
+              0.85,
+              -1.67
+            ],
+            "exit": [
+              -0.65,
+              0,
+              -1.5
+            ],
+            "furniture_id": "entry_stool",
+            "id": "entry_stool",
+            "label": "入口软墩",
+            "room_id": "living",
+            "root": [
+              -1.335,
+              0,
+              -1.67
+            ],
+            "surface_height": 0.45,
+            "yaw": 1.5707963267949
+          },
+          {
+            "approach": [
+              -1.98,
+              0,
+              3.4
+            ],
+            "camera_position": [
+              0.25,
+              2.25,
+              6.78
+            ],
+            "camera_target": [
+              -2.27,
+              0.85,
+              4.18
+            ],
+            "exit": [
+              -1.98,
+              0,
+              3.4
+            ],
+            "furniture_id": "dining_chair",
+            "id": "dining_chair",
+            "label": "餐椅",
+            "room_id": "dining",
+            "root": [
+              -2.45,
+              0,
+              4.18
+            ],
+            "surface_height": 0.45,
+            "yaw": 1.5707963267949
+          },
+          {
+            "approach": [
+              8.16,
+              0,
+              4
+            ],
+            "camera_position": [
+              10.48,
+              2.25,
+              7.36
+            ],
+            "camera_target": [
+              7.96,
+              0.85,
+              4.76
+            ],
+            "exit": [
+              8.16,
+              0,
+              4
+            ],
+            "furniture_id": "study_chair",
+            "id": "study_chair",
+            "label": "书房椅",
+            "room_id": "study",
+            "root": [
+              7.78,
+              0,
+              4.76
+            ],
+            "surface_height": 0.45,
+            "yaw": 1.5707963267949
+          }
+        ],
+        "target": "entry_stool",
+        "target_camera_yaw": 0,
+        "target_zoom": 0.85,
+        "transition_collisions": [],
+        "transition_phase": "none",
+        "triangles": 100122,
+        "version": 2,
+        "viewport": [
+          1280,
+          720
+        ],
+        "x": -0.577500104904175,
+        "y": 0.000646942993625998,
+        "z": -1.47500061988831,
+        "zoom": 0.850058961634866
+      },
+      "seated": {
+        "active_room": "living",
+        "animation": "SitIdle",
+        "app_focused": true,
+        "avatar_scale": [
+          1,
+          1,
+          1
+        ],
+        "avatar_yaw": -4.71238899230957,
+        "body_obstructions": [],
+        "bones": {
+          "Foot.L": [
+            -0.954993963241577,
+            0.0849528312683105,
+            -1.57499992847443
+          ],
+          "Foot.R": [
+            -0.954993963241577,
+            0.0849528312683105,
+            -1.76499998569489
+          ],
+          "Hand.L": [
+            -1.08500015735626,
+            0.609942495822906,
+            -1.54998970031738
+          ],
+          "Hand.R": [
+            -1.08500015735626,
+            0.609942495822906,
+            -1.79001021385193
+          ],
+          "Hips": [
+            -1.33500003814697,
+            0.555493354797363,
+            -1.66999995708466
+          ],
+          "Shin.L": [
+            -0.952037930488586,
+            0.480226665735245,
+            -1.57499992847443
+          ],
+          "Shin.R": [
+            -0.952037930488586,
+            0.480226665735245,
+            -1.76499998569489
+          ]
+        },
+        "camera": [
+          1.36500000953674,
+          2.25,
+          0.930000007152557
+        ],
+        "camera_blending": false,
+        "camera_facing_dot": 0.999502301216125,
+        "camera_focus": [
+          -1.33136630058289,
+          0.800007820129395,
+          -1.66994476318359
+        ],
+        "camera_fov": 35,
+        "camera_pitch_degrees": 21.1390819549561,
+        "camera_yaw": 0,
+        "capture_requested": false,
+        "clip": "SitIdle",
+        "cycles": {
+          "dining_chair": 0,
+          "entry_stool": 0,
+          "sofa_middle": 0,
+          "study_chair": 0,
+          "window_seat": 0
+        },
+        "draw_calls": 91,
+        "escape_held": false,
+        "explore_target": [
+          -1.33500003814697,
+          0.800000011920929,
+          -1.66999995708466
+        ],
+        "fade_alpha": 0,
+        "frame_mean_ms": 167.490145985402,
+        "frame_p95_ms": 38,
+        "frame_samples": 274,
+        "house_rooms": [
+          "living",
+          "balcony",
+          "hallway",
+          "dining",
+          "wash",
+          "study",
+          "kitchen"
+        ],
+        "input_locked": true,
+        "interaction_restore_allowed": true,
+        "lightmap": {
+          "probe_points": 112,
+          "shadowmasks": 1,
+          "textures": 1,
+          "users": 14
+        },
+        "mode": "SEATED",
+        "navigation_active": false,
+        "navigation_scheme": "captured_horizontal_mouse",
+        "objects": 116,
+        "occlusion_hidden_groups": [],
+        "physics_ms": 0.7,
+        "player_screen": [
+          603.261352539062,
+          360.414154052734
+        ],
+        "pointer_locked": false,
+        "process_ms": 33.3,
+        "rendered_body_obstructions": [],
+        "resume_button": [
+          525,
+          328,
+          230,
+          64
+        ],
+        "room_meshes": 219,
+        "seat_id": "entry_stool",
+        "seats": [
+          {
+            "approach": [
+              -1.45,
+              0,
+              -3.35
+            ],
+            "camera_position": [
+              0.485,
+              2.25,
+              -0.75
+            ],
+            "camera_target": [
+              -2.035,
+              0.85,
+              -3.35
+            ],
+            "exit": [
+              -1.45,
+              0,
+              -3.35
+            ],
+            "furniture_id": "sofa",
+            "id": "sofa_middle",
+            "label": "长沙发",
+            "room_id": "living",
+            "root": [
+              -2.215,
+              0,
+              -3.35
+            ],
+            "surface_height": 0.45,
+            "yaw": 1.5707963267949
+          },
+          {
+            "approach": [
+              -1.35,
+              0,
+              -4.35
+            ],
+            "camera_position": [
+              0.485,
+              2.25,
+              -1.61
+            ],
+            "camera_target": [
+              -2.035,
+              0.85,
+              -4.21
+            ],
+            "exit": [
+              -1.35,
+              0,
+              -4.35
+            ],
+            "furniture_id": "sofa",
+            "id": "window_seat",
+            "label": "窗边坐位",
+            "room_id": "living",
+            "root": [
+              -2.215,
+              0,
+              -4.21
+            ],
+            "surface_height": 0.45,
+            "yaw": 1.5707963267949
+          },
+          {
+            "approach": [
+              -0.65,
+              0,
+              -1.5
+            ],
+            "camera_position": [
+              1.365,
+              2.25,
+              0.93
+            ],
+            "camera_target": [
+              -1.155,
+              0.85,
+              -1.67
+            ],
+            "exit": [
+              -0.65,
+              0,
+              -1.5
+            ],
+            "furniture_id": "entry_stool",
+            "id": "entry_stool",
+            "label": "入口软墩",
+            "room_id": "living",
+            "root": [
+              -1.335,
+              0,
+              -1.67
+            ],
+            "surface_height": 0.45,
+            "yaw": 1.5707963267949
+          },
+          {
+            "approach": [
+              -1.98,
+              0,
+              3.4
+            ],
+            "camera_position": [
+              0.25,
+              2.25,
+              6.78
+            ],
+            "camera_target": [
+              -2.27,
+              0.85,
+              4.18
+            ],
+            "exit": [
+              -1.98,
+              0,
+              3.4
+            ],
+            "furniture_id": "dining_chair",
+            "id": "dining_chair",
+            "label": "餐椅",
+            "room_id": "dining",
+            "root": [
+              -2.45,
+              0,
+              4.18
+            ],
+            "surface_height": 0.45,
+            "yaw": 1.5707963267949
+          },
+          {
+            "approach": [
+              8.16,
+              0,
+              4
+            ],
+            "camera_position": [
+              10.48,
+              2.25,
+              7.36
+            ],
+            "camera_target": [
+              7.96,
+              0.85,
+              4.76
+            ],
+            "exit": [
+              8.16,
+              0,
+              4
+            ],
+            "furniture_id": "study_chair",
+            "id": "study_chair",
+            "label": "书房椅",
+            "room_id": "study",
+            "root": [
+              7.78,
+              0,
+              4.76
+            ],
+            "surface_height": 0.45,
+            "yaw": 1.5707963267949
+          }
+        ],
+        "target": "",
+        "target_camera_yaw": 0,
+        "target_zoom": 0.85,
+        "transition_collisions": [],
+        "transition_phase": "none",
+        "triangles": 92336,
+        "version": 2,
+        "viewport": [
+          1280,
+          720
+        ],
+        "x": -1.33500003814697,
+        "y": 0,
+        "z": -1.66999995708466,
+        "zoom": 0.850000000000229
+      },
+      "activation_before_escape": {
+        "locked": false,
+        "focused": true,
+        "hidden": false,
+        "activation": false
+      },
+      "returned": {
+        "active_room": "living",
+        "animation": "Idle",
+        "app_focused": true,
+        "avatar_scale": [
+          1,
+          1,
+          1
+        ],
+        "avatar_yaw": 1.06230688095093,
+        "body_obstructions": [],
+        "bones": {
+          "Foot.L": [
+            -0.713002622127533,
+            0.0866968035697937,
+            -1.42635607719421
+          ],
+          "Foot.R": [
+            -0.620499551296234,
+            0.0866968035697937,
+            -1.59231746196747
+          ],
+          "Hand.L": [
+            -0.79484236240387,
+            0.805635690689087,
+            -1.24872052669525
+          ],
+          "Hand.R": [
+            -0.51245903968811,
+            0.805635690689087,
+            -1.75534915924072
+          ],
+          "Hips": [
+            -0.666751086711884,
+            0.872269809246063,
+            -1.5093367099762
+          ],
+          "Shin.L": [
+            -0.713002622127533,
+            0.481981456279755,
+            -1.42635607719421
+          ],
+          "Shin.R": [
+            -0.620499551296234,
+            0.481981456279755,
+            -1.59231746196747
+          ]
+        },
+        "camera": [
+          -0.668668448925018,
+          6.53772211074829,
+          5.32656860351562
+        ],
+        "camera_blending": false,
+        "camera_facing_dot": 1,
+        "camera_focus": [
+          -0.668668448925018,
+          0.800842344760895,
+          -1.51037812232971
+        ],
+        "camera_fov": 35,
+        "camera_pitch_degrees": 40.0000038146973,
+        "camera_yaw": 0,
+        "capture_requested": false,
+        "clip": "Idle",
+        "cycles": {
+          "dining_chair": 0,
+          "entry_stool": 1,
+          "sofa_middle": 0,
+          "study_chair": 0,
+          "window_seat": 0
+        },
+        "draw_calls": 135,
+        "escape_held": true,
+        "explore_target": [
+          -0.666751086711884,
+          0.800844848155975,
+          -1.5093367099762
+        ],
+        "fade_alpha": 0,
+        "frame_mean_ms": 28.2761666666667,
+        "frame_p95_ms": 35.1,
+        "frame_samples": 600,
+        "house_rooms": [
+          "living",
+          "balcony",
+          "hallway",
+          "dining",
+          "wash",
+          "study",
+          "kitchen"
+        ],
+        "input_locked": true,
+        "interaction_restore_allowed": false,
+        "lightmap": {
+          "probe_points": 112,
+          "shadowmasks": 1,
+          "textures": 1,
+          "users": 14
+        },
+        "mode": "EXPLORE",
+        "navigation_active": true,
+        "navigation_scheme": "captured_horizontal_mouse",
+        "objects": 166,
+        "occlusion_hidden_groups": [],
+        "physics_ms": 0.3,
+        "player_screen": [
+          640.245300292969,
+          360.085357666016
+        ],
+        "pointer_locked": true,
+        "process_ms": 29.1,
+        "rendered_body_obstructions": [],
+        "resume_button": [
+          525,
+          328,
+          230,
+          64
+        ],
+        "room_meshes": 219,
+        "seat_id": "",
+        "seats": [
+          {
+            "approach": [
+              -1.45,
+              0,
+              -3.35
+            ],
+            "camera_position": [
+              0.485,
+              2.25,
+              -0.75
+            ],
+            "camera_target": [
+              -2.035,
+              0.85,
+              -3.35
+            ],
+            "exit": [
+              -1.45,
+              0,
+              -3.35
+            ],
+            "furniture_id": "sofa",
+            "id": "sofa_middle",
+            "label": "长沙发",
+            "room_id": "living",
+            "root": [
+              -2.215,
+              0,
+              -3.35
+            ],
+            "surface_height": 0.45,
+            "yaw": 1.5707963267949
+          },
+          {
+            "approach": [
+              -1.35,
+              0,
+              -4.35
+            ],
+            "camera_position": [
+              0.485,
+              2.25,
+              -1.61
+            ],
+            "camera_target": [
+              -2.035,
+              0.85,
+              -4.21
+            ],
+            "exit": [
+              -1.35,
+              0,
+              -4.35
+            ],
+            "furniture_id": "sofa",
+            "id": "window_seat",
+            "label": "窗边坐位",
+            "room_id": "living",
+            "root": [
+              -2.215,
+              0,
+              -4.21
+            ],
+            "surface_height": 0.45,
+            "yaw": 1.5707963267949
+          },
+          {
+            "approach": [
+              -0.65,
+              0,
+              -1.5
+            ],
+            "camera_position": [
+              1.365,
+              2.25,
+              0.93
+            ],
+            "camera_target": [
+              -1.155,
+              0.85,
+              -1.67
+            ],
+            "exit": [
+              -0.65,
+              0,
+              -1.5
+            ],
+            "furniture_id": "entry_stool",
+            "id": "entry_stool",
+            "label": "入口软墩",
+            "room_id": "living",
+            "root": [
+              -1.335,
+              0,
+              -1.67
+            ],
+            "surface_height": 0.45,
+            "yaw": 1.5707963267949
+          },
+          {
+            "approach": [
+              -1.98,
+              0,
+              3.4
+            ],
+            "camera_position": [
+              0.25,
+              2.25,
+              6.78
+            ],
+            "camera_target": [
+              -2.27,
+              0.85,
+              4.18
+            ],
+            "exit": [
+              -1.98,
+              0,
+              3.4
+            ],
+            "furniture_id": "dining_chair",
+            "id": "dining_chair",
+            "label": "餐椅",
+            "room_id": "dining",
+            "root": [
+              -2.45,
+              0,
+              4.18
+            ],
+            "surface_height": 0.45,
+            "yaw": 1.5707963267949
+          },
+          {
+            "approach": [
+              8.16,
+              0,
+              4
+            ],
+            "camera_position": [
+              10.48,
+              2.25,
+              7.36
+            ],
+            "camera_target": [
+              7.96,
+              0.85,
+              4.76
+            ],
+            "exit": [
+              8.16,
+              0,
+              4
+            ],
+            "furniture_id": "study_chair",
+            "id": "study_chair",
+            "label": "书房椅",
+            "room_id": "study",
+            "root": [
+              7.78,
+              0,
+              4.76
+            ],
+            "surface_height": 0.45,
+            "yaw": 1.5707963267949
+          }
+        ],
+        "target": "entry_stool",
+        "target_camera_yaw": 0,
+        "target_zoom": 0.85,
+        "transition_collisions": [],
+        "transition_phase": "none",
+        "triangles": 100106,
+        "version": 2,
+        "viewport": [
+          1280,
+          720
+        ],
+        "x": -0.666751086711884,
+        "y": 0.000844835420139134,
+        "z": -1.5093367099762,
+        "zoom": 0.85
+      },
+      "turned": {
+        "active_room": "living",
+        "animation": "Idle",
+        "app_focused": true,
+        "avatar_scale": [
+          1,
+          1,
+          1
+        ],
+        "avatar_yaw": 1.06230688095093,
+        "body_obstructions": [],
+        "bones": {
+          "Foot.L": [
+            -0.713002681732178,
+            0.0859023630619049,
+            -1.42635607719421
+          ],
+          "Foot.R": [
+            -0.620499551296234,
+            0.0859023630619049,
+            -1.59231746196747
+          ],
+          "Hand.L": [
+            -0.794824182987213,
+            0.805898308753967,
+            -1.24873530864716
+          ],
+          "Hand.R": [
+            -0.512462079524994,
+            0.805898308753967,
+            -1.75532603263855
+          ],
+          "Hips": [
+            -0.666751086711884,
+            0.870645880699158,
+            -1.5093367099762
+          ],
+          "Shin.L": [
+            -0.697240650653839,
+            0.480774909257889,
+            -1.4175705909729
+          ],
+          "Shin.R": [
+            -0.60473757982254,
+            0.480774909257889,
+            -1.58353209495544
+          ]
+        },
+        "camera": [
+          -2.10223579406738,
+          6.53772449493408,
+          5.1752142906189
+        ],
+        "camera_blending": false,
+        "camera_facing_dot": 1,
+        "camera_focus": [
+          -0.666751384735107,
+          0.800844728946686,
+          -1.50933694839478
+        ],
+        "camera_fov": 35,
+        "camera_pitch_degrees": 40,
+        "camera_yaw": -0.211533905341713,
+        "capture_requested": false,
+        "clip": "Idle",
+        "cycles": {
+          "dining_chair": 0,
+          "entry_stool": 1,
+          "sofa_middle": 0,
+          "study_chair": 0,
+          "window_seat": 0
+        },
+        "draw_calls": 142,
+        "escape_held": false,
+        "explore_target": [
+          -0.666751086711884,
+          0.800844848155975,
+          -1.5093367099762
+        ],
+        "fade_alpha": 0,
+        "frame_mean_ms": 28.2741666666667,
+        "frame_p95_ms": 35.1,
+        "frame_samples": 600,
+        "house_rooms": [
+          "living",
+          "balcony",
+          "hallway",
+          "dining",
+          "wash",
+          "study",
+          "kitchen"
+        ],
+        "input_locked": false,
+        "interaction_restore_allowed": false,
+        "lightmap": {
+          "probe_points": 112,
+          "shadowmasks": 1,
+          "textures": 1,
+          "users": 14
+        },
+        "mode": "EXPLORE",
+        "navigation_active": true,
+        "navigation_scheme": "captured_horizontal_mouse",
+        "objects": 181,
+        "occlusion_hidden_groups": [],
+        "physics_ms": 0.9,
+        "player_screen": [
+          640,
+          360
+        ],
+        "pointer_locked": true,
+        "process_ms": 37.2,
+        "rendered_body_obstructions": [],
+        "resume_button": [
+          525,
+          328,
+          230,
+          64
+        ],
+        "room_meshes": 219,
+        "seat_id": "",
+        "seats": [
+          {
+            "approach": [
+              -1.45,
+              0,
+              -3.35
+            ],
+            "camera_position": [
+              0.485,
+              2.25,
+              -0.75
+            ],
+            "camera_target": [
+              -2.035,
+              0.85,
+              -3.35
+            ],
+            "exit": [
+              -1.45,
+              0,
+              -3.35
+            ],
+            "furniture_id": "sofa",
+            "id": "sofa_middle",
+            "label": "长沙发",
+            "room_id": "living",
+            "root": [
+              -2.215,
+              0,
+              -3.35
+            ],
+            "surface_height": 0.45,
+            "yaw": 1.5707963267949
+          },
+          {
+            "approach": [
+              -1.35,
+              0,
+              -4.35
+            ],
+            "camera_position": [
+              0.485,
+              2.25,
+              -1.61
+            ],
+            "camera_target": [
+              -2.035,
+              0.85,
+              -4.21
+            ],
+            "exit": [
+              -1.35,
+              0,
+              -4.35
+            ],
+            "furniture_id": "sofa",
+            "id": "window_seat",
+            "label": "窗边坐位",
+            "room_id": "living",
+            "root": [
+              -2.215,
+              0,
+              -4.21
+            ],
+            "surface_height": 0.45,
+            "yaw": 1.5707963267949
+          },
+          {
+            "approach": [
+              -0.65,
+              0,
+              -1.5
+            ],
+            "camera_position": [
+              1.365,
+              2.25,
+              0.93
+            ],
+            "camera_target": [
+              -1.155,
+              0.85,
+              -1.67
+            ],
+            "exit": [
+              -0.65,
+              0,
+              -1.5
+            ],
+            "furniture_id": "entry_stool",
+            "id": "entry_stool",
+            "label": "入口软墩",
+            "room_id": "living",
+            "root": [
+              -1.335,
+              0,
+              -1.67
+            ],
+            "surface_height": 0.45,
+            "yaw": 1.5707963267949
+          },
+          {
+            "approach": [
+              -1.98,
+              0,
+              3.4
+            ],
+            "camera_position": [
+              0.25,
+              2.25,
+              6.78
+            ],
+            "camera_target": [
+              -2.27,
+              0.85,
+              4.18
+            ],
+            "exit": [
+              -1.98,
+              0,
+              3.4
+            ],
+            "furniture_id": "dining_chair",
+            "id": "dining_chair",
+            "label": "餐椅",
+            "room_id": "dining",
+            "root": [
+              -2.45,
+              0,
+              4.18
+            ],
+            "surface_height": 0.45,
+            "yaw": 1.5707963267949
+          },
+          {
+            "approach": [
+              8.16,
+              0,
+              4
+            ],
+            "camera_position": [
+              10.48,
+              2.25,
+              7.36
+            ],
+            "camera_target": [
+              7.96,
+              0.85,
+              4.76
+            ],
+            "exit": [
+              8.16,
+              0,
+              4
+            ],
+            "furniture_id": "study_chair",
+            "id": "study_chair",
+            "label": "书房椅",
+            "room_id": "study",
+            "root": [
+              7.78,
+              0,
+              4.76
+            ],
+            "surface_height": 0.45,
+            "yaw": 1.5707963267949
+          }
+        ],
+        "target": "entry_stool",
+        "target_camera_yaw": -0.211533905341713,
+        "target_zoom": 0.85,
+        "transition_collisions": [],
+        "transition_phase": "none",
+        "triangles": 101252,
+        "version": 2,
+        "viewport": [
+          1280,
+          720
+        ],
+        "x": -0.666751086711884,
+        "y": 0.000844835420139134,
+        "z": -1.5093367099762,
+        "zoom": 0.85
+      },
+      "moved": {
+        "active_room": "living",
+        "animation": "Idle",
+        "app_focused": true,
+        "avatar_scale": [
+          1,
+          1,
+          1
+        ],
+        "avatar_yaw": 1.54932022094727,
+        "body_obstructions": [],
+        "bones": {
+          "Foot.L": [
+            -0.366292685270309,
+            0.0857914164662361,
+            -1.41435861587524
+          ],
+          "Foot.R": [
+            -0.362208187580109,
+            0.0857915356755257,
+            -1.60431480407715
+          ],
+          "Hand.L": [
+            -0.355480998754501,
+            0.805797696113586,
+            -1.21908271312714
+          ],
+          "Hand.R": [
+            -0.343026667833328,
+            0.805797755718231,
+            -1.79894638061523
+          ],
+          "Hips": [
+            -0.364250898361206,
+            0.871232748031616,
+            -1.5093367099762
+          ],
+          "Shin.L": [
+            -0.359100937843323,
+            0.481010645627975,
+            -1.41420412063599
+          ],
+          "Shin.R": [
+            -0.355017721652985,
+            0.481010735034943,
+            -1.60416030883789
+          ]
+        },
+        "camera": [
+          -0.407213300466537,
+          6.53772449493408,
+          5.32761001586914
+        ],
+        "camera_blending": false,
+        "camera_facing_dot": 1,
+        "camera_focus": [
+          -0.407213300466537,
+          0.800844669342041,
+          -1.50933694839478
+        ],
+        "camera_fov": 35,
+        "camera_pitch_degrees": 39.9999961853027,
+        "camera_yaw": -2.77555756156289e-17,
+        "capture_requested": false,
+        "clip": "Idle",
+        "cycles": {
+          "dining_chair": 0,
+          "entry_stool": 1,
+          "sofa_middle": 0,
+          "study_chair": 0,
+          "window_seat": 0
+        },
+        "draw_calls": 135,
+        "escape_held": false,
+        "explore_target": [
+          -0.364250898361206,
+          0.800844848155975,
+          -1.5093367099762
+        ],
+        "fade_alpha": 0,
+        "frame_mean_ms": 28.1216666666667,
+        "frame_p95_ms": 35,
+        "frame_samples": 600,
+        "house_rooms": [
+          "living",
+          "balcony",
+          "hallway",
+          "dining",
+          "wash",
+          "study",
+          "kitchen"
+        ],
+        "input_locked": false,
+        "interaction_restore_allowed": false,
+        "lightmap": {
+          "probe_points": 112,
+          "shadowmasks": 1,
+          "textures": 1,
+          "users": 14
+        },
+        "mode": "EXPLORE",
+        "navigation_active": true,
+        "navigation_scheme": "captured_horizontal_mouse",
+        "objects": 174,
+        "occlusion_hidden_groups": [],
+        "physics_ms": 0.7,
+        "player_screen": [
+          645.496154785156,
+          360
+        ],
+        "pointer_locked": true,
+        "process_ms": 36.8,
+        "rendered_body_obstructions": [],
+        "resume_button": [
+          525,
+          328,
+          230,
+          64
+        ],
+        "room_meshes": 219,
+        "seat_id": "",
+        "seats": [
+          {
+            "approach": [
+              -1.45,
+              0,
+              -3.35
+            ],
+            "camera_position": [
+              0.485,
+              2.25,
+              -0.75
+            ],
+            "camera_target": [
+              -2.035,
+              0.85,
+              -3.35
+            ],
+            "exit": [
+              -1.45,
+              0,
+              -3.35
+            ],
+            "furniture_id": "sofa",
+            "id": "sofa_middle",
+            "label": "长沙发",
+            "room_id": "living",
+            "root": [
+              -2.215,
+              0,
+              -3.35
+            ],
+            "surface_height": 0.45,
+            "yaw": 1.5707963267949
+          },
+          {
+            "approach": [
+              -1.35,
+              0,
+              -4.35
+            ],
+            "camera_position": [
+              0.485,
+              2.25,
+              -1.61
+            ],
+            "camera_target": [
+              -2.035,
+              0.85,
+              -4.21
+            ],
+            "exit": [
+              -1.35,
+              0,
+              -4.35
+            ],
+            "furniture_id": "sofa",
+            "id": "window_seat",
+            "label": "窗边坐位",
+            "room_id": "living",
+            "root": [
+              -2.215,
+              0,
+              -4.21
+            ],
+            "surface_height": 0.45,
+            "yaw": 1.5707963267949
+          },
+          {
+            "approach": [
+              -0.65,
+              0,
+              -1.5
+            ],
+            "camera_position": [
+              1.365,
+              2.25,
+              0.93
+            ],
+            "camera_target": [
+              -1.155,
+              0.85,
+              -1.67
+            ],
+            "exit": [
+              -0.65,
+              0,
+              -1.5
+            ],
+            "furniture_id": "entry_stool",
+            "id": "entry_stool",
+            "label": "入口软墩",
+            "room_id": "living",
+            "root": [
+              -1.335,
+              0,
+              -1.67
+            ],
+            "surface_height": 0.45,
+            "yaw": 1.5707963267949
+          },
+          {
+            "approach": [
+              -1.98,
+              0,
+              3.4
+            ],
+            "camera_position": [
+              0.25,
+              2.25,
+              6.78
+            ],
+            "camera_target": [
+              -2.27,
+              0.85,
+              4.18
+            ],
+            "exit": [
+              -1.98,
+              0,
+              3.4
+            ],
+            "furniture_id": "dining_chair",
+            "id": "dining_chair",
+            "label": "餐椅",
+            "room_id": "dining",
+            "root": [
+              -2.45,
+              0,
+              4.18
+            ],
+            "surface_height": 0.45,
+            "yaw": 1.5707963267949
+          },
+          {
+            "approach": [
+              8.16,
+              0,
+              4
+            ],
+            "camera_position": [
+              10.48,
+              2.25,
+              7.36
+            ],
+            "camera_target": [
+              7.96,
+              0.85,
+              4.76
+            ],
+            "exit": [
+              8.16,
+              0,
+              4
+            ],
+            "furniture_id": "study_chair",
+            "id": "study_chair",
+            "label": "书房椅",
+            "room_id": "study",
+            "root": [
+              7.78,
+              0,
+              4.76
+            ],
+            "surface_height": 0.45,
+            "yaw": 1.5707963267949
+          }
+        ],
+        "target": "entry_stool",
+        "target_camera_yaw": -2.77555756156289e-17,
+        "target_zoom": 0.85,
+        "transition_collisions": [],
+        "transition_phase": "none",
+        "triangles": 100122,
+        "version": 2,
+        "viewport": [
+          1280,
+          720
+        ],
+        "x": -0.364250898361206,
+        "y": 0.000844841182697564,
+        "z": -1.5093367099762,
+        "zoom": 0.85
+      },
+      "render_frames": 171,
+      "cut_frame": {
+        "animation": "Idle",
+        "camera": [
+          1.36500000953674,
+          2.25,
+          0.930000007152557
+        ],
+        "fade_alpha": 1,
+        "fixed_camera": true,
+        "focus": [
+          -0.939373552799225,
+          0.800843834877014,
+          -1.66174805164337
+        ],
+        "mode": "SCENE_TRANSITION",
+        "navigation_active": false,
+        "player": [
+          -0.943778097629547,
+          0.000844826805405319,
+          -1.66406083106995
+        ],
+        "pointer_locked": false,
+        "resume_visible": false,
+        "room": "living",
+        "seat_id": "entry_stool",
+        "t": 48455,
+        "transition_phase": "black",
+        "yaw": 0,
+        "zoom": 0.850000108676501
+      },
+      "first_sit_frame": {
+        "animation": "SitDown",
+        "camera": [
+          1.36500000953674,
+          2.25,
+          0.930000007152557
+        ],
+        "fade_alpha": 0,
+        "fixed_camera": true,
+        "focus": [
+          -0.942931890487671,
+          0.800844669342041,
+          -1.66361653804779
+        ],
+        "mode": "SIT_DOWN",
+        "navigation_active": false,
+        "player": [
+          -0.943778097629547,
+          0.000844826805405319,
+          -1.66406083106995
+        ],
+        "pointer_locked": false,
+        "resume_visible": false,
+        "room": "living",
+        "seat_id": "entry_stool",
+        "t": 48675,
+        "transition_phase": "none",
+        "yaw": 0,
+        "zoom": 0.850000020879662
+      },
+      "transition_observed_ms": 367,
+      "frame_peak_ms": 49,
+      "screencast_frames": 0,
+      "exit_trace": [
+        {
+          "animation": "SitIdle",
+          "camera": [
+            1.36500000953674,
+            2.25,
+            0.930000007152557
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            -1.33499991893768,
+            0.800000071525574,
+            -1.66999983787537
+          ],
+          "mode": "SEATED",
+          "navigation_active": false,
+          "player": [
+            -1.33500003814697,
+            0,
+            -1.66999995708466
+          ],
+          "pointer_locked": false,
+          "resume_visible": false,
+          "room": "living",
+          "seat_id": "entry_stool",
+          "t": 59848,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 0.85
+        },
+        {
+          "animation": "SitIdle",
+          "camera": [
+            1.36500000953674,
+            2.25,
+            0.930000007152557
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            -1.33499991893768,
+            0.800000071525574,
+            -1.66999983787537
+          ],
+          "mode": "SEATED",
+          "navigation_active": false,
+          "player": [
+            -1.33500003814697,
+            0,
+            -1.66999995708466
+          ],
+          "pointer_locked": false,
+          "resume_visible": false,
+          "room": "living",
+          "seat_id": "entry_stool",
+          "t": 59877,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 0.85
+        },
+        {
+          "animation": "SitIdle",
+          "camera": [
+            1.36500000953674,
+            2.25,
+            0.930000007152557
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            -1.33499991893768,
+            0.800000071525574,
+            -1.66999983787537
+          ],
+          "mode": "SEATED",
+          "navigation_active": false,
+          "player": [
+            -1.33500003814697,
+            0,
+            -1.66999995708466
+          ],
+          "pointer_locked": false,
+          "resume_visible": false,
+          "room": "living",
+          "seat_id": "entry_stool",
+          "t": 59906,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 0.85
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            1.36500000953674,
+            2.25,
+            0.930000007152557
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            -1.33499991893768,
+            0.800000071525574,
+            -1.66999983787537
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            -1.33442807197571,
+            0,
+            -1.66999995708466
+          ],
+          "pointer_locked": false,
+          "resume_visible": false,
+          "room": "living",
+          "seat_id": "entry_stool",
+          "t": 59940,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 0.85
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            1.36500000953674,
+            2.25,
+            0.930000007152557
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            -1.33488857746124,
+            0.800000071525574,
+            -1.66999983787537
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            -1.33274722099304,
+            0,
+            -1.66999995708466
+          ],
+          "pointer_locked": false,
+          "resume_visible": false,
+          "room": "living",
+          "seat_id": "entry_stool",
+          "t": 59960,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 0.85
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            1.36500000953674,
+            2.25,
+            0.930000007152557
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            -1.33446049690247,
+            0.800000071525574,
+            -1.66999983787537
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            -1.32991337776184,
+            0,
+            -1.66999995708466
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "living",
+          "seat_id": "entry_stool",
+          "t": 59991,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 0.85
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            1.36500000953674,
+            2.25,
+            0.930000007152557
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            -1.33357465267181,
+            0.800000071525574,
+            -1.66999983787537
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            -1.32614290714264,
+            0,
+            -1.66999995708466
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "living",
+          "seat_id": "entry_stool",
+          "t": 60017,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 0.85
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            1.36500000953674,
+            2.25,
+            0.930000007152557
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            -1.33198809623718,
+            0.800000071525574,
+            -1.66999983787537
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            -1.32085621356964,
+            0,
+            -1.66999995708466
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "living",
+          "seat_id": "entry_stool",
+          "t": 60053,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 0.85
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            1.36500000953674,
+            2.25,
+            0.930000007152557
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            -1.32974696159363,
+            0.800000071525574,
+            -1.66999983787537
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            -1.31491267681122,
+            0,
+            -1.66999995708466
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "living",
+          "seat_id": "entry_stool",
+          "t": 60076,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 0.85
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            1.36500000953674,
+            2.25,
+            0.930000007152557
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            -1.3267320394516,
+            0.800000071525574,
+            -1.66999983787537
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            -1.30798971652985,
+            0,
+            -1.66999995708466
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "living",
+          "seat_id": "entry_stool",
+          "t": 60104,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 0.85
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            1.36500000953674,
+            2.25,
+            0.930000007152557
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            -1.32299745082855,
+            0.800000071525574,
+            -1.66999983787537
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            -1.30038547515869,
+            0,
+            -1.66999995708466
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "living",
+          "seat_id": "entry_stool",
+          "t": 60132,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 0.85
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            1.36500000953674,
+            2.25,
+            0.930000007152557
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            -1.31845641136169,
+            0.800000071525574,
+            -1.66999983787537
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            -1.29193758964539,
+            0,
+            -1.66999995708466
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "living",
+          "seat_id": "entry_stool",
+          "t": 60163,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 0.85
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            1.36500000953674,
+            2.25,
+            0.930000007152557
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            -1.31317222118378,
+            0.800000071525574,
+            -1.66999983787537
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            -1.28285038471222,
+            0,
+            -1.66999995708466
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "living",
+          "seat_id": "entry_stool",
+          "t": 60187,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 0.85
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            1.36500000953674,
+            2.25,
+            0.930000007152557
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            -1.30713021755219,
+            0.800000071525574,
+            -1.66999983787537
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            -1.2731100320816,
+            0,
+            -1.66999995708466
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "living",
+          "seat_id": "entry_stool",
+          "t": 60214,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 0.85
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            1.36500000953674,
+            2.25,
+            0.930000007152557
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            -1.30035126209259,
+            0.800000071525574,
+            -1.66999983787537
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            -1.26277303695679,
+            0,
+            -1.66999995708466
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "living",
+          "seat_id": "entry_stool",
+          "t": 60242,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 0.85
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            1.36500000953674,
+            2.25,
+            0.930000007152557
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            -1.29286336898804,
+            0.800000071525574,
+            -1.66999983787537
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            -1.25189602375031,
+            0,
+            -1.66999995708466
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "living",
+          "seat_id": "entry_stool",
+          "t": 60273,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 0.85
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            1.36500000953674,
+            2.25,
+            0.930000007152557
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            -1.28433191776276,
+            0.800000071525574,
+            -1.66999983787537
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            -1.23994660377502,
+            0,
+            -1.66999995708466
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "living",
+          "seat_id": "entry_stool",
+          "t": 60301,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 0.85
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            1.36500000953674,
+            2.25,
+            0.930000007152557
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            -1.27505743503571,
+            0.800000071525574,
+            -1.66999983787537
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            -1.2274808883667,
+            0,
+            -1.66999995708466
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "living",
+          "seat_id": "entry_stool",
+          "t": 60330,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 0.85
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            1.36500000953674,
+            2.25,
+            0.930000007152557
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            -1.26496589183807,
+            0.800000071525574,
+            -1.66999983787537
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            -1.21438694000244,
+            0,
+            -1.66999995708466
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "living",
+          "seat_id": "entry_stool",
+          "t": 60360,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 0.85
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            1.36500000953674,
+            2.25,
+            0.930000007152557
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            -1.25470781326294,
+            0.800000071525574,
+            -1.66999983787537
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            -1.2016122341156,
+            0,
+            -1.66999995708466
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "living",
+          "seat_id": "entry_stool",
+          "t": 60390,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 0.85
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            1.36500000953674,
+            2.25,
+            0.930000007152557
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            -1.24393928050995,
+            0.800000071525574,
+            -1.66999983787537
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            -1.18858170509338,
+            0,
+            -1.66999995708466
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "living",
+          "seat_id": "entry_stool",
+          "t": 60412,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 0.85
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            1.36500000953674,
+            2.25,
+            0.930000007152557
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            -1.23271203041077,
+            0.800000071525574,
+            -1.66999983787537
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            -1.17535507678986,
+            0,
+            -1.66999995708466
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "living",
+          "seat_id": "entry_stool",
+          "t": 60440,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 0.85
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            1.36500000953674,
+            2.25,
+            0.930000007152557
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            -1.22107923030853,
+            0.800000071525574,
+            -1.66999983787537
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            -1.16199266910553,
+            0,
+            -1.66999995708466
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "living",
+          "seat_id": "entry_stool",
+          "t": 60466,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 0.85
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            1.36500000953674,
+            2.25,
+            0.930000007152557
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            -1.20909571647644,
+            0.800000071525574,
+            -1.66999983787537
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            -1.14855432510376,
+            0,
+            -1.66999995708466
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "living",
+          "seat_id": "entry_stool",
+          "t": 60498,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 0.85
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            1.36500000953674,
+            2.25,
+            0.930000007152557
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            -1.19703209400177,
+            0.800000071525574,
+            -1.66999983787537
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            -1.13536369800568,
+            0,
+            -1.66999995708466
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "living",
+          "seat_id": "entry_stool",
+          "t": 60520,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 0.85
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            1.36500000953674,
+            2.25,
+            0.930000007152557
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            -1.18474388122559,
+            0.800000071525574,
+            -1.66999983787537
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            -1.12221443653107,
+            0,
+            -1.66999995708466
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "living",
+          "seat_id": "entry_stool",
+          "t": 60546,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 0.85
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            1.36500000953674,
+            2.25,
+            0.930000007152557
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            -1.17228412628174,
+            0.800000071525574,
+            -1.66999983787537
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            -1.10916304588318,
+            0,
+            -1.66999995708466
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "living",
+          "seat_id": "entry_stool",
+          "t": 60573,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 0.85
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            1.36500000953674,
+            2.25,
+            0.930000007152557
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            -1.15970647335052,
+            0.800000071525574,
+            -1.66999983787537
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            -1.09626615047455,
+            0,
+            -1.66999995708466
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "living",
+          "seat_id": "entry_stool",
+          "t": 60606,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 0.85
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            1.36500000953674,
+            2.25,
+            0.930000007152557
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            -1.14706516265869,
+            0.800000071525574,
+            -1.66999983787537
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            -1.08358025550842,
+            0,
+            -1.66999995708466
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "living",
+          "seat_id": "entry_stool",
+          "t": 60629,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 0.85
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            1.36500000953674,
+            2.25,
+            0.930000007152557
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            -1.13441503047943,
+            0.800000071525574,
+            -1.66999983787537
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            -1.07116186618805,
+            0,
+            -1.66999995708466
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "living",
+          "seat_id": "entry_stool",
+          "t": 60658,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 0.85
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            1.36500000953674,
+            2.25,
+            0.930000007152557
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            -1.12181103229523,
+            0.800000071525574,
+            -1.66999983787537
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            -1.05906760692596,
+            0,
+            -1.66999995708466
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "living",
+          "seat_id": "entry_stool",
+          "t": 60687,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 0.85
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            1.36500000953674,
+            2.25,
+            0.930000007152557
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            -1.10930860042572,
+            0.800000071525574,
+            -1.66999983787537
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            -1.04735398292542,
+            0,
+            -1.66999995708466
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "living",
+          "seat_id": "entry_stool",
+          "t": 60718,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 0.85
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            1.36500000953674,
+            2.25,
+            0.930000007152557
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            -1.09696340560913,
+            0.800000071525574,
+            -1.66999983787537
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            -1.03607773780823,
+            0,
+            -1.66999995708466
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "living",
+          "seat_id": "entry_stool",
+          "t": 60742,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 0.85
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            1.36500000953674,
+            2.25,
+            0.930000007152557
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            -1.08483111858368,
+            0.800000071525574,
+            -1.66999983787537
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            -1.02529525756836,
+            0,
+            -1.66999995708466
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "living",
+          "seat_id": "entry_stool",
+          "t": 60769,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 0.85
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            1.36500000953674,
+            2.25,
+            0.930000007152557
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            -1.07296788692474,
+            0.800000071525574,
+            -1.66999983787537
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            -1.01506304740906,
+            0,
+            -1.66999995708466
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "living",
+          "seat_id": "entry_stool",
+          "t": 60796,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 0.85
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            1.36500000953674,
+            2.25,
+            0.930000007152557
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            -1.06142961978912,
+            0.800000071525574,
+            -1.66999983787537
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            -1.00543785095215,
+            0,
+            -1.66999995708466
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "living",
+          "seat_id": "entry_stool",
+          "t": 60827,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 0.85
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            1.36500000953674,
+            2.25,
+            0.930000007152557
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            -1.05027258396149,
+            0.800000071525574,
+            -1.66999983787537
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            -0.996476173400879,
+            0,
+            -1.66999995708466
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "living",
+          "seat_id": "entry_stool",
+          "t": 60849,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 0.85
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            1.36500000953674,
+            2.25,
+            0.930000007152557
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            -1.03955292701721,
+            0.800000071525574,
+            -1.66999983787537
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            -0.988234519958496,
+            0,
+            -1.66999995708466
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "living",
+          "seat_id": "entry_stool",
+          "t": 60879,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 0.85
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            1.36500000953674,
+            2.25,
+            0.930000007152557
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            -1.02932703495026,
+            0.800000071525574,
+            -1.66999983787537
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            -0.980769515037537,
+            0,
+            -1.66999995708466
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "living",
+          "seat_id": "entry_stool",
+          "t": 60908,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 0.85
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            1.36500000953674,
+            2.25,
+            0.930000007152557
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            -1.01947891712189,
+            0.800000071525574,
+            -1.66999983787537
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            -0.974013805389404,
+            0,
+            -1.66999995708466
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "living",
+          "seat_id": "entry_stool",
+          "t": 60945,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 0.85
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            1.36500000953674,
+            2.25,
+            0.930000007152557
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            -1.01025795936584,
+            0.800000071525574,
+            -1.66999983787537
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            -0.968185067176819,
+            0,
+            -1.66999995708466
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "living",
+          "seat_id": "entry_stool",
+          "t": 60968,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 0.85
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            1.36500000953674,
+            2.25,
+            0.930000007152557
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            -1.0017249584198,
+            0.800000071525574,
+            -1.66999983787537
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            -0.963343143463135,
+            0,
+            -1.66999995708466
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "living",
+          "seat_id": "entry_stool",
+          "t": 60999,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 0.85
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            1.36500000953674,
+            2.25,
+            0.930000007152557
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            -0.993940591812134,
+            0.800000071525574,
+            -1.66999983787537
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            -0.959548115730286,
+            0,
+            -1.66999995708466
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "living",
+          "seat_id": "entry_stool",
+          "t": 61026,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 0.85
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            1.36500000953674,
+            2.25,
+            0.930000007152557
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            -0.986965358257294,
+            0.800000071525574,
+            -1.66999983787537
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            -0.956860065460205,
+            0,
+            -1.66999995708466
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "living",
+          "seat_id": "entry_stool",
+          "t": 61061,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 0.85
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            1.36500000953674,
+            2.25,
+            0.930000007152557
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            -0.980859577655792,
+            0.800000071525574,
+            -1.66999983787537
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            -0.955338895320892,
+            0,
+            -1.66999995708466
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "living",
+          "seat_id": "entry_stool",
+          "t": 61082,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 0.85
+        },
+        {
+          "animation": "StandUp",
+          "camera": [
+            1.36500000953674,
+            2.25,
+            0.930000007152557
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            -0.975683629512787,
+            0.800000071525574,
+            -1.66999983787537
+          ],
+          "mode": "STAND_UP",
+          "navigation_active": false,
+          "player": [
+            -0.954999804496765,
+            0,
+            -1.66999995708466
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "living",
+          "seat_id": "entry_stool",
+          "t": 61113,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 0.85
+        },
+        {
+          "animation": "Walk",
+          "camera": [
+            1.36500000953674,
+            2.25,
+            0.930000007152557
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": true,
+          "focus": [
+            -0.971488654613495,
+            0.800000071525574,
+            -1.66999983787537
+          ],
+          "mode": "EXITING",
+          "navigation_active": false,
+          "player": [
+            -0.954999804496765,
+            0,
+            -1.66999995708466
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "living",
+          "seat_id": "entry_stool",
+          "t": 61144,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 0.85
+        },
+        {
+          "animation": "Walk",
+          "camera": [
+            1.33385050296783,
+            2.3075008392334,
+            0.986907124519348
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": false,
+          "focus": [
+            -0.957395851612091,
+            0.800184547901154,
+            -1.66415190696716
+          ],
+          "mode": "EXITING",
+          "navigation_active": false,
+          "player": [
+            -0.906958401203156,
+            0.000844777387101203,
+            -1.6432226896286
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "living",
+          "seat_id": "entry_stool",
+          "t": 61182,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 0.85
+        },
+        {
+          "animation": "Walk",
+          "camera": [
+            1.23383843898773,
+            2.49463081359863,
+            1.1727522611618
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": false,
+          "focus": [
+            -0.933643996715546,
+            0.800343811511993,
+            -1.65264582633972
+          ],
+          "mode": "EXITING",
+          "navigation_active": false,
+          "player": [
+            -0.858916938304901,
+            0.000844820693600923,
+            -1.61644566059113
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "living",
+          "seat_id": "entry_stool",
+          "t": 61211,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 0.85
+        },
+        {
+          "animation": "Walk",
+          "camera": [
+            1.08582067489624,
+            2.77730059623718,
+            1.45504856109619
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": false,
+          "focus": [
+            -0.90493243932724,
+            0.800460994243622,
+            -1.63791751861572
+          ],
+          "mode": "EXITING",
+          "navigation_active": false,
+          "player": [
+            -0.810875475406647,
+            0.000844836351461709,
+            -1.58966851234436
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "living",
+          "seat_id": "entry_stool",
+          "t": 61244,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 0.85
+        },
+        {
+          "animation": "Walk",
+          "camera": [
+            0.895750045776367,
+            3.14979887008667,
+            1.82970547676086
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": false,
+          "focus": [
+            -0.870919227600098,
+            0.800552904605865,
+            -1.61995899677277
+          ],
+          "mode": "EXITING",
+          "navigation_active": false,
+          "player": [
+            -0.762834012508392,
+            0.000844828027766198,
+            -1.56289124488831
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "living",
+          "seat_id": "entry_stool",
+          "t": 61287,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 0.85
+        },
+        {
+          "animation": "Walk",
+          "camera": [
+            0.638546168804169,
+            3.67058706283569,
+            2.35813331604004
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": false,
+          "focus": [
+            -0.827530682086945,
+            0.800634026527405,
+            -1.5966579914093
+          ],
+          "mode": "EXITING",
+          "navigation_active": false,
+          "player": [
+            -0.714792549610138,
+            0.000844819645863026,
+            -1.53611397743225
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "living",
+          "seat_id": "entry_stool",
+          "t": 61321,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 0.85
+        },
+        {
+          "animation": "Walk",
+          "camera": [
+            0.42937445640564,
+            4.11011409759521,
+            2.80843639373779
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": false,
+          "focus": [
+            -0.791616261005402,
+            0.800681114196777,
+            -1.57715249061584
+          ],
+          "mode": "EXITING",
+          "navigation_active": false,
+          "player": [
+            -0.666751086711884,
+            0.000844835420139134,
+            -1.5093367099762
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "living",
+          "seat_id": "entry_stool",
+          "t": 61350,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 0.85
+        },
+        {
+          "animation": "Idle",
+          "camera": [
+            0.217248558998108,
+            4.56181478500366,
+            3.27274966239929
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": false,
+          "focus": [
+            -0.763672590255737,
+            0.800717771053314,
+            -1.56197595596313
+          ],
+          "mode": "EXPLORE",
+          "navigation_active": false,
+          "player": [
+            -0.666751086711884,
+            0.000844835420139134,
+            -1.5093367099762
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "living",
+          "seat_id": "",
+          "t": 61387,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 0.85
+        },
+        {
+          "animation": "Idle",
+          "camera": [
+            0.00928783416748047,
+            5.00894021987915,
+            3.73345184326172
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": false,
+          "focus": [
+            -0.741891324520111,
+            0.800746321678162,
+            -1.55014622211456
+          ],
+          "mode": "EXPLORE",
+          "navigation_active": false,
+          "player": [
+            -0.666751086711884,
+            0.000844835420139134,
+            -1.5093367099762
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "living",
+          "seat_id": "",
+          "t": 61412,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 0.85
+        },
+        {
+          "animation": "Idle",
+          "camera": [
+            -0.186383008956909,
+            5.43275356292725,
+            4.17091798782349
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": false,
+          "focus": [
+            -0.724946141242981,
+            0.800768554210663,
+            -1.54094314575195
+          ],
+          "mode": "EXPLORE",
+          "navigation_active": false,
+          "player": [
+            -0.666751086711884,
+            0.000844835420139134,
+            -1.5093367099762
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "living",
+          "seat_id": "",
+          "t": 61445,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 0.85
+        },
+        {
+          "animation": "Idle",
+          "camera": [
+            -0.368003487586975,
+            5.82872200012207,
+            4.58028793334961
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": false,
+          "focus": [
+            -0.711310982704163,
+            0.800786435604095,
+            -1.53353774547577
+          ],
+          "mode": "EXPLORE",
+          "navigation_active": false,
+          "player": [
+            -0.666751086711884,
+            0.000844835420139134,
+            -1.5093367099762
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "living",
+          "seat_id": "",
+          "t": 61479,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 0.85
+        },
+        {
+          "animation": "Idle",
+          "camera": [
+            -0.524498581886292,
+            6.17261552810669,
+            4.93649196624756
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": false,
+          "focus": [
+            -0.700348019599915,
+            0.800800800323486,
+            -1.52758359909058
+          ],
+          "mode": "EXPLORE",
+          "navigation_active": false,
+          "player": [
+            -0.666751086711884,
+            0.000844835420139134,
+            -1.5093367099762
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "living",
+          "seat_id": "",
+          "t": 61517,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 0.85
+        },
+        {
+          "animation": "Idle",
+          "camera": [
+            -0.628636479377747,
+            6.40463638305664,
+            5.17760229110718
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": false,
+          "focus": [
+            -0.692483901977539,
+            0.800811111927032,
+            -1.52331256866455
+          ],
+          "mode": "EXPLORE",
+          "navigation_active": false,
+          "player": [
+            -0.666751086711884,
+            0.000844835420139134,
+            -1.5093367099762
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "living",
+          "seat_id": "",
+          "t": 61545,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 0.85
+        },
+        {
+          "animation": "Idle",
+          "camera": [
+            -0.680516719818115,
+            6.52527570724487,
+            5.30419588088989
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": false,
+          "focus": [
+            -0.686460554599762,
+            0.800818979740143,
+            -1.5200412273407
+          ],
+          "mode": "EXPLORE",
+          "navigation_active": false,
+          "player": [
+            -0.666751086711884,
+            0.000844835420139134,
+            -1.5093367099762
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "living",
+          "seat_id": "",
+          "t": 61575,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 0.85
+        },
+        {
+          "animation": "Idle",
+          "camera": [
+            -0.681847155094147,
+            6.5377049446106,
+            5.319411277771
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": false,
+          "focus": [
+            -0.681847155094147,
+            0.80082505941391,
+            -1.51753556728363
+          ],
+          "mode": "EXPLORE",
+          "navigation_active": true,
+          "player": [
+            -0.666751086711884,
+            0.000844835420139134,
+            -1.5093367099762
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "living",
+          "seat_id": "",
+          "t": 61611,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 0.85
+        },
+        {
+          "animation": "Idle",
+          "camera": [
+            -0.678350627422333,
+            6.53770923614502,
+            5.32131052017212
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": false,
+          "focus": [
+            -0.678350627422333,
+            0.800829648971558,
+            -1.51563656330109
+          ],
+          "mode": "EXPLORE",
+          "navigation_active": true,
+          "player": [
+            -0.666751086711884,
+            0.000844835420139134,
+            -1.5093367099762
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "living",
+          "seat_id": "",
+          "t": 61639,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 0.85
+        },
+        {
+          "animation": "Idle",
+          "camera": [
+            -0.675734758377075,
+            6.53771305084229,
+            5.32273101806641
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": false,
+          "focus": [
+            -0.675734758377075,
+            0.800833106040955,
+            -1.51421582698822
+          ],
+          "mode": "EXPLORE",
+          "navigation_active": true,
+          "player": [
+            -0.666751086711884,
+            0.000844835420139134,
+            -1.5093367099762
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "living",
+          "seat_id": "",
+          "t": 61670,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 0.85
+        },
+        {
+          "animation": "Idle",
+          "camera": [
+            -0.67370879650116,
+            6.53771543502808,
+            5.32383155822754
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": false,
+          "focus": [
+            -0.67370879650116,
+            0.800835728645325,
+            -1.51311552524567
+          ],
+          "mode": "EXPLORE",
+          "navigation_active": true,
+          "player": [
+            -0.666751086711884,
+            0.000844835420139134,
+            -1.5093367099762
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "living",
+          "seat_id": "",
+          "t": 61700,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 0.85
+        },
+        {
+          "animation": "Idle",
+          "camera": [
+            -0.672123968601227,
+            6.53771781921387,
+            5.3246922492981
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": false,
+          "focus": [
+            -0.672123968601227,
+            0.800837814807892,
+            -1.51225483417511
+          ],
+          "mode": "EXPLORE",
+          "navigation_active": true,
+          "player": [
+            -0.666751086711884,
+            0.000844835420139134,
+            -1.5093367099762
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "living",
+          "seat_id": "",
+          "t": 61739,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 0.85
+        },
+        {
+          "animation": "Idle",
+          "camera": [
+            -0.670921564102173,
+            6.53771924972534,
+            5.32534503936768
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": false,
+          "focus": [
+            -0.670921564102173,
+            0.800839364528656,
+            -1.51160180568695
+          ],
+          "mode": "EXPLORE",
+          "navigation_active": true,
+          "player": [
+            -0.666751086711884,
+            0.000844835420139134,
+            -1.5093367099762
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "living",
+          "seat_id": "",
+          "t": 61766,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 0.85
+        },
+        {
+          "animation": "Idle",
+          "camera": [
+            -0.669981062412262,
+            6.53772068023682,
+            5.32585620880127
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": false,
+          "focus": [
+            -0.669981062412262,
+            0.800840616226196,
+            -1.51109099388123
+          ],
+          "mode": "EXPLORE",
+          "navigation_active": true,
+          "player": [
+            -0.666751086711884,
+            0.000844835420139134,
+            -1.5093367099762
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "living",
+          "seat_id": "",
+          "t": 61798,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 0.85
+        },
+        {
+          "animation": "Idle",
+          "camera": [
+            -0.669249773025513,
+            6.53772163391113,
+            5.32625293731689
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": false,
+          "focus": [
+            -0.669249773025513,
+            0.800841569900513,
+            -1.51069378852844
+          ],
+          "mode": "EXPLORE",
+          "navigation_active": true,
+          "player": [
+            -0.666751086711884,
+            0.000844835420139134,
+            -1.5093367099762
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "living",
+          "seat_id": "",
+          "t": 61830,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 0.85
+        },
+        {
+          "animation": "Idle",
+          "camera": [
+            -0.668668448925018,
+            6.53772211074829,
+            5.32656860351562
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": false,
+          "focus": [
+            -0.668668448925018,
+            0.800842344760895,
+            -1.51037812232971
+          ],
+          "mode": "EXPLORE",
+          "navigation_active": true,
+          "player": [
+            -0.666751086711884,
+            0.000844835420139134,
+            -1.5093367099762
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "living",
+          "seat_id": "",
+          "t": 61869,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 0.85
+        },
+        {
+          "animation": "Idle",
+          "camera": [
+            -0.66821962594986,
+            6.53772258758545,
+            5.32681274414062
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": false,
+          "focus": [
+            -0.66821962594986,
+            0.800842940807343,
+            -1.51013433933258
+          ],
+          "mode": "EXPLORE",
+          "navigation_active": true,
+          "player": [
+            -0.666751086711884,
+            0.000844835420139134,
+            -1.5093367099762
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "living",
+          "seat_id": "",
+          "t": 61897,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 0.85
+        },
+        {
+          "animation": "Idle",
+          "camera": [
+            -0.66787588596344,
+            6.53772306442261,
+            5.32699918746948
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": false,
+          "focus": [
+            -0.66787588596344,
+            0.800843358039856,
+            -1.50994765758514
+          ],
+          "mode": "EXPLORE",
+          "navigation_active": true,
+          "player": [
+            -0.666751086711884,
+            0.000844835420139134,
+            -1.5093367099762
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "living",
+          "seat_id": "",
+          "t": 61933,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 0.85
+        },
+        {
+          "animation": "Idle",
+          "camera": [
+            -0.667612612247467,
+            6.53772354125977,
+            5.32714223861694
+          ],
+          "fade_alpha": 0,
+          "fixed_camera": false,
+          "focus": [
+            -0.667612612247467,
+            0.800843715667725,
+            -1.50980460643768
+          ],
+          "mode": "EXPLORE",
+          "navigation_active": true,
+          "player": [
+            -0.666751086711884,
+            0.000844835420139134,
+            -1.5093367099762
+          ],
+          "pointer_locked": true,
+          "resume_visible": false,
+          "room": "living",
+          "seat_id": "",
+          "t": 61968,
+          "transition_phase": "none",
+          "yaw": 0,
+          "zoom": 0.85
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "packs": [
+    "scene-4315d056df83.pck"
+  ],
+  "environment": {
+    "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x0000A78B) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "canvas": [
+      1920,
+      1080
+    ],
+    "buffer": [
+      1920,
+      1080
+    ],
+    "dpr": 1,
+    "visible": "visible",
+    "focus": true
+  },
+  "returned_repeat": {
+    "state": {
+      "active_room": "living",
+      "animation": "Idle",
+      "app_focused": true,
+      "avatar_scale": [
+        1,
+        1,
+        1
+      ],
+      "avatar_yaw": 1.06230688095093,
+      "body_obstructions": [],
+      "bones": {
+        "Foot.L": [
+          -0.713002622127533,
+          0.0863685011863708,
+          -1.42635607719421
+        ],
+        "Foot.R": [
+          -0.620499551296234,
+          0.0863685011863708,
+          -1.59231746196747
+        ],
+        "Hand.L": [
+          -0.795636713504791,
+          0.805207490921021,
+          -1.24808037281036
+        ],
+        "Hand.R": [
+          -0.512332320213318,
+          0.805207490921021,
+          -1.75636148452759
+        ],
+        "Hips": [
+          -0.666751086711884,
+          0.87194150686264,
+          -1.5093367099762
+        ],
+        "Shin.L": [
+          -0.713002622127533,
+          0.481653153896332,
+          -1.42635607719421
+        ],
+        "Shin.R": [
+          -0.620499551296234,
+          0.481653153896332,
+          -1.59231746196747
+        ]
+      },
+      "camera": [
+        -0.666915595531464,
+        6.53772449493408,
+        5.32752084732056
+      ],
+      "camera_blending": false,
+      "camera_facing_dot": 1,
+      "camera_focus": [
+        -0.666915595531464,
+        0.800844609737396,
+        -1.50942611694336
+      ],
+      "camera_fov": 35,
+      "camera_pitch_degrees": 39.9999961853027,
+      "camera_yaw": 0,
+      "capture_requested": false,
+      "clip": "Idle",
+      "cycles": {
+        "dining_chair": 0,
+        "entry_stool": 1,
+        "sofa_middle": 0,
+        "study_chair": 0,
+        "window_seat": 0
+      },
+      "draw_calls": 135,
+      "escape_held": true,
+      "explore_target": [
+        -0.666751086711884,
+        0.800844848155975,
+        -1.5093367099762
+      ],
+      "fade_alpha": 0,
+      "frame_mean_ms": 28.3281666666667,
+      "frame_p95_ms": 35.2,
+      "frame_samples": 600,
+      "house_rooms": [
+        "living",
+        "balcony",
+        "hallway",
+        "dining",
+        "wash",
+        "study",
+        "kitchen"
+      ],
+      "input_locked": true,
+      "interaction_restore_allowed": false,
+      "lightmap": {
+        "probe_points": 112,
+        "shadowmasks": 1,
+        "textures": 1,
+        "users": 14
+      },
+      "mode": "EXPLORE",
+      "navigation_active": true,
+      "navigation_scheme": "captured_horizontal_mouse",
+      "objects": 166,
+      "occlusion_hidden_groups": [],
+      "physics_ms": 0.9,
+      "player_screen": [
+        640.021057128906,
+        360.00732421875
+      ],
+      "pointer_locked": true,
+      "process_ms": 37.2,
+      "rendered_body_obstructions": [],
+      "resume_button": [
+        525,
+        328,
+        230,
+        64
+      ],
+      "room_meshes": 219,
+      "seat_id": "",
+      "seats": [
+        {
+          "approach": [
+            -1.45,
+            0,
+            -3.35
+          ],
+          "camera_position": [
+            0.485,
+            2.25,
+            -0.75
+          ],
+          "camera_target": [
+            -2.035,
+            0.85,
+            -3.35
+          ],
+          "exit": [
+            -1.45,
+            0,
+            -3.35
+          ],
+          "furniture_id": "sofa",
+          "id": "sofa_middle",
+          "label": "长沙发",
+          "room_id": "living",
+          "root": [
+            -2.215,
+            0,
+            -3.35
+          ],
+          "surface_height": 0.45,
+          "yaw": 1.5707963267949
+        },
+        {
+          "approach": [
+            -1.35,
+            0,
+            -4.35
+          ],
+          "camera_position": [
+            0.485,
+            2.25,
+            -1.61
+          ],
+          "camera_target": [
+            -2.035,
+            0.85,
+            -4.21
+          ],
+          "exit": [
+            -1.35,
+            0,
+            -4.35
+          ],
+          "furniture_id": "sofa",
+          "id": "window_seat",
+          "label": "窗边坐位",
+          "room_id": "living",
+          "root": [
+            -2.215,
+            0,
+            -4.21
+          ],
+          "surface_height": 0.45,
+          "yaw": 1.5707963267949
+        },
+        {
+          "approach": [
+            -0.65,
+            0,
+            -1.5
+          ],
+          "camera_position": [
+            1.365,
+            2.25,
+            0.93
+          ],
+          "camera_target": [
+            -1.155,
+            0.85,
+            -1.67
+          ],
+          "exit": [
+            -0.65,
+            0,
+            -1.5
+          ],
+          "furniture_id": "entry_stool",
+          "id": "entry_stool",
+          "label": "入口软墩",
+          "room_id": "living",
+          "root": [
+            -1.335,
+            0,
+            -1.67
+          ],
+          "surface_height": 0.45,
+          "yaw": 1.5707963267949
+        },
+        {
+          "approach": [
+            -1.98,
+            0,
+            3.4
+          ],
+          "camera_position": [
+            0.25,
+            2.25,
+            6.78
+          ],
+          "camera_target": [
+            -2.27,
+            0.85,
+            4.18
+          ],
+          "exit": [
+            -1.98,
+            0,
+            3.4
+          ],
+          "furniture_id": "dining_chair",
+          "id": "dining_chair",
+          "label": "餐椅",
+          "room_id": "dining",
+          "root": [
+            -2.45,
+            0,
+            4.18
+          ],
+          "surface_height": 0.45,
+          "yaw": 1.5707963267949
+        },
+        {
+          "approach": [
+            8.16,
+            0,
+            4
+          ],
+          "camera_position": [
+            10.48,
+            2.25,
+            7.36
+          ],
+          "camera_target": [
+            7.96,
+            0.85,
+            4.76
+          ],
+          "exit": [
+            8.16,
+            0,
+            4
+          ],
+          "furniture_id": "study_chair",
+          "id": "study_chair",
+          "label": "书房椅",
+          "room_id": "study",
+          "root": [
+            7.78,
+            0,
+            4.76
+          ],
+          "surface_height": 0.45,
+          "yaw": 1.5707963267949
+        }
+      ],
+      "target": "entry_stool",
+      "target_camera_yaw": 0,
+      "target_zoom": 0.85,
+      "transition_collisions": [],
+      "transition_phase": "none",
+      "triangles": 100106,
+      "version": 2,
+      "viewport": [
+        1280,
+        720
+      ],
+      "x": -0.666751086711884,
+      "y": 0.000844835420139134,
+      "z": -1.5093367099762,
+      "zoom": 0.85
+    },
+    "events": [
+      {
+        "repeat": false,
+        "trusted": true,
+        "mode": "SEATED"
+      },
+      {
+        "repeat": true,
+        "trusted": true,
+        "mode": "STAND_UP"
+      },
+      {
+        "repeat": true,
+        "trusted": true,
+        "mode": "EXPLORE"
+      }
+    ]
+  },
+  "pass": true,
+  "ending_build": {
+    "seats": "d3e330117ac37938c5905f79ebaa270dfe298cd2a1066f2ddc4ed32b0e045d2e",
+    "checks_run": true,
+    "runtime": "2f5d1c1da226f28c001be81fb5a3a51fbf11aea4650da085d0852f49cd3044a9",
+    "sha256": "4315d056df8368c0b0307e94e5f7e51f58da362711ae69e205573654ebba9287",
+    "pack": "scene-4315d056df83.pck",
+    "exported_at": "2026-10-25T22:26:50.9539183+01:00",
+    "character": "b48319f3e1c9b393c6f1019b80ef1c257c06a5b8a50a3b4009d6cebc943b697e",
+    "model": "15d0db1e2c7ab27b5d2923f4f14d257f7a5df5ab497415ad0be25c3633f83fb2"
+  },
+  "version_consistent": true,
+  "finished_at": "2026-10-25T21:43:46.434Z"
+}

@@ -1,0 +1,5 @@
+{
+  "sha256": "acca0b2e95bed33d97401e9711a17806e24fd2ac5377db57f768f3cf5fef2778",
+  "path": "outputs/verification/navigation-v2/1366/runner.cjs",
+  "recovery": "Recovered by reversing recorded post-run harness edits; byte hash equals report startup hash."
+}

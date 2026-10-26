@@ -1,0 +1,581 @@
+--- baseline/outputs/godot/playroom.gd
++++ outputs/godot/playroom.gd
+@@ -30,14 +30,19 @@
+ var target_zoom := 1.0
+ var camera_focus := Vector3.ZERO
+ var help_panel: PanelContainer
+-var edge_hint: Label
+-var pointer_position := Vector2.ZERO
+-var pointer_inside := false
+-var edge_armed := false
++var help_text: Label
++var resume_button: Button
++var pointer_locked := false
++var capture_requested := false
++var programmatic_unlock_pending := false
++var interaction_restore_allowed := false
++var ever_started := false
+ var app_focused := true
+-var edge_direction := 0
+-var edge_elapsed := 0.0
+-var edge_turn_rate := 0.0
++var ignore_mouse_until_frame := 0
++var held_movement_keys: Dictionary = {}
++var blocked_movement_keys: Dictionary = {}
++var navigation_active: bool:
++	get: return pointer_locked and app_focused and mode == "EXPLORE" and camera_blend_elapsed >= 0.45
+ var camera_seated := false
+ var camera_blend_elapsed := 0.45
+ var camera_blend_from := Transform3D.IDENTITY
+@@ -130,8 +135,7 @@
+ 	camera_focus = _explore_target()
+ 	_update_camera(1.0, true)
+ 	_build_ui()
+-	get_window().mouse_exited.connect(_pointer_exited)
+-	get_viewport().size_changed.connect(_pointer_exited)
++	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+ 	if OS.has_feature("web"):
+ 		test_mode = bool(JavaScriptBridge.eval("new URLSearchParams(location.search).has('test')", true))
+ 		web_input_callback = JavaScriptBridge.create_callback(_web_pointer_event)
+@@ -200,18 +204,24 @@
+ 	title.add_theme_font_size_override("font_size", 24)
+ 	column.add_child(title)
+ 	var help := Label.new()
+-	help.text = "WASD / 方向键移动   鼠标靠近左右边缘转向   滚轮缩放"
++	help_text = help
++	help.text = "点击开始游览，鼠标左右移动观察"
+ 	column.add_child(help)
+ 	prompt = Label.new()
+ 	prompt.add_theme_color_override("font_color", Color("f3d6a0"))
+ 	column.add_child(prompt)
+-	edge_hint = Label.new()
+-	edge_hint.theme = theme
+-	edge_hint.mouse_filter = Control.MOUSE_FILTER_IGNORE
+-	edge_hint.add_theme_font_size_override("font_size", 32)
+-	edge_hint.add_theme_color_override("font_color", Color(0.95, 0.91, 0.78, 0.8))
+-	layer.add_child(edge_hint)
+-	edge_hint.hide()
++	var center := CenterContainer.new()
++	center.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
++	center.mouse_filter = Control.MOUSE_FILTER_IGNORE
++	center.theme = theme
++	layer.add_child(center)
++	resume_button = Button.new()
++	resume_button.text = "开始游览"
++	resume_button.custom_minimum_size = Vector2(230, 64)
++	resume_button.focus_mode = Control.FOCUS_NONE
++	resume_button.add_theme_font_size_override("font_size", 22)
++	resume_button.add_theme_stylebox_override("normal", style.duplicate())
++	center.add_child(resume_button)
+ 
+ func _movement() -> Vector2:
+ 	return Input.get_vector("walk_left", "walk_right", "walk_up", "walk_down")
+@@ -219,7 +229,7 @@
+ func _physics_process(delta: float) -> void:
+ 	if mode == "EXPLORE" and camera_blend_elapsed < 0.45:
+ 		awaiting_movement_release = true
+-	elif awaiting_movement_release and _movement().is_zero_approx():
++	elif awaiting_movement_release and not _movement_keys_down():
+ 		awaiting_movement_release = false
+ 	if auto_moving:
+ 		auto_elapsed += delta
+@@ -237,7 +247,7 @@
+ 			if remember_auto_path and (auto_history.is_empty() or auto_history.back().distance_to(player.position) > 0.02):
+ 				auto_history.append(player.position)
+ 	elif mode == "EXPLORE":
+-		var input := Vector2.ZERO if awaiting_movement_release else _movement()
++		var input := Vector2.ZERO if awaiting_movement_release or not navigation_active else _movement()
+ 		var motion := Vector3(input.x, 0, input.y).rotated(Vector3.UP, camera_yaw)
+ 		player.velocity = motion * float(character_data.get("walk_reference_speed", 1.65))
+ 		player.velocity.y = -2.0
+@@ -297,7 +307,7 @@
+ 	_set_seat_exceptions(false)
+ 	player.velocity = Vector3.ZERO
+ 	mode = "EXPLORE"
+-	_suspend_edge()
++	_pause_navigation()
+ 	seat_id = ""
+ 	awaiting_movement_release = true
+ 	notice = message
+@@ -365,13 +375,14 @@
+ 	_play("SitIdle")
+ 	mode = "SEATED"
+ func _enter_target_action(id: String) -> void:
+-	if mode != "EXPLORE" or id.is_empty() or id != _nearest_seat():
++	if not navigation_active or id.is_empty() or id != _nearest_seat():
+ 		return
+ 	saved_yaw = target_camera_yaw
+ 	saved_zoom = target_zoom
+ 	seat_id = id
++	interaction_restore_allowed = true
+ 	mode = "APPROACH"
+-	_suspend_edge()
++	_release_pointer(true)
+ 	transition_clock = 0
+ 	interaction_target = ""
+ 
+@@ -389,6 +400,7 @@
+ 	mode = "EXITING"
+ 	if not await _walk_stage(vec(seat.exit)):
+ 		await _rollback_walk()
++		_release_pointer(true)
+ 		await _perform_sit(seat)
+ 		notice = "出口受阻 · Esc 再试"
+ 		notice_time = 4.0
+@@ -397,7 +409,7 @@
+ 	completed_cycles[seat_id] += 1
+ 	seat_id = ""
+ 	mode = "EXPLORE"
+-	_suspend_edge()
++	interaction_restore_allowed = false
+ 	awaiting_movement_release = true
+ 	target_camera_yaw = saved_yaw
+ 	target_zoom = saved_zoom
+@@ -426,58 +438,102 @@
+ func _explore_target() -> Vector3:
+ 	return player.position + Vector3(0, 0.8, 0)
+ 
+-func _suspend_edge() -> void:
+-	edge_armed = false
+-	edge_direction = 0
+-	edge_elapsed = 0.0
+-	edge_turn_rate = 0.0
+-
+-func _pointer_exited() -> void:
+-	pointer_inside = false
+-	_suspend_edge()
++func _movement_keys_down() -> bool:
++	if not _movement().is_zero_approx(): return true
++	for code in [KEY_W, KEY_A, KEY_S, KEY_D, KEY_UP, KEY_LEFT, KEY_DOWN, KEY_RIGHT]:
++		if Input.is_physical_key_pressed(code): return true
++	return false
++
++func _capture_boundary() -> void:
++	ignore_mouse_until_frame = Engine.get_process_frames() + 1
++	awaiting_movement_release = true
++	for code in held_movement_keys: blocked_movement_keys[code] = true
++	player.velocity = Vector3.ZERO
++
++func _request_capture() -> void:
++	if not app_focused or capture_requested: return
++	_capture_boundary()
++	capture_requested = true
++	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
++	if not OS.has_feature("web"):
++		_pointer_lock_changed(Input.mouse_mode == Input.MOUSE_MODE_CAPTURED)
++
++func _release_pointer(for_interaction: bool) -> void:
++	programmatic_unlock_pending = for_interaction and pointer_locked
++	capture_requested = false
++	pointer_locked = false
++	_capture_boundary()
++	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
++
++func _pause_navigation() -> void:
++	interaction_restore_allowed = false
++	_release_pointer(false)
++	for action in ["walk_left", "walk_right", "walk_up", "walk_down"]:
++		Input.action_release(action)
++
++func _pointer_lock_changed(locked: bool) -> void:
++	if locked and (not app_focused or not (capture_requested or pointer_locked)):
++		_release_pointer(false)
++		return
++	pointer_locked = locked
++	capture_requested = false
++	_capture_boundary()
++	if locked:
++		ever_started = true
++		programmatic_unlock_pending = false
++	elif programmatic_unlock_pending:
++		programmatic_unlock_pending = false
++	else:
++		interaction_restore_allowed = false
+ 
+ func _install_web_pointer_events() -> void:
+-	JavaScriptBridge.eval("window.set_navigation_pointer_callback = function(cb) { const canvas = document.getElementById('canvas'); canvas.addEventListener('pointerleave', () => cb('leave')); canvas.addEventListener('blur', () => cb('leave')); window.addEventListener('blur', () => cb('blur')); window.addEventListener('focus', () => cb('focus')); document.addEventListener('visibilitychange', () => cb(document.hidden ? 'blur' : 'focus')); };", true)
++	JavaScriptBridge.eval("window.set_navigation_pointer_callback = function(cb) { const canvas=document.getElementById('canvas'); document.addEventListener('pointerlockchange',()=>cb(document.pointerLockElement===canvas?'locked':'unlocked')); document.addEventListener('pointerlockerror',()=>cb('lock_error')); window.addEventListener('blur',()=>cb('blur')); window.addEventListener('focus',()=>cb('focus')); document.addEventListener('visibilitychange',()=>cb(document.hidden?'blur':'focus')); };", true)
+ 	JavaScriptBridge.get_interface("window").set_navigation_pointer_callback(web_input_callback)
+ 
+ func _web_pointer_event(args: Array) -> void:
+-	if str(args[0]) == "focus":
+-		app_focused = true
+-	elif str(args[0]) == "blur":
+-		_notification(NOTIFICATION_APPLICATION_FOCUS_OUT)
+-	else:
+-		_pointer_exited()
++	match str(args[0]):
++		"locked": _pointer_lock_changed(true)
++		"unlocked": _pointer_lock_changed(false)
++		"lock_error":
++			_pointer_lock_changed(false)
++			notice = "未能锁定鼠标，请点击按钮重试。"
++			notice_time = 4.0
++		"blur": _notification(NOTIFICATION_APPLICATION_FOCUS_OUT)
++		"focus": app_focused = true
+ 
+ func _input(event: InputEvent) -> void:
+ 	if event is InputEventMouseMotion:
+-		pointer_position = event.position
+-		pointer_inside = get_viewport().get_visible_rect().has_point(pointer_position)
+-		var width := get_viewport().get_visible_rect().size.x
+-		var band := clampf(width * 0.08, 48.0, 120.0)
+-		if app_focused and mode == "EXPLORE" and camera_blend_elapsed >= 0.45 and pointer_inside and pointer_position.x >= band and pointer_position.x <= width - band:
+-			edge_armed = true
+-
+-func _update_edge(delta: float) -> void:
+-	var size := get_viewport().get_visible_rect().size
+-	var band := clampf(size.x * 0.08, 48.0, 120.0)
+-	var strength := 0.0
+-	if edge_armed and pointer_inside and app_focused and mode == "EXPLORE" and camera_blend_elapsed >= 0.45 and not help_panel.get_global_rect().has_point(pointer_position):
+-		if pointer_position.x < band:
+-			strength = 1.0 - pointer_position.x / band
+-		elif pointer_position.x > size.x - band:
+-			strength = -(pointer_position.x - size.x + band) / band
+-	var direction := int(signf(strength))
+-	if direction != edge_direction:
+-		edge_elapsed = 0.0
+-	edge_direction = direction
+-	edge_turn_rate = 0.0
+-	if direction != 0:
+-		edge_elapsed += delta
+-		edge_turn_rate = deg_to_rad(45.0) * clampf(strength, -1.0, 1.0) * clampf((edge_elapsed - 0.15) / 0.15, 0.0, 1.0)
+-		target_camera_yaw += edge_turn_rate * delta
+-	edge_hint.visible = direction != 0
+-	edge_hint.text = "<" if direction > 0 else ">"
+-	edge_hint.position = Vector2(18 if direction > 0 else size.x - 38, size.y * 0.5 - 20)
++		if navigation_active and Engine.get_process_frames() > ignore_mouse_until_frame:
++			target_camera_yaw -= deg_to_rad(event.screen_relative.x * 0.12)
++		return
++	if event is InputEventKey:
++		var code: int = event.physical_keycode if event.physical_keycode else event.keycode
++		if code in [KEY_W, KEY_A, KEY_S, KEY_D, KEY_UP, KEY_LEFT, KEY_DOWN, KEY_RIGHT]:
++			if not event.pressed:
++				held_movement_keys.erase(code)
++				blocked_movement_keys.erase(code)
++			else:
++				held_movement_keys[code] = true
++				if not navigation_active: blocked_movement_keys[code] = true
++				elif not event.echo: blocked_movement_keys.erase(code)
++				if blocked_movement_keys.has(code): awaiting_movement_release = true
++		if not event.pressed or event.echo: return
++		if code == KEY_ESCAPE:
++			if mode == "SEATED":
++				if interaction_restore_allowed and app_focused: _request_capture()
++				_exit_target_action()
++			elif mode == "EXPLORE": _pause_navigation()
++			get_viewport().set_input_as_handled()
++		elif code == KEY_F and navigation_active:
++			_enter_target_action(_nearest_seat())
++			get_viewport().set_input_as_handled()
++	if event is InputEventMouseButton and event.pressed:
++		if event.button_index == MOUSE_BUTTON_LEFT and mode == "EXPLORE" and resume_button.visible and resume_button.get_global_rect().has_point(event.position):
++			_request_capture()
++			get_viewport().set_input_as_handled()
++		elif navigation_active:
++			if event.button_index == MOUSE_BUTTON_WHEEL_UP: target_zoom = maxf(0.85, target_zoom - 0.05)
++			elif event.button_index == MOUSE_BUTTON_WHEEL_DOWN: target_zoom = minf(1.15, target_zoom + 0.05)
+ 
+ func _process(delta: float) -> void:
+ 	notice_time = maxf(0, notice_time - delta)
+@@ -487,18 +543,24 @@
+ 	last_frame_usec = now
+ 	if frame_ms.size() > 600:
+ 		frame_ms.pop_front()
+-	_update_edge(delta)
+ 	_update_camera(delta)
++	resume_button.visible = mode == "EXPLORE" and not pointer_locked
++	resume_button.disabled = capture_requested
++	resume_button.text = "继续游览" if ever_started else "开始游览"
++	if mode == "EXPLORE":
++		help_text.text = "WASD / 方向键移动   鼠标左右移动观察   滚轮缩放   Esc 显示光标" if navigation_active else "点击继续游览，鼠标左右移动观察" if ever_started else "点击开始游览，鼠标左右移动观察"
++	else:
++		help_text.text = "坐姿观察 · 光标可见" if mode == "SEATED" else "动作进行中"
+ 	if mode == "SEATED":
+-		prompt.text = str(seats[seat_id].label) + " · Esc 起身"
+-	elif mode == "EXPLORE" and not interaction_target.is_empty():
++		prompt.text = str(seats[seat_id].label) + " · Esc 起身返回游览"
++	elif navigation_active and not awaiting_movement_release and not interaction_target.is_empty():
+ 		prompt.text = "F 坐下 · " + str(seats[interaction_target].label)
+ 	else:
+ 		prompt.text = ""
+ 	if notice_time > 0:
+ 		prompt.text = notice
+ 	if test_mode:
+-		var sample := {"t": Time.get_ticks_msec(), "player": [player.position.x, player.position.y, player.position.z], "focus": [camera_focus.x, camera_focus.y, camera_focus.z], "camera": [camera.position.x, camera.position.y, camera.position.z], "yaw": camera_yaw, "zoom": zoom, "room": _room_at(player.position), "mode": mode, "edge": edge_turn_rate}
++		var sample := {"t": Time.get_ticks_msec(), "player": [player.position.x, player.position.y, player.position.z], "focus": [camera_focus.x, camera_focus.y, camera_focus.z], "camera": [camera.position.x, camera.position.y, camera.position.z], "yaw": camera_yaw, "zoom": zoom, "room": _room_at(player.position), "mode": mode, "pointer_locked": pointer_locked, "navigation_active": navigation_active}
+ 		JavaScriptBridge.eval("window.__navigation_frames = window.__navigation_frames || []; window.__navigation_frames.push(" + JSON.stringify(sample) + "); if(window.__navigation_frames.length > 1800) window.__navigation_frames.shift();", true)
+ 	sample_clock += delta
+ 	if test_mode and sample_clock >= 0.1:
+@@ -661,26 +723,10 @@
+ 	for mesh in room_meshes:
+ 		mesh.visible = visibility[mesh]
+ 
+-func _unhandled_input(event: InputEvent) -> void:
+-	if event is InputEventKey and event.pressed and not event.echo:
+-		var code: int = event.physical_keycode if event.physical_keycode else event.keycode
+-		if code == KEY_ESCAPE and mode == "SEATED":
+-			_exit_target_action()
+-		elif mode == "EXPLORE" and camera_blend_elapsed >= 0.45:
+-			if code == KEY_F:
+-				_enter_target_action(_nearest_seat())
+-	if event is InputEventMouseButton and event.pressed and mode == "EXPLORE" and camera_blend_elapsed >= 0.45:
+-		if event.button_index == MOUSE_BUTTON_WHEEL_UP:
+-			target_zoom = maxf(0.85, target_zoom - 0.05)
+-		elif event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
+-			target_zoom = minf(1.15, target_zoom + 0.05)
+-
+ func _notification(what: int) -> void:
+ 	if what == NOTIFICATION_APPLICATION_FOCUS_OUT:
+ 		app_focused = false
+-		_pointer_exited()
+-		for action in ["walk_left", "walk_right", "walk_up", "walk_down"]:
+-			Input.action_release(action)
++		if player != null: _pause_navigation()
+ 	elif what == NOTIFICATION_APPLICATION_FOCUS_IN:
+ 		app_focused = true
+ 
+@@ -711,11 +757,10 @@
+ 		"x": player.position.x, "y": player.position.y, "z": player.position.z,
+ 		"mode": mode, "seat_id": seat_id, "target": interaction_target, "animation": animation, "clip": animation_player.current_animation,
+ 		"avatar_scale": [avatar.scale.x, avatar.scale.y, avatar.scale.z], "avatar_yaw": avatar.rotation.y,
+-		"input_locked": mode != "EXPLORE" or awaiting_movement_release,
++		"input_locked": not navigation_active or awaiting_movement_release,
+ 		"camera": [camera.position.x, camera.position.y, camera.position.z], "camera_yaw": camera_yaw,
+ 		"camera_focus": [camera_focus.x, camera_focus.y, camera_focus.z], "explore_target": [_explore_target().x, _explore_target().y, _explore_target().z],
+-		"pointer_inside": pointer_inside, "edge_armed": edge_armed, "edge_direction": edge_direction, "edge_turn_rate": edge_turn_rate, "app_focused": app_focused,
+-		"pointer": [pointer_position.x, pointer_position.y], "edge_band": clampf(get_viewport().get_visible_rect().size.x * 0.08, 48.0, 120.0), "camera_blending": camera_blend_elapsed < 0.45,
++		"pointer_locked": pointer_locked, "navigation_active": navigation_active, "navigation_scheme": "captured_horizontal_mouse", "capture_requested": capture_requested, "interaction_restore_allowed": interaction_restore_allowed, "app_focused": app_focused, "resume_button": [resume_button.get_global_rect().position.x, resume_button.get_global_rect().position.y, resume_button.size.x, resume_button.size.y], "camera_blending": camera_blend_elapsed < 0.45,
+ 		"body_obstructions": _visible_body_obstructions(), "rendered_body_obstructions": _visible_rendered_body_obstructions(), "occlusion_hidden_groups": occlusion_hidden_groups,
+ 		"player_screen": [screen_point.x, screen_point.y], "viewport": [get_viewport().get_visible_rect().size.x, get_viewport().get_visible_rect().size.y], "camera_facing_dot": (-camera.global_basis.z).normalized().dot((camera_focus - camera.global_position).normalized()),
+ 		"target_camera_yaw": target_camera_yaw, "camera_pitch_degrees": -camera.rotation_degrees.x,
+--- baseline/outputs/Verify-Camera.gd
++++ outputs/Verify-Camera.gd
+@@ -9,11 +9,17 @@
+ 		push_error(message)
+ func frames(count: int) -> void:
+ 	for i in range(count): await process_frame
+-func mouse(point: Vector2) -> void:
++func mouse(relative: Vector2) -> void:
+ 	var event := InputEventMouseMotion.new()
+-	event.position = point
+-	root.push_input(event, true)
++	event.screen_relative = relative
++	event.relative = relative * 0.5
++	scene._input(event)
+ 	await process_frame
++func key(code: int) -> void:
++	var event := InputEventKey.new()
++	event.physical_keycode = code
++	event.pressed = true
++	scene._input(event)
+ func visible_body_blockers() -> Array[String]:
+ 	var blockers: Array[String] = []
+ 	for height in [0.87, 1.14, 1.52]:
+@@ -70,58 +76,63 @@
+ 				var casts: bool = extras.get("collision", false) and extras.get("cutaway", "").is_empty()
+ 				check((mesh.cast_shadow == GeometryInstance3D.SHADOW_CASTING_SETTING_ON) == casts, "Assembly shadow policy differs: " + str(mesh.name))
+ 	scene._notification(Node.NOTIFICATION_APPLICATION_FOCUS_IN)
+-	var size := root.get_visible_rect().size
+-	var middle := size * 0.5
+-	var left := Vector2(1, middle.y)
+-	var right := Vector2(size.x - 1, middle.y)
+-	await mouse(left)
+-	await frames(40)
+-	check(is_zero_approx(scene.camera_yaw), "Initial edge must wait for central activation")
+-	await mouse(middle)
+-	check(scene.edge_armed, "Central mouse motion must arm camera")
+-	await mouse(right)
+-	await frames(5)
+-	check(is_zero_approx(scene.camera_yaw), "Edge dwell must prevent immediate rotation")
+-	await frames(60)
+-	check(scene.camera_yaw < -0.2, "Right edge must continuously turn right")
+-	check(absf(scene.edge_turn_rate) <= deg_to_rad(45.0), "Turn speed exceeded bound")
+-	await mouse(middle)
+-	await frames(2)
+-	var stopped: float = scene.camera_yaw
++	var initial: Vector3 = scene.player.position
++	await mouse(Vector2(100, 500))
++	key(KEY_F)
++	Input.action_press("walk_right")
++	await frames(10)
++	Input.action_release("walk_right")
++	check(scene.mode == "EXPLORE" and absf(scene.player.position.x - initial.x) < 0.001, "Inactive navigation accepted movement/F")
++	check(is_zero_approx(scene.target_camera_yaw), "Inactive mouse rotated camera")
++	scene.capture_requested = true
++	key(KEY_ESCAPE)
++	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED # Simulated external late grant.
++	scene._pointer_lock_changed(true)
++	check(not scene.pointer_locked and not scene.navigation_active and Input.mouse_mode == Input.MOUSE_MODE_VISIBLE, "Late grant after Escape reactivated navigation")
++	scene.capture_requested = true
++	scene._notification(Node.NOTIFICATION_APPLICATION_FOCUS_OUT)
++	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED # Simulated external late grant.
++	scene._pointer_lock_changed(true)
++	check(not scene.pointer_locked and Input.mouse_mode == Input.MOUSE_MODE_VISIBLE, "Late grant while blurred did not release native mode")
++	scene._notification(Node.NOTIFICATION_APPLICATION_FOCUS_IN)
++	scene._pointer_lock_changed(true)
++	check(not scene.pointer_locked and not scene.navigation_active and Input.mouse_mode == Input.MOUSE_MODE_VISIBLE, "Late grant after focus return reactivated navigation")
++	# Pure-engine simulation of actual pointerlockchange. Browser permission is tested separately.
++	scene.capture_requested = true # Simulated pending native request; no browser permission claim.
++	scene._pointer_lock_changed(true)
++	await mouse(Vector2(1000, 0))
++	check(is_zero_approx(scene.target_camera_yaw), "Capture transition leaked stale motion")
++	await frames(3)
++	await mouse(Vector2(100, 0))
++	check(absf(scene.target_camera_yaw + deg_to_rad(12.0)) < 0.00001, "screen_relative sensitivity/sign incorrect")
++	var stopped: float = scene.target_camera_yaw
+ 	await frames(30)
+-	check(is_equal_approx(scene.camera_yaw, stopped), "Central pointer left angular drift")
+-	await mouse(left)
+-	await frames(50)
+-	check(scene.camera_yaw > stopped + 0.15, "Left edge must reverse direction")
+-	scene._pointer_exited()
+-	stopped = scene.camera_yaw
+-	await frames(30)
+-	check(is_equal_approx(scene.camera_yaw, stopped) and not scene.edge_armed, "Pointer exit failed to stop and disarm")
+-	await mouse(middle)
+-	await mouse(left)
+-	await frames(30)
++	check(is_equal_approx(scene.target_camera_yaw, stopped), "Stopped mouse left inertia")
++	await mouse(Vector2(0, 600))
++	check(is_equal_approx(scene.target_camera_yaw, stopped), "Vertical mouse changed yaw")
++	for i in range(10): await mouse(Vector2(10, 0))
++	check(absf(scene.target_camera_yaw - stopped + deg_to_rad(12.0)) < 0.00001, "Equivalent pixel displacement depended on event count")
++	key(KEY_ESCAPE)
++	check(not scene.pointer_locked and not scene.navigation_active, "Explore Escape failed to release")
++	stopped = scene.target_camera_yaw
++	await mouse(Vector2(100, 0))
++	check(is_equal_approx(scene.target_camera_yaw, stopped), "Unlocked pointer rotated camera")
++	scene.capture_requested = true # Simulated pending native request; no browser permission claim.
++	scene._pointer_lock_changed(true)
+ 	scene._notification(Node.NOTIFICATION_APPLICATION_FOCUS_OUT)
+-	stopped = scene.camera_yaw
+-	await frames(30)
+-	check(is_equal_approx(scene.camera_yaw, stopped), "Unfocused camera rotated")
+ 	scene._notification(Node.NOTIFICATION_APPLICATION_FOCUS_IN)
+-	await mouse(left)
+-	await frames(30)
+-	check(is_equal_approx(scene.camera_yaw, stopped), "Focus return bypassed central reactivation")
+-	await mouse(middle)
+-	await mouse(Vector2(30, 40))
+-	await frames(40)
+-	check(is_equal_approx(scene.camera_yaw, stopped), "Help panel triggered edge rotation")
+-	await mouse(middle)
+-	await mouse(left)
++	await frames(3)
++	await mouse(Vector2(100, 0))
++	check(not scene.navigation_active and is_equal_approx(scene.target_camera_yaw, stopped), "Focus return resumed without click")
++	scene.capture_requested = true # Simulated pending native request; no browser permission claim.
++	scene._pointer_lock_changed(true)
++	await frames(3)
++	scene.set_physics_process(false)
+ 	scene.mode = "APPROACH"
+-	# Freeze physics only: exercise camera's real per-frame input isolation without starting a seat action.
+-	scene.set_physics_process(false)
+-	await frames(40)
+-	check(is_equal_approx(scene.camera_yaw, stopped), "Automatic approach leaked edge input")
++	await mouse(Vector2(100, 100))
++	check(is_equal_approx(scene.target_camera_yaw, stopped), "Interaction leaked mouse movement")
+ 	scene.mode = "EXPLORE"
+-	scene._suspend_edge()
+-	await mouse(middle)
++	scene.awaiting_movement_release = false
+ 	# A direct placement tests target continuity at the exact old room seam; browser tests walk this route.
+ 	scene.target_camera_yaw = 0.0
+ 	for boundary in [0.0, 2.0]:
+--- baseline/outputs/Verify-Playroom.gd
++++ outputs/Verify-Playroom.gd
+@@ -23,10 +23,14 @@
+ 	var event := InputEventKey.new()
+ 	event.physical_keycode = code
+ 	event.pressed = true
+-	scene._unhandled_input(event)
+-func mouse_edge() -> void:
++	scene._input(event)
++	# Unit boundary: simulate the external OS grant, not browser permission.
++	if code == KEY_ESCAPE and scene.mode == "STAND_UP" and scene.interaction_restore_allowed:
++		scene.capture_requested = true # Simulated pending native request; no browser permission claim.
++		scene._pointer_lock_changed(true)
++func mouse_motion() -> void:
+ 	var event := InputEventMouseMotion.new()
+-	event.position = Vector2(1, root.get_visible_rect().size.y * 0.5)
++	event.screen_relative = Vector2(300, 100)
+ 	root.push_input(event, true)
+ func wait_mode(value: String) -> void:
+ 	for i in range(600):
+@@ -54,6 +58,9 @@
+ 		check(scene.seat_id.is_empty() and scene.seat_exceptions.is_empty(), "Failed alignment did not clean up")
+ 		check(scene.player.position.distance_to(scene.vec(seat.approach)) < 0.1, "Failed alignment did not return safely")
+ 		blocker.queue_free()
++		await physics_frame
++		scene.capture_requested = true # Simulated pending native request; no browser permission claim.
++		scene._pointer_lock_changed(true)
+ 		await physics_frame
+ 	for index in range(3):
+ 		key(KEY_F)
+@@ -84,6 +91,7 @@
+ 			check(scene.player.position.distance_to(scene.vec(seat.root)) < 0.03, "Blocked exit did not return to seat root")
+ 			check(scene.completed_cycles[id] == 0, "Blocked exit counted as completed cycle")
+ 			check(not scene.auto_moving, "Blocked exit left automatic movement active")
++			check(not scene.pointer_locked, "Blocked exit retained pointer capture")
+ 			check(scene.player.get_collision_exceptions().size() == scene.seat_exceptions.size(), "Blocked exit collision exceptions diverged")
+ 			blocker.queue_free()
+ 			await physics_frame
+@@ -92,7 +100,7 @@
+ 		var before: Vector3 = scene.player.position
+ 		var yaw: float = scene.target_camera_yaw
+ 		Input.action_press("walk_up")
+-		mouse_edge()
++		mouse_motion()
+ 		key(KEY_F)
+ 		for i in range(45): await physics_frame
+ 		check(scene.player.position.distance_to(before) < 0.001 and scene.target_camera_yaw == yaw, "Input leaked " + id)
+@@ -117,6 +125,9 @@
+ 	scene = load("res://playroom.tscn").instantiate()
+ 	root.add_child(scene)
+ 	await process_frame
++	await physics_frame
++	scene.capture_requested = true # Simulated pending native request; no browser permission claim.
++	scene._pointer_lock_changed(true)
+ 	await physics_frame
+ 	await walk(Vector3(-0.8, 0, -0.65))
+ 	await cycle("entry_stool")
+--- baseline/outputs/Verify-House.gd
++++ outputs/Verify-House.gd
+@@ -23,10 +23,14 @@
+ 	var event := InputEventKey.new()
+ 	event.physical_keycode = code
+ 	event.pressed = true
+-	scene._unhandled_input(event)
+-func mouse_edge() -> void:
++	scene._input(event)
++	# Unit boundary: simulate the external OS grant, not browser permission.
++	if code == KEY_ESCAPE and scene.mode == "STAND_UP" and scene.interaction_restore_allowed:
++		scene.capture_requested = true # Simulated pending native request; no browser permission claim.
++		scene._pointer_lock_changed(true)
++func mouse_motion() -> void:
+ 	var event := InputEventMouseMotion.new()
+-	event.position = Vector2(1, root.get_visible_rect().size.y * 0.5)
++	event.screen_relative = Vector2(300, 100)
+ 	root.push_input(event, true)
+ func wait_mode(value: String) -> void:
+ 	for i in range(600):
+@@ -49,7 +53,7 @@
+ 		var before: Vector3 = scene.player.position
+ 		var yaw: float = scene.target_camera_yaw
+ 		Input.action_press("walk_up")
+-		mouse_edge()
++		mouse_motion()
+ 		key(KEY_F)
+ 		for i in range(45): await physics_frame
+ 		check(scene.player.position.distance_to(before) < 0.001 and scene.target_camera_yaw == yaw, "Input leaked " + id)
+@@ -84,6 +88,9 @@
+ 	root.add_child(scene)
+ 	await process_frame
+ 	await physics_frame
++	scene.capture_requested = true # Simulated pending native request; no browser permission claim.
++	scene._pointer_lock_changed(true)
++	await physics_frame
+ 	await visit("living", Vector3(0, 0, -2))
+ 	await visit("balcony", Vector3(0, 0, -6.8))
+ 	await walk(Vector3(0, 0, 1))

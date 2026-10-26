@@ -1,70 +1,77 @@
 # 生日礼物 · 3D 小屋
 
-根据客厅照片和全局布局图提取重要家具与空间关系，制作宽敞、清爽、偏漫画/卡通风格的客厅。模型比例服务于画面效果。
+当前可玩候选采用 [相对鼠标游览与分层 Esc](design/mouse-look.md)，并按 [固定场景转场](design/fixed-scene-transition.md)短淡化切入各坐位预设机位：点击开始后，左右移动鼠标观察，停手即停；坐姿中显示光标，Esc 起身后直接返回游览，外层再次 Esc 才暂停。纯色材质与自然光影保留。当前资源版本和实际验证范围统一见 [HOUSE.md](HOUSE.md)，操作见 [PLAYROOM.md](PLAYROOM.md)。
+
+场景包含 [成品场景 V2](design/scene-v2.md) 的 7 个可见区域、正式通用卡通角色与 5 个坐位。[66 秒边缘控制历史演示](verification/navigation-v2/fixed-1366-demo/page@b3d57a64397207f99d3cb2d386c76757.webm)属于导航包 1a42（旧材质）；[94 秒演示](verification/scene-v2/demo.mp4)属于更早控制版本。
 
 ## 直接查看
-- 本机网页预览：<http://127.0.0.1:8767/?v=wide-room>（本地预览服务运行时可用）。
-- 方向键随视角移动，Q/E 旋转、滚轮缩放；跟随小标记，靠近入口软墩按 F 查看，靠近长沙发两个坐位按 F 坐下，固定镜头中按 Esc 返回。[操作与验收步骤](PLAYROOM.md)。
-- [入口预览图](previews/living-room-entry.png) · [布局预览图](previews/living-room-overview.png)。
-- [Blender 可编辑模型](blender/living-room.blend) · [Godot 工程入口](godot/project.godot)。
 
-原客厅模型中加入临时人物、家具碰撞、约 29° 俯角的可旋转缩放镜头、软墩固定特写和两个沙发坐位。挡住镜头的近侧墙窗、顶面和吊灯按机位处理，碰撞保留；固定镜头中锁定探索操作，退出恢复视角和人物状态。环境不投影，走动时人物保留脚下阴影。独立观察场景保留为 `godot/main.tscn`。网页文件位于 `web/`，当前链接仅本机可用。
+- 本机网页预览：<http://127.0.0.1:8767/>，仅本机可用，资源随构建更新。
+- [操作与动作验收](PLAYROOM.md) · [制作方案与美术目标板](design/scene-v2.md)
+- [房屋 Blender 源模型](blender/living-room.blend) · [角色 Blender 源模型](blender/character.blend) · [Godot 工程](godot/project.godot)
 
-客厅内宽由 4.3 m 扩到 5.8 m，纵深 5.8 m、层高 3.3 m。家具保持体量，两侧家具组各向外平移 0.75 m，中央留白增加。入口为无靠背软墩，沙发前木椅已移除，保持明亮暖光。
+## 打开试玩流程
 
-## 项目上下文
-- 项目根目录 [AGENTS.md](../AGENTS.md)：给后续 agent 的入口与协作约定。
-- [PROJECT.md](PROJECT.md)：已确认目标、协作方式、当前状态与待明确事项，供多个对话共同接续。
-- [背景入口](background/README.md)：每个新对话必读的人物与关系摘要；按主题进入 5 份背景复盘和 E 盘原始情书快照。
-- [PHOTO_MANIFEST.md](PHOTO_MANIFEST.md) / [photo-manifest.json](photo-manifest.json)：每张图片的名称、描述、物品。
-- [LIVING_ROOM.md](LIVING_ROOM.md)：照片解读、估算与建模边界。
-- [VERIFICATION.md](VERIFICATION.md)：初始化与迁移的历史验证记录；当前玩法与最新验收见 [PLAYROOM.md](PLAYROOM.md)。
-- [IMPLEMENTATION_NOTES.md](IMPLEMENTATION_NOTES.md)：后续建模、互动与验证的复用入口；遇到异常查 [TROUBLESHOOTING.md](TROUBLESHOOTING.md)。
+用户只要求打开项目或检查画面时，从已有网页启动。用户明确要求 Blender/Godot 编辑工程时，打开上方对应源文件或工程。
 
-创意和实现可以并行。用户提供故事与审美反馈，agent 维护源模型、代码与可查看结果。用户明确不追求精细，不需要测量尺寸。
+1. 工作目录为项目根目录 `D:\vibe-code-life\3d-home`。确认 `outputs/web/index.html` 存在；缺失时按下方“软件与重建”生成网页。
+2. 检查默认地址 `http://127.0.0.1:8767/`。已有服务且页面的 `GODOT_CONFIG.mainPack` 与本地 `outputs/web/index.html` 一致时，复用该服务；无服务时执行 `./outputs/Start-Preview.ps1`。
+3. 若 8767 被其他服务占用，执行 `./outputs/Start-Preview.ps1 -Port 8768`，使用新地址并告知用户实际端口。启动进程信息与日志在 `work/preview-server.json`、`work/preview-server*.log`。
+4. 在 Chrome 打开普通试玩地址。已有对应标签时复用；点击“开始游览”进入鼠标观察和方向键行走，普通游览时按 Esc 恢复光标。浏览器工具报错时先查标签列表，定位已创建页面后继续，避免重复创建空白页。
+5. 确认实际画面出现房屋与人物，保留试玩标签，告知用户地址和操作方式。加载失败时检查服务日志及浏览器错误，按 [排查入口](TROUBLESHOOTING.md) 处理，不能以端口监听或 HTML 返回成功代替画面确认。
 
-## 照片链接
-项目根目录 `references/house-photos` 是指向外部房屋图片目录的 junction。
+正常打开沿用现有模型、烘焙和网页资源。当前性能接受水平为 25–30 FPS（2026-10-25 用户确认）。打开流程的验收是网页实际可查看；历史全屋测试与性能数据见 [HOUSE.md](HOUSE.md)。
 
-日常素材统一为“场景_视角.jpg”命名的 48 张 JPG；45 张原始 HEIC 保存在素材目录的 `_原始HEIC` 子文件夹。照片仍通过目录链接访问，不复制进项目或打包进网页。
+## 资料与当前规则
 
-## 软件已就绪
-- Blender **4.5.14 LTS**：项目内 portable 安装，官方 SHA256 校验通过。
-- Godot **4.7.2 stable** 标准版：项目内 portable 安装，官方 SHA512 校验通过，匹配的 Web 模板已安装。
-- 软件和下载缓存位于根目录 `work/tools/` 与 `work/downloads/`，没有修改全局 PATH。
-- 实际可执行路径、下载来源和校验值分别记录在根目录 `work/blender-setup.json`、`work/godot-setup.json`。
-- Godot 使用自包含 `editor_data`，只安装本项目需要的 Web 模板。后续若需要桌面安装包，再补对应模板。
+- [PROJECT.md](PROJECT.md)：目标、当前阶段、空间范围和待定内容。
+- [设计入口](design/README.md)：当前场景制作与后续 V1 彩蛋；原稿推荐项不自动成为需求。
+- [参考资料入口](../references/README.md)：照片、人物背景、情书和聊天资料。
+- [PHOTO_MANIFEST.md](PHOTO_MANIFEST.md)：照片名称、描述与物品；原图位于只读 junction。
+- [LIVING_ROOM.md](LIVING_ROOM.md)：照片观察和原型尺寸历史。
+- [IMPLEMENTATION_NOTES.md](IMPLEMENTATION_NOTES.md)：实施入口与经验；[TROUBLESHOOTING.md](TROUBLESHOOTING.md)：已有排障记录。
 
-## agent 重建与运行
-在项目根目录使用 PowerShell：
+## 软件与重建
+
+本项目使用 Blender 4.5.14 LTS、Godot 4.7.2 stable 标准版、GDScript、Compatibility 网页渲染。实际可执行路径分别读取 `work/blender-setup.json` 和 `work/godot-setup.json`；软件、缓存和日志位于根目录 `work/`。
+
+在项目根目录执行：
 
 ```powershell
-# 导入模型并重新生成网页
-./outputs/Build.ps1
+# 从环境与角色源文件重建、导入、烘焙、验证并导出网页
+./outputs/Build.ps1 -RebuildAll
 
-# 修改建模脚本后：重新生成模型、两张渲染图，再生成网页
+# 环境改动：重建环境并重新烘焙
 ./outputs/Build.ps1 -RebuildModel
 
-# 本地预览服务关闭后重新启动；仅监听本机
+# 角色改动：重建独立骨骼角色
+./outputs/Build.ps1 -RebuildCharacter
+
+# 灯光改动：重新烘焙
+./outputs/Build.ps1 -BakeLighting
+
+# 仅运行逻辑改动：使用与当前环境匹配的烘焙数据
+./outputs/Build.ps1
+
+# 本地预览（已有服务时复用）
 ./outputs/Start-Preview.ps1
 ```
 
-如 8767 端口已有当前预览，直接访问链接；如被其他程序占用，可用 `-Port 8768` 指定空闲端口。预览服务的进程号记录在根目录 `work/preview-server.json`。
+共享整屋构建、Godot 导入与烘焙串行执行。预览服务默认只监听本机 8767，端口占用时可使用 `-Port 8768`。生成网页使用内容指纹资源包，变更后刷新页面即可；查询参数不代替资源指纹。
 
-构建时，`Verify-Scene.gd` 检查独立观察场景 `main.tscn`，`Verify-Playroom.gd` 检查当前游玩场景 `playroom.tscn`；两者通过后才导出 Web。网页视觉与实际按键操作仍需在用户使用的浏览器验收。
+## 资产来源与运行接口
 
-模型生成源文件：`blender/build_living_room.py`。Blender 坐标为 Z 向上、Y 指向阳台；GLB 导入 Godot 后为 Y 向上、-Z 指向阳台。家具通过命名与 category 元数据保留可识别性。网页模型不包含家庭原始照片。
+- 环境：`blender/build_living_room.py` 及房间模块生成 `.blend`、环境 GLB、房间边界、家具与坐位数据。
+- 角色：`blender/build_character.py` 独立生成 `.blend`、蒙皮 GLB 和动画合同，环境构建不会覆盖它。
+- 公共尺度：`blender/scene-v2-spec.json`。Blender 坐标 `(x,y,z)` 转为 Godot `(x,z,-y)`。
+- 运行入口：`godot/playroom.tscn`；操作与状态逻辑：`godot/playroom.gd`；环境光照：`godot/scene_environment.gd`。
+- 静态光照在本机离线烘焙，网页读取烘焙数据。构建检查模型与光照源哈希，拒绝使用已失配的烘焙资源。
+- 调试页 `?test` 提供只读运行状态；正常试玩页保持简洁。
 
-当前操作版逻辑在 `godot/playroom.gd`；原客厅观察逻辑在 `godot/main.gd`。Godot 使用实时灯光与人物脚下的柔边阴影，不计算家具或环境投影。用户已选择清爽简化的网页效果，Blender 离线渲染图与网页截图分别保留。
+构建检查覆盖资产一致性、五坐位、整屋通行和镜头输入回归。当前浏览器载体位于 [fixed-scene-transition](verification/fixed-scene-transition-20261025/)，覆盖固定机位淡化、真实捕获、相对鼠标观察、分层 Esc、失焦、拒绝捕获、跨房间和坐起。上一轮 [mouse-look](verification/mouse-look-20261025/) 保留该版性能观察；旧 [navigation-v2](verification/navigation-v2/) 属于边缘控制历史证据。实际 Chrome 画面与连续动作另行验收，只有对应资源的证据才代表该版本。
 
-`Build.ps1` 会按游戏资源内容生成 `scene-<hash>.pck`，并自动更新网页引用，避免浏览器复用旧场景。完成构建后刷新试玩页；只改变页面地址的 `?v=` 不能更新固定地址的游戏资源缓存。
+## 第三方与隐私
 
-## 第三方内容
-模型由本项目脚本按照片观察生成，未引入第三方家具包。中文界面使用 Google Fonts 的 Noto Sans SC 字符子集；许可见 `godot/assets/NotoSansSC-OFL.txt`。新增中文文案时需补字体字符或改用完整字体。
+房屋与通用角色由本项目制作；字体 Noto Sans SC 许可见 [OFL](godot/assets/NotoSansSC-OFL.txt)。网页交付保留 Godot 与字体许可。
 
-Blender 与 Godot 下载和许可说明：
-- <https://download.blender.org/release/Blender4.5/>
-- <https://github.com/godotengine/godot-builds/releases/tag/4.7.2-stable>
-- <https://godotengine.org/license/>
-
-最终分享网页时，应保留 Godot 和字体的许可说明。
+房屋照片、故事与原始情书通过 `references` 的只读外部链接访问，留在 E 盘；当前环境制作不把它们打包进网页。公开发布另行由用户明确指示。

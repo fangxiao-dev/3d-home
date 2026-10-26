@@ -1,0 +1,246 @@
+[
+  {
+    "path": "outputs/Bake.ps1",
+    "sha256": "51ff2aec1d2c8ae20d5f5b36579f3e93cad0a9dfc5de5882d5dfbe9fa9a49ee0"
+  },
+  {
+    "path": "outputs/blender/build_living_room.py",
+    "sha256": "d52074142012c202d04a52a1821d35aaeaa021e3ebf342fd56dad03172169e7a"
+  },
+  {
+    "path": "outputs/blender/environment_details.py",
+    "sha256": "ceebafa23fa7c5076d94857c955880f60f104e8a28d452e44c7f2167b1480845"
+  },
+  {
+    "path": "outputs/blender/environment_lightmap.py",
+    "sha256": "a7bed79264f51b8b6e79123192d8e8e1f942e99aebabc78c379a60916a883045"
+  },
+  {
+    "path": "outputs/blender/environment_v2.py",
+    "sha256": "1cd357a14299b3db027738ac01140fa1cebadce12678912c263116ab9fe43a63"
+  },
+  {
+    "path": "outputs/blender/living-room.blend",
+    "sha256": "c9486f59d0bbeabea9959c6f30270d5e3b7a43eb6cdbce68c5841d7572f82702"
+  },
+  {
+    "path": "outputs/blender/model-manifest.json",
+    "sha256": "93847bb8fa7188f999009188e4c2b48cceaa27c08e32b8366d33b3df399b6383"
+  },
+  {
+    "path": "outputs/blender/rooms/balcony.py",
+    "sha256": "bd293226553f861bf451faad58f468d7493a052713b4b8721830e114705b9b20"
+  },
+  {
+    "path": "outputs/blender/rooms/hallway.py",
+    "sha256": "940f97ba357f9af479210f6689f91c860ab22c5371e1b471e69a0d2e7a76e7e2"
+  },
+  {
+    "path": "outputs/blender/rooms/kitchen.py",
+    "sha256": "df0b1fcf4281b781b659a499a621b363032fa6820454539222424170c329938e"
+  },
+  {
+    "path": "outputs/blender/rooms/study.py",
+    "sha256": "34926b7ec7190aa3cb69900b3afb7983880f711dd70f58152deee0d06587a63d"
+  },
+  {
+    "path": "outputs/blender/rooms/wash.py",
+    "sha256": "763bc360709bceaa15da26b70f0bc9e9bdbf26de05f9d47d9588bd175de3a6eb"
+  },
+  {
+    "path": "outputs/Build.ps1",
+    "sha256": "5d5dc0353c1c417bdfe70bcdbe81eddce564b94893b0706fdf31b865aa66c132"
+  },
+  {
+    "path": "outputs/godot/assets/living-room.glb",
+    "sha256": "910d5f5c9838b3c11df1c9a6e66ca04658137dbf6c2be2e9129ca4b19501a9d4"
+  },
+  {
+    "path": "outputs/godot/assets/NotoSansSC-Play.ttf",
+    "sha256": "19365789e7913fc1d8032643f108c1721ab2994f1100e67e6457fce886ef9b68"
+  },
+  {
+    "path": "outputs/godot/assets/scene-v2-data.json",
+    "sha256": "d3e330117ac37938c5905f79ebaa270dfe298cd2a1066f2ddc4ed32b0e045d2e"
+  },
+  {
+    "path": "outputs/godot/baked/bake-manifest.json",
+    "sha256": "fa950a08191e4454a56896251a58795d61965dd84f2cd598081b881244c4788c"
+  },
+  {
+    "path": "outputs/godot/baked/house.exr",
+    "sha256": "9e08d1770870808872bbfbc72c45643f2e75ebb239473917f1e0e39bb7cd3f7f"
+  },
+  {
+    "path": "outputs/godot/baked/house.exr.import",
+    "sha256": "176dc51e9099b13c37ffa44dc58f8a028ceecd2db34126e04b4c3222cec0bab5"
+  },
+  {
+    "path": "outputs/godot/baked/house.lmbake",
+    "sha256": "fcd15a12bf226838f25878f5c63287a57958564e71f384b653d9c84566430ea8"
+  },
+  {
+    "path": "outputs/godot/baked/house.scn",
+    "sha256": "96db2d11008553c9f9a372c3a15017b02008d6fdd13a5681a38f146bd02c2be4"
+  },
+  {
+    "path": "outputs/godot/baked/house_shadow.png",
+    "sha256": "f95945450209ac177ad231bb6d323e921e94ba616f6bf9d5ae47c77c9c388c6f"
+  },
+  {
+    "path": "outputs/godot/baked/house_shadow.png.import",
+    "sha256": "cd06613c5480864c4a15baf5030884e8180a8d0f821215a5fb31acb69eeaac58"
+  },
+  {
+    "path": "outputs/godot/playroom.gd",
+    "sha256": "181ecd08f2c24f5a0d4422e4a70e8bce4485e97af44b5393d4a65b3b308c31ef"
+  },
+  {
+    "path": "outputs/godot/scene_environment.gd",
+    "sha256": "a734c8de35c9c9d30e6af003e559644e6c9d92dc3e68a95388485d139c0d07d8"
+  },
+  {
+    "path": "outputs/verification/navigation-v2/1366/runner.cjs",
+    "sha256": "acca0b2e95bed33d97401e9711a17806e24fd2ac5377db57f768f3cf5fef2778"
+  },
+  {
+    "path": "outputs/verification/navigation-v2/1366-performance/runner.cjs",
+    "sha256": "68290027635c60b435a1b17e92455d682076493c2a305a24c5696a5d2d42ec60"
+  },
+  {
+    "path": "outputs/verification/navigation-v2/1366-prefix/runner.cjs",
+    "sha256": "35b30c6cabdd64425f964e8d404e1c2833bbc0cdd06fc992e3fffe53cbe3b490"
+  },
+  {
+    "path": "outputs/verification/navigation-v2/1920/runner.cjs",
+    "sha256": "68290027635c60b435a1b17e92455d682076493c2a305a24c5696a5d2d42ec60"
+  },
+  {
+    "path": "outputs/verification/navigation-v2/browser-check.cjs",
+    "sha256": "25f67831be812c03981014b53485777fa3b07316b72b8f1acfc3ea66b013e513"
+  },
+  {
+    "path": "outputs/verification/navigation-v2/fixed-1366/runner.cjs",
+    "sha256": "5d62880fef4d3afbddf546729532275beda0424bd42232c780537b9134ca12ab"
+  },
+  {
+    "path": "outputs/verification/navigation-v2/fixed-1366-demo/runner.cjs",
+    "sha256": "a2158a47ffa548aa36e28a74b746ed86e73b88b5f108fd08a5ad5ee7a51967f6"
+  },
+  {
+    "path": "outputs/verification/navigation-v2/fixed-1366-input-smoke/runner.cjs",
+    "sha256": "a2158a47ffa548aa36e28a74b746ed86e73b88b5f108fd08a5ad5ee7a51967f6"
+  },
+  {
+    "path": "outputs/verification/navigation-v2/fixed-1366-occlusion/runner.cjs",
+    "sha256": "5d62880fef4d3afbddf546729532275beda0424bd42232c780537b9134ca12ab"
+  },
+  {
+    "path": "outputs/verification/navigation-v2/fixed-1366-performance/runner.cjs",
+    "sha256": "5d62880fef4d3afbddf546729532275beda0424bd42232c780537b9134ca12ab"
+  },
+  {
+    "path": "outputs/verification/navigation-v2/fixed-1920/runner.cjs",
+    "sha256": "5d62880fef4d3afbddf546729532275beda0424bd42232c780537b9134ca12ab"
+  },
+  {
+    "path": "outputs/verification/navigation-v2/focus-check.cjs",
+    "sha256": "58f97189bcf1413e40402dfe98bb44157f8cbca4a0fa29715c9547a7ee0cb178"
+  },
+  {
+    "path": "outputs/verification/navigation-v2/focus-run/runner.cjs",
+    "sha256": "58f97189bcf1413e40402dfe98bb44157f8cbca4a0fa29715c9547a7ee0cb178"
+  },
+  {
+    "path": "outputs/verification/navigation-v2/performance-comparison/runner.cjs",
+    "sha256": "f25a59ad442ee71b4b1c247c31c85aad7b366245bd04340d65f71ec14a71cf9c"
+  },
+  {
+    "path": "outputs/verification/navigation-v2/performance-comparison-study/runner.cjs",
+    "sha256": "8bb834132b850ca583d29a9e732986b13202543a393f083139c458abaa2b85ad"
+  },
+  {
+    "path": "outputs/verification/navigation-v2/performance-comparison.cjs",
+    "sha256": "8bb834132b850ca583d29a9e732986b13202543a393f083139c458abaa2b85ad"
+  },
+  {
+    "path": "outputs/verification/navigation-v2/prepare-font.py",
+    "sha256": "d5593716238344bb5cc885feede35548cceea3d2620b622fa6d5d9fc9a48a8e0"
+  },
+  {
+    "path": "outputs/verification/navigation-v2/r3-control-reuse.json",
+    "sha256": "44cd3fbdb716f5048cc45b1c8b41c0fcaabc52e3d0df80e5f8faf9ebc20d123f"
+  },
+  {
+    "path": "outputs/verification/navigation-v2/README.md",
+    "sha256": "1539007ffd67f5789c47403d579cb67ffc3cc81b892368cedbeafeb4f16fe8cc"
+  },
+  {
+    "path": "outputs/verification/navigation-v2/review.md",
+    "sha256": "3d9a0d7e09dfbe3da6119988ee8d4569421760c167f35a2180245b5d6bc98984"
+  },
+  {
+    "path": "outputs/verification/navigation-v2/summarize.cjs",
+    "sha256": "49f425e80e637b7a42b7b87f58adb5b41edaaec05d5d2b458d4c8e61eaa17981"
+  },
+  {
+    "path": "outputs/verification/navigation-v2/verify-asset-semantics.py",
+    "sha256": "0a0551f67d5c8e8ad709a8f229266d967632d6f01708a5fe9084556b1ada41b9"
+  },
+  {
+    "path": "outputs/verification/navigation-v2/versions/1a42f717cba2/focus/runner.cjs",
+    "sha256": "58f97189bcf1413e40402dfe98bb44157f8cbca4a0fa29715c9547a7ee0cb178"
+  },
+  {
+    "path": "outputs/verification/navigation-v2/versions/76edbca45168/fixed-1366/runner.cjs",
+    "sha256": "34e2e5a208e627a1c82b079bf1a5a391a45e7128d9d928538697c2ae5a61cacf"
+  },
+  {
+    "path": "outputs/verification/navigation-v2/versions/76edbca45168/fixed-1366-occlusion/runner.cjs",
+    "sha256": "34e2e5a208e627a1c82b079bf1a5a391a45e7128d9d928538697c2ae5a61cacf"
+  },
+  {
+    "path": "outputs/Verify-Camera.gd",
+    "sha256": "8590315cb76aaafdfc0c0d0f8acbe19f7a8c13e94afd8f60c2b1287b1677e5c1"
+  },
+  {
+    "path": "outputs/Verify-House.gd",
+    "sha256": "5bf47ce5f0c9ebe6ab74f1555f644ddc7796eba333b770553095027304238d9f"
+  },
+  {
+    "path": "outputs/Verify-Playroom.gd",
+    "sha256": "d67aad3a6f032625f0b2c8b0742308a5dc636e3e91ed557d419caab8670dd5a1"
+  },
+  {
+    "path": "outputs/Verify-Scene.gd",
+    "sha256": "fb06ffb79bb08d4ed9f6c9ff7ee47ef0296a82d772f97acbe9839cfab4d4653e"
+  },
+  {
+    "path": "outputs/web/index.html",
+    "sha256": "194cc21e0bb0d52fb2ede9de5702ba533903d406a5b9cb3442f019d1712aedd8"
+  },
+  {
+    "path": "outputs/web/scene-1a42f717cba2.pck",
+    "sha256": "1a42f717cba2c77ebd190af10f496393673c5a5832bd378fbc12293df6867e80"
+  },
+  {
+    "path": "work/navigation-v2/asset-comparison.json",
+    "sha256": "dd8d5917e510747d92185991ede9b4003b0fc5c9234e1510269e9a892a1b237c"
+  },
+  {
+    "path": "work/navigation-v2/asset-semantics.json",
+    "sha256": "9c26bce7e3a4063014645df819d93321f70b1bc174f2c2db9e65014f9ec72e5e"
+  },
+  {
+    "path": "work/navigation-v2/compare-assets.py",
+    "sha256": "474585e7befefe0aa96820d87f7843eda2bb2b1548d91810f9fa339c798f1776"
+  },
+  {
+    "path": "work/navigation-v2/r3-function-proof.py",
+    "sha256": "09b233399ff6faee63040a52cd519915032a0e59a590fb5ef76bc43fe3375f82"
+  },
+  {
+    "path": "work/scene-v2-build-receipt.json",
+    "sha256": "c3ae4f5a14e60c948570d80ae4076add912b3fff6fe32185c3b71629a6356aff"
+  }
+]

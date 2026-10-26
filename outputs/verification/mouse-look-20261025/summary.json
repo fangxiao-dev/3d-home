@@ -1,0 +1,119 @@
+{
+  "generated_at": "2026-10-25T20:44:43.581445+00:00",
+  "scope": "MOUSE-LOOK-20261025 builder validation only; project-wide and owner acceptance are separate",
+  "build": {
+    "character": "b48319f3e1c9b393c6f1019b80ef1c257c06a5b8a50a3b4009d6cebc943b697e",
+    "exported_at": "2026-10-25T21:20:47.5211481+01:00",
+    "pack": "scene-2a4b1894705b.pck",
+    "runtime": "cdd5c877c90bcf279d1894fd629c108381c3946baf3b57a5d643a6c9e26a8a1a",
+    "model": "15d0db1e2c7ab27b5d2923f4f14d257f7a5df5ab497415ad0be25c3633f83fb2",
+    "sha256": "2a4b1894705bd9f947729a629ff5897194d2c411d65eccd532e8daf7c9f2b69e",
+    "seats": "d3e330117ac37938c5905f79ebaa270dfe298cd2a1066f2ddc4ed32b0e045d2e",
+    "checks_run": true
+  },
+  "functional_pass": true,
+  "performance_observation_pass": true,
+  "main_browser_seat_cycles": 10,
+  "extra_browser_repeat_cycle": 1,
+  "view_cases": 32,
+  "tour": {
+    "elapsed_ms": 205159,
+    "loops": 5
+  },
+  "performance": {
+    "campaign-1366": {
+      "sample_count": 6,
+      "rolling_mean_ms_min": 11.5798333333333,
+      "rolling_mean_ms_max": 11.7741666666667,
+      "clean_window": {
+        "start_game_ms": 175425,
+        "end_game_ms": 182610,
+        "post_capture_frames": 603,
+        "elapsed_ms": 7183
+      },
+      "pass": true
+    },
+    "campaign-1920": {
+      "sample_count": 21,
+      "rolling_mean_ms_min": 16.052,
+      "rolling_mean_ms_max": 19.1536666666667,
+      "clean_window": {
+        "start_game_ms": 182871,
+        "end_game_ms": 193041,
+        "post_capture_frames": 606,
+        "elapsed_ms": 10170
+      },
+      "pass": true
+    }
+  },
+  "reports": {
+    "campaign-1366": {
+      "path": "outputs/verification/mouse-look-20261025/campaign-1366/report.json",
+      "sha256": "0338378bd318cce67e681c90b1afa9efb085efc4e5ccae43ead8fca594caff3a",
+      "runner_sha256": "6fbbaf4711a4cd342046655b52c352bc5396e53c4e63c84a61563875606235c5",
+      "pass": true
+    },
+    "campaign-1920": {
+      "path": "outputs/verification/mouse-look-20261025/campaign-1920/report.json",
+      "sha256": "71a86062706bd7b2733c78d168eb7cc7606f387cfa4d2544ebfadf34b3468e3a",
+      "runner_sha256": "bdea47e013f75e844706f5f8bc113f32ec1cc7b235a91c03814dd9e541ff188a",
+      "pass": true
+    },
+    "refusal-1366": {
+      "path": "outputs/verification/mouse-look-20261025/refusal-1366/report.json",
+      "sha256": "029b492e317f6ceaa72cebabc3f68b2fbffed6efed3010f90b25e0bc46c6b6f6",
+      "runner_sha256": "1303e3e20949e0a98fedcfd1f3c0349b9d1f34f33b32147d7ecb47d3496dfada",
+      "pass": true
+    },
+    "refusal-1920": {
+      "path": "outputs/verification/mouse-look-20261025/refusal-1920/report.json",
+      "sha256": "80c3bf730617db0525a005c37f93d7764be4e9cf6829364841f2c5abf52a1c53",
+      "runner_sha256": "1303e3e20949e0a98fedcfd1f3c0349b9d1f34f33b32147d7ecb47d3496dfada",
+      "pass": true
+    },
+    "focus-1366": {
+      "path": "outputs/verification/mouse-look-20261025/focus-1366/report.json",
+      "sha256": "b58bdb0fc35c9103b6413fb67e5589184a249888fa979400ea06309f0a54fc01",
+      "runner_sha256": "df943fe4b07cd33c1f99f2f7db99f952b3ba9d4cac83fc2087718eff76f72244",
+      "pass": true
+    },
+    "focus-1920": {
+      "path": "outputs/verification/mouse-look-20261025/focus-1920/report.json",
+      "sha256": "2a6e1eaff55768108d877dea95a37d2cfb514ef23c2e42240d111ba7c28077ca",
+      "runner_sha256": "df943fe4b07cd33c1f99f2f7db99f952b3ba9d4cac83fc2087718eff76f72244",
+      "pass": true
+    },
+    "repeat-smoke-1366": {
+      "path": "outputs/verification/mouse-look-20261025/repeat-smoke-1366/report.json",
+      "sha256": "5d890b29d6e91a1c8cbbef184d717014efb651a305a9180748777e385242b913",
+      "runner_sha256": "b6cadd44ad0ed34beed8e303b0a783b75f3d9f4b1bbe13488774cf11e1610192",
+      "pass": true
+    }
+  },
+  "protected_files": {
+    "checked": 913,
+    "changed": [],
+    "missing": [],
+    "authorized_font_import_only": true
+  },
+  "engine_checks": "Build four checks failures=[]; strengthened late-grant native release and two capture-failure/focus-interrupted exit boundary cycles also failures=[]",
+  "font": {
+    "source": "https://fonts.gstatic.com/l/font?kit=k3kCo84MPvpLmixcA63oeAL7Iqp5IZJF9bmaG9_FnYxV_vfz3VJq1BJKCGLDfu99DUE6im0C5FsnOZCxYKJ750lvvVJemN5t8hqbpmzMYmJPqbkvzKTKiuBACIkYPkeZ4dQSW2vmhrQ-XDilbWCdoTRXd4UBVt_2QGv9my6xh848sT6HgiUORZao4y9x2CWpWR8Z3i6gOlyia_WtjhTuYg3a28UQlp5j1qBlnEP1z8CE9rxpbFL3PDkApLdxxt3iLJCLymg4CYvDAcHshwqyqVyh7T3U9Yuik6xlQdDTiDgt-Z7ld62Q8FhqdAeWFTonOd4O_Zr2PQF614EiuLBMnGCtrHT9HqIvhmcNjTy1SPONsjshYqzpjehCCsf_stKnLGbS7SrRZx7aAAcrmmB8c4UGluLTJwfqwQKWPVo9nwrxSPIlqHv4StHVJ_OQ-wgbVQjBk8p0LBlzGFS8qY1tY7bN-dj1VIux3L2u8sFKi-akHeRvAyiyJm0EVnFBx-toDER-0LB4lWj7gYxNhrPKTevF0ZwsmEONJZcEfEOJUVkW8JJ7ZHz1awOe7wV4yX5d8IbJtQeDJI-A&skey=cf0bb10b5602fdc3&v=v41",
+    "sha256": "df3d7d0daff0ca9e92591eb878253135f74c264dbf1e220f313d4095c4f3a7e1",
+    "characters": 199,
+    "missing": []
+  },
+  "limitations": [
+    "Browser automation used actual headless installed Chrome / Intel UHD with the ?test observation bridge; these performance samples are not a precise FPS claim for the uninstrumented visible user browser. Owner visible Chrome acceptance is parent-owned.",
+    "Refusal recovery navigates from sandbox to a new unrestricted document; it does not change sandbox permissions in place.",
+    "Late-grant and capture-rejection-on-standing tests are explicitly engine external-state simulations, not browser permission evidence.",
+    "Current performance windows follow 600 fresh game frames without screenshots. Earlier candidate3 route-attempt rolling mean 421.63ms/p95 514.9ms is retained without causal attribution; later route reruns were required by waypoint carrier corrections, not performance tuning.",
+    "Old navigation 1920 long-soak 19/52 failed windows and prior owner UI evidence gap remain historical facts; this bounded new run does not rewrite them."
+  ],
+  "history": [
+    "smoke-1 and seat-smoke-1366 use candidate1 346204; not counted as current-package coverage",
+    "work/mouse-look-20261025/candidate-2-aborted-1366 retains stopped candidate2 run",
+    "work/mouse-look-20261025/candidate-3-route-attempt and candidate-3-dining-route-attempt retain raw failed carrier reports, runner, images"
+  ],
+  "cleanup": "All test browsers and private refusal servers closed; existing user preview at 8767 retained; no commit/push/deployment"
+}

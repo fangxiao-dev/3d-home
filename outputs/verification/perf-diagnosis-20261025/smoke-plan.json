@@ -1,0 +1,23 @@
+{
+  "name": "smoke-v1",
+  "warmup_frames": 120,
+  "measure_frames": 120,
+  "blocks": [
+    {
+      "label": "baseline",
+      "config": {},
+      "screenshot": true
+    },
+    {
+      "label": "scale720",
+      "config": {
+        "scale": 0.6666666666666666
+      },
+      "screenshot": true
+    },
+    {
+      "label": "baseline-return",
+      "config": {}
+    }
+  ]
+}

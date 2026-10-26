@@ -1,0 +1,24 @@
+{
+  "precision_m": 0.0001,
+  "geometry_equal": true,
+  "geometry_differences": [],
+  "old_triangles": 162926,
+  "new_triangles": 162926,
+  "materials_equal": true,
+  "seats_equal": true,
+  "room_targets_equal": true,
+  "unchanged_files": {
+    "outputs\\godot\\assets\\house-layout.json": true,
+    "outputs\\godot\\assets\\character.glb": true,
+    "outputs\\godot\\scene_environment.gd": true
+  },
+  "old_model": "910d5f5c9838b3c11df1c9a6e66ca04658137dbf6c2be2e9129ca4b19501a9d4",
+  "new_model": "15d0db1e2c7ab27b5d2923f4f14d257f7a5df5ab497415ad0be25c3633f83fb2",
+  "unchanged_other_furniture": true,
+  "new_groups": [],
+  "lighting_parameters_equal": true,
+  "furniture_regrouping": {},
+  "maximum_triangle_vertex_error_m": 0.0,
+  "continuous_tolerance_m": 1e-05,
+  "pass": true
+}

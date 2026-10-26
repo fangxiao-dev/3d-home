@@ -1,0 +1,191 @@
+{
+  "build": {
+    "runtime": "2e1835def12354d6cf12f8990858f6a36e1578bff0d555e4ac81bd4a035a6382",
+    "checks_run": true,
+    "sha256": "8f68e808fcb83304db3189fb3533b9f53a5437e29f78077f451d11390478ed2c",
+    "model": "dbc32350082c450d69feeb9cc21443c527b427fd1e3b0a2a94c7961250599ca9",
+    "exported_at": "2026-10-18T23:24:00.5510658+08:00",
+    "pack": "scene-8f68e808fcb8.pck",
+    "character": "b48319f3e1c9b393c6f1019b80ef1c257c06a5b8a50a3b4009d6cebc943b697e",
+    "seats": "69ad391c4d484b6255cc0d86f81027459ca909c629e73dc9d903476fada1c73b"
+  },
+  "desktop_load_isolated": false,
+  "performance_scope": "Actual local desktop load; project test browsers run serially; user tabs and system settings unchanged.",
+  "viewports": [
+    {
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "functional_pass": true,
+      "errors": [],
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x0000A78B) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "checks": {
+        "seat_cycles": 15,
+        "accessible_rooms": [
+          "living",
+          "balcony",
+          "hallway",
+          "dining",
+          "wash",
+          "study"
+        ],
+        "boundaries": [
+          "balcony",
+          "kitchen",
+          "bathroom",
+          "hallway"
+        ],
+        "camera_q_four_directions": true,
+        "camera_e_hold_once": true,
+        "zoom_limits": [
+          0.85,
+          1.15
+        ],
+        "wasd": true,
+        "arrow_movement": true,
+        "seated_input_isolation": true,
+        "transition_collisions_clear": true
+      },
+      "rapid_camera_samples": 6,
+      "performance_target_met": false,
+      "performance_criterion": "Every post-route/soak sampled 600-frame rolling mean <= 16.667 ms; functional pass is separate",
+      "soak": {
+        "elapsed_ms": 630021,
+        "loops": 15
+      },
+      "started_at": "2026-10-18T15:28:17.055Z",
+      "finished_at": "2026-10-18T15:44:20.996Z",
+      "samples": 90,
+      "frame_mean_ms": {
+        "min": 16.7703333333333,
+        "max": 34.04,
+        "average": 27.284261111111114
+      },
+      "frame_p95_ms": {
+        "min": 17.8,
+        "max": 40.6,
+        "average": 32.77444444444444
+      },
+      "process_ms": {
+        "min": 15.9,
+        "max": 882,
+        "average": 39.57333333333333
+      },
+      "physics_ms": {
+        "min": 0.3,
+        "max": 9.5,
+        "average": 1.8511111111111112
+      },
+      "draw_calls": {
+        "min": 88,
+        "max": 123,
+        "average": 98.97777777777777
+      },
+      "triangles": {
+        "min": 64382,
+        "max": 87692,
+        "average": 73535.17777777778
+      },
+      "soak_same_room_comparison": {
+        "balcony": {
+          "samples": 15,
+          "first_three_mean_ms": 28.660555555555565,
+          "last_three_mean_ms": 28.040666666666667,
+          "max_ms": 30.8155
+        },
+        "dining": {
+          "samples": 15,
+          "first_three_mean_ms": 28.2057777777778,
+          "last_three_mean_ms": 28.7923333333333,
+          "max_ms": 30.7775
+        },
+        "study": {
+          "samples": 15,
+          "first_three_mean_ms": 28.266,
+          "last_three_mean_ms": 29.512277777777765,
+          "max_ms": 31.5625
+        },
+        "wash": {
+          "samples": 15,
+          "first_three_mean_ms": 28.069444444444432,
+          "last_three_mean_ms": 28.651222222222234,
+          "max_ms": 31.4293333333333
+        }
+      }
+    },
+    {
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "functional_pass": true,
+      "errors": [],
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x0000A78B) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "checks": {
+        "seat_cycles": 15,
+        "accessible_rooms": [
+          "living",
+          "balcony",
+          "hallway",
+          "dining",
+          "wash",
+          "study"
+        ],
+        "boundaries": [
+          "balcony",
+          "kitchen",
+          "bathroom",
+          "hallway"
+        ],
+        "camera_q_four_directions": true,
+        "camera_e_hold_once": true,
+        "zoom_limits": [
+          0.85,
+          1.15
+        ],
+        "wasd": true,
+        "arrow_movement": true,
+        "seated_input_isolation": true,
+        "transition_collisions_clear": true
+      },
+      "rapid_camera_samples": 6,
+      "performance_target_met": false,
+      "performance_criterion": "Every post-route/soak sampled 600-frame rolling mean <= 16.667 ms; functional pass is separate",
+      "soak": null,
+      "started_at": "2026-10-18T15:44:26.370Z",
+      "finished_at": "2026-10-18T15:49:48.895Z",
+      "samples": 30,
+      "frame_mean_ms": {
+        "min": 26.205,
+        "max": 27.1256666666667,
+        "average": 26.72244444444445
+      },
+      "frame_p95_ms": {
+        "min": 31.6,
+        "max": 32.6,
+        "average": 32.123333333333335
+      },
+      "process_ms": {
+        "min": 27.3,
+        "max": 38.2,
+        "average": 30.323333333333334
+      },
+      "physics_ms": {
+        "min": 0.9,
+        "max": 2.3,
+        "average": 1.3566666666666667
+      },
+      "draw_calls": {
+        "min": 93,
+        "max": 93,
+        "average": 93
+      },
+      "triangles": {
+        "min": 58788,
+        "max": 58788,
+        "average": 58788
+      }
+    }
+  ]
+}

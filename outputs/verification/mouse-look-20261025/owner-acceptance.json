@@ -1,0 +1,64 @@
+{
+  "recorded_at": "2026-10-25T21:00:32.5770903Z",
+  "scope": "Approved relative mouse and layered Escape implementation only",
+  "control_change_complete": true,
+  "project_wide_acceptance_complete": false,
+  "visible_window_manual_playtest_complete": false,
+  "pack": "scene-2a4b1894705b.pck",
+  "builder_summary_sha256": "2c94ed5f3b141988882e02a4644d3c0d4a8b768774eb70bb7ed5ba5d3fe8b432",
+  "builder_manifest_sha256": "5cd618b7d68f2386d4ebd8580597faf0c525af1329596da4aaf740646a7f9111",
+  "builder_manifest_entries_verified": 109,
+  "owner_browser_report": "owner-check-v3/report.json",
+  "owner_browser_pass": true,
+  "owner_headless_chrome": true,
+  "owner_raw_failures_preserved": [
+    "owner-check/report.json",
+    "owner-check-v2/report.json"
+  ],
+  "owner_files": [
+    {
+      "path": "outputs/verification/mouse-look-20261025/owner-check.cjs",
+      "sha256": "7d19c77482651c3cb6282b77e5fa637ad7cbbe233e3e4080de305ff2db4e9938"
+    },
+    {
+      "path": "outputs/verification/mouse-look-20261025/owner-check-v2.cjs",
+      "sha256": "730662ff21c0fa21a33542d2f664a2c99a7171dd0c3879544d50b93606e98c75"
+    },
+    {
+      "path": "outputs/verification/mouse-look-20261025/owner-check-v3.cjs",
+      "sha256": "8debbacc4c0ae3efb00e7490dc06e042faf6b5d1e41f951e169f9f2ad934b0b4"
+    },
+    {
+      "path": "outputs/verification/mouse-look-20261025/owner-probe.cjs",
+      "sha256": "06756087a06e4094d810eee9b1cf0dc13cf620a03021a6ff43290a97c1b46900"
+    },
+    {
+      "path": "outputs/verification/mouse-look-20261025/owner-check/report.json",
+      "sha256": "5914a46058a467074f6ddf43b113d3005f303774229776fe2156aaf668a07e3f"
+    },
+    {
+      "path": "outputs/verification/mouse-look-20261025/owner-check-v2/report.json",
+      "sha256": "c1f16760dcce3c7ad6d4bf83689f57866b9a3490538917170eb9ed538ccda33e"
+    },
+    {
+      "path": "outputs/verification/mouse-look-20261025/owner-check-v3/report.json",
+      "sha256": "3d13453c9d6e8224b4a18097a1e4c197327fd68504cc7f36c14b83214d6b64a4"
+    },
+    {
+      "path": "outputs/verification/mouse-look-20261025/owner-probe/report.json",
+      "sha256": "1b765521b36aa4e079699b402e5930b56e0770405f6952e2309a6dc91082799b"
+    },
+    {
+      "path": "outputs/verification/mouse-look-20261025/review.md",
+      "sha256": "604132fae56d8465e5477d614193b131ed1a02ae65931980891ce3f44fcf2dd4"
+    }
+  ],
+  "limitations": [
+    "Old 1080p long-soak failed windows remain; present short run does not supersede them.",
+    "First post-capture automated DOM relative movement was zero; subsequent trusted movementX=100 mapped to 12 degrees. Chromium internal cause unconfirmed.",
+    "Git-wide diff check reports existing extra EOF blank lines in runtime/build files; frozen source files were not rewritten for formatting."
+  ],
+  "preview_url": "http://127.0.0.1:8767/?v=2a4b1894705b",
+  "commit_push_deploy": false,
+  "independent_final_review": "PASS: frozen manifest, repeat smoke, root v3 runner/report, retained failures, documentation and owner receipt reviewed; HOUSE wording corrected"
+}

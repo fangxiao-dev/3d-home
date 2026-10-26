@@ -1,0 +1,52 @@
+{
+  "name": "main-no-probe-v1",
+  "no_probe": true,
+  "warmup_frames": 120,
+  "measure_frames": 240,
+  "blocks": [
+    {
+      "label": "baseline-0",
+      "config": {},
+      "probe": false
+    },
+    {
+      "label": "msaa-off",
+      "config": {
+        "msaa": 0
+      },
+      "probe": false,
+      "screenshot": true
+    },
+    {
+      "label": "baseline-1",
+      "config": {},
+      "probe": false
+    },
+    {
+      "label": "shadows-off",
+      "config": {
+        "shadows": false
+      },
+      "probe": false,
+      "screenshot": true
+    },
+    {
+      "label": "baseline-2",
+      "config": {},
+      "probe": false
+    },
+    {
+      "label": "scale720",
+      "config": {
+        "scale": 0.6666666666666666
+      },
+      "probe": false,
+      "screenshot": true
+    },
+    {
+      "label": "baseline-3",
+      "config": {},
+      "probe": false
+    }
+  ]
+}

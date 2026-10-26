@@ -1,0 +1,10 @@
+{
+  "seats": "b69bcebb3713f4ee3d99dc65aaaa66b98aea2a6fbfb4d77019d4c59aeb105fd6",
+  "runtime": "ce4ae19cbafbd2dc16293a8a151e1b8444f04a77b7328e99572745569d290e06",
+  "exported_at": "2026-10-25T15:04:25.7516579+01:00",
+  "character": "b48319f3e1c9b393c6f1019b80ef1c257c06a5b8a50a3b4009d6cebc943b697e",
+  "checks_run": true,
+  "sha256": "76edbca45168c45146f979b26eee62292faea3ba53f59e93d5cce78b4c68a56c",
+  "model": "848027b22be20eb2a55b23f2774465e6687327326d6ba2b150a52ef18895c683",
+  "pack": "scene-76edbca45168.pck"
+}

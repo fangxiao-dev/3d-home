@@ -1,0 +1,20 @@
+{
+  "verified_at": "2026-10-25T18:24:19.3477249Z",
+  "protected_files": 111,
+  "protected_mismatches": [],
+  "stopped_own_servers": [
+    {
+      "port": 8771,
+      "pid": 14232
+    },
+    {
+      "port": 8772,
+      "pid": 13348
+    }
+  ],
+  "diagnostic_ports_remaining": 0,
+  "preview_http_status": 200,
+  "browser_cleanup": "Each runner finally awaited context.close and browser.close; headful failed sample retained",
+  "runtime_changed": false,
+  "formal_acceptance_changed": false
+}

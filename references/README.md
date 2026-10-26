@@ -4,6 +4,7 @@
 
 | 资料 | 入口 | 什么时候读 |
 | --- | --- | --- |
+| 已确认交互机制与彩蛋设计 | [设计入口](../outputs/design/README.md) | 新会话读机制及入选清单；讨论或实现具体条目前读对应设计稿，按最新补充区分已确认与待定项。 |
 | 房屋照片与全局布局图 | [图片说明](../outputs/PHOTO_MANIFEST.md)、[图片 manifest](../outputs/photo-manifest.json)；原图在 `house-photos/` | 建模、判断房间关系或辨认家具时，先查 manifest，再打开相关照片和布局图。 |
 | 人物与关系背景 | [背景入口](../outputs/background/README.md)，其中按主题链接背景全文 | 新会话读摘要；讨论故事、彩蛋、角色或文案时读对应全文。 |
 | 原始情书与图片 | [情书目录](love-letters/README.md)、[来源清单](love-letters/manifest.json) | 查找私人表达、具体回忆和引文时，核对对应原文及叙述者。 |

@@ -1,22 +1,41 @@
-param([switch]$RebuildModel)
+param([switch]$RebuildModel, [switch]$RebuildCharacter, [switch]$RebuildAll, [switch]$BakeLighting, [switch]$SkipChecks)
 $ErrorActionPreference = 'Stop'
 $projectRoot = Split-Path -Parent $PSScriptRoot
 $godotInfo = Get-Content -LiteralPath (Join-Path $projectRoot 'work/godot-setup.json') -Raw | ConvertFrom-Json
 $godotExe = Join-Path $projectRoot $godotInfo.release.console_executable
+if ($RebuildAll) { $RebuildModel = $true; $RebuildCharacter = $true; $BakeLighting = $true }
 if ($RebuildModel) {
+    $BakeLighting = $true
     $blenderInfo = Get-Content -LiteralPath (Join-Path $projectRoot 'work/blender-setup.json') -Raw | ConvertFrom-Json
-    & $blenderInfo.executable --background --python (Join-Path $PSScriptRoot 'blender/build_living_room.py')
+    & $blenderInfo.executable --background --python-exit-code 1 --python (Join-Path $PSScriptRoot 'blender/build_living_room.py')
     if ($LASTEXITCODE -ne 0) { throw 'Blender model build failed.' }
+}
+if ($RebuildCharacter) {
+    $blenderInfo = Get-Content -LiteralPath (Join-Path $projectRoot 'work/blender-setup.json') -Raw | ConvertFrom-Json
+    & $blenderInfo.executable --background --python-exit-code 1 --python (Join-Path $PSScriptRoot 'blender/build_character.py')
+    if ($LASTEXITCODE -ne 0) { throw 'Blender character build failed.' }
 }
 $gamePath = Join-Path $PSScriptRoot 'godot'
 $webPath = Join-Path $PSScriptRoot 'web'
 New-Item -ItemType Directory -Path $webPath -Force | Out-Null
 & $godotExe --headless --path $gamePath --editor --import
 if ($LASTEXITCODE -ne 0) { throw 'Godot import failed.' }
-& $godotExe --headless --path $gamePath --script (Join-Path $PSScriptRoot 'Verify-Scene.gd')
+if ($BakeLighting) { & (Join-Path $PSScriptRoot 'Bake.ps1') }
+$manifestPath = Join-Path $gamePath 'baked/bake-manifest.json'
+if (-not (Test-Path $manifestPath)) { throw 'Scene v2 requires actual baked lighting. Run with -BakeLighting.' }
+$bake = Get-Content $manifestPath -Raw | ConvertFrom-Json
+if ($bake.model_sha256 -ne (Get-FileHash (Join-Path $gamePath 'assets/living-room.glb') -Algorithm SHA256).Hash.ToLowerInvariant()) { throw 'Environment changed since lighting bake. Run with -BakeLighting.' }
+if ($bake.environment_sha256 -ne (Get-FileHash (Join-Path $gamePath 'scene_environment.gd') -Algorithm SHA256).Hash.ToLowerInvariant()) { throw 'Lighting settings changed since bake. Run with -BakeLighting.' }
+if (-not $SkipChecks) {
+& $godotExe --headless --fixed-fps 60 --path $gamePath --script (Join-Path $PSScriptRoot 'Verify-Scene.gd')
 if ($LASTEXITCODE -ne 0) { throw 'Imported scene verification failed.' }
-& $godotExe --headless --path $gamePath --script (Join-Path $PSScriptRoot 'Verify-Playroom.gd')
+& $godotExe --headless --fixed-fps 60 --path $gamePath --script (Join-Path $PSScriptRoot 'Verify-Playroom.gd')
 if ($LASTEXITCODE -ne 0) { throw 'Playroom verification failed.' }
+& $godotExe --headless --fixed-fps 60 --path $gamePath --script (Join-Path $PSScriptRoot 'Verify-House.gd')
+if ($LASTEXITCODE -ne 0) { throw 'Connected house verification failed.' }
+& $godotExe --headless --fixed-fps 60 --path $gamePath --script (Join-Path $PSScriptRoot 'Verify-Camera.gd')
+if ($LASTEXITCODE -ne 0) { throw 'Navigation camera verification failed.' }
+}
 & $godotExe --headless --path $gamePath --export-release Web (Join-Path $webPath 'index.html')
 if ($LASTEXITCODE -ne 0) { throw 'Godot Web export failed.' }
 $packPath = Join-Path $webPath 'index.pck'
@@ -35,3 +54,18 @@ $configJson = $config | ConvertTo-Json -Compress -Depth 20
 $indexHtml = $indexHtml.Substring(0, $configMatch.Index) + "const GODOT_CONFIG = $configJson;" + $indexHtml.Substring($configMatch.Index + $configMatch.Length)
 [System.IO.File]::WriteAllText($indexPath, $indexHtml, [System.Text.UTF8Encoding]::new($false))
 Write-Output "[OK] Web preview exported to outputs/web/index.html mainPack=$packName sha256=$packHash"
+
+
+$receipt = @{
+    pack = $packName
+    sha256 = $packHash
+    model = (Get-FileHash (Join-Path $gamePath 'assets/living-room.glb') -Algorithm SHA256).Hash.ToLowerInvariant()
+    character = (Get-FileHash (Join-Path $gamePath 'assets/character.glb') -Algorithm SHA256).Hash.ToLowerInvariant()
+    runtime = (Get-FileHash (Join-Path $gamePath 'playroom.gd') -Algorithm SHA256).Hash.ToLowerInvariant()
+    seats = (Get-FileHash (Join-Path $gamePath 'assets/scene-v2-data.json') -Algorithm SHA256).Hash.ToLowerInvariant()
+    exported_at = (Get-Date).ToString('o')
+    checks_run = -not $SkipChecks
+}
+$receipt | ConvertTo-Json | Set-Content (Join-Path $projectRoot 'work/scene-v2-build-receipt.json') -Encoding utf8
+
+

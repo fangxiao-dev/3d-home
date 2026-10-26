@@ -1,0 +1,282 @@
+[
+  {
+    "path": "outputs/verification/perf-diagnosis-20261025/baseline-runner.cjs",
+    "sha256": "2d52163e45b01fdebcb957677f251d65fa52a1eef14efc4f3d7a8cf78d449e14",
+    "bytes": 4621
+  },
+  {
+    "path": "outputs/verification/perf-diagnosis-20261025/baseline-spawn-1920-runner.cjs",
+    "sha256": "c21c269c1033c573dd8a6f4a5a7046b67b378b2c4af5e014038f47e52006b157",
+    "bytes": 4591
+  },
+  {
+    "path": "outputs/verification/perf-diagnosis-20261025/baseline-spawn/normal.png",
+    "sha256": "010c382416bba1ea88bc13f47e76205ac7acca047e3581d67f3adfdd7ee55aa6",
+    "bytes": 1665102
+  },
+  {
+    "path": "outputs/verification/perf-diagnosis-20261025/baseline-spawn/report.json",
+    "sha256": "c953e144ec1617914a75d2bbe4dd9aabb20aa2192cc9d78447428acd61a1ab84",
+    "bytes": 38965
+  },
+  {
+    "path": "outputs/verification/perf-diagnosis-20261025/baseline-spawn/test.png",
+    "sha256": "8b4c4bd4406af1934428ba2cf6efb61cfce0f9d3cd7a77a385c98d357e093b6c",
+    "bytes": 1665272
+  },
+  {
+    "path": "outputs/verification/perf-diagnosis-20261025/baseline-study/normal.png",
+    "sha256": "3d1056a98ff997f0a8663993f7b2e6511563cdb012d7bcd23e88a9049d1f1a45",
+    "bytes": 1521484
+  },
+  {
+    "path": "outputs/verification/perf-diagnosis-20261025/baseline-study/report.json",
+    "sha256": "1b1f512295730269424810300cbec44b283cf925a366443f57bf6fefc1eef44d",
+    "bytes": 39408
+  },
+  {
+    "path": "outputs/verification/perf-diagnosis-20261025/baseline-study/test.png",
+    "sha256": "8e94b7a2cb7c66aa4f08df310fa579e74940636740f3627b8b200efd88224bba",
+    "bytes": 1528577
+  },
+  {
+    "path": "outputs/verification/perf-diagnosis-20261025/blit-probe.js",
+    "sha256": "108b46877e07d186ed131c85c293a7e6c322c9c7dfc3b88491d0f34aa5668c3e",
+    "bytes": 809
+  },
+  {
+    "path": "outputs/verification/perf-diagnosis-20261025/detail-no-probe-plan.json",
+    "sha256": "8a6869a48b4dc308e179561c317490d41576e0906f0b6f6622a9eb64b1b38a85",
+    "bytes": 2084
+  },
+  {
+    "path": "outputs/verification/perf-diagnosis-20261025/detail-no-probe-v1/1-msaa0-scale720.png",
+    "sha256": "bc5febd0a7a48752321a39896cdcb778a9fc45607cbf16e13af0bf072acac910",
+    "bytes": 1112203
+  },
+  {
+    "path": "outputs/verification/perf-diagnosis-20261025/detail-no-probe-v1/4-flat-material.png",
+    "sha256": "df8954019e82b45d3f9e75dc1da83e0b1425bd7dba3bee92b7b22faddc557187",
+    "bytes": 58713
+  },
+  {
+    "path": "outputs/verification/perf-diagnosis-20261025/detail-no-probe-v1/6-environment-hidden.png",
+    "sha256": "4acd28f1d1add07baf08f8a28b008c006548f5956534d893ac78a18e64b1ab02",
+    "bytes": 46683
+  },
+  {
+    "path": "outputs/verification/perf-diagnosis-20261025/detail-no-probe-v1/progress.json",
+    "sha256": "23f031075ac9f8a737ed4d62bd3a921ca4922dc37c947036903316bf97f56bfe",
+    "bytes": 110
+  },
+  {
+    "path": "outputs/verification/perf-diagnosis-20261025/detail-no-probe-v1/report.json",
+    "sha256": "3bdea4e2231e384bc3f24773a99f0010c42dd24277788214fd4a3a26d76e828e",
+    "bytes": 918429
+  },
+  {
+    "path": "outputs/verification/perf-diagnosis-20261025/detail-no-probe-v1/runner.cjs",
+    "sha256": "c99b8a14d21e8bcd7df81ddd1abf7de4c34ed255ef8b1680ae5fff9932cb72f4",
+    "bytes": 5757
+  },
+  {
+    "path": "outputs/verification/perf-diagnosis-20261025/diagnostic-runner-v2.cjs",
+    "sha256": "6b75e95f4dd818fb10557c590235ee56f4acc67aefe336ff86bd9b6394bb4a10",
+    "bytes": 7906
+  },
+  {
+    "path": "outputs/verification/perf-diagnosis-20261025/diagnostic-runner-v3.cjs",
+    "sha256": "821ea5ee1eb6906a074e3248909b47e1a5e81cfa9ad1c88efe5672848c19a8be",
+    "bytes": 8168
+  },
+  {
+    "path": "outputs/verification/perf-diagnosis-20261025/diagnostic-runner.cjs",
+    "sha256": "c99b8a14d21e8bcd7df81ddd1abf7de4c34ed255ef8b1680ae5fff9932cb72f4",
+    "bytes": 5757
+  },
+  {
+    "path": "outputs/verification/perf-diagnosis-20261025/diagnostic-source/diag-receipt.json",
+    "sha256": "9fbe9057c7aba8f4e0d830198be7ac3cf5e828a857262a1ba8c4616415db519b",
+    "bytes": 1028
+  },
+  {
+    "path": "outputs/verification/perf-diagnosis-20261025/diagnostic-source/diagnostic.pck",
+    "sha256": "c26cbe17cdf2fa7c2ce2b199a09b15e20426a7f4e52169a0aff0bb8d48ceb641",
+    "bytes": 16163412
+  },
+  {
+    "path": "outputs/verification/perf-diagnosis-20261025/diagnostic-source/export_presets.cfg",
+    "sha256": "1b7f6d0f546f326d04bb3f0bbab9ed380c3f83309350e5ccdc981372f1c1bea9",
+    "bytes": 629
+  },
+  {
+    "path": "outputs/verification/perf-diagnosis-20261025/diagnostic-source/perf_diag.gd",
+    "sha256": "495aa9c3ab9b04ce9a939040a02bfbb731263fe41f94277bc1adbb1772a98753",
+    "bytes": 6422
+  },
+  {
+    "path": "outputs/verification/perf-diagnosis-20261025/diagnostic-source/playroom.gd",
+    "sha256": "09fa664fe6ba2f440f54f2034d1b6a0bcdd91f2b67bf6c4cd659a3b2f3752d95",
+    "bytes": 32746
+  },
+  {
+    "path": "outputs/verification/perf-diagnosis-20261025/diagnostic-source/playroom.tscn",
+    "sha256": "c9f23c825c2c79afc8c7cc8155b717ea0c0b545d1608d2ee30a2a40b3f7586e4",
+    "bytes": 166
+  },
+  {
+    "path": "outputs/verification/perf-diagnosis-20261025/diagnostic-source/project.godot",
+    "sha256": "2ae4aa49e1ffe45c856e2ee2c10efd01425bb4c06685ad7d3f4c4da415c3a99f",
+    "bytes": 930
+  },
+  {
+    "path": "outputs/verification/perf-diagnosis-20261025/diagnostic-source/protected-manifest.json",
+    "sha256": "533f4f73a5ee65a8af0bf8980380f7d8a9f520a8c3652fe2a0cdc9475bbe68e4",
+    "bytes": 16708
+  },
+  {
+    "path": "outputs/verification/perf-diagnosis-20261025/diagnostic-source/retained-receipt.json",
+    "sha256": "c3ae4f5a14e60c948570d80ae4076add912b3fff6fe32185c3b71629a6356aff",
+    "bytes": 527
+  },
+  {
+    "path": "outputs/verification/perf-diagnosis-20261025/diagnostic-source/scene_environment.gd",
+    "sha256": "a734c8de35c9c9d30e6af003e559644e6c9d92dc3e68a95388485d139c0d07d8",
+    "bytes": 2266
+  },
+  {
+    "path": "outputs/verification/perf-diagnosis-20261025/final-path-isolation/1-true720.png",
+    "sha256": "ef4a35577024e5c17f5ec56623c56916ce59d569d44a0762e217b9cd78778baf",
+    "bytes": 732043
+  },
+  {
+    "path": "outputs/verification/perf-diagnosis-20261025/final-path-isolation/4-internal720-skip-depth-copy.png",
+    "sha256": "49d6eaafcfe1f1aac331064a3d1b7a0a63a413e6d3665f248e1e861adc69dcf8",
+    "bytes": 1131030
+  },
+  {
+    "path": "outputs/verification/perf-diagnosis-20261025/final-path-isolation/progress.json",
+    "sha256": "e9a1dab7bf9ea3b1218efc30472519d615f8591544a08e63e2d1ee79128d9bde",
+    "bytes": 121
+  },
+  {
+    "path": "outputs/verification/perf-diagnosis-20261025/final-path-isolation/report.json",
+    "sha256": "1ece53659c6cd9b7d10f4787b94fbe00c63bdfda8c8a97f82cb49cf034a9a8c1",
+    "bytes": 1212488
+  },
+  {
+    "path": "outputs/verification/perf-diagnosis-20261025/final-path-isolation/runner.cjs",
+    "sha256": "821ea5ee1eb6906a074e3248909b47e1a5e81cfa9ad1c88efe5672848c19a8be",
+    "bytes": 8168
+  },
+  {
+    "path": "outputs/verification/perf-diagnosis-20261025/final-path-plan.json",
+    "sha256": "921f4df7ad3e66b0c43e145887bba322358baf8ab02fd73eb576c019e8103b7e",
+    "bytes": 1174
+  },
+  {
+    "path": "outputs/verification/perf-diagnosis-20261025/gpu-probe.js",
+    "sha256": "19a82b5113d3dd1bd2a5f87675d95b3d6306f5dc6a0601e5e882ab4589380656",
+    "bytes": 4371
+  },
+  {
+    "path": "outputs/verification/perf-diagnosis-20261025/headful-confirm/failure.png",
+    "sha256": "52f5120ae401126e84da586ae98cd59b6cabf4780b87bd8b05acd8f6daa34527",
+    "bytes": 1328921
+  },
+  {
+    "path": "outputs/verification/perf-diagnosis-20261025/headful-confirm/report.json",
+    "sha256": "08178458035b5c6ba79eddc164c546c11ec2907edb619bf4c44c392b08eddebf",
+    "bytes": 4416
+  },
+  {
+    "path": "outputs/verification/perf-diagnosis-20261025/headful-confirm/runner.cjs",
+    "sha256": "6b75e95f4dd818fb10557c590235ee56f4acc67aefe336ff86bd9b6394bb4a10",
+    "bytes": 7906
+  },
+  {
+    "path": "outputs/verification/perf-diagnosis-20261025/headful-plan.json",
+    "sha256": "02b35be3cc32e4fba1954dde9ae0a8555b5a77d3d93e44ec1a8ee5d1cf6d940c",
+    "bytes": 787
+  },
+  {
+    "path": "outputs/verification/perf-diagnosis-20261025/main-no-probe-plan.json",
+    "sha256": "2f638b2d27df05bf119237dfeb2d29346a6c8f9a18c640fb4fe733abefab8f32",
+    "bytes": 926
+  },
+  {
+    "path": "outputs/verification/perf-diagnosis-20261025/main-no-probe-v1/1-msaa-off.png",
+    "sha256": "90fa58c60667670c196b008ba742ea9003ff1ed6fecdb9ce3b6c2248754e5175",
+    "bytes": 1495494
+  },
+  {
+    "path": "outputs/verification/perf-diagnosis-20261025/main-no-probe-v1/3-shadows-off.png",
+    "sha256": "df83877c89cb7f25259899b260dc2dd12d7f9e43fb57c0d6a2bc44726ea18002",
+    "bytes": 1309687
+  },
+  {
+    "path": "outputs/verification/perf-diagnosis-20261025/main-no-probe-v1/5-scale720.png",
+    "sha256": "773abdc89fcfcbe65962edab5cba92f6fe563f4b32a2cbc3bd5d1d3dafe5d833",
+    "bytes": 1131323
+  },
+  {
+    "path": "outputs/verification/perf-diagnosis-20261025/main-no-probe-v1/progress.json",
+    "sha256": "ac3623de42e0fce65bd11388ea21b7a11d5a9417a0c41174922b3c9602a946a2",
+    "bytes": 108
+  },
+  {
+    "path": "outputs/verification/perf-diagnosis-20261025/main-no-probe-v1/report.json",
+    "sha256": "7484b12d1d8d1d495dec320b2984bb90254b6fd8b447201e9e329f7f50041bc8",
+    "bytes": 462090
+  },
+  {
+    "path": "outputs/verification/perf-diagnosis-20261025/main-no-probe-v1/runner.cjs",
+    "sha256": "c99b8a14d21e8bcd7df81ddd1abf7de4c34ed255ef8b1680ae5fff9932cb72f4",
+    "bytes": 5757
+  },
+  {
+    "path": "outputs/verification/perf-diagnosis-20261025/report.md",
+    "sha256": "26958d629b8b055a6fc563c432ee4ff82d6fb269009e86dd492211686a1a18ba",
+    "bytes": 7245
+  },
+  {
+    "path": "outputs/verification/perf-diagnosis-20261025/smoke-plan.json",
+    "sha256": "1ab60f2bbad5d4428e16f6720d038cefcbb46446654165a57599f07b45d5b4bc",
+    "bytes": 392
+  },
+  {
+    "path": "outputs/verification/perf-diagnosis-20261025/smoke-v1/0-baseline.png",
+    "sha256": "0f2fc4f55a0f0b715890c04a6dd66c843c187e9978573e20166ddb836bd163d2",
+    "bytes": 1512631
+  },
+  {
+    "path": "outputs/verification/perf-diagnosis-20261025/smoke-v1/1-scale720.png",
+    "sha256": "e8f86376da1d3240cbfa48e3a9f13f2e2052ea622668062e648dd22d0ebe61d5",
+    "bytes": 1131263
+  },
+  {
+    "path": "outputs/verification/perf-diagnosis-20261025/smoke-v1/gpu-probe.js",
+    "sha256": "19a82b5113d3dd1bd2a5f87675d95b3d6306f5dc6a0601e5e882ab4589380656",
+    "bytes": 4371
+  },
+  {
+    "path": "outputs/verification/perf-diagnosis-20261025/smoke-v1/progress.json",
+    "sha256": "cef308cad7ba3256c6f01e0cee1d4e558c5eeb14180231e22cda78ba250b84c1",
+    "bytes": 114
+  },
+  {
+    "path": "outputs/verification/perf-diagnosis-20261025/smoke-v1/report.json",
+    "sha256": "c05aca9916ac0ffc743d35bfc05236cf5cb45dde6b0a3769a44244d437d5d2ab",
+    "bytes": 357915
+  },
+  {
+    "path": "outputs/verification/perf-diagnosis-20261025/smoke-v1/runner.cjs",
+    "sha256": "12824a3c7879e51dd65ceabfa0aa68ab0d21c174662a3de138e8eb75ba2e2933",
+    "bytes": 5436
+  },
+  {
+    "path": "outputs/verification/perf-diagnosis-20261025/validation.json",
+    "sha256": "84bd228b0187e38aae2959174f08d9a207f7c64cb7d83ccd59ee79c9c72f8e18",
+    "bytes": 510
+  }
+]

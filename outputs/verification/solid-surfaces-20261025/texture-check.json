@@ -1,0 +1,166 @@
+{
+  "pass": true,
+  "textures": [
+    {
+      "name": "wood",
+      "colors": 1,
+      "sha256": "8127af2d0a6c149efd07d54c086adea0533d560db0d88bd37cdb671a80f67603",
+      "baseline_sha256": "9dfc52269174ab4ccae119c5af33ea49be9edb7fd3a5483e5f462690f51aa9e7",
+      "mean_rgb": [
+        59.0,
+        36.0,
+        22.0
+      ],
+      "baseline_mean_rgb": [
+        58.6806640625,
+        35.73033142089844,
+        21.705795288085938
+      ]
+    },
+    {
+      "name": "tablewood",
+      "colors": 1,
+      "sha256": "f3911706e57da65ebdce4656a131baf3a51d0784d511ea8865b24cb1cf30c003",
+      "baseline_sha256": "03903f079cbfbdddea6ecfa9befd53acc7310cf5d917be1be4a6b55a8a9445fd",
+      "mean_rgb": [
+        84.0,
+        48.0,
+        27.0
+      ],
+      "baseline_mean_rgb": [
+        84.17906188964844,
+        48.4801025390625,
+        26.804168701171875
+      ]
+    },
+    {
+      "name": "wall",
+      "colors": 1,
+      "sha256": "a4a07753e40d61de5ae9c54dca42620ea16f24aa491e6af181f417a9def01751",
+      "baseline_sha256": "1f9b7eea0b9a0aeb95d8758b745142060a4bfbf07a47ee4aa40c2bff2056d368",
+      "mean_rgb": [
+        204.0,
+        199.0,
+        179.0
+      ],
+      "baseline_mean_rgb": [
+        203.9989013671875,
+        198.9011993408203,
+        178.49485778808594
+      ]
+    },
+    {
+      "name": "trim",
+      "colors": 1,
+      "sha256": "b3fd3d5f734ab036e31d41651a7d541a567ed8c0852127dd0951c5e7e0a34b01",
+      "baseline_sha256": "b622322e504218f8a4c4b6929064e9761e4c25249f3bf6d13685811236d75da6",
+      "mean_rgb": [
+        240.0,
+        230.0,
+        204.0
+      ],
+      "baseline_mean_rgb": [
+        239.70310974121094,
+        229.49485778808594,
+        203.9989013671875
+      ]
+    },
+    {
+      "name": "limestone",
+      "colors": 1,
+      "sha256": "a55ad3dbf3bdc2bafd4d0f12b698745f02dcc58455620ff8bc69071052de2eef",
+      "baseline_sha256": "28b7ec0ba26fd08259d934decee226e3902ea9b1db720227963f53938582a528",
+      "mean_rgb": [
+        145.0,
+        143.0,
+        133.0
+      ],
+      "baseline_mean_rgb": [
+        145.41921997070312,
+        142.86703491210938,
+        132.66917419433594
+      ]
+    },
+    {
+      "name": "floor-finish",
+      "colors": 2,
+      "sha256": "bbf9eb7758d70036a065cb1256deda1dd3085d312ab6cfad1e721550e4ec9230",
+      "baseline_sha256": "e7e4facaa4e27478028a0bccea2580c24c7e97cb37fe6bd0a4657141a0a8e472",
+      "mean_rgb": [
+        144.85992431640625,
+        142.85992431640625,
+        132.85992431640625
+      ],
+      "baseline_mean_rgb": [
+        144.9749631881714,
+        142.4274501800537,
+        132.22346687316895
+      ]
+    },
+    {
+      "name": "cream",
+      "colors": 28,
+      "sha256": "44f5e0f6e16570e99a413db1c535c322196e7cfa2f0c208ed5c27628445148a9",
+      "baseline_sha256": "44f5e0f6e16570e99a413db1c535c322196e7cfa2f0c208ed5c27628445148a9",
+      "mean_rgb": [
+        201.484619140625,
+        191.2892608642578,
+        165.77902221679688
+      ],
+      "baseline_mean_rgb": [
+        201.484619140625,
+        191.2892608642578,
+        165.77902221679688
+      ]
+    },
+    {
+      "name": "throw",
+      "colors": 28,
+      "sha256": "d499c1ff5964f18b8056361463055569fd086edb203fb4a704a23c4774e45667",
+      "baseline_sha256": "d499c1ff5964f18b8056361463055569fd086edb203fb4a704a23c4774e45667",
+      "mean_rgb": [
+        232.0921173095703,
+        221.877197265625,
+        196.38697814941406
+      ],
+      "baseline_mean_rgb": [
+        232.0921173095703,
+        221.877197265625,
+        196.38697814941406
+      ]
+    },
+    {
+      "name": "cushion",
+      "colors": 29,
+      "sha256": "afee5fa340d49cc159c24f1bc8b072137d39b6bf6304d11f6f4d3694425233ab",
+      "baseline_sha256": "afee5fa340d49cc159c24f1bc8b072137d39b6bf6304d11f6f4d3694425233ab",
+      "mean_rgb": [
+        102.03668212890625,
+        122.4356689453125,
+        79.09211730957031
+      ],
+      "baseline_mean_rgb": [
+        102.03668212890625,
+        122.4356689453125,
+        79.09211730957031
+      ]
+    },
+    {
+      "name": "curtain",
+      "colors": 28,
+      "sha256": "6fb15ce0830f92e08dfdbfe60d962bf947c891571f455c5cf903932f47539c03",
+      "baseline_sha256": "6fb15ce0830f92e08dfdbfe60d962bf947c891571f455c5cf903932f47539c03",
+      "mean_rgb": [
+        132.6312713623047,
+        114.77902221679688,
+        91.82772827148438
+      ],
+      "baseline_mean_rgb": [
+        132.6312713623047,
+        114.77902221679688,
+        91.82772827148438
+      ]
+    }
+  ],
+  "runtime_lighting_settings_unchanged": true
+}

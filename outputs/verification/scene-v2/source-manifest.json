@@ -1,0 +1,527 @@
+{
+  "recorded_at": "2026-10-18T23:37:43.6645064+08:00",
+  "pack": "scene-8f68e808fcb8.pck",
+  "scope": "Source generators, editable assets, runtime, baked lighting, build checks and active Web bundle; screenshots and acceptance reports are separate evidence.",
+  "files": [
+    {
+      "path": "outputs/Bake.ps1",
+      "bytes": 1855,
+      "sha256": "51ff2aec1d2c8ae20d5f5b36579f3e93cad0a9dfc5de5882d5dfbe9fa9a49ee0"
+    },
+    {
+      "path": "outputs/blender/build_character.py",
+      "bytes": 21849,
+      "sha256": "d6691f5ba7e305210c054a7a56ffaae6782957d5afc67bba93f3fd049ed9ee97"
+    },
+    {
+      "path": "outputs/blender/build_living_room.py",
+      "bytes": 21535,
+      "sha256": "8abc8873f829732c5bc3d539cb3242539cca415f0f990e72809b08ab8059dddc"
+    },
+    {
+      "path": "outputs/blender/character.blend",
+      "bytes": 5449698,
+      "sha256": "955e7639c4e654af46997cf55ba7867a8d21dc781b9e75e28cd57055285834d1"
+    },
+    {
+      "path": "outputs/blender/environment_details.py",
+      "bytes": 3515,
+      "sha256": "2303efdfff7337ed6dcb3bcb2d29e532880a4d8b08d5e3607345bdac4a2ea01a"
+    },
+    {
+      "path": "outputs/blender/environment_lightmap.py",
+      "bytes": 4495,
+      "sha256": "a7bed79264f51b8b6e79123192d8e8e1f942e99aebabc78c379a60916a883045"
+    },
+    {
+      "path": "outputs/blender/environment_preview.py",
+      "bytes": 2706,
+      "sha256": "72634ae9c3d870865882b44790422bfca188cbdc8a60f6fc5a4973bfe66ac185"
+    },
+    {
+      "path": "outputs/blender/environment_v2.py",
+      "bytes": 11597,
+      "sha256": "49da0c32b724bbed5d69a6399e98fe7f94a57f75710e15aec104b538cb0225a8"
+    },
+    {
+      "path": "outputs/blender/living-room.blend",
+      "bytes": 13482684,
+      "sha256": "ad4defa2fe23bb13d80b9194e62ee0d432ec6dfc4cfa561edf2e5d9de385d1d7"
+    },
+    {
+      "path": "outputs/blender/model-manifest.json",
+      "bytes": 1467,
+      "sha256": "092c766c4e67ef0163e74398b852f80cdf81f434165a15f3f3b42761d4ac2393"
+    },
+    {
+      "path": "outputs/blender/render_character_environment.py",
+      "bytes": 3612,
+      "sha256": "7e0201b4df68b97396dd579f15db660970fb2946867c469ab2c3ef0843b54f99"
+    },
+    {
+      "path": "outputs/blender/render_environment_draft.py",
+      "bytes": 2096,
+      "sha256": "1fec4f01eb7d5e3d0961895fe50bafada7d20bb240716fe6c64578cabf7ab39f"
+    },
+    {
+      "path": "outputs/blender/room_api.py",
+      "bytes": 5954,
+      "sha256": "4c578a1886cdb7f2b0c395156e52ae6659632b48bc1bd847352b562e7e83c2ad"
+    },
+    {
+      "path": "outputs/blender/ROOM_CONTRACT.md",
+      "bytes": 3778,
+      "sha256": "b7c40f8de003e025b1888b066ef45eec2da882a4185efc945e75316fb66d6e9c"
+    },
+    {
+      "path": "outputs/blender/rooms/balcony.py",
+      "bytes": 8743,
+      "sha256": "0cf45c321deba2cd3f102f8186e3f226f5e93a7b8b5aff565ab545f54d065a2b"
+    },
+    {
+      "path": "outputs/blender/rooms/dining.py",
+      "bytes": 4228,
+      "sha256": "0f85646c7a5fb0eb5c32dbda54cf4acd6368ce52dcac0fedb55fc64c89208b3e"
+    },
+    {
+      "path": "outputs/blender/rooms/hallway.py",
+      "bytes": 2285,
+      "sha256": "2734f397d4244c4c9cac4a258f2c49cbc02adb2635124f3b237dff12ebc5c30a"
+    },
+    {
+      "path": "outputs/blender/rooms/kitchen.py",
+      "bytes": 12220,
+      "sha256": "4fe006317bd5b60857422e5c251848d03274ecdb6094a9605834e1b5ceec8452"
+    },
+    {
+      "path": "outputs/blender/rooms/study.py",
+      "bytes": 6654,
+      "sha256": "8b8a1983a4002738d75d77de5baced6db5831dff14c334c885dfeba7e95f89af"
+    },
+    {
+      "path": "outputs/blender/rooms/wash.py",
+      "bytes": 3283,
+      "sha256": "f8ea3c5bcf17ff3a28132ad5768a29311116e7332698b8c7057261bdd3d9dc13"
+    },
+    {
+      "path": "outputs/blender/scene-v2-spec.json",
+      "bytes": 651,
+      "sha256": "0b2d07ef16bfa3e1591ea769fee7f4b04c8997ecefd289c1b91a9fe753ea179d"
+    },
+    {
+      "path": "outputs/Build.ps1",
+      "bytes": 4950,
+      "sha256": "df86b1348ac2e70c8dc8d43f972ba623ff1802115639b39e94c1d6d209bff6d7"
+    },
+    {
+      "path": "outputs/godot/addons/scene_baker/plugin.cfg",
+      "bytes": 158,
+      "sha256": "4e653055215528f38ce3c88bde7179139ea38caf1c7dc5f27860bf5b483de4a1"
+    },
+    {
+      "path": "outputs/godot/addons/scene_baker/plugin.gd",
+      "bytes": 2061,
+      "sha256": "d1576fd9a165b2c99ea37c200c408faa8dd4edb664af987adc0dded083590633"
+    },
+    {
+      "path": "outputs/godot/addons/scene_baker/plugin.gd.uid",
+      "bytes": 19,
+      "sha256": "46a918b86465e48458c3df9c77605086f3fe9c6bc53721e7cac8d2a62fc10710"
+    },
+    {
+      "path": "outputs/godot/assets/character-contract.json",
+      "bytes": 6537,
+      "sha256": "8d102d63a212b6c0bd9f26a38130b31856143a666444a0c29b31903a15a52af5"
+    },
+    {
+      "path": "outputs/godot/assets/character.glb",
+      "bytes": 1115156,
+      "sha256": "b48319f3e1c9b393c6f1019b80ef1c257c06a5b8a50a3b4009d6cebc943b697e"
+    },
+    {
+      "path": "outputs/godot/assets/character.glb.import",
+      "bytes": 1149,
+      "sha256": "e918b1fdef89ed22af9afff29f76b2092dc7fee8ec94d23c4d8b9f30dfc53965"
+    },
+    {
+      "path": "outputs/godot/assets/environment-textures/cream.png",
+      "bytes": 81998,
+      "sha256": "44f5e0f6e16570e99a413db1c535c322196e7cfa2f0c208ed5c27628445148a9"
+    },
+    {
+      "path": "outputs/godot/assets/environment-textures/cream.png.import",
+      "bytes": 947,
+      "sha256": "14cd6675c786d3d1f7638079dc120b32b4afe97570a2e98feed66f1b3cc3fa65"
+    },
+    {
+      "path": "outputs/godot/assets/environment-textures/curtain.png",
+      "bytes": 70437,
+      "sha256": "6fb15ce0830f92e08dfdbfe60d962bf947c891571f455c5cf903932f47539c03"
+    },
+    {
+      "path": "outputs/godot/assets/environment-textures/curtain.png.import",
+      "bytes": 952,
+      "sha256": "3dad01779b6f801922a0d04905805943a0ed7822944b0d79d9e08bce9f848b6d"
+    },
+    {
+      "path": "outputs/godot/assets/environment-textures/cushion.png",
+      "bytes": 77256,
+      "sha256": "afee5fa340d49cc159c24f1bc8b072137d39b6bf6304d11f6f4d3694425233ab"
+    },
+    {
+      "path": "outputs/godot/assets/environment-textures/cushion.png.import",
+      "bytes": 952,
+      "sha256": "5327327b4789a02f14426870ba17cfc5964bf21476df1777716bfffa2f08403a"
+    },
+    {
+      "path": "outputs/godot/assets/environment-textures/floor-finish.png",
+      "bytes": 916961,
+      "sha256": "e7e4facaa4e27478028a0bccea2580c24c7e97cb37fe6bd0a4657141a0a8e472"
+    },
+    {
+      "path": "outputs/godot/assets/environment-textures/floor-finish.png.import",
+      "bytes": 968,
+      "sha256": "f8410d1248e6942f56ea5a2dde9ad0775d11f104601b1753d8b58752b2ce0d27"
+    },
+    {
+      "path": "outputs/godot/assets/environment-textures/limestone.png",
+      "bytes": 71774,
+      "sha256": "28b7ec0ba26fd08259d934decee226e3902ea9b1db720227963f53938582a528"
+    },
+    {
+      "path": "outputs/godot/assets/environment-textures/limestone.png.import",
+      "bytes": 958,
+      "sha256": "8c6cc5e7df33f63a6bdc99cf94476705bf42a808e8bb5d0ee709b1a20fe554d5"
+    },
+    {
+      "path": "outputs/godot/assets/environment-textures/tablewood.png",
+      "bytes": 75957,
+      "sha256": "03903f079cbfbdddea6ecfa9befd53acc7310cf5d917be1be4a6b55a8a9445fd"
+    },
+    {
+      "path": "outputs/godot/assets/environment-textures/tablewood.png.import",
+      "bytes": 959,
+      "sha256": "282395eceed15a8a638ab90461569de1e4c6b8d5f2fa73466c718767e7c4dd5b"
+    },
+    {
+      "path": "outputs/godot/assets/environment-textures/throw.png",
+      "bytes": 82288,
+      "sha256": "d499c1ff5964f18b8056361463055569fd086edb203fb4a704a23c4774e45667"
+    },
+    {
+      "path": "outputs/godot/assets/environment-textures/throw.png.import",
+      "bytes": 947,
+      "sha256": "0d4cafadf81b5d9808ba8f96a6decbb9c6b5312353ffba6f542c1947e9225242"
+    },
+    {
+      "path": "outputs/godot/assets/environment-textures/trim.png",
+      "bytes": 75084,
+      "sha256": "b622322e504218f8a4c4b6929064e9761e4c25249f3bf6d13685811236d75da6"
+    },
+    {
+      "path": "outputs/godot/assets/environment-textures/trim.png.import",
+      "bytes": 944,
+      "sha256": "1324101d829d7938692c1893aa7dc59f8d5eccf77fcdb4b1629c721816cdec09"
+    },
+    {
+      "path": "outputs/godot/assets/environment-textures/wall.png",
+      "bytes": 72809,
+      "sha256": "1f9b7eea0b9a0aeb95d8758b745142060a4bfbf07a47ee4aa40c2bff2056d368"
+    },
+    {
+      "path": "outputs/godot/assets/environment-textures/wall.png.import",
+      "bytes": 944,
+      "sha256": "b9f98aea5189db934586501751e81166a3df9d886381bc09d928e5c42d6d8f48"
+    },
+    {
+      "path": "outputs/godot/assets/environment-textures/wood.png",
+      "bytes": 58661,
+      "sha256": "9dfc52269174ab4ccae119c5af33ea49be9edb7fd3a5483e5f462690f51aa9e7"
+    },
+    {
+      "path": "outputs/godot/assets/environment-textures/wood.png.import",
+      "bytes": 944,
+      "sha256": "e2ccf1dc13da646453c7e09cc2a7ff0df8b3d59af51d49c9617a8fa7b0010ede"
+    },
+    {
+      "path": "outputs/godot/assets/house-layout.json",
+      "bytes": 440,
+      "sha256": "e2362a44bbc866feabc5f39bbf8ca03e27052468b6e580e58f2d198b9e5228e9"
+    },
+    {
+      "path": "outputs/godot/assets/living-room_cream.png",
+      "bytes": 81998,
+      "sha256": "44f5e0f6e16570e99a413db1c535c322196e7cfa2f0c208ed5c27628445148a9"
+    },
+    {
+      "path": "outputs/godot/assets/living-room_cream.png.import",
+      "bytes": 1077,
+      "sha256": "dd8bd907c910468bcabda24e31211b12e012376e00e5eb9ac7c2cae98918d846"
+    },
+    {
+      "path": "outputs/godot/assets/living-room_curtain.png",
+      "bytes": 70437,
+      "sha256": "6fb15ce0830f92e08dfdbfe60d962bf947c891571f455c5cf903932f47539c03"
+    },
+    {
+      "path": "outputs/godot/assets/living-room_curtain.png.import",
+      "bytes": 1082,
+      "sha256": "3b177a5424bdf541630918ef352e466c95e90bd3d152cca8e08f3281eb2529a9"
+    },
+    {
+      "path": "outputs/godot/assets/living-room_cushion.png",
+      "bytes": 77256,
+      "sha256": "afee5fa340d49cc159c24f1bc8b072137d39b6bf6304d11f6f4d3694425233ab"
+    },
+    {
+      "path": "outputs/godot/assets/living-room_cushion.png.import",
+      "bytes": 1083,
+      "sha256": "57e98afc52011a18d2123ee96afc80d18ac70fa856707de94ef2296f81db661b"
+    },
+    {
+      "path": "outputs/godot/assets/living-room_floor-finish.png",
+      "bytes": 916961,
+      "sha256": "e7e4facaa4e27478028a0bccea2580c24c7e97cb37fe6bd0a4657141a0a8e472"
+    },
+    {
+      "path": "outputs/godot/assets/living-room_floor-finish.png.import",
+      "bytes": 1098,
+      "sha256": "ab431338032f7bf6b68863391fd31731ab8b020bda9d3cc615feb2b790cd3bcc"
+    },
+    {
+      "path": "outputs/godot/assets/living-room_limestone.png",
+      "bytes": 71774,
+      "sha256": "28b7ec0ba26fd08259d934decee226e3902ea9b1db720227963f53938582a528"
+    },
+    {
+      "path": "outputs/godot/assets/living-room_limestone.png.import",
+      "bytes": 1089,
+      "sha256": "3426ac8c4cdd5b4a46d1dd25d0ea754265aa389c8bf8b056d716fbdb63c41c44"
+    },
+    {
+      "path": "outputs/godot/assets/living-room_tablewood.png",
+      "bytes": 75957,
+      "sha256": "03903f079cbfbdddea6ecfa9befd53acc7310cf5d917be1be4a6b55a8a9445fd"
+    },
+    {
+      "path": "outputs/godot/assets/living-room_tablewood.png.import",
+      "bytes": 1089,
+      "sha256": "41833af19fe31b6f4d351c0cd48e236adc90af4ea2840fb57923f89d01544df8"
+    },
+    {
+      "path": "outputs/godot/assets/living-room_throw.png",
+      "bytes": 82288,
+      "sha256": "d499c1ff5964f18b8056361463055569fd086edb203fb4a704a23c4774e45667"
+    },
+    {
+      "path": "outputs/godot/assets/living-room_throw.png.import",
+      "bytes": 1077,
+      "sha256": "0a7ee671958bc279e8faa1b3d49ba76ef751a0b70bbc4455df608309785aa34a"
+    },
+    {
+      "path": "outputs/godot/assets/living-room_trim.png",
+      "bytes": 75084,
+      "sha256": "b622322e504218f8a4c4b6929064e9761e4c25249f3bf6d13685811236d75da6"
+    },
+    {
+      "path": "outputs/godot/assets/living-room_trim.png.import",
+      "bytes": 1073,
+      "sha256": "a6bd42811e7e13bbec7747b58225cb99e27d213159d71cab69221febb18a6606"
+    },
+    {
+      "path": "outputs/godot/assets/living-room_wall.png",
+      "bytes": 72809,
+      "sha256": "1f9b7eea0b9a0aeb95d8758b745142060a4bfbf07a47ee4aa40c2bff2056d368"
+    },
+    {
+      "path": "outputs/godot/assets/living-room_wall.png.import",
+      "bytes": 1074,
+      "sha256": "2c5fefca25c1009e347a5896b123dcce38943c8de1306bb42e1f2c1ac785a5ce"
+    },
+    {
+      "path": "outputs/godot/assets/living-room_wood.png",
+      "bytes": 58661,
+      "sha256": "9dfc52269174ab4ccae119c5af33ea49be9edb7fd3a5483e5f462690f51aa9e7"
+    },
+    {
+      "path": "outputs/godot/assets/living-room_wood.png.import",
+      "bytes": 1074,
+      "sha256": "be5d0ad3c262ed92fd25a135921b5a858f28b8769336bc84097ddb4f865cc05c"
+    },
+    {
+      "path": "outputs/godot/assets/living-room.glb",
+      "bytes": 10579108,
+      "sha256": "dbc32350082c450d69feeb9cc21443c527b427fd1e3b0a2a94c7961250599ca9"
+    },
+    {
+      "path": "outputs/godot/assets/living-room.glb.import",
+      "bytes": 1156,
+      "sha256": "2b345611388f62925d1115df5bbe8e9669e314ba69c256ed38e172a4f3abda36"
+    },
+    {
+      "path": "outputs/godot/assets/living-room.glb.unwrap_cache",
+      "bytes": 2647468,
+      "sha256": "9d15392dcc64ac015fa098b1b68970f3d11f8c30f4448311c72f53092e723424"
+    },
+    {
+      "path": "outputs/godot/assets/NotoSansSC-OFL.txt",
+      "bytes": 4481,
+      "sha256": "e35ffdebb2225b49814c31889cbb3ce69cb3509e6a9f431edaba5e1a6de8cd15"
+    },
+    {
+      "path": "outputs/godot/assets/NotoSansSC-Play.ttf",
+      "bytes": 30628,
+      "sha256": "e2218f050a8daccf337b767079ec592f0cf398cd170a15c5736a3b618c99660e"
+    },
+    {
+      "path": "outputs/godot/assets/NotoSansSC-Play.ttf.import",
+      "bytes": 777,
+      "sha256": "eebfb26705c6428ec50f7acce82768c07a7bd2e75a3098639d87f9f064646bdb"
+    },
+    {
+      "path": "outputs/godot/assets/NotoSansSC-Preview.ttf",
+      "bytes": 14744,
+      "sha256": "bb3d334654c2eebf304cc543cd917794574a70d898038b44b3fa3705af062de1"
+    },
+    {
+      "path": "outputs/godot/assets/NotoSansSC-Preview.ttf.import",
+      "bytes": 785,
+      "sha256": "70399c78592e49d97776e978f5906973f38edde91098ecc49d04358c93aa1ec2"
+    },
+    {
+      "path": "outputs/godot/assets/scene-v2-data.json",
+      "bytes": 12676,
+      "sha256": "69ad391c4d484b6255cc0d86f81027459ca909c629e73dc9d903476fada1c73b"
+    },
+    {
+      "path": "outputs/godot/baked/bake-manifest.json",
+      "bytes": 237,
+      "sha256": "ac48a03ad68ff8465858606398e9d58530f186bdc1b9bab1a64fb42961d4d838"
+    },
+    {
+      "path": "outputs/godot/baked/house_shadow.png",
+      "bytes": 39791,
+      "sha256": "b4c5a5c0ef78e019e50f353da764d94624242344791741d472676a0fdf771c44"
+    },
+    {
+      "path": "outputs/godot/baked/house_shadow.png.import",
+      "bytes": 634,
+      "sha256": "d890660e2c40c40a25d4cd0ac59bf85921fc7efa190f27ebf5a14acdac1db96e"
+    },
+    {
+      "path": "outputs/godot/baked/house.exr",
+      "bytes": 645748,
+      "sha256": "f854f7461594ad0b76dda6381d99256bec35f82ec6b86df2d5362031500b3246"
+    },
+    {
+      "path": "outputs/godot/baked/house.exr.import",
+      "bytes": 660,
+      "sha256": "5f5f4ef265dab5718788fddf22a3d3c0454e4d97b6deebaa906b0d24749647a0"
+    },
+    {
+      "path": "outputs/godot/baked/house.lmbake",
+      "bytes": 43838,
+      "sha256": "38eb51c97bf3c04b4df0238c4126469d419569563271814b4c850a0910e70547"
+    },
+    {
+      "path": "outputs/godot/baked/house.scn",
+      "bytes": 6718098,
+      "sha256": "ff8df8105e25c7d04424a0cde3b7a7aa69d826775ba6c08561a1462cc4b38d99"
+    },
+    {
+      "path": "outputs/godot/export_presets.cfg",
+      "bytes": 629,
+      "sha256": "1b7f6d0f546f326d04bb3f0bbab9ed380c3f83309350e5ccdc981372f1c1bea9"
+    },
+    {
+      "path": "outputs/godot/main.gd",
+      "bytes": 437,
+      "sha256": "2ecacb30e02cbfb4da67b9ea05a09e69025a363296c75ad7beae39628a3d9456"
+    },
+    {
+      "path": "outputs/godot/main.gd.uid",
+      "bytes": 20,
+      "sha256": "b294859ef22e75a29194665066ca5709a9c37acea10442b0cf0d874b1ed59147"
+    },
+    {
+      "path": "outputs/godot/main.tscn",
+      "bytes": 164,
+      "sha256": "79b669b3b0d7a954b4d941d7e0a90bbb54e26b59e2769a0c765e702f08d264ba"
+    },
+    {
+      "path": "outputs/godot/playroom.gd",
+      "bytes": 21096,
+      "sha256": "2e1835def12354d6cf12f8990858f6a36e1578bff0d555e4ac81bd4a035a6382"
+    },
+    {
+      "path": "outputs/godot/playroom.gd.uid",
+      "bytes": 20,
+      "sha256": "4a7416b31f838d8869bdfe9278ef0e3de63bc12db7c4c8ba8b48bffc74e97e44"
+    },
+    {
+      "path": "outputs/godot/playroom.tscn",
+      "bytes": 159,
+      "sha256": "bc26ee22cd8a95b71afac057fe7ebe74df730128f2a028e9baf6c750936721da"
+    },
+    {
+      "path": "outputs/godot/project.godot",
+      "bytes": 930,
+      "sha256": "2ae4aa49e1ffe45c856e2ee2c10efd01425bb4c06685ad7d3f4c4da415c3a99f"
+    },
+    {
+      "path": "outputs/godot/scene_environment.gd",
+      "bytes": 1893,
+      "sha256": "1f0cfa9da1f28d0c6c495ed4c4152144dd6d22527e688981ed95de0ec1f4cb21"
+    },
+    {
+      "path": "outputs/godot/scene_environment.gd.uid",
+      "bytes": 20,
+      "sha256": "6c536ca986faf53e64663a499fe2085fccfa2c46a424f6b414239f9e582a8593"
+    },
+    {
+      "path": "outputs/Prepare-Bake.gd",
+      "bytes": 1268,
+      "sha256": "0a0f49ed713203fc2efc61debae9399fa82e2cba70fd01469719c3bb24011aaf"
+    },
+    {
+      "path": "outputs/Start-Preview.ps1",
+      "bytes": 1109,
+      "sha256": "e853c29fb786b7c977a8fffc2d2a6b33febc27ebd64a2f83062ca1b7a024e5d1"
+    },
+    {
+      "path": "outputs/Verify-House.gd",
+      "bytes": 3878,
+      "sha256": "155c50a37ec429f04cbbc26b0d5df2ccc82fe80c37d61f40b7158c4b8f63e3e0"
+    },
+    {
+      "path": "outputs/Verify-Playroom.gd",
+      "bytes": 6135,
+      "sha256": "512fc096db65a91954739777d96995ced4de0857f14d635f79539c1bdf9cd09d"
+    },
+    {
+      "path": "outputs/Verify-Scene.gd",
+      "bytes": 1782,
+      "sha256": "fb06ffb79bb08d4ed9f6c9ff7ee47ef0296a82d772f97acbe9839cfab4d4653e"
+    },
+    {
+      "path": "outputs/web/index.html",
+      "bytes": 5605,
+      "sha256": "81dbebe6e8481fa86da2b3be89cf3d7d8fa5749c7ea754039bfc547317443b49"
+    },
+    {
+      "path": "outputs/web/index.js",
+      "bytes": 279815,
+      "sha256": "33c94cb3175f3333b82e2a3be5e8e86f77986f0aa2042b1631f6367a4e5bb6ba"
+    },
+    {
+      "path": "outputs/web/index.wasm",
+      "bytes": 39514754,
+      "sha256": "fc74679e3b97f76878947fcd4fbe1268cbfa6188182a2e33bbc3f5dc9bfa57d0"
+    },
+    {
+      "path": "outputs/web/scene-8f68e808fcb8.pck",
+      "bytes": 16346704,
+      "sha256": "8f68e808fcb83304db3189fb3533b9f53a5437e29f78077f451d11390478ed2c"
+    }
+  ]
+}

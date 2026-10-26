@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "units": "meters",
+  "character": {"height": 1.65, "head_ratio": 5.5, "seat_surface": 0.45, "walk_speed": 1.65, "radius": 0.22},
+  "furniture": {"chair_seat": 0.45, "chair_back": 0.90, "table_top": 0.75, "sofa_seat": 0.45, "fridge_height": 1.90, "minimum_route": 0.90},
+  "camera": {"pitch_degrees": 40.0, "fov": 35.0, "zoom_min": 0.85, "zoom_max": 1.15},
+  "rooms": {"living": [-2.9, 2.9, 0.0, 5.8], "balcony": [-2.9, 2.9, 5.8, 8.0], "hallway": [-2.9, 11.9, -2.0, 0.0], "dining": [-2.9, 2.0, -6.6, -2.0], "wash": [2.0, 4.6, -4.4, -2.0], "study": [4.6, 9.6, -6.6, -2.0], "kitchen": [-2.9, 2.0, -9.2, -6.6]},
+  "wall_height": 2.8
+}

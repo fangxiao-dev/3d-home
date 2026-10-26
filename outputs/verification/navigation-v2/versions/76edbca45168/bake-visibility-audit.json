@@ -1,0 +1,560 @@
+{
+  "pack": "scene-76edbca45168.pck",
+  "observed_hidden_groups": {
+    "balcony/balcony_cabinet": [
+      "fixed-1366/report.json/views/1/angles/12/state",
+      "fixed-1366/report.json/views/1/angles/13/state"
+    ],
+    "dining/refrigerator": [
+      "fixed-1366/report.json/views/4/angles/6/state",
+      "fixed-1366/report.json/views/4/angles/7/state"
+    ]
+  },
+  "observed_hidden_and_baked": [
+    {
+      "group": "balcony/balcony_cabinet",
+      "baked_parts": [
+        "balcony laundry upper cabinet"
+      ],
+      "occurrences": [
+        "fixed-1366/report.json/views/1/angles/12/state",
+        "fixed-1366/report.json/views/1/angles/13/state"
+      ],
+      "parts": [
+        {
+          "name": "balcony laundry upper cabinet",
+          "bake_static": true,
+          "collision": true,
+          "cutaway": ""
+        },
+        {
+          "name": "balcony recessed cabinet field",
+          "bake_static": false,
+          "collision": false,
+          "cutaway": ""
+        }
+      ]
+    },
+    {
+      "group": "dining/refrigerator",
+      "baked_parts": [
+        "dining refrigerator body"
+      ],
+      "occurrences": [
+        "fixed-1366/report.json/views/4/angles/6/state",
+        "fixed-1366/report.json/views/4/angles/7/state"
+      ],
+      "parts": [
+        {
+          "name": "dining refrigerator body",
+          "bake_static": true,
+          "collision": true,
+          "cutaway": ""
+        },
+        {
+          "name": "dining refrigerator toe grille",
+          "bake_static": false,
+          "collision": false,
+          "cutaway": ""
+        },
+        {
+          "name": "dining refrigerator door 0",
+          "bake_static": false,
+          "collision": false,
+          "cutaway": ""
+        },
+        {
+          "name": "dining refrigerator handle 0",
+          "bake_static": false,
+          "collision": false,
+          "cutaway": ""
+        },
+        {
+          "name": "dining refrigerator door 1",
+          "bake_static": false,
+          "collision": false,
+          "cutaway": ""
+        },
+        {
+          "name": "dining refrigerator handle 1",
+          "bake_static": false,
+          "collision": false,
+          "cutaway": ""
+        }
+      ]
+    }
+  ],
+  "all_ray_hide_eligible_baked_groups": {
+    "living/sofa": [
+      {
+        "name": "Sofa plinth",
+        "bake_static": true,
+        "collision": true,
+        "cutaway": ""
+      },
+      {
+        "name": "Sofa seat cushion",
+        "bake_static": true,
+        "collision": true,
+        "cutaway": ""
+      },
+      {
+        "name": "Oat pillow",
+        "bake_static": true,
+        "collision": true,
+        "cutaway": ""
+      },
+      {
+        "name": "Sofa cushion welt",
+        "bake_static": false,
+        "collision": false,
+        "cutaway": ""
+      },
+      {
+        "name": "living sofa timber foot",
+        "bake_static": false,
+        "collision": false,
+        "cutaway": ""
+      }
+    ],
+    "living/entry_stool": [
+      {
+        "name": "Sofa return base",
+        "bake_static": true,
+        "collision": true,
+        "cutaway": ""
+      }
+    ],
+    "living/coffee_table": [
+      {
+        "name": "Tea table top",
+        "bake_static": true,
+        "collision": true,
+        "cutaway": ""
+      },
+      {
+        "name": "Tissue packet",
+        "bake_static": true,
+        "collision": true,
+        "cutaway": ""
+      },
+      {
+        "name": "Remote control",
+        "bake_static": true,
+        "collision": true,
+        "cutaway": ""
+      }
+    ],
+    "living/tv_console": [
+      {
+        "name": "TV console body",
+        "bake_static": true,
+        "collision": true,
+        "cutaway": ""
+      },
+      {
+        "name": "TV console brass pull",
+        "bake_static": true,
+        "collision": true,
+        "cutaway": ""
+      },
+      {
+        "name": "Console glass door",
+        "bake_static": true,
+        "collision": true,
+        "cutaway": ""
+      }
+    ],
+    "living/living_chest": [
+      {
+        "name": "Tall chest body",
+        "bake_static": true,
+        "collision": true,
+        "cutaway": ""
+      },
+      {
+        "name": "Tall chest brass pull",
+        "bake_static": true,
+        "collision": true,
+        "cutaway": ""
+      }
+    ],
+    "living/living_side_cabinet": [
+      {
+        "name": "Balcony side cabinet body",
+        "bake_static": true,
+        "collision": true,
+        "cutaway": ""
+      },
+      {
+        "name": "Balcony side cabinet brass pull",
+        "bake_static": true,
+        "collision": true,
+        "cutaway": ""
+      }
+    ],
+    "living/pet_bed": [
+      {
+        "name": "Pet mat",
+        "bake_static": true,
+        "collision": true,
+        "cutaway": ""
+      },
+      {
+        "name": "Pet bed base",
+        "bake_static": true,
+        "collision": true,
+        "cutaway": ""
+      },
+      {
+        "name": "Chicken bed body",
+        "bake_static": true,
+        "collision": true,
+        "cutaway": ""
+      },
+      {
+        "name": "Pet bed opening",
+        "bake_static": true,
+        "collision": true,
+        "cutaway": ""
+      },
+      {
+        "name": "Chicken beak",
+        "bake_static": true,
+        "collision": true,
+        "cutaway": ""
+      },
+      {
+        "name": "Chicken eye",
+        "bake_static": true,
+        "collision": true,
+        "cutaway": ""
+      },
+      {
+        "name": "Chicken comb",
+        "bake_static": true,
+        "collision": true,
+        "cutaway": ""
+      }
+    ],
+    "balcony/balcony_wash_basin": [
+      {
+        "name": "balcony wash basin cabinet",
+        "bake_static": true,
+        "collision": true,
+        "cutaway": ""
+      },
+      {
+        "name": "balcony wash basin counter",
+        "bake_static": true,
+        "collision": true,
+        "cutaway": ""
+      },
+      {
+        "name": "balcony wash basin",
+        "bake_static": false,
+        "collision": false,
+        "cutaway": ""
+      },
+      {
+        "name": "balcony wash basin inner",
+        "bake_static": false,
+        "collision": false,
+        "cutaway": ""
+      },
+      {
+        "name": "balcony wash basin faucet",
+        "bake_static": false,
+        "collision": false,
+        "cutaway": ""
+      },
+      {
+        "name": "balcony wash basin cabinet door 0",
+        "bake_static": false,
+        "collision": false,
+        "cutaway": ""
+      }
+    ],
+    "balcony/balcony_washing_machine": [
+      {
+        "name": "balcony washing machine body",
+        "bake_static": true,
+        "collision": true,
+        "cutaway": ""
+      },
+      {
+        "name": "balcony washing machine control panel",
+        "bake_static": false,
+        "collision": false,
+        "cutaway": ""
+      },
+      {
+        "name": "balcony washing machine dial",
+        "bake_static": false,
+        "collision": false,
+        "cutaway": ""
+      },
+      {
+        "name": "balcony washing machine door rim",
+        "bake_static": false,
+        "collision": false,
+        "cutaway": ""
+      },
+      {
+        "name": "balcony washing machine door glass",
+        "bake_static": false,
+        "collision": false,
+        "cutaway": ""
+      }
+    ],
+    "balcony/balcony_cabinet": [
+      {
+        "name": "balcony laundry upper cabinet",
+        "bake_static": true,
+        "collision": true,
+        "cutaway": ""
+      },
+      {
+        "name": "balcony recessed cabinet field",
+        "bake_static": false,
+        "collision": false,
+        "cutaway": ""
+      }
+    ],
+    "dining/dining_table": [
+      {
+        "name": "dining table top",
+        "bake_static": true,
+        "collision": true,
+        "cutaway": ""
+      },
+      {
+        "name": "dining table edge reveal",
+        "bake_static": false,
+        "collision": false,
+        "cutaway": ""
+      },
+      {
+        "name": "dining pedestal foot",
+        "bake_static": true,
+        "collision": true,
+        "cutaway": ""
+      }
+    ],
+    "dining/dining_chair": [
+      {
+        "name": "dining chair timber seat",
+        "bake_static": true,
+        "collision": true,
+        "cutaway": ""
+      },
+      {
+        "name": "dining chair upholstered pad",
+        "bake_static": false,
+        "collision": false,
+        "cutaway": ""
+      },
+      {
+        "name": "dining chair tapered leg",
+        "bake_static": false,
+        "collision": false,
+        "cutaway": ""
+      }
+    ],
+    "dining/refrigerator": [
+      {
+        "name": "dining refrigerator body",
+        "bake_static": true,
+        "collision": true,
+        "cutaway": ""
+      },
+      {
+        "name": "dining refrigerator toe grille",
+        "bake_static": false,
+        "collision": false,
+        "cutaway": ""
+      },
+      {
+        "name": "dining refrigerator door 0",
+        "bake_static": false,
+        "collision": false,
+        "cutaway": ""
+      },
+      {
+        "name": "dining refrigerator handle 0",
+        "bake_static": false,
+        "collision": false,
+        "cutaway": ""
+      },
+      {
+        "name": "dining refrigerator door 1",
+        "bake_static": false,
+        "collision": false,
+        "cutaway": ""
+      },
+      {
+        "name": "dining refrigerator handle 1",
+        "bake_static": false,
+        "collision": false,
+        "cutaway": ""
+      }
+    ],
+    "wash/wash_vanity": [
+      {
+        "name": "wash vanity cabinet",
+        "bake_static": true,
+        "collision": true,
+        "cutaway": ""
+      },
+      {
+        "name": "wash vanity plinth",
+        "bake_static": true,
+        "collision": true,
+        "cutaway": ""
+      },
+      {
+        "name": "wash vanity countertop",
+        "bake_static": true,
+        "collision": true,
+        "cutaway": ""
+      },
+      {
+        "name": "wash vanity door 0",
+        "bake_static": false,
+        "collision": false,
+        "cutaway": ""
+      },
+      {
+        "name": "wash vanity pull 0",
+        "bake_static": false,
+        "collision": false,
+        "cutaway": ""
+      },
+      {
+        "name": "wash basin rim side",
+        "bake_static": false,
+        "collision": false,
+        "cutaway": ""
+      },
+      {
+        "name": "wash folded hand towel",
+        "bake_static": false,
+        "collision": false,
+        "cutaway": ""
+      }
+    ],
+    "study/study_desk": [
+      {
+        "name": "study desk top",
+        "bake_static": true,
+        "collision": true,
+        "cutaway": ""
+      },
+      {
+        "name": "study desk drawer front",
+        "bake_static": false,
+        "collision": false,
+        "cutaway": ""
+      },
+      {
+        "name": "study desk lamp base",
+        "bake_static": false,
+        "collision": false,
+        "cutaway": ""
+      },
+      {
+        "name": "study desk lamp shade",
+        "bake_static": false,
+        "collision": false,
+        "cutaway": ""
+      }
+    ],
+    "study/guzheng": [
+      {
+        "name": "study guzheng",
+        "bake_static": true,
+        "collision": true,
+        "cutaway": ""
+      },
+      {
+        "name": "study guzheng soundboard",
+        "bake_static": false,
+        "collision": false,
+        "cutaway": ""
+      },
+      {
+        "name": "study guzheng string",
+        "bake_static": false,
+        "collision": false,
+        "cutaway": ""
+      },
+      {
+        "name": "study guzheng stand crossbar",
+        "bake_static": false,
+        "collision": false,
+        "cutaway": ""
+      }
+    ],
+    "kitchen/kitchen_cabinet": [
+      {
+        "name": "kitchen west lower cabinet body",
+        "bake_static": true,
+        "collision": true,
+        "cutaway": ""
+      },
+      {
+        "name": "kitchen west lower cabinet plinth",
+        "bake_static": true,
+        "collision": true,
+        "cutaway": ""
+      },
+      {
+        "name": "kitchen west lower cabinet front",
+        "bake_static": false,
+        "collision": false,
+        "cutaway": ""
+      },
+      {
+        "name": "kitchen west lower cabinet pull",
+        "bake_static": false,
+        "collision": false,
+        "cutaway": ""
+      },
+      {
+        "name": "kitchen recessed cabinet field.002",
+        "bake_static": false,
+        "collision": false,
+        "cutaway": ""
+      }
+    ],
+    "kitchen/kitchen_countertop": [
+      {
+        "name": "kitchen south countertop",
+        "bake_static": true,
+        "collision": true,
+        "cutaway": ""
+      }
+    ],
+    "study/study_chair": [
+      {
+        "name": "study chair timber seat",
+        "bake_static": true,
+        "collision": true,
+        "cutaway": ""
+      },
+      {
+        "name": "study chair upholstered pad",
+        "bake_static": false,
+        "collision": false,
+        "cutaway": ""
+      },
+      {
+        "name": "study chair tapered leg",
+        "bake_static": false,
+        "collision": false,
+        "cutaway": ""
+      }
+    ]
+  },
+  "scope": "The shared ray algorithm can hide any semantic group owning collision geometry. Observed intersections are only samples, not an exhaustive eligibility rule."
+}

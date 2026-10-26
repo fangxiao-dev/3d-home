@@ -1,0 +1,119 @@
+{
+  "started_at": "2026-10-25T18:09:26.259Z",
+  "runner_sha256": "6b75e95f4dd818fb10557c590235ee56f4acc67aefe336ff86bd9b6394bb4a10",
+  "plan_sha256": "02b35be3cc32e4fba1954dde9ae0a8555b5a77d3d93e44ec1a8ee5d1cf6d940c",
+  "probe_sha256": "19a82b5113d3dd1bd2a5f87675d95b3d6306f5dc6a0601e5e882ab4589380656",
+  "receipt": {
+    "godot/perf_diag.gd": "495aa9c3ab9b04ce9a939040a02bfbb731263fe41f94277bc1adbb1772a98753",
+    "godot/playroom.gd": "09fa664fe6ba2f440f54f2034d1b6a0bcdd91f2b67bf6c4cd659a3b2f3752d95",
+    "godot/playroom.tscn": "c9f23c825c2c79afc8c7cc8155b717ea0c0b545d1608d2ee30a2a40b3f7586e4",
+    "diag-web/index.pck": "c26cbe17cdf2fa7c2ce2b199a09b15e20426a7f4e52169a0aff0bb8d48ceb641",
+    "pack_sha256": "c26cbe17cdf2fa7c2ce2b199a09b15e20426a7f4e52169a0aff0bb8d48ceb641",
+    "retained_source": {
+      "checks_run": true,
+      "pack": "scene-1a42f717cba2.pck",
+      "seats": "d3e330117ac37938c5905f79ebaa270dfe298cd2a1066f2ddc4ed32b0e045d2e",
+      "model": "910d5f5c9838b3c11df1c9a6e66ca04658137dbf6c2be2e9129ca4b19501a9d4",
+      "exported_at": "2026-10-25T15:41:29.4637660+01:00",
+      "sha256": "1a42f717cba2c77ebd190af10f496393673c5a5832bd378fbc12293df6867e80",
+      "character": "b48319f3e1c9b393c6f1019b80ef1c257c06a5b8a50a3b4009d6cebc943b697e",
+      "runtime": "181ecd08f2c24f5a0d4422e4a70e8bce4485e97af44b5393d4a65b3b308c31ef"
+    }
+  },
+  "headful": true,
+  "focus_emulation": "noDefaults native",
+  "probe_not_installed": true,
+  "plan": {
+    "name": "headful-confirm",
+    "headful": true,
+    "no_probe": true,
+    "warmup_frames": 120,
+    "measure_frames": 180,
+    "blocks": [
+      {
+        "label": "baseline",
+        "config": {},
+        "probe": false,
+        "screenshot": true
+      },
+      {
+        "label": "msaa-off",
+        "config": {
+          "msaa": 0
+        },
+        "probe": false,
+        "screenshot": true
+      },
+      {
+        "label": "baseline-return",
+        "config": {},
+        "probe": false,
+        "screenshot": true
+      },
+      {
+        "label": "shadows-off",
+        "config": {
+          "shadows": false
+        },
+        "probe": false,
+        "screenshot": true
+      },
+      {
+        "label": "baseline-final",
+        "config": {},
+        "probe": false,
+        "screenshot": true
+      }
+    ]
+  },
+  "errors": [],
+  "loaded_packs": [
+    "http://127.0.0.1:8772/index.pck"
+  ],
+  "blocks": [],
+  "environment": {
+    "renderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x0000A78B) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "canvas": [
+      1920,
+      1080
+    ],
+    "drawingBuffer": [
+      1920,
+      1080
+    ],
+    "css": [
+      1919,
+      1079
+    ],
+    "inner": [
+      1920,
+      1080
+    ],
+    "dpr": 1.0000000298023224,
+    "visible": "visible",
+    "focus": true
+  },
+  "pass": false,
+  "failure": "TimeoutError: page.waitForFunction: Timeout 120000ms exceeded.",
+  "stack": "page.waitForFunction: Timeout 120000ms exceeded.\n    at measure (D:\\vibe-code-life\\3d-home\\outputs\\verification\\perf-diagnosis-20261025\\diagnostic-runner-v2.cjs:16:333)\n    at async D:\\vibe-code-life\\3d-home\\outputs\\verification\\perf-diagnosis-20261025\\diagnostic-runner-v2.cjs:21:95",
+  "ending_receipt": {
+    "godot/perf_diag.gd": "495aa9c3ab9b04ce9a939040a02bfbb731263fe41f94277bc1adbb1772a98753",
+    "godot/playroom.gd": "09fa664fe6ba2f440f54f2034d1b6a0bcdd91f2b67bf6c4cd659a3b2f3752d95",
+    "godot/playroom.tscn": "c9f23c825c2c79afc8c7cc8155b717ea0c0b545d1608d2ee30a2a40b3f7586e4",
+    "diag-web/index.pck": "c26cbe17cdf2fa7c2ce2b199a09b15e20426a7f4e52169a0aff0bb8d48ceb641",
+    "pack_sha256": "c26cbe17cdf2fa7c2ce2b199a09b15e20426a7f4e52169a0aff0bb8d48ceb641",
+    "retained_source": {
+      "checks_run": true,
+      "pack": "scene-1a42f717cba2.pck",
+      "seats": "d3e330117ac37938c5905f79ebaa270dfe298cd2a1066f2ddc4ed32b0e045d2e",
+      "model": "910d5f5c9838b3c11df1c9a6e66ca04658137dbf6c2be2e9129ca4b19501a9d4",
+      "exported_at": "2026-10-25T15:41:29.4637660+01:00",
+      "sha256": "1a42f717cba2c77ebd190af10f496393673c5a5832bd378fbc12293df6867e80",
+      "character": "b48319f3e1c9b393c6f1019b80ef1c257c06a5b8a50a3b4009d6cebc943b697e",
+      "runtime": "181ecd08f2c24f5a0d4422e4a70e8bce4485e97af44b5393d4a65b3b308c31ef"
+    }
+  },
+  "pack_sha256_end": "c26cbe17cdf2fa7c2ce2b199a09b15e20426a7f4e52169a0aff0bb8d48ceb641",
+  "version_consistent": true,
+  "finished_at": "2026-10-25T18:11:47.315Z"
+}
