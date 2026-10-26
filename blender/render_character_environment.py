@@ -27,10 +27,10 @@ rig=bpy.data.objects.get('CharacterRig');rig.animation_data.action=bpy.data.acti
 rig.location=(-.05,-4.18,0);rig.rotation_euler.z=-math.pi/4
 cam=bpy.data.cameras.new('Scale camera');obj=bpy.data.objects.new('Scale camera',cam);s.collection.objects.link(obj);s.camera=obj;cam.type='ORTHO';cam.ortho_scale=5.5
 obj.location=(-5,-10,3.6);obj.rotation_euler=(Vector((-.25,-4.5,.85))-obj.location).to_track_quat('-Z','Y').to_euler()
-s.render.filepath=str(OUT/'previews/v2-environment-character-scale.png');bpy.ops.render.render(write_still=True)
+s.render.filepath=str(OUT/'outputs/previews/v2-environment-character-scale.png');bpy.ops.render.render(write_still=True)
 rig.animation_data.action=bpy.data.actions.get('SitIdle');s.frame_set(0);rig.location=(-2.45,-4.18,0);rig.rotation_euler.z=math.pi/2
 obj.location=(-.3,-8,2.9);obj.rotation_euler=(Vector((-1.9,-4.18,.75))-obj.location).to_track_quat('-Z','Y').to_euler();cam.ortho_scale=3.2
-s.render.filepath=str(OUT/'previews/v2-environment-character-seated.png');bpy.ops.render.render(write_still=True)
+s.render.filepath=str(OUT/'outputs/previews/v2-environment-character-seated.png');bpy.ops.render.render(write_still=True)
 for sid,x,y in [('entry_stool',-1.335,1.67),('sofa_middle',-2.215,3.35),('window_seat',-2.215,4.21),('study_chair',7.78,-4.76)]:
     for o in s.objects:
         if o.type=='MESH' and o.name!='CharacterMesh':o.hide_render=o.get('room_id')!=('study' if sid=='study_chair' else 'living') or bool(o.get('cutaway'))
@@ -40,7 +40,7 @@ for sid,x,y in [('entry_stool',-1.335,1.67),('sofa_middle',-2.215,3.35),('window
         obj.location=(6,-7.8,2.6);obj.rotation_euler=(Vector((8.1,-4.76,.65))-obj.location).to_track_quat('-Z','Y').to_euler();cam.ortho_scale=3.7
     elif sid=='sofa_middle':
         obj.location=(x+2.7,y+1.8,1.9);obj.rotation_euler=(Vector((x+.2,y,.65))-obj.location).to_track_quat('-Z','Y').to_euler()
-    s.render.filepath=str(OUT/('previews/v2-environment-character-'+sid+'.png'));bpy.ops.render.render(write_still=True)
+    s.render.filepath=str(OUT/('outputs/previews/v2-environment-character-'+sid+'.png'));bpy.ops.render.render(write_still=True)
 
 
 

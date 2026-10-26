@@ -14,7 +14,7 @@ from mathutils import Vector, Matrix
 HERE = Path(__file__).resolve().parent
 OUT = HERE.parent
 ASSETS = OUT / 'godot' / 'assets'
-PREVIEWS = OUT / 'previews'
+PREVIEWS = OUT / 'outputs' / 'previews'
 SPEC = json.loads((HERE / 'scene-v2-spec.json').read_text())
 bpy.ops.object.select_all(action='SELECT')
 bpy.ops.object.delete(use_global=False)

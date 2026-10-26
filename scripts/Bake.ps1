@@ -3,7 +3,7 @@ $ErrorActionPreference = 'Stop'
 $root = Split-Path -Parent $PSScriptRoot
 $info = Get-Content (Join-Path $root 'work/godot-setup.json') -Raw | ConvertFrom-Json
 $exe = Join-Path $root $info.release.console_executable
-$game = Join-Path $PSScriptRoot 'godot'
+$game = Join-Path $root 'godot'
 & $exe --headless --path $game --script (Join-Path $PSScriptRoot 'Prepare-Bake.gd')
 if ($LASTEXITCODE -ne 0) { throw 'Bake scene preparation failed.' }
 $log = Join-Path $root 'work/scene-v2-bake.log'

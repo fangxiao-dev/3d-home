@@ -14,7 +14,7 @@ __pycache__/
 !.env.*.example
 *.pem
 *.key
-outputs/godot/export_credentials.cfg
+godot/export_credentials.cfg
 
 # Editor backups and temporary logs
 *.blend[0-9]*
@@ -26,13 +26,13 @@ outputs/godot/export_credentials.cfg
 
 # Generated visual checks and archived browser/build artifacts
 /outputs/previews/
-/outputs/verification/**/*.png
-/outputs/verification/**/*.jpg
-/outputs/verification/**/*.jpeg
-/outputs/verification/**/*.webp
-/outputs/verification/**/*.mp4
-/outputs/verification/**/*.webm
-/outputs/verification/**/*.pck
-/outputs/verification/**/*.wasm
-/outputs/verification/**/*.zip
-/outputs/verification/**/package/
+/docs/archive/verification/**/*.png
+/docs/archive/verification/**/*.jpg
+/docs/archive/verification/**/*.jpeg
+/docs/archive/verification/**/*.webp
+/docs/archive/verification/**/*.mp4
+/docs/archive/verification/**/*.webm
+/docs/archive/verification/**/*.pck
+/docs/archive/verification/**/*.wasm
+/docs/archive/verification/**/*.zip
+/docs/archive/verification/**/package/

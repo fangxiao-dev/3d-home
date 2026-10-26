@@ -6,7 +6,7 @@ sys.path.insert(0,str(Path(__file__).resolve().parent))
 from room_api import ROOMS
 from environment_preview import render_previews
 OUT=Path(__file__).resolve().parent.parent
-draft=OUT.parent/'work/v2-environment-draft.blend'
+draft=OUT/'work/v2-environment-draft.blend'
 bpy.ops.wm.open_mainfile(filepath=str(draft if '--draft' in sys.argv and draft.exists() else OUT/'blender/living-room.blend'))
 s=bpy.context.scene; s.render.engine='CYCLES'; s.cycles.samples=16;s.cycles.denoiser="OPTIX"; s.cycles.use_denoising=True
 s.render.threads_mode='FIXED'; s.render.threads=2; s.view_settings.view_transform='AgX'

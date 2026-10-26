@@ -7,16 +7,16 @@ if ($RebuildAll) { $RebuildModel = $true; $RebuildCharacter = $true; $BakeLighti
 if ($RebuildModel) {
     $BakeLighting = $true
     $blenderInfo = Get-Content -LiteralPath (Join-Path $projectRoot 'work/blender-setup.json') -Raw | ConvertFrom-Json
-    & $blenderInfo.executable --background --python-exit-code 1 --python (Join-Path $PSScriptRoot 'blender/build_living_room.py')
+    & $blenderInfo.executable --background --python-exit-code 1 --python (Join-Path $projectRoot 'blender/build_living_room.py')
     if ($LASTEXITCODE -ne 0) { throw 'Blender model build failed.' }
 }
 if ($RebuildCharacter) {
     $blenderInfo = Get-Content -LiteralPath (Join-Path $projectRoot 'work/blender-setup.json') -Raw | ConvertFrom-Json
-    & $blenderInfo.executable --background --python-exit-code 1 --python (Join-Path $PSScriptRoot 'blender/build_character.py')
+    & $blenderInfo.executable --background --python-exit-code 1 --python (Join-Path $projectRoot 'blender/build_character.py')
     if ($LASTEXITCODE -ne 0) { throw 'Blender character build failed.' }
 }
-$gamePath = Join-Path $PSScriptRoot 'godot'
-$webPath = Join-Path $PSScriptRoot 'web'
+$gamePath = Join-Path $projectRoot 'godot'
+$webPath = Join-Path $projectRoot 'outputs/web'
 New-Item -ItemType Directory -Path $webPath -Force | Out-Null
 & $godotExe --headless --path $gamePath --editor --import
 if ($LASTEXITCODE -ne 0) { throw 'Godot import failed.' }
@@ -27,13 +27,13 @@ $bake = Get-Content $manifestPath -Raw | ConvertFrom-Json
 if ($bake.model_sha256 -ne (Get-FileHash (Join-Path $gamePath 'assets/living-room.glb') -Algorithm SHA256).Hash.ToLowerInvariant()) { throw 'Environment changed since lighting bake. Run with -BakeLighting.' }
 if ($bake.environment_sha256 -ne (Get-FileHash (Join-Path $gamePath 'scene_environment.gd') -Algorithm SHA256).Hash.ToLowerInvariant()) { throw 'Lighting settings changed since bake. Run with -BakeLighting.' }
 if (-not $SkipChecks) {
-& $godotExe --headless --fixed-fps 60 --path $gamePath --script (Join-Path $PSScriptRoot 'Verify-Scene.gd')
+& $godotExe --headless --fixed-fps 60 --path $gamePath --script (Join-Path $projectRoot 'tests/Verify-Scene.gd')
 if ($LASTEXITCODE -ne 0) { throw 'Imported scene verification failed.' }
-& $godotExe --headless --fixed-fps 60 --path $gamePath --script (Join-Path $PSScriptRoot 'Verify-Playroom.gd')
+& $godotExe --headless --fixed-fps 60 --path $gamePath --script (Join-Path $projectRoot 'tests/Verify-Playroom.gd')
 if ($LASTEXITCODE -ne 0) { throw 'Playroom verification failed.' }
-& $godotExe --headless --fixed-fps 60 --path $gamePath --script (Join-Path $PSScriptRoot 'Verify-House.gd')
+& $godotExe --headless --fixed-fps 60 --path $gamePath --script (Join-Path $projectRoot 'tests/Verify-House.gd')
 if ($LASTEXITCODE -ne 0) { throw 'Connected house verification failed.' }
-& $godotExe --headless --fixed-fps 60 --path $gamePath --script (Join-Path $PSScriptRoot 'Verify-Camera.gd')
+& $godotExe --headless --fixed-fps 60 --path $gamePath --script (Join-Path $projectRoot 'tests/Verify-Camera.gd')
 if ($LASTEXITCODE -ne 0) { throw 'Navigation camera verification failed.' }
 }
 & $godotExe --headless --path $gamePath --export-release Web (Join-Path $webPath 'index.html')

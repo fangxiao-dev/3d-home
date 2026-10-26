@@ -1,7 +1,7 @@
 """Rebuild the deliberately simple, photo-led living room. Run with Blender -b -P.
 
 Coordinates: X sofa -> TV, Y hall -> balcony, Z up. All dimensions approximate.
-Source observations: ../LIVING_ROOM.md. No original photographs are embedded.
+Source observations: ../docs/archive/living-room.md. No original photographs are embedded.
 """
 from pathlib import Path
 import argparse
@@ -443,7 +443,7 @@ for space in [a.spaces.active for s in bpy.data.screens for a in s.areas if a.ty
     space.region_3d.view_perspective='CAMERA'
 
 (OUT/'godot/assets').mkdir(parents=True,exist_ok=True)
-(OUT/'previews').mkdir(parents=True,exist_ok=True)
+(OUT/'outputs/previews').mkdir(parents=True,exist_ok=True)
 meshes=[o for o in scene.objects if o.type=='MESH']
 assert len(meshes)>50
 assert all(all(math.isfinite(v) for v in o.location) for o in meshes)

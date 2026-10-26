@@ -20,7 +20,7 @@ def render_previews(e, only=None):
         for o in meshes:
             o.hide_render=(o.get('room_id') not in rooms or o.get('cutaway','') in hide)
         scene.camera=camera(name,loc,target,ortho=scale)
-        scene.render.filepath=str(out/'previews'/('v2-environment-'+name+'.png'))
+        scene.render.filepath=str(out/'outputs/previews'/('v2-environment-'+name+'.png'))
         bpy.ops.render.render(write_still=True)
     shot('dining',{'dining'},(-6,-10,6),(-.3,-4.25,.7),6.5,{'top','south','west'})
     shot('living',{'living','balcony'},(9,-8,10),(-.1,3.65,.65),10.5,{'top','south','east'})
@@ -40,6 +40,6 @@ def render_previews(e, only=None):
         obj=bpy.data.objects.new('Scale label',data); scene.collection.objects.link(obj)
         obj.location=(.28,-4,z); obj.rotation_euler=(math.pi/2,0,0)
     scene.camera=camera('Furniture scale',(-5,-10,3.6),(-.3,-4.5,.85),ortho=5.5)
-    scene.render.filepath=str(out/'previews/v2-environment-proportions.png'); bpy.ops.render.render(write_still=True)
+    scene.render.filepath=str(out/'outputs/previews/v2-environment-proportions.png'); bpy.ops.render.render(write_still=True)
 
 
