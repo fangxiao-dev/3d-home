@@ -38,6 +38,9 @@ Godot 编辑工程为 `godot/project.godot`；房屋和人物源文件分别为 
 # Stage 2 蛋糕／蜡烛变更：独立重建
 ./scripts/Build.ps1 -RebuildCake
 
+# 茶几手机变更：独立重建
+./scripts/Build.ps1 -RebuildPhone
+
 # 灯光变更：重新烘焙
 ./scripts/Build.ps1 -BakeLighting
 
@@ -63,7 +66,7 @@ python scripts/Prepare-ReadingFont.py
 
 字体准备脚本从本机 Blender 随附的 OFL Noto 字体提取正文及界面字形，需要 Python 的 fontTools 与 Brotli（本机依赖位于 `work/python-deps/`）。源文集仍为只读，生成的正文与图片会进入网页资源包，公开上传需单独授权。
 
-`-RebuildAll` 包含 Stage 1 道具与 Stage 2 蛋糕重建。环境内原有占位本已移除，冰箱已有内腔与门铰链；环境变化仍按 `-RebuildModel` 重建并重新烘焙。
+`-RebuildAll` 包含 Stage 1 道具、Stage 2 蛋糕与茶几手机重建。手机独立源为 `blender/phone.blend`，生成入口为 `blender/build_phone.py`，位置从茶几元数据派生。环境内原有占位本已移除，冰箱已有内腔与门铰链；环境变化仍按 `-RebuildModel` 重建并重新烘焙。
 
 ## 文件边界
 

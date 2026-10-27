@@ -3,6 +3,9 @@ extends Node3D
 const EnvironmentFactory = preload("res://scene_environment.gd")
 const LettersUI = preload("res://letters_ui.gd")
 const Birthday = preload("res://birthday.gd")
+const Phone2048 = preload("res://phone_2048.gd")
+var phone_ui: CanvasLayer
+var phone_table: Dictionary
 var birthday: Node3D
 var birthday_avatar_yaw := 0.0
 const APPROACH_REACHED_DISTANCE := 0.05
@@ -154,6 +157,7 @@ func _ready() -> void:
 	birthday=Birthday.new();add_child(birthday);birthday.setup(scene_data,room)
 	birthday.close_requested.connect(_close_birthday)
 	birthday.replay_requested.connect(_start_birthday)
+	_build_phone()
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	if OS.has_feature("web"):
 		test_mode = bool(JavaScriptBridge.eval("new URLSearchParams(location.search).has('test')", true))
@@ -225,6 +229,7 @@ func _book_near() -> bool:
 
 func _nearest_interaction() -> String:
 	var seat:=_nearest_seat()
+	if _phone_near(seat):return "phone_2048"
 	var birthday_target:Dictionary=birthday.target_at(player.position,_room_at(player.position)) if birthday else {}
 	if not birthday_target.is_empty():
 		if seat.is_empty():return birthday_target.id
@@ -236,6 +241,36 @@ func _nearest_interaction() -> String:
 	if seat.is_empty():return "letters"
 	var seat_point:=vec(seats[seat].approach)
 	return "letters" if point.distance_to(Vector2(book_point.x,book_point.z))<point.distance_to(Vector2(seat_point.x,seat_point.z)) else seat
+
+func _build_phone() -> void:
+	for item in scene_data.furniture:
+		if item.id=="coffee_table":phone_table=item
+	var placement:Dictionary=JSON.parse_string(FileAccess.get_file_as_string("res://assets/phone/placement.json"))
+	var phone:Node3D=load("res://assets/phone/phone.glb").instantiate();add_child(phone)
+	phone.position=vec(placement.position);phone.rotation.y=float(placement.yaw)
+	for mesh in phone.find_children("*","GeometryInstance3D",true,false):mesh.gi_mode=GeometryInstance3D.GI_MODE_DYNAMIC
+	phone_ui=Phone2048.new();add_child(phone_ui);phone_ui.close_requested.connect(_close_phone)
+
+func _phone_near(seat: String) -> bool:
+	if phone_table.is_empty() or _room_at(player.position)!="living":return false
+	var low:=vec(phone_table.bounds_min);var high:=vec(phone_table.bounds_max)
+	var point:=Vector2(player.position.x,player.position.z)
+	var distance:=point.distance_to(Vector2(clampf(point.x,low.x,high.x),clampf(point.y,low.z,high.z)))
+	if distance>.65:return false
+	if seat.is_empty():return true
+	var seat_point:=vec(seats[seat].approach)
+	return distance<point.distance_to(Vector2(seat_point.x,seat_point.z))
+
+func _open_phone() -> void:
+	if not navigation_active:return
+	interaction_restore_allowed=pointer_locked and app_focused
+	mode="PHONE_2048";_release_pointer(true);_play("Idle");phone_ui.show_game()
+
+func _close_phone() -> void:
+	if mode!="PHONE_2048":return
+	phone_ui.hide_game();mode="EXPLORE"
+	if interaction_restore_allowed and app_focused:_request_capture()
+	interaction_restore_allowed=false;awaiting_movement_release=true
 
 func _birthday_action(target: String) -> void:
 	if target=="cake_fridge":
@@ -705,7 +740,12 @@ func _input(event: InputEvent) -> void:
 				if not navigation_active: blocked_movement_keys[code] = true
 				elif not event.echo: blocked_movement_keys.erase(code)
 				if blocked_movement_keys.has(code): awaiting_movement_release = true
+		if event.echo and mode=="PHONE_2048":
+			get_viewport().set_input_as_handled();return
 		if not event.pressed or event.echo: return
+		if mode=="PHONE_2048":
+			if phone_ui.handle_key(code):get_viewport().set_input_as_handled()
+			return
 		if mode=="CEREMONY":
 			if code==KEY_ESCAPE:_close_birthday()
 			elif code==KEY_ENTER and app_focused:
@@ -732,6 +772,7 @@ func _input(event: InputEvent) -> void:
 			var target:=_nearest_interaction()
 			if target in ["cake_fridge","cake_table"]:_birthday_action(target)
 			elif target=="letters":_open_letters("READING")
+			elif target=="phone_2048":_open_phone()
 			else:_enter_target_action(_nearest_seat())
 			get_viewport().set_input_as_handled()
 		elif code==KEY_B and mode=="EXPLORE":
@@ -757,7 +798,7 @@ func _process(delta: float) -> void:
 	resume_button.disabled = capture_requested
 	resume_button.text = "继续游览" if ever_started else "开始游览"
 	bag_button.visible=mode=="EXPLORE"
-	help_panel.visible=mode not in ["READING","INVENTORY","CEREMONY"]
+	help_panel.visible=mode not in ["READING","INVENTORY","CEREMONY","PHONE_2048"]
 	if mode == "EXPLORE":
 		help_text.text = "WASD / 方向键移动   鼠标左右移动观察   滚轮缩放   Esc 显示光标" if navigation_active else "点击继续游览，鼠标左右移动观察" if ever_started else "点击开始游览，鼠标左右移动观察"
 	elif mode=="READING":
@@ -770,6 +811,7 @@ func _process(delta: float) -> void:
 		prompt.text = str(seats[seat_id].label) + " · Esc 起身返回游览"
 	elif navigation_active and not awaiting_movement_release and not interaction_target.is_empty():
 		if interaction_target in ["cake_fridge","cake_table"]:prompt.text=birthday.prompt_for(interaction_target)
+		elif interaction_target=="phone_2048":prompt.text="F 玩手机 · 2048"
 		else:prompt.text = "F 翻开情书文集" if interaction_target=="letters" else "F 坐下 · " + str(seats[interaction_target].label)
 	else:
 		prompt.text = ""
@@ -793,7 +835,7 @@ func _update_camera(delta: float, snap := false) -> void:
 		var desired:=Transform3D(Basis.IDENTITY,vec(prop_data.camera_position)).looking_at(vec(prop_data.camera_target),Vector3.UP)
 		camera.transform=camera.transform.interpolate_with(desired,1.0-exp(-delta*8.0))
 		_update_visibility();return
-	if mode=="INVENTORY":return
+	if mode in ["INVENTORY","PHONE_2048"]:return
 	var alpha := 1.0 if snap else 1.0 - exp(-delta * 8.0)
 	camera_yaw = target_camera_yaw
 	zoom = lerpf(zoom, target_zoom, alpha)
@@ -954,6 +996,7 @@ func _notification(what: int) -> void:
 		escape_held = false
 		app_focused = false
 		if birthday and mode=="CEREMONY":birthday.pause_ceremony()
+		if phone_ui and mode=="PHONE_2048":phone_ui.pause_game()
 		if player != null: _pause_navigation()
 	elif what == NOTIFICATION_APPLICATION_FOCUS_IN:
 		app_focused = true
@@ -995,7 +1038,7 @@ func snapshot() -> Dictionary:
 		"camera_fov": camera.fov, "zoom": zoom, "target_zoom": target_zoom,
 		"seats": scene_data.seats, "cycles": completed_cycles, "transition_collisions": transition_collisions, "frame_mean_ms": mean,
 		"frame_p95_ms": sorted[int(sorted.size() * 0.95)] if not sorted.is_empty() else 0,
-		"room_meshes": room_meshes.size(), "lightmap": _lightmap_state(), "letters": letters_ui.snapshot() if letters_ui else {}, "birthday": birthday.snapshot() if birthday else {}}
+		"room_meshes": room_meshes.size(), "lightmap": _lightmap_state(), "letters": letters_ui.snapshot() if letters_ui else {}, "birthday": birthday.snapshot() if birthday else {}, "phone": phone_ui.snapshot() if phone_ui else {}}
 
 
 
