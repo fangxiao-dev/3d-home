@@ -20,10 +20,17 @@ blender/ 源模型、规格、生成脚本
 | --- | --- |
 | `blender/` | 环境、人物、房间模块与公共规格；生成房屋及角色 `.blend`、GLB 与布局数据。环境和角色独立构建。 |
 | `godot/playroom.gd` | 人物移动、鼠标捕获、互动状态、固定机位与镜头遮挡。运行场景为 `playroom.tscn`。 |
+| `godot/letters_ui.gd` | 多篇文集目录、分页、图片、阅读位置，以及会话内王冠领取／穿戴与人物界面；由运行入口接入输入、阅读镜头与头部王冠。 |
+| `godot/birthday.gd` | 蛋糕准备状态、缺条件判断、8 秒生日演出与暂停／结束／重播界面；运行入口统一接入 F 目标、镜头和输入，王冠读取既有状态。 |
+| `godot/content/letters/` | 从只读情书快照准备的 15 篇正文和 7 图，供运行时阅读。源文与生成内容完整性由独立脚本核对。 |
+| `blender/build_stage1.py` | 独立书本与王冠的可编辑资产来源，输出 `stage1-props.blend` 与 Godot 道具资源；不重做人物骨骼。 |
+| `blender/build_stage2.py` | 蛋糕与蜡烛的权威生成源，输出 `stage2-cake.blend` 与独立道具资源；环境侧维护冰箱内腔与原有门铰链。 |
 | `godot/scene_environment.gd` | 生成引擎环境、灯光与碰撞；烘焙资源保存在工程内，属于网页运行必需资源。 |
 | `scripts/` | 构建、准备及执行烘焙、本地预览；输出网页到 `outputs/web/`。 |
 | `tests/` | 现役引擎验证；测试启动时将 `godot/` 设为项目路径。 |
 | `references/` | 理解空间与故事的参考资料；原始照片和情书通过外部 junction 只读访问，不随网页导出。 |
+
+Stage 1 确认收录的正文与图片通过内容准备脚本进入 `godot/content/letters/` 并随网页导出；原始 junction 不进入资源包。生成包包含私人内容，仅用于已授权的本地试玩。
 
 家具、坐位与房间使用稳定标识。源侧产生尺寸及互动定位，运行时读取资产数据；Blender 坐标 `(x,y,z)` 转为 Godot `(x,z,-y)`。具体合同按任务从[设计入口](design/README.md)读取。
 

@@ -109,8 +109,7 @@ def finish_assets(env):
     # Small functional accents; no new story content.
     api=api_class(env,'study'); api.furniture_id='study_desk'
     api.box('desk writing mat',(8.80,-4.55,.755),(.60,.78,.008),'cushion',.035,False)
-    api.box('closed notebook',(8.72,-4.55,.779),(.34,.44,.035),'wood',.018,False)
-    api.box('notebook page block',(8.716,-4.55,.798),(.32,.42,.012),'throw',.01,False)
+    # The editable Stage 1 letter book is loaded separately at runtime.
     api=api_class(env,'balcony'); api.furniture_id='balcony_wash_basin'
     for i in range(3): api.box('folded linen',(-2.42,7.27,1.075+i*.045),(.34,.34,.045),'throw' if i!=1 else 'cushion',.025,False)
     from environment_details import add_details
@@ -133,7 +132,7 @@ def finish_assets(env):
         o['bake_static']=bool(not o['camera_occluder'] and not o.get('cutaway') and not o.get('movable') and o.get('collision'))
     bpy.context.view_layer.update()
     write_contract(env)
-    bpy.ops.wm.save_as_mainfile(filepath=str(env['OUT'].parent/'work/v2-environment-draft.blend'))
+    bpy.ops.wm.save_as_mainfile(filepath=str(env['OUT']/'work/v2-environment-draft.blend'))
     print('V2_DRAFT_READY',flush=True)
     # Multi-object edit mode unfolds independent mesh datablocks in one pass.
     # Each object's islands occupy disjoint atlas regions, hence no local overlap.

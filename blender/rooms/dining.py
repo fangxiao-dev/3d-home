@@ -38,7 +38,14 @@ def build(api):
             api.cylinder('ceramic plates',(1.70,yy,1.52+i*.018),.13,.012,'throw',side='east')
     api.furniture_id='refrigerator'
     fx,fy=1.59,-5.50
-    api.box('refrigerator body',(fx,fy,.95),(.76,1.25,1.90),'black',.045,True)
+    # Openable doors reveal a real cavity rather than a solid black block.
+    api.box('refrigerator back',(fx+.35,fy,.95),(.06,1.25,1.90),'black',.025,True)
+    for yy in (fy-.60,fy+.60):
+        api.box('refrigerator side',(fx,yy,.95),(.76,.05,1.90),'black',.018,True)
+    for zz in (.04,1.86):
+        api.box('refrigerator cap',(fx,fy,zz),(.76,1.25,.08),'black',.018,True)
+    for zz in (.68,1.22):
+        api.box('refrigerator shelf',(fx,fy,zz),(.66,1.13,.035),'trim',.008,False)
     api.box('refrigerator toe grille',(1.195,fy,.08),(.025,1.13,.10),'frame',.008,False)
     for i,yy in enumerate((fy-.313,fy+.313)):
         hinge=bpy.data.objects.new('refrigerator hinge '+str(i),None)

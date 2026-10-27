@@ -1,6 +1,17 @@
 extends Node3D
 ## Scene v2 runtime. Asset metadata owns furniture semantics and seat transforms.
 const EnvironmentFactory = preload("res://scene_environment.gd")
+const LettersUI = preload("res://letters_ui.gd")
+const Birthday = preload("res://birthday.gd")
+var birthday: Node3D
+var birthday_avatar_yaw := 0.0
+const APPROACH_REACHED_DISTANCE := 0.05
+var letters_ui: CanvasLayer
+var letter_book: Node3D
+var worn_crown: Node3D
+var prop_data: Dictionary
+var interaction_camera := Transform3D.IDENTITY
+var bag_button: Button
 var room: Node3D
 var house_layout: Dictionary
 var scene_data: Dictionary
@@ -69,6 +80,7 @@ var frame_ms: Array[float] = []
 var sample_clock := 0.0
 var transition_clock := 0.0
 var approach_stage := ""
+var approach_route: Array[Vector3] = []
 var saved_yaw := 0.0
 var saved_zoom := 1.0
 var completed_cycles: Dictionary = {}
@@ -138,6 +150,10 @@ func _ready() -> void:
 	camera_focus = _explore_target()
 	_update_camera(1.0, true)
 	_build_ui()
+	_build_letters()
+	birthday=Birthday.new();add_child(birthday);birthday.setup(scene_data,room)
+	birthday.close_requested.connect(_close_birthday)
+	birthday.replay_requested.connect(_start_birthday)
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	if OS.has_feature("web"):
 		test_mode = bool(JavaScriptBridge.eval("new URLSearchParams(location.search).has('test')", true))
@@ -151,7 +167,8 @@ func _build_player() -> void:
 	player.name = "Player"
 	player.position = Vector3(0, 0.02, -0.65)
 	player.collision_layer = 2
-	player.collision_mask = 1
+	# Layer 4 is an invisible appliance-access boundary, excluded from camera rays.
+	player.collision_mask = 1 | 4
 	player.floor_snap_length = 0.12
 	add_child(player)
 	var collider := CollisionShape3D.new()
@@ -181,6 +198,97 @@ func _play(key: String) -> void:
 	animation = key
 	animation_player.play(animations[key], 0.12)
 
+func _build_letters() -> void:
+	prop_data=JSON.parse_string(FileAccess.get_file_as_string("res://assets/stage1/placement.json"))
+	letter_book=load("res://assets/stage1/letters-book.glb").instantiate()
+	add_child(letter_book);letter_book.position=vec(prop_data.book_position)
+	letter_book.rotation.y=float(prop_data.book_yaw)
+	for mesh in letter_book.find_children("*","GeometryInstance3D",true,false):mesh.gi_mode=GeometryInstance3D.GI_MODE_DYNAMIC
+	var attachment:=BoneAttachment3D.new()
+	attachment.bone_name="Head";character_skeleton.add_child(attachment)
+	worn_crown=load("res://assets/stage1/crown.glb").instantiate()
+	attachment.add_child(worn_crown);worn_crown.position=vec(prop_data.crown_offset);worn_crown.hide()
+	for mesh in worn_crown.find_children("*","GeometryInstance3D",true,false):mesh.gi_mode=GeometryInstance3D.GI_MODE_DYNAMIC
+	letters_ui=LettersUI.new();add_child(letters_ui)
+	letters_ui.close_requested.connect(_close_letters)
+	letters_ui.crown_changed.connect(func():worn_crown.visible=letters_ui.crown_worn)
+	bag_button=Button.new();bag_button.text="珍藏  B";bag_button.position=Vector2(24,148);bag_button.size=Vector2(120,40)
+	bag_button.add_theme_font_override("font",load("res://assets/NotoSansSC-Reading.ttf"))
+	bag_button.add_theme_font_size_override("font_size",18)
+	help_panel.get_parent().add_child(bag_button)
+	bag_button.pressed.connect(func():_open_letters("INVENTORY"))
+
+func _book_near() -> bool:
+	if prop_data.is_empty() or _room_at(player.position)!="study":return false
+	var delta:=player.position-vec(prop_data.book_position);delta.y=0
+	return delta.length()<1.25
+
+func _nearest_interaction() -> String:
+	var seat:=_nearest_seat()
+	var birthday_target:Dictionary=birthday.target_at(player.position,_room_at(player.position)) if birthday else {}
+	if not birthday_target.is_empty():
+		if seat.is_empty():return birthday_target.id
+		var seat_point:=vec(seats[seat].approach)
+		if Vector2(player.position.x-seat_point.x,player.position.z-seat_point.z).length()>float(birthday_target.distance):return birthday_target.id
+	if not _book_near():return seat
+	var point:=Vector2(player.position.x,player.position.z)
+	var book_point:=vec(prop_data.book_position)
+	if seat.is_empty():return "letters"
+	var seat_point:=vec(seats[seat].approach)
+	return "letters" if point.distance_to(Vector2(book_point.x,book_point.z))<point.distance_to(Vector2(seat_point.x,seat_point.z)) else seat
+
+func _birthday_action(target: String) -> void:
+	if target=="cake_fridge":
+		if birthday.take_cake():notice="蛋糕已从冰箱取出 · 到餐桌旁按 F 摆放。"
+		else:notice="蛋糕已经取出，去餐桌继续准备吧。"
+	elif birthday.cake_state=="in_fridge":notice="蛋糕还在冰箱里 · 先去冰箱旁按 F 取出。"
+	elif birthday.cake_state=="carried":
+		birthday.place_cake();notice="蛋糕摆好了 · 再按 F 点燃蜡烛。"
+	elif birthday.cake_state=="placed":
+		birthday.light_candles();notice="烛光亮起来了 · 戴上王冠后，按 F 开始庆祝。"
+	else:
+		if _start_birthday():return
+		notice=birthday.condition_message(letters_ui.crown_owned,letters_ui.crown_worn)
+	notice_time=5
+
+func _start_birthday() -> bool:
+	if mode not in ["EXPLORE","CEREMONY"]:return false
+	if not birthday.start_ceremony(letters_ui.crown_owned,letters_ui.crown_worn):return false
+	if mode=="EXPLORE":
+		saved_yaw=target_camera_yaw;saved_zoom=target_zoom;birthday_avatar_yaw=avatar.rotation.y
+		interaction_restore_allowed=pointer_locked and app_focused
+		mode="CEREMONY";_release_pointer(true);_play("Idle")
+	birthday.frame_actor(player.position)
+	var facing:Vector3=birthday.ceremony_camera.origin-player.position
+	avatar.rotation.y=atan2(facing.x,facing.z)
+	notice="";notice_time=0
+	return true
+
+func _close_birthday() -> void:
+	if mode!="CEREMONY":return
+	birthday.exit_ceremony();mode="EXPLORE";avatar.rotation.y=birthday_avatar_yaw
+	camera_blend_from=camera.transform;camera_blend_elapsed=0
+	target_camera_yaw=saved_yaw;target_zoom=saved_zoom
+	if interaction_restore_allowed and app_focused:_request_capture()
+	interaction_restore_allowed=false;awaiting_movement_release=true
+
+func _open_letters(view: String) -> void:
+	if mode!="EXPLORE" or auto_moving or camera_blend_elapsed<.45:return
+	saved_yaw=camera_yaw;saved_zoom=zoom
+	interaction_restore_allowed=pointer_locked and app_focused
+	interaction_camera=camera.transform
+	mode=view;_release_pointer(true);_play("Idle")
+	if view=="READING":letters_ui.show_reader()
+	else:letters_ui.show_inventory()
+
+func _close_letters() -> void:
+	if mode not in ["READING","INVENTORY"]:return
+	letters_ui.hide_all();mode="EXPLORE"
+	camera_blend_from=camera.transform;camera_blend_elapsed=0
+	target_camera_yaw=saved_yaw;target_zoom=saved_zoom
+	if interaction_restore_allowed and app_focused:_request_capture()
+	interaction_restore_allowed=false;awaiting_movement_release=true
+
 func _build_ui() -> void:
 	var layer := CanvasLayer.new()
 	add_child(layer)
@@ -197,7 +305,7 @@ func _build_ui() -> void:
 	style.content_margin_bottom = 12
 	panel.add_theme_stylebox_override("panel", style)
 	var theme := Theme.new()
-	theme.default_font = load("res://assets/NotoSansSC-Play.ttf")
+	theme.default_font = load("res://assets/NotoSansSC-Reading.ttf")
 	theme.default_font_size = 16
 	panel.theme = theme
 	layer.add_child(panel)
@@ -270,20 +378,23 @@ func _physics_process(delta: float) -> void:
 			_play("Walk")
 		else:
 			_play("Idle")
-		interaction_target = _nearest_seat()
+		interaction_target = _nearest_interaction()
 	elif mode == "APPROACH":
 		transition_clock += delta
 		var seat: Dictionary = seats[seat_id]
-		var point := vec(seat.approach)
+		var point: Vector3 = approach_route[0] if not approach_route.is_empty() else vec(seat.approach)
 		point.y = player.position.y
 		var difference := point - player.position
-		if difference.length() > 0.05:
+		if difference.length() > APPROACH_REACHED_DISTANCE:
 			player.velocity = difference.normalized() * minf(float(character_data.walk_reference_speed), difference.length() / delta)
 			player.velocity.y = -2
 			player.move_and_slide()
 			avatar.rotation.y = lerp_angle(avatar.rotation.y, atan2(difference.x, difference.z), minf(1, delta * 12))
 			_play("Walk")
 		else:
+			if approach_route.size()>1:
+				approach_route.pop_front();transition_clock=0
+				return
 			_align_and_sit()
 			return
 		if transition_clock > 4.0:
@@ -317,6 +428,7 @@ func _rollback_walk() -> void:
 		await _walk_stage(point, false)
 
 func _cancel_explore(message: String) -> void:
+	approach_route.clear()
 	_set_seat_exceptions(false)
 	player.velocity = Vector3.ZERO
 	mode = "EXPLORE"
@@ -418,12 +530,37 @@ func _enter_target_action(id: String) -> void:
 	saved_yaw = target_camera_yaw
 	saved_zoom = target_zoom
 	seat_id = id
+	approach_route = _seat_approach_route(id)
 	interaction_restore_allowed = true
 	mode = "APPROACH"
 	notice = ""
 	notice_time = 0.0
 	transition_clock = 0
 	interaction_target = ""
+
+func _seat_approach_route(id: String) -> Array[Vector3]:
+	var route: Array[Vector3]=[]
+	# The study chair is close to the desk: approach around its footprint,
+	# rather than drawing a straight line through the chair from its west/south.
+	if id=="study_chair":
+		for furniture in scene_data.furniture:
+			if furniture.id!="study_chair":continue
+			var low:=vec(furniture.bounds_min)
+			var high:=vec(furniture.bounds_max)
+			var point:=player.position
+			var collider:CollisionShape3D=player.get_child(0)
+			var clearance:float=collider.shape.radius+player.safe_margin+APPROACH_REACHED_DISTANCE
+			var west:=low.x-clearance
+			var north:=low.z-clearance
+			# Classify the occupied side by the chair itself, not the waypoint
+			# clearance: a legal capsule just behind the back still needs a detour.
+			if point.z>high.z and point.x>west:
+				point.x=west;route.append(point)
+			if point.z>north and (point.x<low.x or point.x>high.x):
+				point.z=north;route.append(point)
+			break
+	route.append(vec(seats[id].approach))
+	return route
 
 func _exit_target_action() -> void:
 	if mode != "SEATED":
@@ -457,11 +594,15 @@ func _nearest_seat() -> String:
 	var nearest := ""
 	var distance := 1.1
 	for id in seats:
-		var point := vec(seats[id].approach)
+		var point := vec(seats[id].root if id=="study_chair" else seats[id].approach)
 		var d := Vector2(player.position.x - point.x, player.position.z - point.z).length()
 		if d >= distance or _room_at(player.position) != seats[id].room_id:
 			continue
 		var ray := PhysicsRayQueryParameters3D.create(player.position + Vector3(0, 0.9, 0), point + Vector3(0, 0.9, 0), 1)
+		if id=="study_chair":
+			var excluded: Array[RID]=[]
+			for body in furniture_bodies.get(seats[id].furniture_id,[]):excluded.append(body.get_rid())
+			ray.exclude=excluded
 		if get_world_3d().direct_space_state.intersect_ray(ray).is_empty():
 			nearest = id
 			distance = d
@@ -565,6 +706,22 @@ func _input(event: InputEvent) -> void:
 				elif not event.echo: blocked_movement_keys.erase(code)
 				if blocked_movement_keys.has(code): awaiting_movement_release = true
 		if not event.pressed or event.echo: return
+		if mode=="CEREMONY":
+			if code==KEY_ESCAPE:_close_birthday()
+			elif code==KEY_ENTER and app_focused:
+				if birthday.ceremony_paused:birthday.resume_ceremony()
+				elif birthday.ceremony_phase=="finished":_start_birthday()
+			get_viewport().set_input_as_handled();return
+		if mode in ["READING","INVENTORY"]:
+			if code==KEY_ESCAPE or (code==KEY_B and mode=="INVENTORY"):_close_letters()
+			elif mode=="READING":
+				if code==KEY_LEFT:letters_ui.turn(-1)
+				elif code==KEY_RIGHT:letters_ui.turn(1)
+				elif code==KEY_C:letters_ui.show_index()
+				elif code==KEY_R:letters_ui.open_crown_article()
+				elif code==KEY_ENTER:letters_ui.claim_crown()
+			elif code==KEY_ENTER:letters_ui.toggle_crown()
+			get_viewport().set_input_as_handled();return
 		if code == KEY_ESCAPE:
 			if mode == "SEATED":
 				if interaction_restore_allowed and app_focused: _request_capture()
@@ -572,8 +729,13 @@ func _input(event: InputEvent) -> void:
 			elif mode == "EXPLORE": _pause_navigation()
 			get_viewport().set_input_as_handled()
 		elif code == KEY_F and navigation_active:
-			_enter_target_action(_nearest_seat())
+			var target:=_nearest_interaction()
+			if target in ["cake_fridge","cake_table"]:_birthday_action(target)
+			elif target=="letters":_open_letters("READING")
+			else:_enter_target_action(_nearest_seat())
 			get_viewport().set_input_as_handled()
+		elif code==KEY_B and mode=="EXPLORE":
+			_open_letters("INVENTORY");get_viewport().set_input_as_handled()
 	if event is InputEventMouseButton and event.pressed:
 		if event.button_index == MOUSE_BUTTON_LEFT and mode == "EXPLORE" and resume_button.visible and resume_button.get_global_rect().has_point(event.position):
 			_request_capture()
@@ -594,14 +756,21 @@ func _process(delta: float) -> void:
 	resume_button.visible = mode == "EXPLORE" and not pointer_locked
 	resume_button.disabled = capture_requested
 	resume_button.text = "继续游览" if ever_started else "开始游览"
+	bag_button.visible=mode=="EXPLORE"
+	help_panel.visible=mode not in ["READING","INVENTORY","CEREMONY"]
 	if mode == "EXPLORE":
 		help_text.text = "WASD / 方向键移动   鼠标左右移动观察   滚轮缩放   Esc 显示光标" if navigation_active else "点击继续游览，鼠标左右移动观察" if ever_started else "点击开始游览，鼠标左右移动观察"
+	elif mode=="READING":
+		help_text.text="← → 翻页 · C 目录 · R 王冠书签 · Enter 领取 · Esc 合上书"
+	elif mode=="INVENTORY":
+		help_text.text="点击或 Enter 佩戴／取下 · B / Esc 返回"
 	else:
 		help_text.text = "坐姿观察 · 光标可见" if mode == "SEATED" else "动作进行中"
 	if mode == "SEATED":
 		prompt.text = str(seats[seat_id].label) + " · Esc 起身返回游览"
 	elif navigation_active and not awaiting_movement_release and not interaction_target.is_empty():
-		prompt.text = "F 坐下 · " + str(seats[interaction_target].label)
+		if interaction_target in ["cake_fridge","cake_table"]:prompt.text=birthday.prompt_for(interaction_target)
+		else:prompt.text = "F 翻开情书文集" if interaction_target=="letters" else "F 坐下 · " + str(seats[interaction_target].label)
 	else:
 		prompt.text = ""
 	if notice_time > 0:
@@ -617,6 +786,14 @@ func _record_navigation_frame() -> void:
 	JavaScriptBridge.eval("window.__navigation_frames = window.__navigation_frames || []; window.__navigation_frames.push(" + JSON.stringify(sample) + "); if(window.__navigation_frames.length > 1800) window.__navigation_frames.shift();", true)
 
 func _update_camera(delta: float, snap := false) -> void:
+	if mode=="CEREMONY":
+		if not birthday.ceremony_paused:camera.transform=camera.transform.interpolate_with(birthday.ceremony_camera,1.0-exp(-delta*3.0))
+		_update_visibility();return
+	if mode=="READING":
+		var desired:=Transform3D(Basis.IDENTITY,vec(prop_data.camera_position)).looking_at(vec(prop_data.camera_target),Vector3.UP)
+		camera.transform=camera.transform.interpolate_with(desired,1.0-exp(-delta*8.0))
+		_update_visibility();return
+	if mode=="INVENTORY":return
 	var alpha := 1.0 if snap else 1.0 - exp(-delta * 8.0)
 	camera_yaw = target_camera_yaw
 	zoom = lerpf(zoom, target_zoom, alpha)
@@ -776,6 +953,7 @@ func _notification(what: int) -> void:
 	if what == NOTIFICATION_APPLICATION_FOCUS_OUT:
 		escape_held = false
 		app_focused = false
+		if birthday and mode=="CEREMONY":birthday.pause_ceremony()
 		if player != null: _pause_navigation()
 	elif what == NOTIFICATION_APPLICATION_FOCUS_IN:
 		app_focused = true
@@ -817,7 +995,7 @@ func snapshot() -> Dictionary:
 		"camera_fov": camera.fov, "zoom": zoom, "target_zoom": target_zoom,
 		"seats": scene_data.seats, "cycles": completed_cycles, "transition_collisions": transition_collisions, "frame_mean_ms": mean,
 		"frame_p95_ms": sorted[int(sorted.size() * 0.95)] if not sorted.is_empty() else 0,
-		"room_meshes": room_meshes.size(), "lightmap": _lightmap_state()}
+		"room_meshes": room_meshes.size(), "lightmap": _lightmap_state(), "letters": letters_ui.snapshot() if letters_ui else {}, "birthday": birthday.snapshot() if birthday else {}}
 
 
 

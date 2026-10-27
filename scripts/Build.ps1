@@ -1,9 +1,9 @@
-param([switch]$RebuildModel, [switch]$RebuildCharacter, [switch]$RebuildAll, [switch]$BakeLighting, [switch]$SkipChecks)
+param([switch]$RebuildModel, [switch]$RebuildCharacter, [switch]$RebuildProps, [switch]$RebuildCake, [switch]$RebuildAll, [switch]$BakeLighting, [switch]$SkipChecks)
 $ErrorActionPreference = 'Stop'
 $projectRoot = Split-Path -Parent $PSScriptRoot
 $godotInfo = Get-Content -LiteralPath (Join-Path $projectRoot 'work/godot-setup.json') -Raw | ConvertFrom-Json
 $godotExe = Join-Path $projectRoot $godotInfo.release.console_executable
-if ($RebuildAll) { $RebuildModel = $true; $RebuildCharacter = $true; $BakeLighting = $true }
+if ($RebuildAll) { $RebuildModel = $true; $RebuildCharacter = $true; $RebuildProps = $true; $RebuildCake = $true; $BakeLighting = $true }
 if ($RebuildModel) {
     $BakeLighting = $true
     $blenderInfo = Get-Content -LiteralPath (Join-Path $projectRoot 'work/blender-setup.json') -Raw | ConvertFrom-Json
@@ -16,6 +16,16 @@ if ($RebuildCharacter) {
     if ($LASTEXITCODE -ne 0) { throw 'Blender character build failed.' }
 }
 $gamePath = Join-Path $projectRoot 'godot'
+if ($RebuildProps) {
+    $blenderInfo = Get-Content -LiteralPath (Join-Path $projectRoot 'work/blender-setup.json') -Raw | ConvertFrom-Json
+    & $blenderInfo.executable --background --python-exit-code 1 --python (Join-Path $projectRoot 'blender/build_stage1.py')
+    if ($LASTEXITCODE -ne 0) { throw 'Stage 1 prop build failed.' }
+}
+if ($RebuildCake) {
+    $blenderInfo = Get-Content -LiteralPath (Join-Path $projectRoot 'work/blender-setup.json') -Raw | ConvertFrom-Json
+    & $blenderInfo.executable --background --python-exit-code 1 --python (Join-Path $projectRoot 'blender/build_stage2.py')
+    if ($LASTEXITCODE -ne 0) { throw 'Stage 2 cake build failed.' }
+}
 $webPath = Join-Path $projectRoot 'outputs/web'
 New-Item -ItemType Directory -Path $webPath -Force | Out-Null
 & $godotExe --headless --path $gamePath --editor --import
@@ -35,6 +45,12 @@ if ($LASTEXITCODE -ne 0) { throw 'Playroom verification failed.' }
 if ($LASTEXITCODE -ne 0) { throw 'Connected house verification failed.' }
 & $godotExe --headless --fixed-fps 60 --path $gamePath --script (Join-Path $projectRoot 'tests/Verify-Camera.gd')
 if ($LASTEXITCODE -ne 0) { throw 'Navigation camera verification failed.' }
+& $godotExe --headless --fixed-fps 60 --path $gamePath --script (Join-Path $projectRoot 'tests/Verify-Letters.gd')
+if ($LASTEXITCODE -ne 0) { throw 'Letter collection verification failed.' }
+& $godotExe --headless --fixed-fps 60 --path $gamePath --script (Join-Path $projectRoot 'tests/Verify-Study-Access.gd')
+if ($LASTEXITCODE -ne 0) { throw 'Study interaction access verification failed.' }
+& $godotExe --headless --fixed-fps 60 --path $gamePath --script (Join-Path $projectRoot 'tests/Verify-Birthday.gd')
+if ($LASTEXITCODE -ne 0) { throw 'Birthday preparation and ceremony verification failed.' }
 }
 & $godotExe --headless --path $gamePath --export-release Web (Join-Path $webPath 'index.html')
 if ($LASTEXITCODE -ne 0) { throw 'Godot Web export failed.' }

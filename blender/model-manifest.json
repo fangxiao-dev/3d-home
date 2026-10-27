@@ -26,7 +26,7 @@
     "Wall_Sofa",
     "Wall_TV"
   ],
-  "total_mesh_count": 219,
+  "total_mesh_count": 218,
   "rooms": {
     "living": {
       "bounds": [
@@ -62,7 +62,7 @@
         -6.6,
         -2.0
       ],
-      "mesh_count": 30
+      "mesh_count": 31
     },
     "wash": {
       "bounds": [
@@ -80,7 +80,7 @@
         -6.6,
         -2.0
       ],
-      "mesh_count": 30
+      "mesh_count": 28
     },
     "kitchen": {
       "bounds": [

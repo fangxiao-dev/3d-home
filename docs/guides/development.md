@@ -32,6 +32,12 @@ Godot 编辑工程为 `godot/project.godot`；房屋和人物源文件分别为 
 # 角色变更：独立重建角色
 ./scripts/Build.ps1 -RebuildCharacter
 
+# Stage 1 书本／王冠道具变更：独立重建道具
+./scripts/Build.ps1 -RebuildProps
+
+# Stage 2 蛋糕／蜡烛变更：独立重建
+./scripts/Build.ps1 -RebuildCake
+
 # 灯光变更：重新烘焙
 ./scripts/Build.ps1 -BakeLighting
 
@@ -43,6 +49,21 @@ Godot 编辑工程为 `godot/project.godot`；房屋和人物源文件分别为 
 ```
 
 共享的 Godot 导入、构建与烘焙串行执行。构建保留现有模型与烘焙匹配检查，不能拿旧烘焙配新环境；网页资源包版本用于浏览器缓存更新。日常操作无需额外 SHA 或完整归档流程。
+
+## 更新文集内容与字体
+
+`scripts/Prepare-Letters.ps1` 从只读情书快照生成 `godot/content/letters/`；`tests/Verify-LettersContent.ps1` 核对 15 篇正文与 7 图。更新内容后依次执行：
+
+```powershell
+./scripts/Prepare-Letters.ps1
+./tests/Verify-LettersContent.ps1
+python scripts/Prepare-ReadingFont.py
+./scripts/Build.ps1
+```
+
+字体准备脚本从本机 Blender 随附的 OFL Noto 字体提取正文及界面字形，需要 Python 的 fontTools 与 Brotli（本机依赖位于 `work/python-deps/`）。源文集仍为只读，生成的正文与图片会进入网页资源包，公开上传需单独授权。
+
+`-RebuildAll` 包含 Stage 1 道具与 Stage 2 蛋糕重建。环境内原有占位本已移除，冰箱已有内腔与门铰链；环境变化仍按 `-RebuildModel` 重建并重新烘焙。
 
 ## 文件边界
 
