@@ -1,0 +1,1450 @@
+{
+  "version": 1,
+  "pages": [
+    {
+      "id": "start",
+      "time": 2016.12,
+      "date": "2016 · 02.14",
+      "short": "初识",
+      "title": "故事最初的一页",
+      "tag": "两条人生轨迹短暂交会",
+      "kind": "start",
+      "side": "both",
+      "spreads": [
+        {
+          "eyebrow": "PROLOGUE · OUR FIRST ENCOUNTER",
+          "layout": "standard",
+          "spread_index": 0,
+          "blocks": [
+            {
+              "type": "note",
+              "text": "FEBRUARY 14, 2016",
+              "class_name": "date-tag",
+              "style": "",
+              "caption": ""
+            },
+            {
+              "type": "heading",
+              "text": "2016.",
+              "level": 2,
+              "caption": ""
+            },
+            {
+              "type": "heading",
+              "text": "从这里， \n 两条线有了交点。",
+              "level": 2,
+              "caption": ""
+            },
+            {
+              "type": "text",
+              "text": "那时只是认识，远没有想到，很多年以后，会重新把彼此写进生活。",
+              "class_name": "",
+              "style": "",
+              "caption": ""
+            },
+            {
+              "type": "note",
+              "text": "重庆 · 第一次相识",
+              "class_name": "footnote",
+              "style": "",
+              "caption": ""
+            }
+          ]
+        },
+        {
+          "eyebrow": "LITTLE TRACES",
+          "layout": "standard",
+          "spread_index": 1,
+          "blocks": [
+            {
+              "type": "note",
+              "text": "零零散散的联系 2017 ·「在不」 2019 ·「谢谢大兄弟」 后来很少聊天，但朋友圈里的点赞一直留下痕迹。",
+              "class_name": "memo",
+              "style": "",
+              "caption": ""
+            },
+            {
+              "type": "note",
+              "text": "并不是完全断了联系。 \n 只是那时，我们都还在过自己的日子。",
+              "class_name": "tiny-script",
+              "style": "",
+              "caption": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tree",
+      "time": 2017.94,
+      "date": "2017 · 冬",
+      "short": "圣诞树",
+      "title": "那年冬天的圣诞树",
+      "tag": "当时只道是寻常",
+      "kind": "tree",
+      "side": "fang",
+      "spreads": [
+        {
+          "eyebrow": "FANG · A WINTER MEMORY",
+          "layout": "standard",
+          "spread_index": 0,
+          "blocks": [
+            {
+              "type": "photo",
+              "asset": "tree2017",
+              "caption": "Dortmund · 2017 / 已有真实档案照",
+              "class_name": "photo-card",
+              "style": "--rot:-3deg;--imgH:228px"
+            },
+            {
+              "type": "note",
+              "text": "那时只是一棵树。",
+              "class_name": "hand-note",
+              "style": "align-self:flex-end;margin:3px 18px",
+              "caption": ""
+            }
+          ]
+        },
+        {
+          "eyebrow": "2017 → 2024 → 2025",
+          "layout": "standard",
+          "spread_index": 1,
+          "blocks": [
+            {
+              "type": "note",
+              "text": "2017 · 德国",
+              "class_name": "date-tag",
+              "style": "",
+              "asset": "tree2024",
+              "caption": ""
+            },
+            {
+              "type": "heading",
+              "text": "当时只道 \n 是寻常。",
+              "level": 2,
+              "caption": ""
+            },
+            {
+              "type": "text",
+              "text": "离开、回望、重新选择。多年前一个普通的冬夜，后来在另一段人生里重新获得了意义。",
+              "class_name": "",
+              "style": "",
+              "caption": ""
+            },
+            {
+              "type": "photo",
+              "asset": "tree2024",
+              "caption": "多年后，又见那棵树",
+              "class_name": "photo-card",
+              "style": "--rot:4deg;--imgH:125px"
+            },
+            {
+              "type": "note",
+              "text": "她懂得，",
+              "class_name": "hand-note",
+              "style": "",
+              "caption": ""
+            },
+            {
+              "type": "text",
+              "text": "这不仅仅是一棵圣诞树。",
+              "class_name": "text-sm",
+              "style": "",
+              "caption": ""
+            },
+            {
+              "type": "note",
+              "text": "这一页关于理解一个人的人生，不是“命中注定”的证明。",
+              "class_name": "footnote",
+              "style": "",
+              "caption": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "africa",
+      "time": 2020.25,
+      "date": "约 2020 · 待核实",
+      "short": "两个世界",
+      "title": "同一年，不同的世界",
+      "tag": "非洲与另一端的日常",
+      "kind": "africa",
+      "side": "both",
+      "draft": true,
+      "spreads": [
+        {
+          "eyebrow": "TWO LIVES · A",
+          "layout": "standard",
+          "spread_index": 0,
+          "blocks": [
+            {
+              "type": "note",
+              "text": "同一个年份 · 日期待核实",
+              "class_name": "date-tag",
+              "style": "",
+              "caption": ""
+            },
+            {
+              "type": "photo",
+              "asset": "work",
+              "caption": "放仔 · 当年的生活 / 示意插画",
+              "class_name": "photo-card",
+              "style": "--rot:-3deg;--imgH:200px"
+            },
+            {
+              "type": "note",
+              "text": "那一年，我在……",
+              "class_name": "hand-note",
+              "style": "align-self:flex-end;margin:8px 12px",
+              "caption": ""
+            }
+          ]
+        },
+        {
+          "eyebrow": "TWO LIVES · B",
+          "layout": "standard",
+          "spread_index": 1,
+          "blocks": [
+            {
+              "type": "note",
+              "text": "世界的另一端",
+              "class_name": "date-tag",
+              "style": "",
+              "caption": ""
+            },
+            {
+              "type": "photo",
+              "asset": "africa",
+              "caption": "莹仔 · 非洲外派 / 示意插画",
+              "class_name": "photo-card",
+              "style": "--rot:4deg;--imgH:200px"
+            },
+            {
+              "type": "note",
+              "text": "当时的我们，大概并不知道彼此正在经历怎样的日子。",
+              "class_name": "tiny-script",
+              "style": "margin-top:12px",
+              "caption": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "guzheng",
+      "time": 2022.1,
+      "date": "年份待核实",
+      "short": "琴行时光",
+      "title": "我们各自过着生活",
+      "tag": "古筝琴行时期的双人对照",
+      "kind": "guzheng",
+      "side": "both",
+      "draft": true,
+      "spreads": [
+        {
+          "eyebrow": "TWO LIVES · C",
+          "layout": "standard",
+          "spread_index": 0,
+          "blocks": [
+            {
+              "type": "note",
+              "text": "某年 · 年份待核实",
+              "class_name": "date-tag",
+              "style": "",
+              "caption": ""
+            },
+            {
+              "type": "photo",
+              "asset": "guzheng",
+              "caption": "莹仔 · 琴行与古筝 / 示意插画",
+              "class_name": "photo-card",
+              "style": "--rot:-2deg;--imgH:203px"
+            },
+            {
+              "type": "text",
+              "text": "后来她回国，在琴行教了一年的古筝。",
+              "class_name": "",
+              "style": "",
+              "caption": ""
+            }
+          ]
+        },
+        {
+          "eyebrow": "TWO LIVES · D",
+          "layout": "standard",
+          "spread_index": 1,
+          "blocks": [
+            {
+              "type": "note",
+              "text": "同一年，你在做什么？",
+              "class_name": "date-tag",
+              "style": "",
+              "caption": ""
+            },
+            {
+              "type": "photo",
+              "asset": "city",
+              "caption": "放仔 · 同年生活 / 示意插画",
+              "class_name": "photo-card",
+              "style": "--rot:3deg;--imgH:203px"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "snow",
+      "time": 2023.6,
+      "date": "某年 · 待核实",
+      "short": "雪山与湖水",
+      "title": "她自己珍惜的那一天",
+      "tag": "认识之前，她也有一段会记一辈子的生活",
+      "kind": "snow",
+      "side": "ying",
+      "draft": true,
+      "spreads": [
+        {
+          "eyebrow": "YING · A QUIET MEMORY",
+          "layout": "standard",
+          "spread_index": 0,
+          "blocks": [
+            {
+              "type": "note",
+              "text": "某年 · 新疆 · 年份待核实",
+              "class_name": "date-tag",
+              "caption": ""
+            },
+            {
+              "type": "photo",
+              "asset": "skyBlue",
+              "caption": "莹仔 · 雪山与湖水 / 示意插画",
+              "style": "--rot:-3deg;--imgH:210px"
+            },
+            {
+              "type": "note",
+              "text": "只听湖水。",
+              "class_name": "hand-note",
+              "caption": ""
+            }
+          ]
+        },
+        {
+          "eyebrow": "SOMETHING SHE KEEPS",
+          "layout": "standard",
+          "spread_index": 1,
+          "blocks": [
+            {
+              "type": "heading",
+              "text": "不忙着出片，只是站在那里。",
+              "level": 2,
+              "caption": ""
+            },
+            {
+              "type": "text",
+              "text": "站在雪山脚下听湖水，舒服得觉得这一生都会记得。",
+              "caption": ""
+            },
+            {
+              "type": "note",
+              "text": "和那棵圣诞树一样，这是她在认识彼此之前，就很珍贵的一天。",
+              "caption": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reconnect",
+      "time": 2025.87,
+      "date": "2025 · 11.13",
+      "short": "重新连接",
+      "title": "重新连接",
+      "tag": "一次普通的点赞，一次真正的聊天",
+      "kind": "reconnect",
+      "side": "both",
+      "spreads": [
+        {
+          "eyebrow": "NOVEMBER · 2025",
+          "layout": "standard",
+          "spread_index": 0,
+          "blocks": [
+            {
+              "type": "heading",
+              "text": "那些疏密不同的星群，",
+              "level": 2,
+              "caption": ""
+            },
+            {
+              "type": "text",
+              "text": "那些年，朋友圈里留下的点赞比想象中还多。却直到后来，我们才真正聊起彼此的生活。",
+              "caption": ""
+            },
+            {
+              "type": "note",
+              "text": "直到有一天，一个小小的回应，接上了一段真正的对话。",
+              "caption": ""
+            }
+          ]
+        },
+        {
+          "eyebrow": "THE NIGHT WE RECONNECTED",
+          "layout": "standard",
+          "spread_index": 1,
+          "blocks": [
+            {
+              "type": "note",
+              "text": "夜里 又是一个时差党",
+              "class_name": "her chat",
+              "style": "",
+              "caption": ""
+            },
+            {
+              "type": "note",
+              "text": "那一晚 一场比想象中更长的聊天。",
+              "class_name": "him chat",
+              "style": "",
+              "caption": ""
+            },
+            {
+              "type": "heading",
+              "text": "重新连接",
+              "level": 3,
+              "caption": ""
+            },
+            {
+              "type": "text",
+              "text": "起初没有人知道，这一次联系，会把两个人带到哪里。",
+              "class_name": "",
+              "style": "",
+              "caption": ""
+            },
+            {
+              "type": "note",
+              "text": "以前是「大兄弟」。 \n 后来变成了「老公」「老婆」。",
+              "class_name": "memo",
+              "style": "margin-top:12px",
+              "caption": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dayone",
+      "time": 2026.005,
+      "month": 1.02,
+      "date": "2026 · 01.01",
+      "short": "Day One",
+      "title": "没有截图的跨年",
+      "tag": "第一处重要的留白",
+      "kind": "dayone",
+      "spreads": [
+        {
+          "eyebrow": "DAY ONE · THE FIRST BLANK",
+          "layout": "standard",
+          "spread_index": 0,
+          "blocks": [
+            {
+              "type": "note",
+              "text": "2026 · JANUARY 01",
+              "class_name": "date-tag",
+              "style": "",
+              "caption": ""
+            },
+            {
+              "type": "blank",
+              "text": "✳ 这一刻没有照片 跨年那通视频，忘了截图。",
+              "variant": "phone",
+              "caption": ""
+            },
+            {
+              "type": "note",
+              "text": "明明很重要呀。",
+              "class_name": "hand-note",
+              "style": "align-self:flex-end;margin-right:24px",
+              "caption": ""
+            }
+          ]
+        },
+        {
+          "eyebrow": "A MOMENT WITHOUT A PHOTO",
+          "layout": "standard",
+          "spread_index": 1,
+          "blocks": [
+            {
+              "type": "heading",
+              "text": "有些瞬间， \n 忙着幸福就忘了拍。",
+              "level": 2,
+              "caption": ""
+            },
+            {
+              "type": "note",
+              "text": "后来 刚刚视频忘了截图",
+              "class_name": "her chat",
+              "style": "",
+              "caption": ""
+            },
+            {
+              "type": "text",
+              "text": "我们都喜欢留下照片和视频。但那个重要的夜晚，最重要的画面留在了记忆里。",
+              "class_name": "",
+              "style": "",
+              "caption": ""
+            },
+            {
+              "type": "note",
+              "text": "这不是一张缺失的证据， \n 而是一段确实发生的生活。",
+              "class_name": "tiny-script",
+              "style": "",
+              "caption": ""
+            },
+            {
+              "type": "note",
+              "text": "完整的《Day One》仍在书房的情书文集里。",
+              "class_name": "footnote",
+              "style": "",
+              "caption": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "firstmeet",
+      "time": 2026.12,
+      "month": 2.45,
+      "date": "2026 · 02",
+      "short": "终于见面",
+      "title": "线上喜欢的人，真的存在",
+      "tag": "第一次共同在场",
+      "kind": "firstmeet",
+      "spreads": [
+        {
+          "eyebrow": "FEBRUARY · TOGETHER AT LAST",
+          "layout": "collage",
+          "spread_index": 0,
+          "blocks": [
+            {
+              "type": "note",
+              "text": "2026 · 02",
+              "class_name": "date-tag",
+              "style": "",
+              "caption": ""
+            },
+            {
+              "type": "heading",
+              "text": "终于，见到你。",
+              "level": 2,
+              "caption": ""
+            },
+            {
+              "type": "photo",
+              "asset": "couple",
+              "caption": "第一次见面 / 示意插画",
+              "class_name": "photo-card",
+              "style": "--rot:;--imgH:166px"
+            },
+            {
+              "type": "photo",
+              "asset": "skyGold",
+              "caption": "那一天的晚霞 / 示意插画",
+              "class_name": "photo-card",
+              "style": "--rot:;--imgH:166px"
+            }
+          ]
+        },
+        {
+          "eyebrow": "THE FIRST REAL EMBRACE",
+          "layout": "collage",
+          "spread_index": 1,
+          "blocks": [
+            {
+              "type": "heading",
+              "text": "线上喜欢的那个人， \n 在现实里真的存在。",
+              "level": 3,
+              "caption": ""
+            },
+            {
+              "type": "text",
+              "text": "没有一场特别盛大的初次约会。下班后的相见、散步、一起吃饭，还有一点点不真实感。",
+              "class_name": "",
+              "style": "",
+              "caption": ""
+            },
+            {
+              "type": "note",
+              "text": "一个特别的普通日子 原来第一次见面，也可以像已经认识很久的人一样，自然地走进生活。",
+              "class_name": "memo",
+              "style": "margin:17px 0",
+              "caption": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "skies",
+      "time": 2026.55,
+      "month": 7.2,
+      "date": "2026 · 夏",
+      "short": "同一片天空",
+      "title": "给你看今天的天空",
+      "tag": "两地日常，变成彼此分享的日常",
+      "kind": "skies",
+      "spreads": [
+        {
+          "eyebrow": "OUR TWO SKIES · WEST",
+          "layout": "standard",
+          "spread_index": 0,
+          "blocks": [
+            {
+              "type": "note",
+              "text": "2026 · 异地的时候",
+              "class_name": "date-tag",
+              "style": "",
+              "caption": ""
+            },
+            {
+              "type": "photo",
+              "asset": "skyBlue",
+              "caption": "德国 · 今天的天空 / 示意插画",
+              "class_name": "photo-card",
+              "style": "--rot:-3deg;--imgH:178px"
+            },
+            {
+              "type": "note",
+              "text": "这是我这边的天空。",
+              "class_name": "tiny-script",
+              "style": "",
+              "caption": ""
+            }
+          ]
+        },
+        {
+          "eyebrow": "OUR TWO SKIES · EAST",
+          "layout": "standard",
+          "spread_index": 1,
+          "blocks": [
+            {
+              "type": "note",
+              "text": "一张照片也能靠近彼此",
+              "class_name": "date-tag",
+              "style": "",
+              "caption": ""
+            },
+            {
+              "type": "photo",
+              "asset": "skyGold",
+              "caption": "宜昌 · 给你的晚霞 / 示意插画",
+              "class_name": "photo-card",
+              "style": "--rot:3deg;--imgH:178px"
+            },
+            {
+              "type": "quote",
+              "text": "“是只给老公的晚霞吗？” \n “当然啦！”",
+              "class_name": "quote",
+              "style": "font-size:13px",
+              "caption": ""
+            },
+            {
+              "type": "note",
+              "text": "和相识前的双页不同：这一次，两张照片是主动分享给彼此的。",
+              "class_name": "footnote",
+              "style": "",
+              "caption": ""
+            },
+            {
+              "type": "note",
+              "text": "「我脑子里想不到第二个人」 · 2026.07.29 · 莹仔",
+              "class_name": "private-note"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "travel",
+      "time": 2026.75,
+      "month": 9.65,
+      "date": "2026 · 09—10",
+      "short": "一起旅行",
+      "title": "我们一起去过的地方",
+      "tag": "这一年的照片渐渐变多",
+      "kind": "travel",
+      "spreads": [
+        {
+          "eyebrow": "A YEAR OF LITTLE DAYS",
+          "layout": "collage",
+          "spread_index": 0,
+          "blocks": [
+            {
+              "type": "note",
+              "text": "2026 · 09—10",
+              "class_name": "date-tag",
+              "style": "",
+              "caption": ""
+            },
+            {
+              "type": "heading",
+              "text": "照片突然多了起来。",
+              "level": 2,
+              "caption": ""
+            },
+            {
+              "type": "photo",
+              "asset": "thailand",
+              "caption": "泰国旅行 / 示意插画",
+              "class_name": "photo-card",
+              "style": "--rot:;--imgH:166px"
+            },
+            {
+              "type": "photo",
+              "asset": "airplane",
+              "caption": "回程飞机 / 示意插画",
+              "class_name": "photo-card",
+              "style": "--rot:;--imgH:166px"
+            }
+          ]
+        },
+        {
+          "eyebrow": "TRAVEL, FOOD & SILLY JOY",
+          "layout": "collage",
+          "spread_index": 1,
+          "blocks": [
+            {
+              "type": "heading",
+              "text": "一起去过的地方， \n 一起浪费的时间。",
+              "level": 3,
+              "caption": ""
+            },
+            {
+              "type": "note",
+              "text": "曼谷",
+              "class_name": "chip",
+              "style": "",
+              "caption": ""
+            },
+            {
+              "type": "note",
+              "text": "芭提雅",
+              "class_name": "chip",
+              "style": "",
+              "caption": ""
+            },
+            {
+              "type": "note",
+              "text": "沙美岛",
+              "class_name": "chip",
+              "style": "",
+              "caption": ""
+            },
+            {
+              "type": "note",
+              "text": "乱七八糟的小幸福",
+              "class_name": "chip",
+              "style": "",
+              "caption": ""
+            },
+            {
+              "type": "text",
+              "text": "旅行、零食、游戏、开玩笑。相册越来越像一本随手贴起来的生活本。",
+              "class_name": "",
+              "style": "",
+              "caption": ""
+            },
+            {
+              "type": "note",
+              "text": "2",
+              "class_name": "tile",
+              "style": "",
+              "caption": ""
+            },
+            {
+              "type": "note",
+              "text": "4",
+              "class_name": "tile",
+              "style": "",
+              "caption": ""
+            },
+            {
+              "type": "note",
+              "text": "8",
+              "class_name": "tile",
+              "style": "",
+              "caption": ""
+            },
+            {
+              "type": "note",
+              "text": "16",
+              "class_name": "tile",
+              "style": "",
+              "caption": ""
+            },
+            {
+              "type": "note",
+              "text": "“又可以决战 2048 了！”",
+              "class_name": "hand-note",
+              "style": "",
+              "caption": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "proposal",
+      "time": 2026.755,
+      "month": 10.1,
+      "date": "2026 · 10.03",
+      "short": "没有照片的求婚",
+      "title": "没拍下来的那一夜",
+      "tag": "第二处重要的留白",
+      "kind": "proposal",
+      "spreads": [
+        {
+          "eyebrow": "OCTOBER 03 · THE SECOND BLANK",
+          "layout": "standard",
+          "spread_index": 0,
+          "blocks": [
+            {
+              "type": "note",
+              "text": "2026 · 10.03",
+              "class_name": "date-tag",
+              "style": "",
+              "caption": ""
+            },
+            {
+              "type": "blank",
+              "text": "✳ 这一刻没有照片 这一夜，没有录像。",
+              "variant": "polaroid",
+              "caption": ""
+            },
+            {
+              "type": "note",
+              "text": "就留在我们脑子里吧。",
+              "class_name": "hand-note",
+              "style": "align-self:center",
+              "caption": ""
+            },
+            {
+              "type": "note",
+              "text": "“让我们的求婚被记忆不断的加工美化。”",
+              "class_name": "hand-note"
+            }
+          ]
+        },
+        {
+          "eyebrow": "THE MOMENT IS OURS",
+          "layout": "standard",
+          "spread_index": 1,
+          "blocks": [
+            {
+              "type": "photo",
+              "asset": "ring",
+              "caption": "戒指照片 / 示意插画",
+              "class_name": "photo-card",
+              "style": "--rot:3deg;--imgH:179px"
+            },
+            {
+              "type": "text",
+              "text": "想记录生活的人，也会选择让某一个瞬间只存在于彼此的记忆里。",
+              "class_name": "",
+              "style": "",
+              "caption": ""
+            },
+            {
+              "type": "quote",
+              "text": "“谢谢走出的第一步。\n剩下的路，我都会勇敢向你奔赴。”",
+              "class_name": "quote"
+            },
+            {
+              "type": "note",
+              "text": "❜❜ 他奔赴的路：02.23 飞回宜昌 → 09.19 回国 → 10.03 这一夜 → 10.19 → …",
+              "class_name": "steps-memo"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marriage",
+      "time": 2026.8,
+      "month": 10.66,
+      "date": "2026 · 10.19",
+      "short": "新婚那朝",
+      "title": "然后，我们有了这张照片",
+      "tag": "空白之后，生活鲜明起来",
+      "kind": "marriage",
+      "spreads": [
+        {
+          "eyebrow": "OCTOBER 19 · THE BRIGHT PAGE",
+          "layout": "red",
+          "spread_index": 0,
+          "blocks": [
+            {
+              "type": "note",
+              "text": "2026 · 10.19",
+              "class_name": "date-tag",
+              "style": "",
+              "caption": ""
+            },
+            {
+              "type": "note",
+              "text": "囍 今天，我们结婚啦",
+              "class_name": "wedding-banner",
+              "style": "",
+              "caption": ""
+            },
+            {
+              "type": "note",
+              "text": "前一页没有照片。 \n 这一页，终于有了。",
+              "class_name": "tiny-script",
+              "style": "text-align:center",
+              "caption": ""
+            }
+          ]
+        },
+        {
+          "eyebrow": "MARRIED · OUR LITTLE LIFE",
+          "layout": "red",
+          "spread_index": 1,
+          "blocks": [
+            {
+              "type": "heading",
+              "text": "新婚那朝。",
+              "level": 2,
+              "caption": ""
+            },
+            {
+              "type": "text",
+              "text": "下雨、放晴、赶路、聊天。连这样重要的日子，也有「待会儿吃麦当劳还是汉堡王」这样的琐碎。",
+              "class_name": "",
+              "style": "",
+              "caption": ""
+            },
+            {
+              "type": "photo",
+              "asset": "wedding",
+              "caption": "领证照片 / 示意插画",
+              "class_name": "photo-card",
+              "style": "--rot:2deg;--imgH:166px"
+            },
+            {
+              "type": "note",
+              "text": "怎么突然就是已婚人士啦。",
+              "class_name": "hand-note",
+              "style": "align-self:flex-end",
+              "caption": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "future",
+      "time": 2027.2,
+      "month": 12.9,
+      "date": "未来 · 待续",
+      "short": "未来",
+      "title": "还没拍下来的照片",
+      "tag": "第三处留白：尚未发生",
+      "kind": "future",
+      "spreads": [
+        {
+          "eyebrow": "EPILOGUE · THE THIRD BLANK",
+          "layout": "standard",
+          "spread_index": 0,
+          "blocks": [
+            {
+              "type": "note",
+              "text": "2027 · AND BEYOND",
+              "class_name": "date-tag",
+              "style": "",
+              "caption": ""
+            },
+            {
+              "type": "blank",
+              "text": "✳ 这一刻没有照片 这里还没有照片。",
+              "variant": "film",
+              "caption": ""
+            },
+            {
+              "type": "note",
+              "text": "不是忘了拍。 \n 是还没有走到那一天。",
+              "class_name": "tiny-script",
+              "style": "text-align:center",
+              "caption": ""
+            }
+          ]
+        },
+        {
+          "eyebrow": "TO BE CONTINUED",
+          "layout": "standard",
+          "spread_index": 1,
+          "blocks": [
+            {
+              "type": "heading",
+              "text": "未完 \n 待续。",
+              "level": 2,
+              "caption": ""
+            },
+            {
+              "type": "text",
+              "text": "我们以后还会有很多想要拍下来的日子，也会有很多来不及拍下来的幸福。",
+              "class_name": "",
+              "style": "",
+              "caption": ""
+            },
+            {
+              "type": "note",
+              "text": "翻到最后，合上相册，就回到了我们的 3D 小屋。",
+              "class_name": "footnote",
+              "style": "",
+              "caption": ""
+            },
+            {
+              "type": "quote",
+              "text": "“明年之后的每个生日，\n我都陪你一起过。”\n—— 莹仔 · 2026.10.16",
+              "class_name": "quote"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "assets": {
+    "treeSnow": "res://content/letters/images/XlNBb1iD4oMSbBxnLSKciABmndf.jpg",
+    "africa": "res://content/album/images/africa.svg",
+    "city": "res://content/album/images/city.svg",
+    "guzheng": "res://content/album/images/guzheng.svg",
+    "work": "res://content/album/images/work.svg",
+    "skyBlue": "res://content/album/images/skyBlue.svg",
+    "skyGold": "res://content/album/images/skyGold.svg",
+    "thailand": "res://content/album/images/thailand.svg",
+    "airplane": "res://content/album/images/airplane.svg",
+    "ring": "res://content/album/images/ring.svg",
+    "wedding": "res://content/album/images/wedding.svg",
+    "couple": "res://content/album/images/couple.svg",
+    "book": "res://content/album/images/book.svg",
+    "tree2017": "res://content/letters/images/W5k9bcxbcoJpvyx7nP3cJAQOnLc.jpg",
+    "tree2024": "res://content/letters/images/AveNbQC5CobBevxA2imcvws5nnb.jpg"
+  },
+  "quarters": [
+    {
+      "year": 2016,
+      "quarter": 1,
+      "count": 11,
+      "time": 2016.125
+    },
+    {
+      "year": 2016,
+      "quarter": 2,
+      "count": 20,
+      "time": 2016.375
+    },
+    {
+      "year": 2016,
+      "quarter": 3,
+      "count": 43,
+      "time": 2016.625
+    },
+    {
+      "year": 2016,
+      "quarter": 4,
+      "count": 80,
+      "time": 2016.875
+    },
+    {
+      "year": 2017,
+      "quarter": 1,
+      "count": 35,
+      "time": 2017.125
+    },
+    {
+      "year": 2017,
+      "quarter": 2,
+      "count": 52,
+      "time": 2017.375
+    },
+    {
+      "year": 2017,
+      "quarter": 3,
+      "count": 14,
+      "time": 2017.625
+    },
+    {
+      "year": 2017,
+      "quarter": 4,
+      "count": 24,
+      "time": 2017.875
+    },
+    {
+      "year": 2018,
+      "quarter": 1,
+      "count": 27,
+      "time": 2018.125
+    },
+    {
+      "year": 2018,
+      "quarter": 2,
+      "count": 17,
+      "time": 2018.375
+    },
+    {
+      "year": 2018,
+      "quarter": 3,
+      "count": 20,
+      "time": 2018.625
+    },
+    {
+      "year": 2018,
+      "quarter": 4,
+      "count": 17,
+      "time": 2018.875
+    },
+    {
+      "year": 2019,
+      "quarter": 1,
+      "count": 20,
+      "time": 2019.125
+    },
+    {
+      "year": 2019,
+      "quarter": 2,
+      "count": 20,
+      "time": 2019.375
+    },
+    {
+      "year": 2019,
+      "quarter": 3,
+      "count": 7,
+      "time": 2019.625
+    },
+    {
+      "year": 2019,
+      "quarter": 4,
+      "count": 6,
+      "time": 2019.875
+    },
+    {
+      "year": 2020,
+      "quarter": 1,
+      "count": 14,
+      "time": 2020.125
+    },
+    {
+      "year": 2020,
+      "quarter": 2,
+      "count": 11,
+      "time": 2020.375
+    },
+    {
+      "year": 2020,
+      "quarter": 3,
+      "count": 35,
+      "time": 2020.625
+    },
+    {
+      "year": 2020,
+      "quarter": 4,
+      "count": 29,
+      "time": 2020.875
+    },
+    {
+      "year": 2021,
+      "quarter": 1,
+      "count": 13,
+      "time": 2021.125
+    },
+    {
+      "year": 2021,
+      "quarter": 2,
+      "count": 50,
+      "time": 2021.375
+    },
+    {
+      "year": 2021,
+      "quarter": 3,
+      "count": 47,
+      "time": 2021.625
+    },
+    {
+      "year": 2021,
+      "quarter": 4,
+      "count": 22,
+      "time": 2021.875
+    },
+    {
+      "year": 2022,
+      "quarter": 1,
+      "count": 9,
+      "time": 2022.125
+    },
+    {
+      "year": 2022,
+      "quarter": 2,
+      "count": 34,
+      "time": 2022.375
+    },
+    {
+      "year": 2022,
+      "quarter": 3,
+      "count": 4,
+      "time": 2022.625
+    },
+    {
+      "year": 2022,
+      "quarter": 4,
+      "count": 0,
+      "time": 2022.875
+    },
+    {
+      "year": 2023,
+      "quarter": 1,
+      "count": 3,
+      "time": 2023.125
+    },
+    {
+      "year": 2023,
+      "quarter": 2,
+      "count": 7,
+      "time": 2023.375
+    },
+    {
+      "year": 2023,
+      "quarter": 3,
+      "count": 6,
+      "time": 2023.625
+    },
+    {
+      "year": 2023,
+      "quarter": 4,
+      "count": 12,
+      "time": 2023.875
+    },
+    {
+      "year": 2024,
+      "quarter": 1,
+      "count": 10,
+      "time": 2024.125
+    },
+    {
+      "year": 2024,
+      "quarter": 2,
+      "count": 9,
+      "time": 2024.375
+    },
+    {
+      "year": 2024,
+      "quarter": 3,
+      "count": 8,
+      "time": 2024.625
+    },
+    {
+      "year": 2024,
+      "quarter": 4,
+      "count": 7,
+      "time": 2024.875
+    },
+    {
+      "year": 2025,
+      "quarter": 1,
+      "count": 8,
+      "time": 2025.125
+    },
+    {
+      "year": 2025,
+      "quarter": 2,
+      "count": 11,
+      "time": 2025.375
+    },
+    {
+      "year": 2025,
+      "quarter": 3,
+      "count": 9,
+      "time": 2025.625
+    },
+    {
+      "year": 2025,
+      "quarter": 4,
+      "count": 7,
+      "time": 2025.875
+    }
+  ],
+  "real_stars": [
+    {
+      "t": 2017.5671232876712,
+      "label": "2017.07.27 · 她发来「在不」",
+      "shape": "spark"
+    },
+    {
+      "t": 2019.0328767123287,
+      "label": "2019.01.13 · 她回「谢谢大兄弟」",
+      "shape": "star"
+    }
+  ],
+  "call_hours": {
+    "1": 99.8,
+    "2": 62.9,
+    "3": 64.1,
+    "4": 91.3,
+    "5": 83.1,
+    "6": 84.7,
+    "7": 87.7,
+    "8": 70.9,
+    "9": 25.3,
+    "10": 0.2
+  },
+  "tracks": {
+    "top": [
+      [
+        1,
+        43
+      ],
+      [
+        2.65,
+        43
+      ],
+      [
+        2.8,
+        62
+      ],
+      [
+        3.25,
+        62
+      ],
+      [
+        3.45,
+        43
+      ],
+      [
+        7,
+        43
+      ],
+      [
+        9.45,
+        43
+      ],
+      [
+        9.62,
+        62
+      ],
+      [
+        10.75,
+        62
+      ],
+      [
+        11,
+        46
+      ],
+      [
+        12,
+        45
+      ],
+      [
+        13,
+        43
+      ]
+    ],
+    "bottom": [
+      [
+        1,
+        82
+      ],
+      [
+        2.65,
+        84
+      ],
+      [
+        2.8,
+        62
+      ],
+      [
+        3.25,
+        62
+      ],
+      [
+        3.45,
+        88
+      ],
+      [
+        7,
+        88
+      ],
+      [
+        9.45,
+        86
+      ],
+      [
+        9.62,
+        62
+      ],
+      [
+        10.75,
+        62
+      ],
+      [
+        11,
+        78
+      ],
+      [
+        12,
+        84
+      ],
+      [
+        13,
+        86
+      ]
+    ]
+  },
+  "footsteps": [
+    {
+      "time": 2017.5671232876712,
+      "who": "ying",
+      "label": "2017 · 她先开口：「在不」"
+    },
+    {
+      "time": 2025.8657534246574,
+      "who": "ying",
+      "label": "2025.11.13 · 她先开口"
+    },
+    {
+      "time": 2026.0,
+      "month": 1.0,
+      "who": "ying",
+      "label": "2026.01.01 · 她先开口：「是的吧？」"
+    },
+    {
+      "time": 2026.15,
+      "month": 2.7857142857142856,
+      "who": "fang",
+      "label": "02.23 飞回宜昌"
+    },
+    {
+      "time": 2026.72,
+      "month": 9.6,
+      "who": "fang",
+      "label": "09.19 回国"
+    },
+    {
+      "time": 2026.755,
+      "month": 10.064516129032258,
+      "who": "fang",
+      "label": "10.03 求婚"
+    },
+    {
+      "time": 2026.8,
+      "month": 10.580645161290322,
+      "who": "fang",
+      "label": "10.19 领证"
+    },
+    {
+      "time": 2027.2,
+      "month": 12.9,
+      "who": "fang",
+      "label": "向未来继续奔赴"
+    }
+  ]
+}

@@ -1,0 +1,253 @@
+{
+  "source_file": "朋友圈双向互动-日期与方向.json",
+  "date_basis": "朋友圈发布日期，非实际点赞时间",
+  "period_start": "2016-02-14",
+  "period_end_inclusive": "2025-11-12",
+  "total_all_records": 952,
+  "total_before_reconnection": 778,
+  "years": [
+    {
+      "year": 2016,
+      "count": 154
+    },
+    {
+      "year": 2017,
+      "count": 125
+    },
+    {
+      "year": 2018,
+      "count": 81
+    },
+    {
+      "year": 2019,
+      "count": 53
+    },
+    {
+      "year": 2020,
+      "count": 89
+    },
+    {
+      "year": 2021,
+      "count": 132
+    },
+    {
+      "year": 2022,
+      "count": 47
+    },
+    {
+      "year": 2023,
+      "count": 28
+    },
+    {
+      "year": 2024,
+      "count": 34
+    },
+    {
+      "year": 2025,
+      "count": 35
+    }
+  ],
+  "quarters": [
+    {
+      "year": 2016,
+      "quarter": 1,
+      "count": 11
+    },
+    {
+      "year": 2016,
+      "quarter": 2,
+      "count": 20
+    },
+    {
+      "year": 2016,
+      "quarter": 3,
+      "count": 43
+    },
+    {
+      "year": 2016,
+      "quarter": 4,
+      "count": 80
+    },
+    {
+      "year": 2017,
+      "quarter": 1,
+      "count": 35
+    },
+    {
+      "year": 2017,
+      "quarter": 2,
+      "count": 52
+    },
+    {
+      "year": 2017,
+      "quarter": 3,
+      "count": 14
+    },
+    {
+      "year": 2017,
+      "quarter": 4,
+      "count": 24
+    },
+    {
+      "year": 2018,
+      "quarter": 1,
+      "count": 27
+    },
+    {
+      "year": 2018,
+      "quarter": 2,
+      "count": 17
+    },
+    {
+      "year": 2018,
+      "quarter": 3,
+      "count": 20
+    },
+    {
+      "year": 2018,
+      "quarter": 4,
+      "count": 17
+    },
+    {
+      "year": 2019,
+      "quarter": 1,
+      "count": 20
+    },
+    {
+      "year": 2019,
+      "quarter": 2,
+      "count": 20
+    },
+    {
+      "year": 2019,
+      "quarter": 3,
+      "count": 7
+    },
+    {
+      "year": 2019,
+      "quarter": 4,
+      "count": 6
+    },
+    {
+      "year": 2020,
+      "quarter": 1,
+      "count": 14
+    },
+    {
+      "year": 2020,
+      "quarter": 2,
+      "count": 11
+    },
+    {
+      "year": 2020,
+      "quarter": 3,
+      "count": 35
+    },
+    {
+      "year": 2020,
+      "quarter": 4,
+      "count": 29
+    },
+    {
+      "year": 2021,
+      "quarter": 1,
+      "count": 13
+    },
+    {
+      "year": 2021,
+      "quarter": 2,
+      "count": 50
+    },
+    {
+      "year": 2021,
+      "quarter": 3,
+      "count": 47
+    },
+    {
+      "year": 2021,
+      "quarter": 4,
+      "count": 22
+    },
+    {
+      "year": 2022,
+      "quarter": 1,
+      "count": 9
+    },
+    {
+      "year": 2022,
+      "quarter": 2,
+      "count": 34
+    },
+    {
+      "year": 2022,
+      "quarter": 3,
+      "count": 4
+    },
+    {
+      "year": 2022,
+      "quarter": 4,
+      "count": 0
+    },
+    {
+      "year": 2023,
+      "quarter": 1,
+      "count": 3
+    },
+    {
+      "year": 2023,
+      "quarter": 2,
+      "count": 7
+    },
+    {
+      "year": 2023,
+      "quarter": 3,
+      "count": 6
+    },
+    {
+      "year": 2023,
+      "quarter": 4,
+      "count": 12
+    },
+    {
+      "year": 2024,
+      "quarter": 1,
+      "count": 10
+    },
+    {
+      "year": 2024,
+      "quarter": 2,
+      "count": 9
+    },
+    {
+      "year": 2024,
+      "quarter": 3,
+      "count": 8
+    },
+    {
+      "year": 2024,
+      "quarter": 4,
+      "count": 7
+    },
+    {
+      "year": 2025,
+      "quarter": 1,
+      "count": 8
+    },
+    {
+      "year": 2025,
+      "quarter": 2,
+      "count": 11
+    },
+    {
+      "year": 2025,
+      "quarter": 3,
+      "count": 9
+    },
+    {
+      "year": 2025,
+      "quarter": 4,
+      "count": 7
+    }
+  ],
+  "aggregation": "按年份和季度汇总双向互动；不区分方向；同日多条保留计数；0 次季度显示留白。"
+}

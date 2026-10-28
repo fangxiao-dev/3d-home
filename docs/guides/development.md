@@ -41,6 +41,9 @@ Godot 编辑工程为 `godot/project.godot`；房屋和人物源文件分别为 
 # 茶几手机变更：独立重建
 ./scripts/Build.ps1 -RebuildPhone
 
+# 时间画册：独立重建实体资产
+./scripts/Build.ps1 -RebuildAlbum
+
 # 灯光变更：重新烘焙
 ./scripts/Build.ps1 -BakeLighting
 
@@ -73,3 +76,9 @@ python scripts/Prepare-ReadingFont.py
 `outputs/web/` 是可部署网页，不代表已上线；`outputs/previews/` 是生成画面。源文件和必要运行资源在 `blender/`、`godot/`，不能将整个工程当作可删除产物。网页发布范围仅为 `outputs/web/`，参考资料不打包。
 
 运行检查按[测试入口](../../tests/README.md)和根协作规则选择最小范围。初次克隆仍需要准备上述本机工具配置，不能只凭仓库文件宣称新机器开箱运行。
+
+## 更新时间画册
+
+内容与图片索引维护在 `godot/content/album/album.json`；图片放在同目录的 `images/`，已有情书树照继续引用原位置。HTML v1.3 和 Godot 读取同一内容，修改后依次运行 `python tests/Verify-AlbumContent.py`、`python scripts/Prepare-ReadingFont.py`、`./scripts/Build.ps1`。
+
+`blender/build_album.py` 生成独立可编辑的 `blender/album.blend` 与 GLB，位置同时读取电视柜布局及源模型实际木质台面，避免把仙人掌高度当作支撑面。`-RebuildAll` 包含相册；环境源变更后须重建相册位置。

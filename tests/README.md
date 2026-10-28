@@ -24,3 +24,7 @@ $godotExe = Join-Path $PWD $godotInfo.release.console_executable
 默认 `scripts/Build.ps1` 执行前四项、`Verify-Letters.gd`、`Verify-Study-Access.gd`、`Verify-Birthday.gd` 与 `Verify-2048.gd`；可用 `-SkipChecks` 只导入导出。按根 AGENTS 的轻量规则选问题路径及相邻正常流程，不要求每次执行整表。变更交互机制时维护对应现役测试，失效用例及时增删改。
 
 历史网页 runner 和冻结结果见[历史档案](../docs/archive/README.md)，不自动视为当前可执行套件。网页检查使用真实操作，不通过测试脚本伪造产品状态。
+
+## 时间画册
+
+`python tests/Verify-AlbumContent.py` 检查 13 个单元、图像、40 季度及关键原文。`Verify-Album.gd` 已接入默认构建检查，覆盖合法入口、翻页与时间尺度往返、输入隔离、会话记忆及相邻入口；实际网页证据单独记录在当前状态。

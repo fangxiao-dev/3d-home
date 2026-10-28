@@ -20,6 +20,7 @@ blender/ 源模型、规格、生成脚本
 | --- | --- |
 | `blender/` | 环境、人物、房间模块与公共规格；生成房屋及角色 `.blend`、GLB 与布局数据。环境和角色独立构建。 |
 | `godot/playroom.gd` | 人物移动、鼠标捕获、互动状态、固定机位与镜头遮挡。运行场景为 `playroom.tscn`。 |
+| `godot/album_ui.gd` / `album_timeline.gd` | 数据驱动双页画册与双尺度时间轴；共用内容为 `godot/content/album/album.json`，运行入口管理 F、输入隔离与返回。 |
 | `godot/letters_ui.gd` | 多篇文集目录、分页、图片、阅读位置，以及会话内王冠领取／穿戴与人物界面；由运行入口接入输入、阅读镜头与头部王冠。 |
 | `godot/birthday.gd` | 蛋糕准备状态、缺条件判断、8 秒生日演出与暂停／结束／重播界面；运行入口统一接入 F 目标、镜头和输入，王冠读取既有状态。 |
 | `godot/content/letters/` | 从只读情书快照准备的 15 篇正文和 7 图，供运行时阅读。源文与生成内容完整性由独立脚本核对。 |

@@ -1,9 +1,9 @@
-param([switch]$RebuildModel, [switch]$RebuildCharacter, [switch]$RebuildProps, [switch]$RebuildCake, [switch]$RebuildPhone, [switch]$RebuildAll, [switch]$BakeLighting, [switch]$SkipChecks)
+param([switch]$RebuildModel, [switch]$RebuildCharacter, [switch]$RebuildProps, [switch]$RebuildCake, [switch]$RebuildPhone, [switch]$RebuildAlbum, [switch]$RebuildAll, [switch]$BakeLighting, [switch]$SkipChecks)
 $ErrorActionPreference = 'Stop'
 $projectRoot = Split-Path -Parent $PSScriptRoot
 $godotInfo = Get-Content -LiteralPath (Join-Path $projectRoot 'work/godot-setup.json') -Raw | ConvertFrom-Json
 $godotExe = Join-Path $projectRoot $godotInfo.release.console_executable
-if ($RebuildAll) { $RebuildModel = $true; $RebuildCharacter = $true; $RebuildProps = $true; $RebuildCake = $true; $RebuildPhone = $true; $BakeLighting = $true }
+if ($RebuildAll) { $RebuildModel = $true; $RebuildCharacter = $true; $RebuildProps = $true; $RebuildCake = $true; $RebuildPhone = $true; $RebuildAlbum = $true; $BakeLighting = $true }
 if ($RebuildModel) {
     $BakeLighting = $true
     $blenderInfo = Get-Content -LiteralPath (Join-Path $projectRoot 'work/blender-setup.json') -Raw | ConvertFrom-Json
@@ -30,6 +30,11 @@ if ($RebuildPhone) {
     $blenderInfo = Get-Content -LiteralPath (Join-Path $projectRoot 'work/blender-setup.json') -Raw | ConvertFrom-Json
     & $blenderInfo.executable --background --python-exit-code 1 --python (Join-Path $projectRoot 'blender/build_phone.py')
     if ($LASTEXITCODE -ne 0) { throw 'Phone build failed.' }
+}
+if ($RebuildAlbum) {
+    $blenderInfo = Get-Content -LiteralPath (Join-Path $projectRoot 'work/blender-setup.json') -Raw | ConvertFrom-Json
+    & $blenderInfo.executable --background --python-exit-code 1 --python (Join-Path $projectRoot 'blender/build_album.py')
+    if ($LASTEXITCODE -ne 0) { throw 'Album build failed.' }
 }
 $webPath = Join-Path $projectRoot 'outputs/web'
 New-Item -ItemType Directory -Path $webPath -Force | Out-Null
@@ -58,6 +63,8 @@ if ($LASTEXITCODE -ne 0) { throw 'Study interaction access verification failed.'
 if ($LASTEXITCODE -ne 0) { throw 'Birthday preparation and ceremony verification failed.' }
 & $godotExe --headless --fixed-fps 60 --path $gamePath --script (Join-Path $projectRoot 'tests/Verify-2048.gd')
 if ($LASTEXITCODE -ne 0) { throw 'Phone 2048 verification failed.' }
+& $godotExe --headless --fixed-fps 60 --path $gamePath --script (Join-Path $projectRoot 'tests/Verify-Album.gd')
+if ($LASTEXITCODE -ne 0) { throw 'Time album verification failed.' }
 }
 & $godotExe --headless --path $gamePath --export-release Web (Join-Path $webPath 'index.html')
 if ($LASTEXITCODE -ne 0) { throw 'Godot Web export failed.' }
