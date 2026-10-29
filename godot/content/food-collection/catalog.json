@@ -1,0 +1,322 @@
+[
+  {
+    "name": "泰国打抛饭",
+    "file": "pad-krapao-v1-clean.png",
+    "source": "pad-krapao-v1.png",
+    "width": 1536,
+    "height": 1024,
+    "removed_pixels": 82,
+    "display": {
+      "row": 1,
+      "width_units": 140,
+      "body_bounds": [
+        86,
+        90,
+        1366,
+        853
+      ],
+      "rotation_deg": -3,
+      "label_color": "#bcddef"
+    }
+  },
+  {
+    "name": "赛百味",
+    "file": "subway-v1-clean.png",
+    "source": "subway-v1.png",
+    "width": 1536,
+    "height": 1024,
+    "removed_pixels": 57,
+    "display": {
+      "row": 1,
+      "width_units": 135,
+      "body_bounds": [
+        74,
+        98,
+        1404,
+        831
+      ],
+      "rotation_deg": 2,
+      "label_color": "#c9dca8"
+    }
+  },
+  {
+    "name": "牛蛙",
+    "file": "bullfrog-v2.png",
+    "source": "bullfrog-v2.png",
+    "width": 1536,
+    "height": 1024,
+    "removed_pixels": 0,
+    "display": {
+      "row": 1,
+      "width_units": 145,
+      "body_bounds": [
+        38,
+        64,
+        1464,
+        900
+      ],
+      "rotation_deg": -3,
+      "label_color": "#edb5ad"
+    }
+  },
+  {
+    "name": "热干面",
+    "file": "hot-dry-noodles-v1-clean.png",
+    "source": "hot-dry-noodles-v1.png",
+    "width": 1536,
+    "height": 1024,
+    "removed_pixels": 696,
+    "display": {
+      "row": 2,
+      "width_units": 140,
+      "body_bounds": [
+        204,
+        37,
+        1137,
+        943
+      ],
+      "rotation_deg": 3,
+      "label_color": "#f9db83"
+    }
+  },
+  {
+    "name": "糖醋排骨",
+    "file": "sweet-sour-ribs-v1-clean.png",
+    "source": "sweet-sour-ribs-v1.png",
+    "width": 1536,
+    "height": 1024,
+    "removed_pixels": 217,
+    "display": {
+      "row": 2,
+      "width_units": 125,
+      "body_bounds": [
+        82,
+        90,
+        1373,
+        839
+      ],
+      "rotation_deg": -2,
+      "label_color": "#c8d8ec"
+    }
+  },
+  {
+    "name": "非洲 Fufu",
+    "file": "fufu-v3-clean.png",
+    "source": "fufu-v3.png",
+    "width": 1448,
+    "height": 1086,
+    "removed_pixels": 166,
+    "display": {
+      "row": 2,
+      "width_units": 140,
+      "body_bounds": [
+        100,
+        60,
+        1250,
+        968
+      ],
+      "rotation_deg": 2,
+      "label_color": "#f6c2b5"
+    }
+  },
+  {
+    "name": "三文鱼",
+    "file": "salmon-v1-clean.png",
+    "source": "salmon-v1.png",
+    "width": 1536,
+    "height": 1024,
+    "removed_pixels": 55,
+    "display": {
+      "row": 3,
+      "width_units": 120,
+      "body_bounds": [
+        143,
+        70,
+        1273,
+        882
+      ],
+      "rotation_deg": -3,
+      "label_color": "#cbd5f2"
+    }
+  },
+  {
+    "name": "麦辣鸡腿堡",
+    "file": "mcspicy-burger-v1-clean.png",
+    "source": "mcspicy-burger-v1.png",
+    "width": 1536,
+    "height": 1024,
+    "removed_pixels": 188,
+    "display": {
+      "row": 3,
+      "width_units": 100,
+      "body_bounds": [
+        207,
+        54,
+        1148,
+        915
+      ],
+      "rotation_deg": 3,
+      "label_color": "#e5c5ed"
+    }
+  },
+  {
+    "name": "榴莲",
+    "file": "durian-v1-clean.png",
+    "source": "durian-v1.png",
+    "width": 1433,
+    "height": 1098,
+    "removed_pixels": 81,
+    "display": {
+      "row": 3,
+      "width_units": 115,
+      "body_bounds": [
+        182,
+        34,
+        1118,
+        1035
+      ],
+      "rotation_deg": -2,
+      "label_color": "#bcddef"
+    }
+  },
+  {
+    "name": "巧克力熔岩",
+    "file": "lava-cake-v1-clean.png",
+    "source": "lava-cake-v1.png",
+    "width": 1536,
+    "height": 1024,
+    "removed_pixels": 76,
+    "display": {
+      "row": 4,
+      "width_units": 75,
+      "body_bounds": [
+        186,
+        137,
+        1164,
+        750
+      ],
+      "rotation_deg": 2,
+      "label_color": "#c9dca8"
+    }
+  },
+  {
+    "name": "星巴克巧克力麦芬",
+    "file": "chocolate-muffin-v1-clean.png",
+    "source": "chocolate-muffin-v1.png",
+    "width": 1312,
+    "height": 1199,
+    "removed_pixels": 437,
+    "display": {
+      "row": 4,
+      "width_units": 62,
+      "body_bounds": [
+        129,
+        110,
+        1072,
+        995
+      ],
+      "rotation_deg": -3,
+      "label_color": "#edb5ad"
+    }
+  },
+  {
+    "name": "菠萝油",
+    "file": "pineapple-bun-v1-clean.png",
+    "source": "pineapple-bun-v1.png",
+    "width": 1312,
+    "height": 1199,
+    "removed_pixels": 706,
+    "display": {
+      "row": 4,
+      "width_units": 80,
+      "body_bounds": [
+        62,
+        99,
+        1188,
+        1005
+      ],
+      "rotation_deg": 2,
+      "label_color": "#f9db83"
+    }
+  },
+  {
+    "name": "饼干夹心冰淇淋",
+    "file": "ice-cream-sandwich-v1-clean.png",
+    "source": "ice-cream-sandwich-v1.png",
+    "width": 1536,
+    "height": 1024,
+    "removed_pixels": 40,
+    "display": {
+      "row": 4,
+      "width_units": 65,
+      "body_bounds": [
+        246,
+        114,
+        1048,
+        803
+      ],
+      "rotation_deg": -2,
+      "label_color": "#c8d8ec"
+    }
+  },
+  {
+    "name": "瑞幸生椰拿铁",
+    "file": "coconut-latte-v1-clean.png",
+    "source": "coconut-latte-v1.png",
+    "width": 1312,
+    "height": 1199,
+    "removed_pixels": 179,
+    "display": {
+      "row": 5,
+      "width_units": 65,
+      "body_bounds": [
+        202,
+        90,
+        908,
+        1036
+      ],
+      "rotation_deg": 3,
+      "label_color": "#f6c2b5"
+    }
+  },
+  {
+    "name": "冰可乐",
+    "file": "iced-cola-v1.png",
+    "source": "iced-cola-v1.png",
+    "width": 1024,
+    "height": 1536,
+    "removed_pixels": 0,
+    "display": {
+      "row": 5,
+      "width_units": 44,
+      "body_bounds": [
+        258,
+        178,
+        506,
+        1175
+      ],
+      "rotation_deg": -2,
+      "label_color": "#cbd5f2"
+    }
+  },
+  {
+    "name": "Pocky 百奇",
+    "file": "pocky-baiqi-v1-clean.png",
+    "source": "pocky-baiqi-v1.png",
+    "width": 1024,
+    "height": 1536,
+    "removed_pixels": 141,
+    "display": {
+      "row": 5,
+      "width_units": 60,
+      "body_bounds": [
+        110,
+        106,
+        823,
+        1361
+      ],
+      "rotation_deg": 2,
+      "label_color": "#e5c5ed"
+    }
+  }
+]

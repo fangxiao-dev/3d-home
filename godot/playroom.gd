@@ -4,6 +4,15 @@ const EnvironmentFactory = preload("res://scene_environment.gd")
 const LettersUI = preload("res://letters_ui.gd")
 const Birthday = preload("res://birthday.gd")
 const AlbumUI = preload("res://album_ui.gd")
+const FoodUI = preload("res://food_collection_ui.gd")
+const FoodState = preload("res://food_collection_state.gd")
+@export var food_collection_preview_complete := true
+var food_state: RefCounted
+var food_ui: CanvasLayer
+var food_button: Button
+var food_previous_mode := "EXPLORE"
+var food_previous_restore := false
+var food_restore_pointer := false
 const Phone2048 = preload("res://phone_2048.gd")
 var phone_ui: CanvasLayer
 var phone_table: Dictionary
@@ -162,6 +171,7 @@ func _ready() -> void:
 	birthday.replay_requested.connect(_start_birthday)
 	_build_phone()
 	_build_album()
+	_build_food_collection()
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	if OS.has_feature("web"):
 		test_mode = bool(JavaScriptBridge.eval("new URLSearchParams(location.search).has('test')", true))
@@ -253,6 +263,40 @@ func _build_album() -> void:
 	album.position=vec(album_placement.position);album.rotation.y=float(album_placement.yaw)
 	for mesh in album.find_children("*","GeometryInstance3D",true,false):mesh.gi_mode=GeometryInstance3D.GI_MODE_DYNAMIC
 	album_ui=AlbumUI.new();add_child(album_ui);album_ui.close_requested.connect(_close_album)
+
+func _build_food_collection() -> void:
+	food_state=FoodState.new()
+	if food_collection_preview_complete:food_state.preview_complete()
+	food_ui=FoodUI.new();add_child(food_ui);food_ui.setup(food_state.content)
+	food_ui.close_requested.connect(_close_food_collection)
+	food_button=Button.new();food_button.text="美食图鉴 G";food_button.icon=load("res://food_collection_icon.svg")
+	food_button.add_theme_font_override("font",load("res://assets/NotoSansSC-Reading.ttf"))
+	food_button.add_theme_font_size_override("font_size",18);food_button.focus_mode=Control.FOCUS_NONE
+	help_panel.get_parent().add_child(food_button)
+	food_button.pressed.connect(_open_food_collection)
+	_layout_food_button();get_viewport().size_changed.connect(_layout_food_button)
+
+func _layout_food_button() -> void:
+	food_button.position=get_viewport().get_visible_rect().size-Vector2(196,72)
+	food_button.size=Vector2(172,48)
+
+func discover_food(id:String)->bool:
+	return food_state.discover(id)
+
+func _open_food_collection() -> void:
+	if not food_state.active() or not app_focused or mode not in ["EXPLORE","SEATED"] or auto_moving or camera_blend_elapsed<.45:return
+	food_previous_mode=mode;food_previous_restore=interaction_restore_allowed
+	food_restore_pointer=pointer_locked and app_focused
+	mode="FOOD_COLLECTION";_release_pointer(true)
+	if food_previous_mode=="EXPLORE":_play("Idle")
+	food_ui.show_collection()
+
+func _close_food_collection() -> void:
+	if mode!="FOOD_COLLECTION":return
+	food_ui.hide_collection();mode=food_previous_mode
+	interaction_restore_allowed=food_previous_restore and app_focused
+	if food_restore_pointer and app_focused:_request_capture()
+	food_restore_pointer=false;awaiting_movement_release=true
 
 func _album_near() -> bool:
 	if album_placement.is_empty() or _room_at(player.position)!="living":return false
@@ -771,6 +815,9 @@ func _input(event: InputEvent) -> void:
 		if event.echo and mode=="PHONE_2048":
 			get_viewport().set_input_as_handled();return
 		if not event.pressed or event.echo: return
+		if mode=="FOOD_COLLECTION":
+			food_ui.handle_key(code,event.shift_pressed)
+			get_viewport().set_input_as_handled();return
 		if mode=="ALBUM":
 			if code==KEY_ESCAPE:_close_album()
 			elif code==KEY_LEFT:album_ui.turn(-1)
@@ -809,6 +856,8 @@ func _input(event: InputEvent) -> void:
 			elif target=="phone_2048":_open_phone()
 			else:_enter_target_action(_nearest_seat())
 			get_viewport().set_input_as_handled()
+		elif code==KEY_G and mode in ["EXPLORE","SEATED"]:
+			_open_food_collection();get_viewport().set_input_as_handled()
 		elif code==KEY_B and mode=="EXPLORE":
 			_open_letters("INVENTORY");get_viewport().set_input_as_handled()
 	if event is InputEventMouseButton and event.pressed:
@@ -832,7 +881,8 @@ func _process(delta: float) -> void:
 	resume_button.disabled = capture_requested
 	resume_button.text = "继续游览" if ever_started else "开始游览"
 	bag_button.visible=mode=="EXPLORE"
-	help_panel.visible=mode not in ["READING","INVENTORY","CEREMONY","PHONE_2048","ALBUM"]
+	food_button.visible=food_state.active() and mode in ["EXPLORE","SEATED"] and not auto_moving and camera_blend_elapsed>=.45
+	help_panel.visible=mode not in ["READING","INVENTORY","CEREMONY","PHONE_2048","ALBUM","FOOD_COLLECTION"]
 	if mode == "EXPLORE":
 		help_text.text = "WASD / 方向键移动   鼠标左右移动观察   滚轮缩放   Esc 显示光标" if navigation_active else "点击继续游览，鼠标左右移动观察" if ever_started else "点击开始游览，鼠标左右移动观察"
 	elif mode=="READING":
@@ -870,7 +920,7 @@ func _update_camera(delta: float, snap := false) -> void:
 		var desired:=Transform3D(Basis.IDENTITY,vec(prop_data.camera_position)).looking_at(vec(prop_data.camera_target),Vector3.UP)
 		camera.transform=camera.transform.interpolate_with(desired,1.0-exp(-delta*8.0))
 		_update_visibility();return
-	if mode in ["INVENTORY","PHONE_2048","ALBUM"]:return
+	if mode in ["INVENTORY","PHONE_2048","ALBUM","FOOD_COLLECTION"]:return
 	var alpha := 1.0 if snap else 1.0 - exp(-delta * 8.0)
 	camera_yaw = target_camera_yaw
 	zoom = lerpf(zoom, target_zoom, alpha)
@@ -1030,6 +1080,8 @@ func _notification(what: int) -> void:
 	if what == NOTIFICATION_APPLICATION_FOCUS_OUT:
 		escape_held = false
 		app_focused = false
+		food_restore_pointer=false
+		food_previous_restore=false
 		if birthday and mode=="CEREMONY":birthday.pause_ceremony()
 		if phone_ui and mode=="PHONE_2048":phone_ui.pause_game()
 		if player != null: _pause_navigation()
@@ -1059,7 +1111,7 @@ func snapshot() -> Dictionary:
 	var mean := 0.0
 	for value in frame_ms:
 		mean += value / maxf(1, frame_ms.size())
-	return {"version": 2, "bones": _bone_points(), "frame_samples": frame_ms.size(), "draw_calls": Performance.get_monitor(Performance.RENDER_TOTAL_DRAW_CALLS_IN_FRAME), "objects": Performance.get_monitor(Performance.RENDER_TOTAL_OBJECTS_IN_FRAME), "triangles": Performance.get_monitor(Performance.RENDER_TOTAL_PRIMITIVES_IN_FRAME), "process_ms": Performance.get_monitor(Performance.TIME_PROCESS) * 1000, "physics_ms": Performance.get_monitor(Performance.TIME_PHYSICS_PROCESS) * 1000, "active_room": _room_at(player.position), "house_rooms": house_layout.keys(),
+	return {"food_collection": {"visible":food_ui.root.visible,"count":food_state.found.size(),"selected":food_ui.sheet.selected_id,"detail":food_ui.detail_id,"items":food_state.catalog.size(),"button":[food_button.position.x,food_button.position.y,food_button.size.x,food_button.size.y],"close":[food_ui.close_button.global_position.x,food_ui.close_button.global_position.y,food_ui.close_button.size.x,food_ui.close_button.size.y]}, "version": 2, "bones": _bone_points(), "frame_samples": frame_ms.size(), "draw_calls": Performance.get_monitor(Performance.RENDER_TOTAL_DRAW_CALLS_IN_FRAME), "objects": Performance.get_monitor(Performance.RENDER_TOTAL_OBJECTS_IN_FRAME), "triangles": Performance.get_monitor(Performance.RENDER_TOTAL_PRIMITIVES_IN_FRAME), "process_ms": Performance.get_monitor(Performance.TIME_PROCESS) * 1000, "physics_ms": Performance.get_monitor(Performance.TIME_PHYSICS_PROCESS) * 1000, "active_room": _room_at(player.position), "house_rooms": house_layout.keys(),
 		"x": player.position.x, "y": player.position.y, "z": player.position.z,
 		"mode": mode, "seat_id": seat_id, "target": interaction_target, "animation": animation, "clip": animation_player.current_animation,
 		"avatar_scale": [avatar.scale.x, avatar.scale.y, avatar.scale.z], "avatar_yaw": avatar.rotation.y,

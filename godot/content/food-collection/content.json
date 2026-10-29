@@ -1,0 +1,132 @@
+{
+  "title": "莹仔的美食收藏图鉴",
+  "subtitle": "把喜欢，收藏在一起",
+  "items": [
+    {
+      "id": "pad-krapao",
+      "name": "泰国打抛饭",
+      "description": "罗勒的香气拌进热饭，煎蛋轻轻盖在上面。一盘热乎乎的好胃口。",
+      "image": "pad-krapao-v1-clean.png",
+      "draft": true
+    },
+    {
+      "id": "subway",
+      "name": "赛百味",
+      "description": "长面包里装着层层馅料，蔬菜带来清脆口感。双手拿稳，再咬一大口。",
+      "image": "subway-v1-clean.png",
+      "draft": true
+    },
+    {
+      "id": "bullfrog",
+      "name": "牛蛙",
+      "description": "鲜嫩的蛙肉裹着香辣酱汁，椒香藏在每一口里。适合慢慢吃，也适合配饭。",
+      "image": "bullfrog-piled-v4.png",
+      "draft": true
+    },
+    {
+      "id": "sweet-sour-ribs",
+      "name": "糖醋排骨",
+      "description": "酸甜酱汁裹住排骨，表面亮晶晶。香气先到，胃口随后跟上。",
+      "image": "sweet-sour-ribs-v1-clean.png",
+      "draft": true
+    },
+    {
+      "id": "street-snack",
+      "name": "街边小吃",
+      "description": "火腿肠配上金黄豆腐，裹一点香辣调料。竹签挑起一口，是街边小吃朴实的满足。",
+      "image": "street-snack-v1.png",
+      "draft": true
+    },
+    {
+      "id": "hot-dry-noodles",
+      "name": "热干面",
+      "description": "芝麻酱把面条拌得香浓，葱花添一点清爽。趁热拌匀，每一筷都满足。",
+      "image": "hot-dry-noodles-v1-clean.png",
+      "draft": true
+    },
+    {
+      "id": "fufu",
+      "name": "非洲 Fufu",
+      "description": "软糯的米黄色团块配上浓稠酱汁，样子朴实。蘸一点，尝一口温暖浓厚的滋味。",
+      "image": "fufu-v3-clean.png",
+      "draft": true
+    },
+    {
+      "id": "iced-cola",
+      "name": "冰可乐",
+      "description": "刚从冰箱拿出的小瓶可乐，瓶身还挂着水珠。冰凉气泡，是一口清爽的暂停。",
+      "image": "iced-cola-v1.png",
+      "draft": true
+    },
+    {
+      "id": "spicy-wings",
+      "name": "麦辣鸡翅",
+      "description": "金黄酥皮裹着鲜嫩鸡肉，香辣藏在每一口里。一对刚刚好，趁热咔嚓。",
+      "image": "spicy-wings-v1.png",
+      "draft": true
+    },
+    {
+      "id": "mcspicy-burger",
+      "name": "麦辣鸡腿堡",
+      "description": "酥脆鸡腿肉、清爽生菜与松软面包，层层叠好。一口下去，香辣又扎实。",
+      "image": "mcspicy-burger-v1-clean.png",
+      "draft": true
+    },
+    {
+      "id": "durian",
+      "name": "榴莲",
+      "description": "带刺外壳里藏着柔软金黄的果肉，香气鲜明。喜欢这一口的人，自然懂得。",
+      "image": "durian-selected-v2.png",
+      "draft": true
+    },
+    {
+      "id": "lava-cake",
+      "name": "巧克力熔岩",
+      "description": "轻轻切开，浓浓巧克力缓缓流出。小小一座甜点，藏着温热的内心。",
+      "image": "lava-cake-v1-clean.png",
+      "draft": true
+    },
+    {
+      "id": "chocolate-muffin",
+      "name": "星巴克巧克力麦芬",
+      "description": "松软麦芬藏着巧克力颗粒，小小一只也很浓郁。留给想吃甜的时候。",
+      "image": "chocolate-muffin-v1-clean.png",
+      "draft": true
+    },
+    {
+      "id": "ice-cream-sandwich",
+      "name": "饼干夹心冰淇淋",
+      "description": "两块饼干抱住冰凉奶香，巧克力点点藏在表面。咬到的是酥软和冰甜的相遇。",
+      "image": "ice-cream-sandwich-v1-clean.png",
+      "draft": true
+    },
+    {
+      "id": "pineapple-bun",
+      "name": "菠萝油",
+      "description": "金黄酥皮夹着厚厚黄油，温热与奶香相遇。名字里有菠萝，香气来自面包。",
+      "image": "pineapple-bun-v1-clean.png",
+      "draft": true
+    },
+    {
+      "id": "coconut-rolls",
+      "name": "椰子卷",
+      "description": "薄薄的酥皮卷成小筒，带着淡淡椰香。轻轻一咬，是松脆的小满足。",
+      "image": "coconut-rolls-v1.png",
+      "draft": true
+    },
+    {
+      "id": "coconut-latte",
+      "name": "瑞幸生椰拿铁",
+      "description": "椰香与咖啡在杯里交融，冰块轻响。清甜里留一点咖啡的醇香。",
+      "image": "coconut-latte-v1-clean.png",
+      "draft": true
+    },
+    {
+      "id": "pocky",
+      "name": "Pocky 百奇",
+      "description": "细细饼干棒裹着牛奶味涂层，一根接着一根。小小的咔嚓声，给休息添点甜。",
+      "image": "pocky-baiqi-v1-clean.png",
+      "draft": true
+    }
+  ]
+}

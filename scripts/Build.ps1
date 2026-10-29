@@ -65,6 +65,8 @@ if ($LASTEXITCODE -ne 0) { throw 'Birthday preparation and ceremony verification
 if ($LASTEXITCODE -ne 0) { throw 'Phone 2048 verification failed.' }
 & $godotExe --headless --fixed-fps 60 --path $gamePath --script (Join-Path $projectRoot 'tests/Verify-Album.gd')
 if ($LASTEXITCODE -ne 0) { throw 'Time album verification failed.' }
+& $godotExe --headless --fixed-fps 60 --path $gamePath --script (Join-Path $projectRoot 'tests/Verify-FoodCollection.gd')
+if ($LASTEXITCODE -ne 0) { throw 'Food collection verification failed.' }
 }
 & $godotExe --headless --path $gamePath --export-release Web (Join-Path $webPath 'index.html')
 if ($LASTEXITCODE -ne 0) { throw 'Godot Web export failed.' }
