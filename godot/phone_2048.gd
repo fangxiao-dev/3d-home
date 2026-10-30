@@ -16,6 +16,13 @@ var paused:=false
 var busy:=false
 var tile_tween: Tween
 var moving_layer: Control
+var result_panel: PanelContainer
+var result_title: Label
+var result_scores: Label
+var result_restart: Button
+var result_continue: Button
+var win_acknowledged:=false
+var record_message:=""
 
 func style(color: String, padding:=0) -> StyleBoxFlat:
 	var box:=StyleBoxFlat.new();box.bg_color=Color(color);box.set_corner_radius_all(10)
@@ -45,8 +52,20 @@ func _ready() -> void:
 	for i in 16:
 		var tile:=label("",30,grid);tile.custom_minimum_size=Vector2(96,86);tile.horizontal_alignment=HORIZONTAL_ALIGNMENT_CENTER;tile.vertical_alignment=VERTICAL_ALIGNMENT_CENTER;tiles.append(tile)
 	moving_layer=Control.new();moving_layer.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT);moving_layer.mouse_filter=Control.MOUSE_FILTER_IGNORE;board.add_child(moving_layer)
+	result_panel=PanelContainer.new();result_panel.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT);board.add_child(result_panel)
+	var result_center:=CenterContainer.new();result_panel.add_child(result_center)
+	var result_column:=VBoxContainer.new();result_column.add_theme_constant_override("separation",14);result_center.add_child(result_column)
+	result_title=label("",36,result_column);result_title.horizontal_alignment=HORIZONTAL_ALIGNMENT_CENTER
+	result_scores=label("",20,result_column);result_scores.horizontal_alignment=HORIZONTAL_ALIGNMENT_CENTER
+	result_restart=button("",result_column,restart)
+	result_restart.custom_minimum_size.x=220
+	result_restart.add_theme_stylebox_override("normal",style("897561",10))
+	result_restart.add_theme_stylebox_override("hover",style("a28b70",10))
+	for state in ["font_color","font_hover_color","font_focus_color","font_pressed_color"]:result_restart.add_theme_color_override(state,Color("fff9ed"))
+	result_continue=button("继续挑战",result_column,continue_after_win)
+	result_panel.hide()
 	status_label=label("",18,column);status_label.custom_minimum_size.y=28
-	var hint:=label("↑ ↓ ← → 移动 · Esc 返回小屋",18,column);hint.horizontal_alignment=HORIZONTAL_ALIGNMENT_CENTER
+	var hint:=label("方向键 / WASD · Enter 确认 · Esc 返回",16,column);hint.horizontal_alignment=HORIZONTAL_ALIGNMENT_CENTER
 	restart_button=button("重新开始",column,request_restart)
 	confirmation=VBoxContainer.new();confirmation.add_theme_constant_override("separation",8);column.add_child(confirmation)
 	label("重新开始？当前棋局将清空。",18,confirmation)
@@ -58,7 +77,7 @@ func _ready() -> void:
 
 func show_game() -> void:
 	_settle_animation()
-	active=true;paused=false;overlay.show();confirmation.hide();continue_button.hide();refresh();restart_button.grab_focus()
+	active=true;paused=false;overlay.show();confirmation.hide();continue_button.hide();refresh();_focus_action()
 
 func hide_game() -> void:
 	_settle_animation()
@@ -68,14 +87,22 @@ func request_restart() -> void:
 	if paused:return
 	_settle_animation()
 	if game.moves==0:restart();return
-	confirmation.show();restart_button.hide();cancel_button.grab_focus()
+	confirmation.show();refresh();cancel_button.grab_focus()
 
 func cancel_restart() -> void:
-	confirmation.hide();refresh();restart_button.grab_focus()
+	confirmation.hide();refresh();_focus_action()
 
 func restart() -> void:
 	_settle_animation()
-	game.restart();confirmation.hide();refresh();restart_button.grab_focus()
+	game.restart();win_acknowledged=false;record_message="";confirmation.hide();refresh();restart_button.grab_focus()
+
+func continue_after_win() -> void:
+	win_acknowledged=true;refresh();_focus_action()
+
+func _focus_action() -> void:
+	if paused:continue_button.grab_focus()
+	elif result_panel.visible:result_restart.grab_focus()
+	else:restart_button.grab_focus()
 
 func pause_game() -> void:
 	if not active:return
@@ -83,21 +110,33 @@ func pause_game() -> void:
 	paused=true;confirmation.hide();refresh();continue_button.grab_focus()
 
 func resume_game() -> void:
-	paused=false;refresh();restart_button.grab_focus()
+	paused=false;refresh();_focus_action()
 
 func handle_key(code: int) -> bool:
 	if code==KEY_ESCAPE:
 		if confirmation.visible:cancel_restart()
 		else:close_requested.emit()
 		return true
-	if code in [KEY_LEFT,KEY_RIGHT,KEY_UP,KEY_DOWN]:
-		if not paused and not busy and not confirmation.visible:
-			var directions={KEY_LEFT:Vector2i.LEFT,KEY_RIGHT:Vector2i.RIGHT,KEY_UP:Vector2i.UP,KEY_DOWN:Vector2i.DOWN}
+	if code in [KEY_LEFT,KEY_RIGHT,KEY_UP,KEY_DOWN,KEY_A,KEY_D,KEY_W,KEY_S]:
+		if busy or paused:return true
+		record_message="";refresh()
+		if result_panel.visible:
+			if result_continue.visible:
+				if result_restart.has_focus():result_continue.grab_focus()
+				else:result_restart.grab_focus()
+			else:result_restart.grab_focus()
+		elif not confirmation.visible:
+			var directions={KEY_LEFT:Vector2i.LEFT,KEY_A:Vector2i.LEFT,KEY_RIGHT:Vector2i.RIGHT,KEY_D:Vector2i.RIGHT,KEY_UP:Vector2i.UP,KEY_W:Vector2i.UP,KEY_DOWN:Vector2i.DOWN,KEY_S:Vector2i.DOWN}
 			var before:Array[int]=game.cells.duplicate()
+			var score_before:int=game.score
 			if game.move(directions[code]):
+				var messages:Array[String]=[]
+				if score_before<=6000 and game.score>6000:messages.append("哇，超过老公的记录啦")
+				if score_before<=13000 and game.score>13000:messages.append("哇，超过老婆的记录啦")
+				record_message="\n".join(messages)
 				_animate_move(before)
 		return true
-	return code in [KEY_F,KEY_B,KEY_W,KEY_A,KEY_S,KEY_D]
+	return code in [KEY_F,KEY_B]
 
 func _clear_moving_tiles() -> void:
 	for tile in moving_layer.get_children():tile.free()
@@ -123,7 +162,7 @@ func _animate_move(before: Array[int]) -> void:
 	tile_tween.chain().tween_interval(.10)
 	for index in game.merged+[game.spawned_index]:
 		tile_tween.parallel().tween_property(tiles[index],"scale",Vector2.ONE,.10).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
-	tile_tween.chain().tween_callback(func():busy=false)
+	tile_tween.chain().tween_callback(func():busy=false;refresh())
 
 func _land_tiles() -> void:
 	_clear_moving_tiles();refresh()
@@ -142,8 +181,20 @@ func _paint_tile(tile: Label, value: int) -> void:
 func refresh() -> void:
 	score_label.text="分数  %d"%game.score
 	status_label.text="游戏已暂停 · 点击继续游戏" if paused else "没有可移动的方块了" if game.game_over() else "已达成 2048 · 继续挑战吧" if game.won else "合并相同数字"
+	if not record_message.is_empty():status_label.text=record_message
+	var was_result_visible:=result_panel.visible
+	var show_win:bool=game.won and not win_acknowledged
+	result_panel.visible=not paused and not busy and not confirmation.visible and (show_win or game.game_over())
+	result_panel.add_theme_stylebox_override("panel",style("edc850c9" if show_win else "eee5d5df"))
+	result_title.text="You win!" if show_win else "Game over!"
+	result_title.add_theme_color_override("font_color",Color("fff9ed" if show_win else "564b40"))
+	result_scores.text="当前分数  %d\n老公记录  6000\n老婆记录  13000"%game.score
+	result_scores.visible=not show_win
+	result_restart.text="Start new" if show_win else "Try again"
+	result_continue.visible=show_win
+	if result_panel.visible and not was_result_visible:result_restart.grab_focus()
 	continue_button.visible=paused
-	restart_button.visible=not paused and not confirmation.visible
+	restart_button.visible=not paused and not confirmation.visible and not result_panel.visible
 	for i in 16:_paint_tile(tiles[i],game.cells[i])
 
 func snapshot() -> Dictionary:
