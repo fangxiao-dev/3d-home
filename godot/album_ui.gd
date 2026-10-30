@@ -125,4 +125,4 @@ func _spread(spread:Dictionary,kind:String,side:int)->void:
 				if str(block.get("class_name","")) in ["footnote","date-tag"]:words.add_theme_color_override("font_color",Color("9c8064"))
 
 func snapshot()->Dictionary:
-	return {"visible":root.visible,"index":page_index,"id":data.pages[page_index].id,"pages":data.pages.size(),"zoom":timeline.zoom,"cursor":timeline.cursor}
+	return {"visible":root.visible,"index":page_index,"id":data.pages[page_index].id,"pages":data.pages.size(),"zoom":timeline.zoom,"cursor":timeline.cursor,"timeline":timeline.snapshot()}

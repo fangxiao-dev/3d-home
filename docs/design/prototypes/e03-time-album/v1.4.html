@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>E03｜我们的时间 · v1.4 时间画册原型</title>
+<link rel="icon" href="data:,">
+<style>
+:root{--ink:#44382f;--muted:#9c806a;--rose:#b86e75;--paper:#f9f1e6;--cream:#f5e6d1;--shadow:0 24px 65px rgba(27,20,19,.4)}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:'Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif;color:var(--ink)}
+body{background:#293039;overflow:hidden}
+.room{position:fixed;inset:0;background:radial-gradient(ellipse at 20% 15%,#8c90926e,transparent 52%),radial-gradient(ellipse at 80% 90%,#a58b6a80,transparent 48%),linear-gradient(125deg,#343c42,#68584c 60%,#302d2e);filter:blur(2px)}
+.shell{position:relative;min-height:100dvh;display:flex;align-items:center;justify-content:center;padding:12px 54px}
+.album{position:relative;width:min(1200px,100%);height:min(718px,calc(100dvh - 24px));min-height:570px;display:flex;flex-direction:column;background:#ebdcc5;padding:11px 13px 14px;border-radius:9px 18px 13px 9px;border:4px solid #947b66;box-shadow:inset 0 0 0 2px #d4bda0,0 5px 0 #7d654d,0 10px 0 #b59b7e,var(--shadow)}
+.album:after{content:"";position:absolute;left:50%;top:13px;bottom:14px;width:17px;transform:translateX(-50%);z-index:5;pointer-events:none;background:linear-gradient(90deg,transparent,#76584620 23%,#ffffff7a 51%,#866c5730 74%,transparent);border-radius:50%}
+.chapter{position:absolute;right:24px;top:-20px;z-index:8;color:#fffbf4;background:#bc827b;padding:8px 16px;border-radius:5px 5px 0 0;box-shadow:0 -2px 6px #422d2614;letter-spacing:.17em;font-size:11px;font-weight:700}
+.spread{position:relative;display:grid;grid-template-columns:1fr 1fr;min-height:0;flex:1;background:var(--paper);overflow:hidden;border-radius:3px 11px 0 0}
+.page{min-width:0;min-height:0;overflow:auto;padding:28px 37px 20px 37px;scrollbar-width:thin;scrollbar-color:#cfbea7 transparent;background:radial-gradient(circle at 20% 20%,#fffdf9,#f8f0e4 78%)}
+.page.right{background:radial-gradient(circle at 80% 22%,#fffdf9,#f7ecdc 80%);border-left:1px solid #eadfce}
+.page-top{font-size:11px;letter-spacing:.19em;color:#b28a6e;display:flex;justify-content:space-between;gap:8px;margin-bottom:15px;font-family:Georgia,'Times New Roman',serif}
+.page-body{display:flex;flex-direction:column;align-items:stretch;gap:9px;max-width:100%;min-height:0}
+.page h2,.page h3{font-family:'Songti SC','Noto Serif CJK SC',Georgia,serif;margin:0;line-height:1.35;color:#47382f;font-weight:650}
+.page h2{font-size:30px;letter-spacing:.08em}.page h3{font-size:23px;letter-spacing:.03em}
+.page p{font-size:15px;line-height:1.8;color:#62564b;margin:2px 0 7px}
+.date-tag{color:#9d7157;font-size:13px;letter-spacing:.12em;margin:3px 0 6px}
+.hand-note,.tiny-script{font-family:'Songti SC',serif;color:#8c7064;font-size:14px;line-height:1.7;white-space:pre-line}
+.memo{margin:8px 0;padding:15px 18px;background:#fdf6ea;border:1px solid #e4d2bd;border-radius:3px;line-height:1.75;font-size:14px;box-shadow:0 6px 16px #876b4c10;position:relative;white-space:pre-line}
+.memo:before{content:"";position:absolute;top:-10px;left:39%;width:55px;height:17px;background:#d4b48a77;transform:rotate(-5deg)}
+.footnote{font-size:11px;color:#aa9582;line-height:1.5;white-space:pre-line}
+.private-note{font-size:13px;line-height:1.5;color:#795663;align-self:flex-start;background:#f7e5e6;border:1px solid #e4c3c5;border-radius:3px;padding:9px 12px;box-shadow:0 4px 12px #8b626219;transform:rotate(-1.3deg);white-space:pre-line;max-width:100%}
+.steps-memo{font-size:12px;color:#836759;padding:10px 14px;background:#f7e9d8;border-left:2px solid #d2a17c;line-height:1.6;white-space:pre-line}
+.quote{font-family:'Songti SC',serif;border-left:2px solid #cba78b;padding:10px 15px;margin:8px 0;color:#6c5446;line-height:1.9;font-size:16px;white-space:pre-line}
+.chat{font-size:13px;line-height:1.65;max-width:90%;padding:11px 14px;border-radius:15px;white-space:pre-line}
+.chat.her{background:#e9eddf;color:#65715f;align-self:flex-start}.chat.him{background:#f5e3d6;color:#946f60;align-self:flex-end}
+.wedding-banner{text-align:center;background:#b8454b;color:#ffecce;padding:9px 15px;align-self:stretch;border-radius:3px}
+.wedding-banner .xi{font-family:serif;font-size:68px;line-height:1.25}.wedding-banner small{display:block;letter-spacing:.16em}
+.chip{display:inline-block;background:#f0dbc2;padding:4px 10px;border-radius:14px;font-size:12px;color:#9a6a51;align-self:flex-start}
+.tile-row{display:flex;gap:5px}.tile{padding:7px;background:#efd1a6;border-radius:4px;color:#8d6550;font-weight:bold}
+.photo-card{background:#fff9f0;padding:8px 8px 22px;box-shadow:0 9px 22px #59433526;max-width:100%;min-width:0;transform:rotate(var(--rot,0deg));margin:7px auto;position:relative;width:93%;border:1px solid #f6ecdd}
+.photo-image{height:var(--imgH,205px);max-height:235px;overflow:hidden;background:#cbc0b0}
+.photo-image img{display:block;width:100%;height:100%;object-fit:cover}.photo-caption{color:#b49376;text-align:center;font-size:11px;padding:9px 1px 0;font-family:'Songti SC',serif;line-height:1.4}
+.photo-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px;margin:5px 0 10px;align-items:center}
+.photo-grid .photo-card{width:100%;padding-bottom:14px}.photo-grid .photo-image{height:160px}.photo-grid .photo-caption{font-size:10px}
+.blank-frame{position:relative;width:min(90%,300px);min-height:200px;display:grid;place-items:center;padding:14px;background:#f3ece1;border:10px solid #fffaf0;box-shadow:0 10px 26px #6a554025;margin:9px auto;transform:rotate(-1.5deg);text-align:center;color:#79695b}
+.blank-frame strong{display:block;color:#7b6857;font-family:'Songti SC',serif;font-size:17px}.blank-frame small{display:block;font-size:12px;line-height:1.7;margin-top:11px}
+.blank-frame.phone{width:180px;min-height:0;aspect-ratio:9/15;border:9px solid #463d38;border-radius:26px;padding:24px 12px 16px;background:linear-gradient(160deg,#4c4b49,#302e30);color:#eee1cf;transform:rotate(-3deg)}
+.blank-frame.phone:before{content:"";position:absolute;top:5px;left:31%;width:38%;height:11px;border-radius:0 0 8px 8px;background:#252326}.blank-frame.phone strong{color:#f7e7cc;font-size:16px}
+.blank-frame.polaroid{width:min(80%,260px);min-height:0;border:0;padding:12px 12px 44px;background:#fffaf2;transform:rotate(-2deg)}
+.blank-frame.polaroid>div{display:grid;align-content:center;width:100%;aspect-ratio:1;padding:12px;background:#ece5d9;border:1px solid #e0d6c7}
+.blank-frame.film{background:radial-gradient(ellipse at 40% 35%,#fffefb 0,#f4efe6 55%,#e9e2d6 100%);border-color:#fdfaf3;border-radius:4px;box-shadow:0 10px 25px #6a55401a,0 0 7px 3px #fdfaf3,inset 0 0 35px #fff;transform:rotate(1.5deg)}
+.skies .page-body{gap:6px}.skies .photo-image{height:128px}.skies .photo-card{margin:4px auto;padding-bottom:12px}.skies .quote{font-size:14px;line-height:1.6;padding:6px 12px;margin:4px 0}
+.tree .right .page-body{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:6px 12px}.tree .right .page-body>div,.tree .right .page-body>p{grid-column:1/-1}.tree .right .page-body>:nth-child(-n+3){grid-column:1}.tree .right .page-body>.photo-card{grid-column:2;grid-row:1/4;align-self:center;width:100%;padding-bottom:12px}.tree .right h2{font-size:26px}.tree .right p{font-size:14px;line-height:1.6}
+.timeline{position:relative;height:154px;flex:none;overflow:hidden;border-top:1px solid #cfbea9;background:#eadac5}
+.timeline-header{height:27px;display:flex;align-items:center;justify-content:space-between;padding:7px 34px 1px;font-size:10px;color:#937862;letter-spacing:.15em}
+.timeline-header span:first-child{font-family:Georgia,serif}.timeline-header .mode{letter-spacing:.04em;font-size:11px;color:#78635c}
+.timeline canvas{display:block;width:100%;height:127px;cursor:crosshair;touch-action:manipulation}
+.timeline-tooltip{position:absolute;z-index:7;pointer-events:none;display:none;max-width:245px;font-size:11px;color:#fff8ee;background:#283448f0;padding:8px 11px;border:1px solid #b9b4ac55;border-radius:7px;box-shadow:0 6px 24px #171c2433;line-height:1.5;white-space:pre-line}
+.album-toolbar{display:flex;justify-content:flex-end;align-items:center;gap:10px;min-height:29px;padding:0 8px 5px}.tools{display:flex;gap:8px}.mini{border:1px solid #bba38b;background:#f7e9d9d9;color:#856b5d;border-radius:7px;font-size:11px;padding:4px 8px;cursor:pointer}.mini:hover{background:#fff6e8}
+.inline-mementos{display:flex;flex-wrap:wrap;gap:6px}.steps-memo strong{display:block;letter-spacing:.12em;margin-bottom:4px}.steps-memo .quote{margin:0 0 5px;padding:0;border:0;font-size:14px;line-height:1.65}.proposal .photo-image{height:135px}.proposal .page-body{gap:6px}.proposal .photo-card{margin:2px auto}.proposal p{font-size:14px;line-height:1.6}.proposal .steps-memo{margin-top:2px}
+.nav{position:absolute;top:50%;transform:translateY(-50%);width:43px;height:58px;display:grid;place-items:center;border-radius:40px;background:#f1e0ca25;color:#f9e4c8;border:1px solid #f3dbc69c;font-size:28px;cursor:pointer;transition:.2s}.nav:hover{background:#eed6b14a}.nav:disabled{opacity:.2;cursor:default}.nav.left{left:8px}.nav.right{right:8px}
+.statusbar{position:fixed;bottom:4px;left:50%;transform:translateX(-50%);font-size:10px;color:#e6ded2bb;white-space:nowrap;letter-spacing:.06em}
+.index-overlay{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:#141b23b9;backdrop-filter:blur(5px);z-index:20;padding:24px}.index-overlay.show{display:flex}
+.index-card{width:min(740px,100%);max-height:85vh;overflow:auto;background:#faf2e6;border:1px solid #d1b79d;box-shadow:0 25px 70px #0006;border-radius:10px;padding:22px}
+.index-card header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:20px;font-family:'Songti SC',serif}.index-card header button{border:0;background:none;color:#78655b;font-size:24px;cursor:pointer}
+.index-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.index-item{border:1px solid #e7d8c5;background:#fffaf1;border-radius:7px;text-align:left;padding:12px;cursor:pointer;color:#4f4136}.index-item small{font-size:10px;color:#ae8e74;display:block;margin-bottom:5px}.index-item b{font-size:13px;font-weight:600}.index-item:hover,.index-item.current{border-color:#c99286;background:#f8e9e0}
+@media(max-height:750px){.shell{padding-block:8px}.album{height:calc(100dvh - 18px)}.page{padding-top:19px;padding-bottom:14px}.page h2{font-size:26px}.page h3{font-size:21px}.timeline{height:145px}.timeline canvas{height:118px}.photo-image{height:170px}.photo-grid .photo-image{height:138px}}
+@media(max-width:900px){.shell{padding:12px 37px}.album{min-height:510px}.page{padding:18px 22px}.page h2{font-size:23px}.page h3{font-size:19px}.page p{font-size:13px}.photo-grid .photo-image{height:115px}.timeline-header{padding-inline:16px}.nav{width:32px;height:43px;font-size:22px}.nav.left{left:2px}.nav.right{right:2px}.index-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){body{overflow:auto}.shell{padding:25px 22px}.album{height:auto;min-height:95vh}.spread{grid-template-columns:1fr;flex:1}.page{min-height:320px}.album:after{display:none}.timeline{height:170px}.timeline canvas{height:143px}.nav{position:fixed;top:auto;bottom:8px;z-index:12;transform:none}.nav.left{left:5px}.nav.right{right:5px}.index-grid{grid-template-columns:1fr}.statusbar{display:none}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<div class="room" aria-hidden="true"></div>
+<main class="shell">
+  <button class="nav left" id="prev" title="上一页" aria-label="上一页">‹</button>
+  <div class="album">
+    <div class="chapter" id="chapter">CHAPTER 01</div>
+    <header class="album-toolbar"><div class="tools"><button class="mini" id="replay" title="重播本次航行或从上一节点开始的暖光接力">↺ 重播光迹</button><button class="mini" id="index-open">☷ 目录</button></div></header>
+    <div class="spread" id="spread"><article class="page left" id="page-left"></article><article class="page right" id="page-right"></article></div>
+    <section class="timeline" id="timeline" aria-label="双轨星河与共同手账时间轴">
+      <div class="timeline-header"><span>✧ &nbsp; TWO LIVES · ONE STORY</span><span class="mode" id="timeline-mode">十年远景 · 星河</span></div>
+      <canvas id="timeline-canvas" aria-label="点击星河中轨迹节点或 2026 的图标跳转相册"></canvas>
+      <div class="timeline-tooltip" id="timeline-tooltip"></div>
+    </section>
+  </div>
+  <button class="nav right" id="next" title="下一页" aria-label="下一页">›</button>
+</main>
+<div class="statusbar" id="source-indicator">← → 翻页 · 点击节点跳转 · 小船在 2026 靠岸，接力给光点</div>
+<div class="index-overlay" id="index-overlay" role="dialog" aria-label="时间目录" aria-modal="true"><div class="index-card"><header><span>我们的时间 · 目录</span><button id="index-close" aria-label="关闭目录">×</button></header><div class="index-grid" id="index-grid"></div></div></div>
+<script>
+'use strict';
+/*
+ * v1.4 standalone preview with repo-album.json progressive enhancement.
+ * In the repository this file reads ../../../../godot/content/album/album.json.
+ * When opened directly, 13 clearly-labelled demonstration spreads are provided.
+ * New visual layout/positions are intentionally in JS, not persisted back to album.json.
+ */
+const Q_COUNTS=[11,20,43,80,35,52,14,24,27,17,20,17,20,20,7,6,14,11,35,29,13,50,47,22,9,34,4,0,3,7,6,12,10,9,8,7,8,11,9,7];
+const QUARTERS=Q_COUNTS.map((count,i)=>({year:2016+Math.floor(i/4),quarter:i%4+1,count,time:2016+Math.floor(i/4)+(i%4+.5)/4}));
+const D=(eyebrow,blocks,layout='standard')=>({eyebrow,blocks,layout});
+const N=(text,class_name='tiny-script')=>({type:'note',text,class_name});
+const T=(text)=>({type:'text',text});const H=(text,level=2)=>({type:'heading',text,level});const P=(asset,caption)=>({type:'photo',asset,caption});
+const B=(text,variant)=>({type:'blank',text,variant});
+const fallback={version:'v1.4-demo',quarters:QUARTERS,real_stars:[{t:2017.57,label:'2017.07.27 · 她发来「在不」'},{t:2019.04,label:'2019.01.13 · 她回「谢谢大兄弟」'}],assets:{},pages:[
+ {id:'start',time:2016.12,date:'2016 · 02.14',short:'初识',title:'故事从这里开始',kind:'start',side:'both',spreads:[D('FEBRUARY · THE BEGINNING',[N('2016 · 02.14','date-tag'),H('那时的我们，\n还不知道后来。'),T('因为共同的朋友，我们在重庆相识。之后的很多年，继续过着各自的生活。'),N('故事开始的时候，甚至还不像一个故事。','memo')]),D('TWO LIVES · ONE STORY',[H('十年并不空白。',3),T('朋友圈里那些若隐若现的互动，会在时间轴中央，成为一条安静的星河。'),P('book','照片 / 示意插画'),N('沿着下方时间轴，你可以看见那些年的光。')])]},
+ {id:'tree',time:2017.94,date:'2017 · 冬',short:'圣诞树',title:'那年冬天的圣诞树',kind:'tree',side:'fang',spreads:[D('FANG · A WINTER MEMORY',[N('2017 · 德国','date-tag'),P('tree2017','2017 圣诞树 / 示意占位'),N('那时只是一棵树。')]),D('2017 → 2024 → 2025',[H('当时只道\n是寻常。'),T('许多年前一个普通的冬夜，后来重新获得了意义。'),P('tree2024','多年后重新看见 / 示意占位'),N('关于记忆，而不是命中注定。','footnote')])]},
+ {id:'africa',time:2020.25,date:'年份待核实',short:'两个世界',title:'同一年，不同的世界',kind:'africa',side:'both',draft:true,spreads:[D('TWO LIVES · A',[N('年份待核实','date-tag'),P('work','放仔 · 当年的生活 / 示意插画'),N('那一年，我在……')]),D('TWO LIVES · B',[N('世界的另一端','date-tag'),P('africa','莹仔 · 非洲外派 / 示意插画'),T('那时，我们仍然过着各自的生活。')])]},
+ {id:'guzheng',time:2022.1,date:'年份待核实',short:'琴行时光',title:'我们各自过着生活',kind:'guzheng',side:'both',draft:true,spreads:[D('TWO LIVES · C',[N('某年 · 待核实','date-tag'),P('guzheng','莹仔 · 琴行和古筝 / 示意插画'),T('后来，她回国，在琴行教过古筝。')]),D('TWO LIVES · D',[N('同一年，你在做什么？','date-tag'),P('city','放仔 · 同一年的生活 / 示意插画'),N('两个世界在同一本相册里相遇。')])]},
+ {id:'snow',time:2023.6,date:'某年 · 待核实',short:'雪山与湖水',title:'她自己珍惜的一天',kind:'snow',side:'ying',draft:true,spreads:[D('YING · A QUIET MEMORY',[N('新疆 · 年份待核实','date-tag'),P('skyBlue','雪山与湖水 / 示意插画'),N('只听湖水。')]),D('SOMETHING SHE KEEPS',[H('不忙着出片，\n只是站在那里。',3),T('雪山脚下的湖水，是她自己很珍惜的记忆。'),N('这里的具体年份和照片待核实。','footnote')])]},
+ {id:'reconnect',time:2025.87,date:'2025 · 11.13',short:'重新连接',title:'重新连接',kind:'reconnect',side:'both',spreads:[D('NOVEMBER · 2025',[H('那些疏密不同的星群，'),T('那些年，朋友圈里留下的点赞比想象中还多。直到后来，我们才真正聊起彼此的生活。'),N('那一晚，一个小小的回应，接上了一段真正的对话。','memo')]),D('THE NIGHT WE RECONNECTED',[N('“又是一个时差党”','chat her'),H('重新连接',3),T('起初没有人知道，这一次联系，会把两个人带到哪里。'),N('小船此刻驶入暮色，两条轨迹开始靠近。','footnote')])]},
+ {id:'dayone',time:2026.005,month:1.02,date:'2026 · 01.01',short:'Day One',title:'没有截图的跨年',kind:'dayone',spreads:[D('DAY ONE · THE FIRST BLANK',[N('2026 · JANUARY 01','date-tag'),B('跨年视频，忘了截图','phone'),N('明明很重要呀。','hand-note')]),D('A MOMENT WITHOUT A PHOTO',[H('有些瞬间，\n忙着幸福就忘了拍。',3),N('“刚刚视频忘了截图”','chat her'),T('两个人的故事，从这里真正汇成了一条路。')])]},
+ {id:'firstmeet',time:2026.12,month:2.45,date:'2026 · 02',short:'终于见面',title:'线上喜欢的人真的存在',kind:'firstmeet',spreads:[D('FEBRUARY · TOGETHER AT LAST',[N('2026 · 02','date-tag'),H('终于，见到你。'),P('couple','第一次见面 / 示意插画'),P('skyGold','那天的晚霞 / 示意插画')],'collage'),D('THE FIRST REAL EMBRACE',[H('线上喜欢的那个人，\n在现实里真的存在。',3),T('没有一场特别盛大的初次约会。下班后的相见、散步、一起吃饭，还有一点点不真实感。'),N('一个特别的普通日子。','memo')],'collage')]},
+ {id:'skies',time:2026.55,month:7.2,date:'2026 · 夏',short:'同一片天空',title:'给你看今天的天空',kind:'skies',spreads:[D('OUR TWO SKIES · WEST',[N('2026 · 异地的时候','date-tag'),P('skyBlue','德国 · 今天的天空 / 示意插画'),N('这是我这边的天空。')]),D('OUR TWO SKIES · EAST',[N('一张照片也能靠近彼此','date-tag'),P('skyGold','宜昌 · 给你的晚霞 / 示意插画'),{type:'quote',text:'“是只给老公的晚霞吗？”\n“当然啦！”'},N('「我脑子里想不到第二个人」 · 2026.07.29 · 莹仔','private-note')])]},
+ {id:'travel',time:2026.75,month:9.65,date:'2026 · 09—10',short:'一起旅行',title:'我们一起去过的地方',kind:'travel',spreads:[D('A YEAR OF LITTLE DAYS',[N('2026 · 09—10','date-tag'),H('照片突然多了起来。'),P('thailand','泰国旅行 / 示意插画'),P('airplane','回程飞机 / 示意插画')],'collage'),D('TRAVEL, FOOD & SILLY JOY',[H('一起去过的地方，\n一起浪费的时间。',3),T('曼谷、芭提雅、沙美岛。旅行、零食、游戏、开玩笑。'),N('“又可以决战 2048 了！”','memo')])]},
+ {id:'proposal',time:2026.755,month:10.1,date:'2026 · 10.03',short:'求婚',title:'没拍下来的那一夜',kind:'proposal',spreads:[D('OCTOBER 03 · THE SECOND BLANK',[N('2026 · 10.03','date-tag'),B('这一夜，没有录像。','polaroid'),N('就留在我们脑子里吧。')]),D('THE MOMENT IS OURS',[P('ring','戒指 / 示意插画'),{type:'quote',text:'“谢谢走出的第一步。\n剩下的路，我都会勇敢向你奔赴。”'},N('02.23 → 09.19 → 10.03 → 10.19','steps-memo')])]},
+ {id:'marriage',time:2026.8,month:10.66,date:'2026 · 10.19',short:'新婚那朝',title:'然后，我们有了这张照片',kind:'marriage',spreads:[D('OCTOBER 19 · THE BRIGHT PAGE',[N('2026 · 10.19','date-tag'),N('囍 今天，我们结婚啦','wedding-banner'),N('前一页没有照片。\n这一页，终于有了。')]),D('MARRIED · OUR LITTLE LIFE',[H('新婚那朝。'),T('连这样重要的日子，也有琐碎而具体的小幸福。'),P('wedding','领证 / 示意插画'),N('怎么突然就是已婚人士啦。')])]},
+ {id:'future',time:2027.2,month:12.9,date:'未来 · 待续',short:'未来',title:'还没拍下来的照片',kind:'future',spreads:[D('EPILOGUE · THE THIRD BLANK',[N('未来 · 未完待续','date-tag'),B('不是忘了拍，是还没有走到那一天。','film')]),D('TO BE CONTINUED',[H('未完\n待续。'),T('以后还有很多想要拍下来的日子。'),{type:'quote',text:'“明年之后的每个生日，\n我都陪你一起过。”\n—— 莹仔 · 2026.10.16'}])]}]};
+const PAST_CUTOFF=2025.87;
+const ICONS={dayone:'video',firstmeet:'heart',skies:'sun',travel:'plane',proposal:'ring',marriage:'certificate',future:'sparkle'};
+let album=fallback,sourceMode='fallback',index=0;
+const canvas=document.getElementById('timeline-canvas'),ctx=canvas.getContext('2d');
+const tooltip=document.getElementById('timeline-tooltip');
+const reducedMotion=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const state={focus:0,fromFocus:0,targetFocus:0,animStart:0,duration:1150,boatTime:2016.12,boatFrom:2016.12,boatTo:2016.12,boatStart:0,boatDuration:1150,signalStart:0,signalFrom:null,signalTarget:null,signalProgress:0,signalActive:false,seenSteps:new Set(),wake:[],hits:[],active:true,frameTime:performance.now(),flashAt:-1};
+let bounds={w:900,h:127,dpr:1},hoverHit=null;
+function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+function escapeSVG(s){return esc(s).replace(/'/g,'&#39;');}
+function placeholderSVG(name){
+ const warm=/skyGold|ring|wedding|thailand|couple/.test(name),night=/tree/.test(name);
+ const bg=night?['#435471','#a8a1a4']:warm?['#938ca2','#e4b69a']:['#677d98','#d8c2a7'];
+ const label={tree2017:'圣诞树',tree2024:'多年后',couple:'相见',skyGold:'晚霞',skyBlue:'天空',ring:'戒指',wedding:'领证',africa:'非洲',guzheng:'古筝',city:'城市',work:'日常',thailand:'旅行',airplane:'航程',book:'记忆'}[name]||'记忆';
+ const svg=`<svg xmlns="http://www.w3.org/2000/svg" width="800" height="440" viewBox="0 0 800 440"><defs><linearGradient id="b" x2="0.15" y2="1"><stop stop-color="${bg[0]}"/><stop offset="1" stop-color="${bg[1]}"/></linearGradient></defs><rect width="800" height="440" fill="url(#b)"/><circle cx="595" cy="125" r="65" fill="#F7E3B3" opacity=".7"/><path d="M0 315 Q160 263 300 314 T610 300 T800 312 V440 H0Z" fill="#647b7e" opacity=".85"/><path d="M0 357 Q160 330 325 354 T800 342 V440 H0Z" fill="#344e60" opacity=".75"/><path d="M80 90 Q220 56 385 96" stroke="#FAEDDB" opacity=".22" stroke-width="15" stroke-linecap="round" fill="none"/><text x="400" y="405" text-anchor="middle" fill="#FCF1DD" opacity=".7" font-family="serif" font-size="23" letter-spacing="6">${escapeSVG(label)} · 示意插画</text></svg>`;
+ return 'data:image/svg+xml;charset=UTF-8,'+encodeURIComponent(svg);
+}
+function assetURL(k){const s=album.assets?.[k]||'';if(s.startsWith('res://'))return '../../../../godot/'+s.slice(6);if(s.startsWith('data:'))return s;return placeholderSVG(k);}
+function renderBlock(b){const type=b.type||'note',text=esc(b.text||'').replace(/\n/g,'<br>'),cls=esc(b.class_name||'');
+ if(type==='heading')return `<h${b.level===3?'3':'2'}>${text}</h${b.level===3?'3':'2'}>`;
+ if(type==='text')return `<p class="${cls}">${text}</p>`;
+ if(type==='quote')return `<div class="quote">${text}</div>`;
+ if(type==='blank'){const subtitle=text.replace(/^(?:✳\s*)?这一刻没有照片(?:\s|<br>)*/, '');return `<div class="blank-frame ${esc(b.variant||'')}"><div><strong>✳ 这一刻没有照片</strong><small>${subtitle}</small></div></div>`;}
+ if(type==='photo')return `<figure class="photo-card" style="--rot:${b.style?.match(/--rot:([^;]+)/)?.[1]||'0deg'};--imgH:${b.style?.match(/--imgH:([^;]+)/)?.[1]||'200px'}"><div class="photo-image"><img src="${esc(assetURL(b.asset))}" alt="${esc(b.caption||'示意素材')}" onerror="this.src=window.albumPlaceholder('${esc(b.asset)}')"></div><figcaption class="photo-caption">${esc(b.caption||'')}</figcaption></figure>`;
+ if(type==='note'){
+  if(cls.includes('wedding-banner'))return `<div class="wedding-banner"><div class="xi">囍</div><small>${text.replace(/^囍\s*/, '')}</small></div>`;
+  if(cls==='tile')return `<span class="tile">${text}</span>`;
+  return `<div class="${cls||'hand-note'}">${text}</div>`;
+ }return '';
+}
+window.albumPlaceholder=placeholderSVG;
+function renderSpread(spread,p,side){let blocks=spread.blocks||[],html='';const collage=spread.layout==='collage';
+ for(let i=0;i<blocks.length;i++){let b=blocks[i];
+  if(p.id==='proposal'&&side===1&&(b.type==='quote'||b.class_name==='steps-memo'))continue;
+  if(collage&&b.type==='photo'){const photos=[];while(i<blocks.length&&blocks[i].type==='photo')photos.push(blocks[i++]);i--;html+=`<div class="photo-grid">${photos.map(renderBlock).join('')}</div>`;}
+  else if(['chip','tile'].includes(b.class_name)){const items=[],kind=b.class_name;while(i<blocks.length&&blocks[i].class_name===kind)items.push(blocks[i++]);i--;html+=`<div class="inline-mementos">${items.map(renderBlock).join('')}</div>`;}
+  else{html+=renderBlock(b)}}
+ if(p.id==='proposal'&&side===1)html+=`<div class="steps-memo"><strong>他奔赴的路</strong><div class="quote">谢谢走出的第一步。剩下的路，我都会勇敢向你奔赴。</div><div>02.23 → 09.19 → 10.03 → 10.19</div><div>飞回宜昌 → 回国 → 求婚 → 领证</div></div>`;
+ const no=album.pages.indexOf(p)*2+side+1;
+ return `<div class="page-top"><span>${esc(spread.eyebrow||p.title).toUpperCase()}</span><span>${String(no).padStart(2,'0')}</span></div><div class="page-body">${html}</div>`;
+}
+function renderPage(){const p=album.pages[index];document.getElementById('spread').className=`spread ${p.id}`;document.getElementById('page-left').innerHTML=renderSpread(p.spreads[0],p,0);document.getElementById('page-right').innerHTML=renderSpread(p.spreads[1],p,1);
+ document.getElementById('page-left').scrollTop=0;document.getElementById('page-right').scrollTop=0;
+ document.getElementById('chapter').textContent=`CHAPTER ${String(index+1).padStart(2,'0')}`;
+ document.getElementById('prev').disabled=index===0;document.getElementById('next').disabled=index===album.pages.length-1;
+ document.getElementById('timeline-mode').textContent=index<5?'十年远景 · 星河':index===5?'2025.11 · 暮色渐暖':'2026 · 共同手账';
+ document.querySelectorAll('.index-item').forEach(b=>b.classList.toggle('current',Number(b.dataset.i)===index));
+}
+function clamp(x,a,b){return Math.max(a,Math.min(b,x))}
+function smooth(t){t=clamp(t,0,1);return t*t*(3-2*t)}
+function ease(t){return 1-Math.pow(1-clamp(t,0,1),3)}
+function getFocus(i){return i<5?0:i===5?.12:1}
+function dim(){const r=canvas.getBoundingClientRect(),dpr=Math.min(devicePixelRatio||1,2);bounds={w:r.width,h:r.height,dpr};canvas.width=Math.round(r.width*dpr);canvas.height=Math.round(r.height*dpr);ctx.setTransform(dpr,0,0,dpr,0,0)}
+function position(){const {w,h}=bounds,margin=22,inner=w-44,boundary=margin+inner*(.60-.40*state.focus),start=boundary-39,end=boundary+42;
+ return {w,h,margin,inner,boundary,start,end,y:h*.54,historyEnd:PAST_CUTOFF};}
+function histX(t,g){return g.margin+(clamp(t,2016.12,PAST_CUTOFF)-2016.12)/(PAST_CUTOFF-2016.12)*(g.start-g.margin)}
+const FUTURE_U={dayone:.05,firstmeet:.19,skies:.35,travel:.53,proposal:.655,marriage:.79,future:.94};
+function futureX(p,g){return g.end+(g.w-g.margin-g.end)*(FUTURE_U[p.id]??.95)}
+const STEP_DETAILS=[
+ {who:'ying',time:2017.5671232876712,label:'2017.07.27 · 她先开口：「在不」'},
+ {who:'ying',time:2025.8657534246574,label:'2025.11.13 · 她先开口：「又是一个时差党」'},
+ {who:'ying',time:2026,label:'2026.01.01 · 她先开口：「是的吧？」',page:'dayone'},
+ {who:'fang',time:2026.15,label:'2026.02.23 · 飞回宜昌',page:'firstmeet'},
+ {who:'fang',time:2026.72,label:'2026.09.19 · 回国',page:'travel'},
+ {who:'fang',time:2026.755,label:'2026.10.03 · 求婚',page:'proposal'},
+ {who:'fang',time:2026.8,label:'2026.10.19 · 领证',page:'marriage'},
+ {who:'fang',time:2027.2,label:'未来 · 向未来继续奔赴',page:'future'}
+];
+// Enrich existing records for presentation only; album.json and its dates stay untouched.
+function footsteps(){return (album.footsteps||STEP_DETAILS).map((step,i)=>{
+ const detail=STEP_DETAILS.find(d=>d.who===step.who&&Math.abs(d.time-step.time)<.001);
+ return {...step,...detail,key:i};
+});}
+function drawFootsteps(g){
+ for(const step of footsteps()){
+  const historical=step.time<2026;
+  if(historical&&step.time>=Math.min(state.boatFrom,state.boatTime)&&step.time<=Math.max(state.boatFrom,state.boatTime))state.seenSteps.add(step.key);
+  if(step.who==='ying'&&step.page==='dayone'&&state.boatTime>=2026)state.seenSteps.add(step.key);
+  if(!state.seenSteps.has(step.key))continue;
+  // Slightly left of the event anchor, on its own strand, never covering its icon.
+  const x=historical?histX(step.time,g)-7:futureX({id:step.page},g)-9;
+  const y=historical?historyY(x,1,g):ribbonY(x,g)+(step.who==='fang'?-2:2);
+  ctx.save();ctx.translate(x,y);ctx.rotate(-.4);glow(0,0,9,'rgba(255,211,148,ALPHA)',.17);
+  ctx.fillStyle=historical?'rgba(255,216,162,.78)':'rgba(112,67,54,.7)';
+  for(const [dx,dy] of [[-2,1],[2,-2]]){ctx.beginPath();ctx.ellipse(dx,dy,1.6,3.2,0,0,Math.PI*2);ctx.fill();ctx.beginPath();ctx.arc(dx,dy-4.6,1.1,0,Math.PI*2);ctx.fill();}
+  ctx.restore();state.hits.push({x,y,index:null,label:step.label,kind:'footstep',who:step.who,clickable:false});
+ }
+}
+function ribbonY(x,g){const u=(x-g.end)/(g.w-g.end);return g.y+Math.sin(u*7.8)*4.3+Math.sin(u*15)*1.5}
+function rand(i){let x=Math.sin((i+1)*127.1)*43758.5453;return x-Math.floor(x)}
+function line(points,color,width=1){if(points.length<2)return;ctx.beginPath();ctx.moveTo(...points[0]);for(let i=1;i<points.length;i++)ctx.lineTo(...points[i]);ctx.strokeStyle=color;ctx.lineWidth=width;ctx.stroke();}
+function glow(x,y,r,c,a){const gr=ctx.createRadialGradient(x,y,0,x,y,r);gr.addColorStop(0,c.replace('ALPHA',String(a)));gr.addColorStop(.35,c.replace('ALPHA',String(a*.45)));gr.addColorStop(1,c.replace('ALPHA','0'));ctx.fillStyle=gr;ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);ctx.fill()}
+// One repeatable paper texture, shared by the entire wash, never regenerated per frame.
+const grain=document.createElement('canvas');grain.width=192;grain.height=128;
+const grainCtx=grain.getContext('2d');
+for(let i=0;i<4800;i++){grainCtx.fillStyle=i%3===0?'rgba(59,44,43,.08)':'rgba(255,246,227,.16)';grainCtx.fillRect(rand(i*7)*192,rand(i*7+1)*128,.5+rand(i*3),.5+rand(i*5));}
+const paperPattern=ctx.createPattern(grain,'repeat');
+function atmosphere(g){
+ ctx.fillStyle='#eadac5';ctx.fillRect(0,0,g.w,g.h);
+ const gr=ctx.createLinearGradient(0,0,g.w,0);
+ const a=clamp((g.boundary-102)/g.w,.04,.55),b=clamp((g.boundary-10)/g.w,a+.005,.75),c=clamp((g.boundary+96)/g.w,b+.01,.89);
+ gr.addColorStop(0,'#1a283c');gr.addColorStop(a,'#2b3e54');gr.addColorStop(b,'#736e7c');gr.addColorStop(c,'#cba7a2');gr.addColorStop(1,'#d3b2a6');
+ // Translucent, uneven wash edges let the paper show through above and below.
+ for(let layer=0;layer<4;layer++){
+  ctx.save();ctx.globalAlpha=layer===0?.76:.24;ctx.fillStyle=gr;ctx.beginPath();
+  for(let x=0;x<=g.w+8;x+=8){const y=8+Math.sin(x*.017)*3+Math.sin(x*.059+layer)*1.8+layer*1.6;if(x===0)ctx.moveTo(x,y);else ctx.lineTo(x,y);}
+  for(let x=g.w+8;x>=0;x-=8)ctx.lineTo(x,g.h-2-layer*1.1+Math.sin(x*.023+layer)*2);
+  ctx.closePath();ctx.fill();ctx.restore();
+ }
+ const gg=ctx.createRadialGradient(g.boundary-70,g.y,5,g.boundary-70,g.y,g.w*.36);gg.addColorStop(0,'rgba(154,171,197,.09)');gg.addColorStop(1,'rgba(154,171,197,0)');ctx.fillStyle=gg;ctx.fillRect(0,0,g.w,g.h);
+ // Soft pigment blooms and exposed fibres, instead of a solid rectangular panel.
+ for(let i=0;i<16;i++){const x=rand(i*7+41)*g.w,y=16+rand(i*9+3)*(g.h-32);glow(x,y,18+rand(i)*30,'rgba(224,210,199,ALPHA)',.035);}
+ ctx.fillStyle=paperPattern;ctx.fillRect(0,0,g.w,g.h);
+}
+function historyY(x,side,g){
+ const t=clamp((x-g.margin)/(g.start-g.margin),0,1),spread=smooth(t/.10);
+ const wave=Math.sin(t*11+side*.5)*2.8+Math.sin(t*23)*1.2;
+ return g.y+side*(27+wave)*spread;
+}
+function historicalTracks(g){const upper=[],lower=[];
+ for(let i=0;i<=90;i++){const x=g.margin+(g.start-g.margin)*i/90;upper.push([x,historyY(x,-1,g)]);lower.push([x,historyY(x,1,g)])}
+ for(let i=1;i<=28;i++){const t=i/28,s=smooth(t),x=g.start+(g.end-g.start)*t;upper.push([x,historyY(g.start,-1,g)*(1-s)+g.y*s]);lower.push([x,historyY(g.start,1,g)*(1-s)+g.y*s]);}
+ // very faint twin light threads, not bright cartoon strokes
+ ctx.lineCap='round';line(upper,'rgba(194,213,229,.072)',7);line(lower,'rgba(226,187,212,.065)',7);line(upper,'rgba(190,213,235,.49)',1.7);line(lower,'rgba(218,173,204,.47)',1.7);
+ return {upper,lower};}
+function starRiver(g,now){const bw=Math.max(0,g.start-g.margin);
+ // The milky river has its own form; sparse stars are not a uniform random wallpaper.
+ for(let k=0;k<5;k++){const y=g.y+(k-2)*6.5;const points=[];for(let i=0;i<=75;i++){const x=g.margin+(g.end-g.margin)*i/75;points.push([x,y+Math.sin(i*.22+k)*3]);}line(points,`rgba(177,203,224,${.025+(k%2)*.015})`,2+k*.2)}
+ for(let i=0;i<210;i++){const u=rand(i*4+27),x=g.margin+u*(g.start-g.margin),band=(rand(i*17+2)-.5)*49;const y=g.y+band+Math.sin(u*8)*3.7;const core=1-Math.abs(band)/26;const twinkle=.83+.17*Math.sin(now*.001+i*2.2);
+  ctx.fillStyle=`rgba(218,235,250,${(.04+.20*core)*twinkle})`;ctx.beginPath();ctx.arc(x,y,.4+rand(i*31)*.55,0,Math.PI*2);ctx.fill();}
+ const boatX=state.boatTime>=2026?g.end:histX(state.boatTime,g);
+ const qBlend=smooth((state.focus-.18)/.64),quarters=album.quarters||QUARTERS;
+ ctx.save();ctx.globalAlpha=1-qBlend;
+ quarters.forEach((q,i)=>{if(q.count<=0)return;const x=histX(q.time,g),y=g.y+(i%3-1)*2.5;const n=q.count<5?1:q.count<15?2:q.count<30?3:q.count<50?4:5;
+  const nearby=Math.exp(-Math.pow((x-boatX)/26,2));if(nearby>.02)glow(x,y,12,'rgba(165,225,255,ALPHA)',nearby*.1);
+  for(let j=0;j<n;j++){const dx=(rand(i*37+j*17)-.5)*11,dy=(rand(i*29+j*23)-.5)*11;ctx.beginPath();ctx.arc(x+dx,y+dy,.8+rand(i*43+j)*.65,0,Math.PI*2);ctx.fillStyle=`rgba(223,242,252,${(.36+nearby*.60)})`;ctx.fill();}
+ });ctx.restore();
+ if(qBlend>.01){const sums=Array.from({length:10},(_,i)=>quarters.slice(i*4,i*4+4).reduce((a,q)=>a+q.count,0));ctx.save();ctx.globalAlpha=qBlend;
+  sums.forEach((count,i)=>{const x=histX(2016+i+.5,g);const n=1+Math.round(Math.sqrt(count)/3);for(let j=0;j<Math.min(n,7);j++){const dx=(rand(i*30+j*2)-.5)*8,dy=(rand(i*17+j*13)-.5)*13;ctx.fillStyle='rgba(230,241,250,.52)';ctx.beginPath();ctx.arc(x+dx,g.y+dy,.8,0,Math.PI*2);ctx.fill()}});ctx.restore();}
+ // Chat stars belong to the river between the tracks, distinct from footprints.
+ for(const [i,st] of (album.real_stars||[]).entries()){const x=histX(st.t,g),y=g.y+(i===0?-9:9);ctx.fillStyle='#f4e3bc';ctx.globalAlpha=.95;ctx.beginPath();for(let k=0;k<8;k++){const a=k*Math.PI/4-Math.PI/2,r=k%2?2.3:5;const xx=x+Math.cos(a)*r,yy=y+Math.sin(a)*r;if(k===0)ctx.moveTo(xx,yy);else ctx.lineTo(xx,yy);}ctx.closePath();ctx.fill();ctx.globalAlpha=1;state.hits.push({x,y,index:null,label:st.label,kind:'star',clickable:false})}
+}
+function warmRibbon(g){const pts=[];for(let i=0;i<=90;i++){const x=g.end+(g.w-g.margin-g.end)*i/90;pts.push([x,ribbonY(x,g)])}
+ ctx.lineCap='round';line(pts,'rgba(251,229,203,.18)',16);
+ const grad=ctx.createLinearGradient(g.end,0,g.w,0);grad.addColorStop(0,'#c693ab');grad.addColorStop(.4,'#e9a28e');grad.addColorStop(.8,'#f0c08d');grad.addColorStop(1,'#c79096');line(pts,grad,5.6);
+ // Two woven strands remain visible inside a single outer silhouette.
+ line(pts.map(([x,y])=>[x,y-1.45]),'rgba(255,241,229,.76)',1.1);
+ line(pts.map(([x,y])=>[x,y+1.7]),'rgba(149,97,112,.42)',1.1);
+ for(let i=0;i<32;i++){const x=g.end+rand(i*19+18)*(g.w-g.margin-g.end),y=ribbonY(x,g)+(rand(i*3)-.5)*19;ctx.fillStyle=`rgba(255,230,200,${.13+rand(i)*.2})`;ctx.beginPath();ctx.arc(x,y,.6+rand(i*6)*.6,0,Math.PI*2);ctx.fill()}
+ // A quiet dock where the boat stops; no permanent position cursor in 2026.
+ const dx=g.end+3,dy=g.y+9;line([[dx,dy+6],[dx+26,dy+6]],'rgba(108,83,88,.45)',1.6);line([[dx+9,dy-3],[dx+9,dy+10]],'rgba(108,83,88,.36)',1.3);
+}
+function drawSmallIcon(type,cx,cy,scale=1){ctx.save();ctx.translate(cx,cy);ctx.scale(scale,scale);ctx.lineWidth=1.8;ctx.strokeStyle='#77535b';ctx.fillStyle='none';ctx.lineCap='round';ctx.lineJoin='round';ctx.beginPath();
+ if(type==='heart'){ctx.moveTo(0,6);ctx.bezierCurveTo(-11,-1,-8,-8,-2,-6);ctx.quadraticCurveTo(0,-4,0,-2);ctx.quadraticCurveTo(5,-10,10,-5);ctx.bezierCurveTo(13,0,5,5,0,6)}
+ else if(type==='sun'){ctx.arc(0,0,4.4,0,7);for(let i=0;i<8;i++){const a=i*Math.PI/4;ctx.moveTo(Math.cos(a)*7,Math.sin(a)*7);ctx.lineTo(Math.cos(a)*9,Math.sin(a)*9)}}
+ else if(type==='plane'){ctx.moveTo(-9,3);ctx.lineTo(9,-2);ctx.lineTo(-8,-5);ctx.lineTo(-4,-1);ctx.lineTo(-2,4);ctx.lineTo(1,6)}
+ else if(type==='ring'){ctx.arc(0,2,6.3,0,7);ctx.moveTo(-3,-6);ctx.lineTo(0,-10);ctx.lineTo(4,-6);ctx.lineTo(0,-3);ctx.closePath()}
+ else if(type==='certificate'){ctx.rect(-7,-7,14,14);ctx.moveTo(-4,-2);ctx.lineTo(4,-2);ctx.moveTo(-4,2);ctx.lineTo(1,2);ctx.moveTo(6,8);ctx.lineTo(9,11)}
+ else if(type==='video'){ctx.roundRect(-8,-6,11,12,2);ctx.moveTo(4,-3);ctx.lineTo(9,-6);ctx.lineTo(9,6);ctx.lineTo(4,3)}
+ else {ctx.moveTo(0,-10);ctx.lineTo(2,-2);ctx.lineTo(9,0);ctx.lineTo(2,2);ctx.lineTo(0,10);ctx.lineTo(-2,2);ctx.lineTo(-9,0);ctx.lineTo(-2,-2);ctx.closePath()}
+ ctx.stroke();ctx.restore();}
+function historyNodes(g){album.pages.forEach((p,i)=>{if(p.time>=2026) return;const x=histX(p.time,g);const sides=p.side==='fang'?[-1]:p.side==='ying'?[1]:[-1,1];
+  sides.forEach(s=>{const y=historyY(x,s,g),selected=index===i;ctx.fillStyle=selected?'#e9e6e3':'#253348';ctx.strokeStyle=s<0?'rgba(198,221,239,.9)':'rgba(224,185,214,.86)';ctx.lineWidth=selected?2.3:1.5;
+    ctx.beginPath();ctx.arc(x,y,selected?5.3:4.5,0,7);ctx.fill();ctx.stroke();state.hits.push({x,y,index:i,label:p.date+' · '+p.short,clickable:true})})});}
+function futureNodes(g,now){const nodes=album.pages.filter(p=>p.time>=2026),focus=state.focus;
+ nodes.forEach(p=>{const i=album.pages.indexOf(p),x=futureX(p,g),ix=nodes.indexOf(p),y=g.y+(ix%2===0?-28:28),pathY=ribbonY(x,g),chosen=i===index;
+  line([[x,pathY],[x,y<g.y?y+12:y-12]],'rgba(118,75,80,.38)',1.2);
+  if(chosen)glow(x,y,24,'rgba(255,246,213,ALPHA)',.2);
+  ctx.fillStyle=chosen?'#fff5e8':'#f7e8d9';ctx.strokeStyle=chosen?'#9b6474':'#bf8c8c';ctx.lineWidth=chosen?2:1.3;ctx.beginPath();ctx.arc(x,y,12,0,7);ctx.fill();ctx.stroke();drawSmallIcon(ICONS[p.id]||'sparkle',x,y,.78);
+  state.hits.push({x,y,index:i,label:p.date+' · '+p.short,clickable:true})
+ });
+ // Traveling energy pulses for the currently selected icon; not a permanent marker.
+ if(state.signalActive&&now>=state.signalStart){const age=now-state.signalStart,dur=reducedMotion?1:1100,t=clamp(age/dur,0,1);
+  state.signalProgress=ease(t);
+  const fromU=state.signalFrom?FUTURE_U[state.signalFrom]:0,toU=FUTURE_U[state.signalTarget],currentU=fromU+(toU-fromU)*state.signalProgress;
+  for(const step of footsteps()){if(step.who!=='fang'||!step.page)continue;const u=FUTURE_U[step.page];if(u>=Math.min(fromU,currentU)-.00001&&u<=Math.max(fromU,currentU)+.00001)state.seenSteps.add(step.key);}
+  if(t>=1){state.signalActive=false;state.flashAt=now}else{
+  const to=futureX({id:state.signalTarget},g),from=state.signalFrom?futureX({id:state.signalFrom},g):g.end,x=from+(to-from)*ease(t),y=ribbonY(x,g);
+  glow(x,y,22,'rgba(255,235,187,ALPHA)',.38);
+  ctx.fillStyle='#fff6d1';ctx.beginPath();ctx.arc(x,y,2.5,0,Math.PI*2);ctx.fill();
+  for(let j=1;j<4;j++){const xx=from+(to-from)*ease(clamp(t-j*.065,0,1));glow(xx,ribbonY(xx,g),9,'rgba(255,236,204,ALPHA)',.3-j*.045);ctx.fillStyle=`rgba(255,247,216,${.9-j*.16})`;ctx.beginPath();ctx.arc(xx,ribbonY(xx,g),2-j*.25,0,Math.PI*2);ctx.fill();}
+ }}
+ if(state.flashAt>0&&now-state.flashAt<550){const target=album.pages[index],x=futureX(target,g),i=nodes.indexOf(target),y=g.y+(i%2===0?-28:28);glow(x,y,17,'rgba(255,246,219,ALPHA)',.46*(1-(now-state.flashAt)/550))}
+}
+function wakeAndBoat(g,now,dt){const onWater=state.boatTime<2026;
+ const bx=onWater?histX(state.boatTime,g):g.end+12,by=g.y+7+Math.sin(now*.002)*.6;
+ if(onWater&&now<state.boatStart+state.boatDuration+30&&Math.abs(state.boatTo-state.boatFrom)>.001){for(let j=0;j<2;j++){state.wake.push({x:bx-6-rand(Math.floor(now+j))*6,y:by+(rand(Math.floor(now*2+j))-.5)*18,life:1,r:1.3+rand(j+Math.floor(now))*1.7})}}
+ state.wake=state.wake.filter(p=>p.life>0);
+ for(const p of state.wake){p.life-=dt*.00125;glow(p.x,p.y,p.r*8,'rgba(143,225,254,ALPHA)',.13*p.life);ctx.fillStyle=`rgba(194,243,255,${p.life*.64})`;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,7);ctx.fill()}
+ if(onWater){glow(bx,by+4,33,'rgba(115,222,248,ALPHA)',.23);
+  for(let j=0;j<9;j++){const px=bx-20+rand(j*4+12)*32,py=by+(rand(j*7+19)-.5)*20;ctx.fillStyle=`rgba(199,246,253,${.2+.3*Math.sin((now*.003+j)*2)**2})`;ctx.beginPath();ctx.arc(px,py,.6+rand(j*3),0,7);ctx.fill()}
+ }
+ // hand-drawn little dark hull, just enough to recognize a boat
+ ctx.save();ctx.translate(bx,by);ctx.fillStyle=onWater?'#263444':'#73565a';ctx.strokeStyle=onWater?'rgba(220,238,245,.9)':'rgba(255,239,213,.65)';ctx.lineWidth=1.1;
+ ctx.beginPath();ctx.moveTo(-12,-1);ctx.quadraticCurveTo(0,2,12,-1);ctx.lineTo(8,5);ctx.quadraticCurveTo(0,9,-8,5);ctx.closePath();ctx.fill();ctx.stroke();ctx.beginPath();ctx.moveTo(-1,-2);ctx.lineTo(-1,-11);ctx.lineTo(6,-3);ctx.closePath();ctx.fill();ctx.restore();
+}
+function timeLabels(g){ctx.save();ctx.font='10px Georgia,serif';ctx.textBaseline='middle';ctx.fillStyle='rgba(243,238,228,.9)';
+ let right=-Infinity;const reserve=g.start-ctx.measureText('2025 · 11月').width;
+ for(const year of [2016,2018,2020,2022,2024]){const x=histX(year+.12,g)-9,width=ctx.measureText(String(year)).width;if(x<right+13||x+width>reserve-13)continue;ctx.fillText(String(year),x,g.h-12);right=x+width;}
+ ctx.fillText('2025 · 11月',reserve,g.h-12);ctx.fillStyle='rgba(98,72,74,.88)';ctx.fillText('2026',g.end+4,g.h-12);
+ ctx.restore();}
+function draw(now){if(!state.active)return;const dt=Math.min(40,now-state.frameTime);state.frameTime=now;
+ const f=smooth((now-state.animStart)/state.duration);state.focus=state.fromFocus+(state.targetFocus-state.fromFocus)*f;
+ const t=smooth((now-state.boatStart)/state.boatDuration);state.boatTime=state.boatFrom+(state.boatTo-state.boatFrom)*t;
+ const g=position();ctx.clearRect(0,0,g.w,g.h);state.hits=[];atmosphere(g);starRiver(g,now);historicalTracks(g);warmRibbon(g);historyNodes(g);futureNodes(g,now);drawFootsteps(g);wakeAndBoat(g,now,dt);timeLabels(g);
+ requestAnimationFrame(draw);
+}
+function navigate(i,{immediate=false}={}){if(i<0||i>=album.pages.length)return;if(i===index&&!immediate)return;
+ const prev=album.pages[index];index=i;const p=album.pages[i],now=performance.now();
+ const newFocus=getFocus(i);state.fromFocus=state.focus;state.targetFocus=newFocus;state.animStart=now;state.duration=immediate||reducedMotion?1:1170;
+ const toBoat=p.time>=2026?2026.01:p.time;state.boatFrom=state.boatTime;state.boatTo=toBoat;state.boatStart=now;state.boatDuration=immediate||reducedMotion?1:1000;
+ if(p.time>=2026&&!immediate){state.signalFrom=prev.time>=2026?prev.id:null;state.signalTarget=p.id;state.signalProgress=0;state.signalActive=true;state.signalStart=now+(prev.time>=2026||reducedMotion?0:1000)}else state.signalActive=false;
+ state.flashAt=-1;renderPage();}
+function drawIndex(){const g=document.getElementById('index-grid');g.innerHTML=album.pages.map((p,i)=>`<button class="index-item" data-i="${i}"><small>${esc(p.date)}${p.draft?' · 年份待核实':''}</small><b>${String(i+1).padStart(2,'0')} · ${esc(p.short)}</b></button>`).join('');}
+function replay(){const p=album.pages[index],now=performance.now();if(p.time>=2026){state.signalActive=true;state.signalStart=now;state.signalProgress=0;state.flashAt=-1;state.signalTarget=p.id;}else{state.boatFrom=2016.12;state.boatTo=p.time;state.boatTime=2016.12;state.boatStart=now;state.boatDuration=reducedMotion?1:1300;state.wake=[]}}
+canvas.addEventListener('mousemove',ev=>{const r=canvas.getBoundingClientRect(),x=ev.clientX-r.left,y=ev.clientY-r.top;hoverHit=state.hits.filter(p=>Math.hypot(p.x-x,p.y-y)<15).sort((a,b)=>Math.hypot(a.x-x,a.y-y)-Math.hypot(b.x-x,b.y-y))[0];if(hoverHit){tooltip.style.display='block';tooltip.textContent=hoverHit.label;tooltip.style.left=Math.max(6,Math.min(bounds.w-230,x+12))+'px';tooltip.style.top=Math.max(4,y-40)+'px';canvas.style.cursor=hoverHit.clickable?'pointer':'help'}else{tooltip.style.display='none';canvas.style.cursor='crosshair'}});
+canvas.addEventListener('mouseleave',()=>{tooltip.style.display='none';hoverHit=null});
+canvas.addEventListener('click',ev=>{const r=canvas.getBoundingClientRect(),x=ev.clientX-r.left,y=ev.clientY-r.top,h=state.hits.filter(h=>Math.hypot(h.x-x,h.y-y)<15).sort((a,b)=>Math.hypot(a.x-x,a.y-y)-Math.hypot(b.x-x,b.y-y))[0];if(h?.clickable)navigate(h.index)});
+document.getElementById('prev').onclick=()=>navigate(index-1);document.getElementById('next').onclick=()=>navigate(index+1);
+document.getElementById('replay').onclick=replay;
+const overlay=document.getElementById('index-overlay');document.getElementById('index-open').onclick=()=>overlay.classList.add('show');document.getElementById('index-close').onclick=()=>overlay.classList.remove('show');overlay.addEventListener('click',e=>{if(e.target===overlay)overlay.classList.remove('show')});
+document.getElementById('index-grid').addEventListener('click',e=>{const b=e.target.closest('[data-i]');if(b){overlay.classList.remove('show');navigate(Number(b.dataset.i))}});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){overlay.classList.remove('show');return}if(overlay.classList.contains('show'))return;if(e.key==='ArrowRight')navigate(index+1);if(e.key==='ArrowLeft')navigate(index-1)});
+window.addEventListener('resize',dim);window.E03Prototype={goto:(i)=>navigate(i),getState:()=>({index,focus:state.focus,boatTime:state.boatTime,sourceMode,nodes:state.hits.length,pageCount:album.pages.length,signalFrom:state.signalFrom,signalTarget:state.signalTarget,signalProgress:state.signalProgress,signalActive:state.signalActive,footsteps:[...state.seenSteps]})};
+(async function boot(){try{const res=await fetch('../../../../godot/content/album/album.json',{cache:'no-store'});if(res.ok){const data=await res.json();if(data.pages?.length===13&&data.quarters?.length===40){album=data;sourceMode='repo'}}}catch(e){};
+ document.getElementById('source-indicator').textContent=sourceMode==='repo'?'共用 album.json · ← → 翻页 · 点击节点跳转 · ↺ 重播光迹':'独立离线示例（原相册内容在仓库环境自动加载） · ← → 翻页 · 点击节点跳转';
+ drawIndex();index=0;state.boatTime=2016.12;state.boatFrom=2016.12;state.boatTo=2016.12;state.targetFocus=0;state.fromFocus=0;state.focus=0;renderPage();dim();requestAnimationFrame(draw);
+})();
+</script>
+</body>
+</html>
