@@ -2,8 +2,60 @@
 <html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>一屏贴纸图鉴 · 交互原型</title>
 <style>
 *{box-sizing:border-box}body{margin:0;min-height:100dvh;display:grid;place-items:center;background:#e9e1d2;color:#49372a;font-family:"Microsoft YaHei",sans-serif}button{font:inherit}.sheet{position:relative;width:min(88vw,1100px,calc(84dvh * 1000 / 620));aspect-ratio:1000/620;border-radius:22px;background:#fff8e9;background-image:radial-gradient(ellipse at 20% 30%,#e9c78224,transparent 55%),radial-gradient(ellipse at 90% 80%,#e4c79a24,transparent 60%);box-shadow:0 14px 50px #5542261c;container-type:inline-size;transition:filter .2s,opacity .2s}header{position:absolute;left:4%;right:4%;top:4%;display:flex;align-items:center;justify-content:space-between;gap:12px;pointer-events:none}h1{margin:0;font-family:"KaiTi","STKaiti",serif;font-size:clamp(15px,2.6cqw,28px);letter-spacing:2px}header p{margin:0;font-size:clamp(9px,1.15cqw,13px);color:#a18a70}.food{position:absolute;display:block;padding:0;border:0;background:none;cursor:pointer;transform:translate(-50%,-50%);border-radius:18px;isolation:isolate}.art{position:absolute;inset:0;transform:rotate(var(--angle));transition:transform .18s;pointer-events:none}.art img{position:absolute;max-width:none;pointer-events:none;filter:drop-shadow(1px 3px 1px #86664b19)}.food:hover .art,.food:focus-visible .art{transform:rotate(0deg) translateY(-4px)}.food:focus-visible{outline:2px dashed #ae784e;outline-offset:6px}.food .name{position:absolute;left:50%;bottom:calc(100% + 9px);transform:translateX(-50%);padding:6px 11px;border-radius:7px;background:#5b4639;color:#fff8ed;font-size:clamp(10px,1.35cqw,15px);white-space:nowrap;opacity:0;visibility:hidden;transition:opacity .12s;pointer-events:none;z-index:4}.food[data-band="top"] .name{bottom:auto;top:calc(100% + 9px)}.food[data-band="bottom"] .name{bottom:auto;top:calc(100% + 9px)}.food:hover,.food:focus-visible{z-index:5}.food:hover .name,.food:focus-visible .name{opacity:1;visibility:visible}footer{position:absolute;bottom:2.3%;left:4%;right:4%;font-size:clamp(8px,1cqw,11px);color:#a28d76;display:flex;justify-content:space-between;pointer-events:none}body:has(dialog[open]) .sheet{filter:blur(7px);opacity:.6}dialog{padding:0;border:1px solid #d4bfa3;border-radius:22px;background:#fff8eb;color:#49372a;width:min(780px,88vw);max-height:86dvh;overflow:auto;box-shadow:0 24px 90px #38261e33}dialog::backdrop{background:#392d2440}.detail{display:grid;grid-template-columns:45fr 55fr;align-items:center;min-height:360px;padding:52px 35px 36px;gap:26px}.detail-image{width:100%;height:250px;object-fit:contain;filter:drop-shadow(2px 7px 3px #92714e14)}h2{font-family:"KaiTi","STKaiti",serif;font-size:30px;line-height:1.4;margin:12px 0 18px}.sample{font-size:12px;letter-spacing:2px;color:#a0805e}.description{font-size:16px;line-height:1.95;margin:0}.close{position:absolute;right:14px;top:12px;min-width:80px;min-height:36px;border:0;border-radius:20px;background:#eee1ca;color:#5d4938;cursor:pointer}.close:focus-visible{outline:3px solid #a57348;outline-offset:3px}.detail-note{font-size:11px;line-height:1.7;color:#a28d76;margin:22px 0 0}@media(max-width:600px){header p{display:none}dialog{width:90vw}.detail{grid-template-columns:1fr;padding:50px 24px 28px;gap:10px;min-height:0}.detail-image{height:180px}h2{font-size:24px;margin:8px 0 12px}.description{font-size:14px}.detail-note{margin-top:14px}.sheet{width:94vw}footer{font-size:8px}}@media(prefers-reduced-motion:reduce){.sheet,.art,.name{transition:none}}
+
+/* Decorative ink stays behind the food and scales with the original collage. */
+.doodles{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;border-radius:22px;overflow:hidden}
+.doodles use{stroke-linecap:round;stroke-linejoin:round;stroke-width:1.7}
+.doodles .gold{color:#e6b74f}.doodles .mint{color:#78ad96}.doodles .rose{color:#dca199}.doodles .blue{color:#8fb9c7}
 </style></head><body>
-<main class="sheet" aria-label="18 款美食贴纸图鉴"><header><h1></h1><p></p></header><p id="error" role="alert" hidden style="position:absolute;top:40%;left:10%;right:10%;color:#a02525;background:#fff;padding:1em;z-index:10"></p><div id="foods"></div><footer><span>一屏拼贴 · 交互原型</span><span>轻点食物，看看它的小介绍</span></footer></main>
+<main class="sheet" aria-label="18 款美食贴纸图鉴"><svg class="doodles" viewBox="0 0 1000 620" aria-hidden="true" focusable="false">
+<defs>
+ <g id="ink-star" stroke="currentColor" fill="#f9df8e" fill-opacity=".48"><path d="M0 -12 3 -3 12 -2 5 3 7 12 -1 6 -9 11 -6 2 -13 -3 -4 -4Z"/><path d="m-2 -5 2 6 5 2" fill="none" stroke="#fffaf0"/></g>
+ <g id="ink-spark" stroke="currentColor" fill="none"><path d="M0 -9Q0 0 8 0Q0 1 0 10Q-1 1 -8 0Q-1 -1 0 -9Z"/></g>
+ <g id="ink-heart" stroke="currentColor" fill="#f0b3a8" fill-opacity=".4"><path d="M0 9C-22 -3 -7 -16 0 -6C9 -17 20 -4 0 9Z"/></g>
+ <g id="ink-flower" stroke="currentColor" fill="#fff8e9"><path d="M0 -3C-15 -23 -19 -2 -5 2C-24 11 -9 23 0 7C4 26 21 15 7 4C28 0 15 -17 4 -5C12 -27 -7 -25 0 -3Z"/><circle r="3" fill="#efcf75" stroke="none"/></g>
+ <g id="ink-sprig" stroke="currentColor" fill="#c4ddc4" fill-opacity=".55"><path d="M0 26Q-6 0 4 -28" fill="none"/><path d="M-2 10Q-19 9 -19 -5Q-3 -2 -2 10ZM-2 0Q14 -1 16 -15Q0 -12 -2 0ZM1 -13Q-11 -17 -9 -29Q3 -25 1 -13Z"/></g>
+</defs>
+<!-- A few larger marginal drawings, with smaller marks in the inter-row gaps. -->
+<g opacity=".8">
+ <use href="#ink-sprig" class="mint" transform="translate(22 190) rotate(-15) scale(.9)"/>
+ <use href="#ink-flower" class="rose" transform="translate(408 78) rotate(12) scale(.62)"/>
+ <use href="#ink-star" class="gold" transform="translate(226 206) rotate(14) scale(.8)"/>
+ <use href="#ink-spark" class="gold" transform="translate(195 69) scale(.65)"/>
+ <use href="#ink-heart" class="rose" transform="translate(625 90) rotate(-16) scale(.7)"/>
+ <use href="#ink-sprig" class="mint" transform="translate(824 182) rotate(29) scale(.68)"/>
+ <use href="#ink-star" class="gold" transform="translate(973 67) rotate(18) scale(.72)"/>
+ <use href="#ink-flower" class="blue" transform="translate(979 240) rotate(15) scale(.68)"/>
+ <use href="#ink-spark" class="gold" transform="translate(362 208) scale(.8)"/>
+ <use href="#ink-star" class="gold" transform="translate(572 243) rotate(-12) scale(.85)"/>
+ <use href="#ink-heart" class="rose" transform="translate(775 220) rotate(18) scale(.62)"/>
+ <use href="#ink-flower" class="rose" transform="translate(453 220) rotate(-12) scale(.58)"/>
+ <use href="#ink-spark" class="mint" transform="translate(661 225) rotate(10) scale(.75)"/>
+ <use href="#ink-heart" class="rose" transform="translate(507 284) rotate(-18) scale(.52)"/>
+ <use href="#ink-star" class="gold" transform="translate(610 298) rotate(12) scale(.55)"/>
+ <use href="#ink-flower" class="blue" transform="translate(548 437) rotate(24) scale(.64)"/>
+ <use href="#ink-spark" class="gold" transform="translate(329 398) rotate(-8) scale(.75)"/>
+ <use href="#ink-heart" class="rose" transform="translate(735 403) rotate(16) scale(.53)"/>
+ <use href="#ink-flower" class="mint" transform="translate(204 405) rotate(8) scale(.7)"/>
+ <use href="#ink-spark" class="gold" transform="translate(35 446) scale(.9)"/>
+ <use href="#ink-heart" class="rose" transform="translate(72 220) rotate(-12) scale(.6)"/>
+ <use href="#ink-star" class="gold" transform="translate(478 414) rotate(18) scale(.68)"/>
+ <use href="#ink-sprig" class="mint" transform="translate(632 425) rotate(-28) scale(.65)"/>
+ <use href="#ink-spark" class="blue" transform="translate(810 379) rotate(15) scale(.8)"/>
+ <use href="#ink-star" class="gold" transform="translate(960 422) rotate(-15) scale(.75)"/>
+ <use href="#ink-flower" class="rose" transform="translate(246 561) rotate(-18) scale(.65)"/>
+ <use href="#ink-spark" class="gold" transform="translate(363 548) scale(.7)"/>
+ <use href="#ink-heart" class="rose" transform="translate(568 575) rotate(12) scale(.55)"/>
+ <use href="#ink-star" class="gold" transform="translate(710 572) rotate(-12) scale(.65)"/>
+ <use href="#ink-flower" class="blue" transform="translate(862 565) rotate(16) scale(.72)"/>
+ <use href="#ink-sprig" class="mint" transform="translate(979 563) rotate(25) scale(.7)"/>
+</g>
+<g fill="#e5bf70" opacity=".48">
+ <circle cx="253" cy="61" r="1.8"/><circle cx="392" cy="192" r="2"/><circle cx="612" cy="223" r="1.7"/>
+ <circle cx="840" cy="247" r="2"/><circle cx="182" cy="234" r="1.5"/><circle cx="401" cy="385" r="1.8"/>
+ <circle cx="727" cy="413" r="1.6"/><circle cx="903" cy="231" r="1.7"/><circle cx="58" cy="572" r="2"/>
+</g>
+</svg><header><h1></h1><p></p></header><p id="error" role="alert" hidden style="position:absolute;top:40%;left:10%;right:10%;color:#a02525;background:#fff;padding:1em;z-index:10"></p><div id="foods"></div><footer><span>一屏拼贴 · 交互原型</span><span>轻点食物，看看它的小介绍</span></footer></main>
 <dialog aria-labelledby="detail-title" aria-describedby="detail-description"><button class="close" type="button" autofocus>关闭 ×</button><div class="detail"><img class="detail-image" alt=""><div><span class="sample">示意文案</span><h2 id="detail-title"></h2><p class="description" id="detail-description"></p><p class="detail-note">游戏式介绍示意，不是聊天原话。</p></div></div></dialog>
 <script>
 const base='/godot/content/food-collection/';

@@ -6,7 +6,13 @@ const Birthday = preload("res://birthday.gd")
 const AlbumUI = preload("res://album_ui.gd")
 const FoodUI = preload("res://food_collection_ui.gd")
 const FoodState = preload("res://food_collection_state.gd")
-@export var food_collection_preview_complete := true
+@export var food_collection_preview_complete := false
+const FoodCloseup=preload("res://food_closeup.gd")
+var closeup:Node3D
+var closeup_camera:=Transform3D.IDENTITY
+var food_settings:Button
+var reset_dialog:ConfirmationDialog
+var interaction_held:=false
 var food_state: RefCounted
 var food_ui: CanvasLayer
 var food_button: Button
@@ -172,6 +178,7 @@ func _ready() -> void:
 	_build_phone()
 	_build_album()
 	_build_food_collection()
+	_build_closeup()
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	if OS.has_feature("web"):
 		test_mode = bool(JavaScriptBridge.eval("new URLSearchParams(location.search).has('test')", true))
@@ -244,9 +251,10 @@ func _book_near() -> bool:
 func _nearest_interaction() -> String:
 	var seat:=_nearest_seat()
 	if _album_near():return "album"
-	if _phone_near(seat):return "phone_2048"
+	var closeup_target:=_closeup_target(seat)
+	if not closeup_target.is_empty():return closeup_target
 	var birthday_target:Dictionary=birthday.target_at(player.position,_room_at(player.position)) if birthday else {}
-	if not birthday_target.is_empty():
+	if not birthday_target.is_empty() and birthday_target.id!="cake_fridge":
 		if seat.is_empty():return birthday_target.id
 		var seat_point:=vec(seats[seat].approach)
 		if Vector2(player.position.x-seat_point.x,player.position.z-seat_point.z).length()>float(birthday_target.distance):return birthday_target.id
@@ -266,9 +274,11 @@ func _build_album() -> void:
 
 func _build_food_collection() -> void:
 	food_state=FoodState.new()
-	if food_collection_preview_complete:food_state.preview_complete()
+	food_state.start(food_collection_preview_complete)
 	food_ui=FoodUI.new();add_child(food_ui);food_ui.setup(food_state.content)
 	food_ui.close_requested.connect(_close_food_collection)
+	food_ui.detail_closed.connect(_close_discovery_detail)
+	food_ui.sheet.set_found(food_state.found)
 	food_button=Button.new();food_button.text="美食图鉴 G";food_button.icon=load("res://food_collection_icon.svg")
 	food_button.add_theme_font_override("font",load("res://assets/NotoSansSC-Reading.ttf"))
 	food_button.add_theme_font_size_override("font_size",18);food_button.focus_mode=Control.FOCUS_NONE
@@ -276,12 +286,83 @@ func _build_food_collection() -> void:
 	food_button.pressed.connect(_open_food_collection)
 	_layout_food_button();get_viewport().size_changed.connect(_layout_food_button)
 
+func _build_closeup()->void:
+	closeup=FoodCloseup.new();add_child(closeup);closeup.setup(food_state,room)
+	closeup.activated.connect(_closeup_action);closeup.closed.connect(_close_closeup)
+	food_settings=Button.new();food_settings.text="收藏设置";food_settings.position=Vector2(24,196);food_settings.size=Vector2(120,38);food_settings.add_theme_font_override("font",load("res://assets/NotoSansSC-Reading.ttf"));help_panel.get_parent().add_child(food_settings)
+	food_settings.pressed.connect(_open_food_reset)
+	reset_dialog=ConfirmationDialog.new();reset_dialog.title="重置美食收藏";reset_dialog.dialog_text="清除这台浏览器的美食收藏？\n生日准备和其他内容保持不变。";reset_dialog.ok_button_text="清除收藏";reset_dialog.cancel_button_text="取消";reset_dialog.add_theme_font_override("font",load("res://assets/NotoSansSC-Reading.ttf"));add_child(reset_dialog)
+	var reset_theme:=Theme.new();reset_theme.default_font=load("res://assets/NotoSansSC-Reading.ttf");reset_theme.default_font_size=18;reset_theme.set_font("title_font","Window",reset_theme.default_font);reset_dialog.theme=reset_theme
+	reset_dialog.confirmed.connect(func():
+		var ok:bool=food_state.reset();food_ui.sheet.set_found(food_state.found)
+		notice="美食收藏已重置。" if ok else food_state.save_error;notice_time=6;_close_food_reset())
+	reset_dialog.canceled.connect(_close_food_reset)
+	var placement:Dictionary=JSON.parse_string(FileAccess.get_file_as_string("res://assets/food-world/placement.json"))
+	for item in placement.props:
+		var prop:Node3D=load("res://assets/food-world/"+str(item.id)+".glb").instantiate()
+		prop.name="FoodProp_"+str(item.id);add_child(prop);prop.position=vec(item.position);prop.rotation.y=float(item.yaw)
+		for mesh in prop.find_children("*","GeometryInstance3D",true,false):mesh.gi_mode=GeometryInstance3D.GI_MODE_DYNAMIC
+	if not food_state.save_error.is_empty():notice=food_state.save_error;notice_time=8
+
+func _open_food_reset()->void:
+	if mode!="EXPLORE" or not app_focused:return
+	mode="FOOD_RESET";_release_pointer(true);_play("Idle");reset_dialog.popup_centered(Vector2i(440,180))
+
+func _close_food_reset()->void:
+	if mode=="FOOD_RESET":mode="EXPLORE";awaiting_movement_release=true
+
+func _closeup_target(seat:String)->String:
+	var best:="";var score:=INF
+	var forward:=Vector2(sin(avatar.rotation.y),cos(avatar.rotation.y))
+	for value in closeup.regions:
+		if value.room!=_room_at(player.position):continue
+		var anchor:=vec(value.anchor);var delta:=Vector2(anchor.x-player.position.x,anchor.z-player.position.z)
+		var distance:=delta.length()
+		if distance>float(value.reach):continue
+		if value.id in ["fridge","cabinet"] and player.position.x>anchor.x+.1:continue
+		var candidate:=distance+.25*(1.0-forward.dot(delta.normalized()))
+		if candidate<score:score=candidate;best="closeup_"+str(value.id)
+	if not seat.is_empty():
+		var point:=vec(seats[seat].approach);var delta:=Vector2(point.x-player.position.x,point.z-player.position.z)
+		if delta.length()+.25*(1-forward.dot(delta.normalized()))<score:return ""
+	return best
+
+func _open_closeup(id:String)->void:
+	if not navigation_active:return
+	interaction_restore_allowed=pointer_locked and app_focused;closeup_camera=camera.transform
+	mode="CLOSEUP";_release_pointer(true);_play("Idle");closeup.open(id,birthday.cake_state!="in_fridge")
+
+func _closeup_action(id:String)->void:
+	if mode!="CLOSEUP" or not app_focused:return
+	if id=="phone":_open_phone()
+	elif id=="cake":
+		_birthday_action("cake_fridge");closeup.cake_taken=birthday.cake_state!="in_fridge";closeup.refresh()
+	elif food_ui.show_external_detail(id):
+		mode="FOOD_DETAIL";closeup.root.hide();discover_food(id)
+
+func _close_discovery_detail()->void:
+	if mode!="FOOD_DETAIL":return
+	mode="CLOSEUP";closeup.root.show();closeup.refresh()
+	if notice_time>0:closeup.status.text=notice
+
+func _close_closeup()->void:
+	if mode!="CLOSEUP":return
+	closeup.close();mode="EXPLORE";camera.transform=closeup_camera
+	if interaction_restore_allowed and app_focused:_request_capture()
+	interaction_restore_allowed=false;awaiting_movement_release=true
+
 func _layout_food_button() -> void:
 	food_button.position=get_viewport().get_visible_rect().size-Vector2(196,72)
 	food_button.size=Vector2(172,48)
 
 func discover_food(id:String)->bool:
-	return food_state.discover(id)
+	var first:bool=not food_state.active()
+	var added:bool=food_state.discover(id)
+	food_ui.sheet.set_found(food_state.found)
+	if added:
+		notice="已开启美食图鉴 · G 查看" if first else "已加入美食图鉴";notice_time=5
+	if not food_state.save_error.is_empty():notice=food_state.save_error;notice_time=8
+	return added
 
 func _open_food_collection() -> void:
 	if not food_state.active() or not app_focused or mode not in ["EXPLORE","SEATED"] or auto_moving or camera_blend_elapsed<.45:return
@@ -289,7 +370,7 @@ func _open_food_collection() -> void:
 	food_restore_pointer=pointer_locked and app_focused
 	mode="FOOD_COLLECTION";_release_pointer(true)
 	if food_previous_mode=="EXPLORE":_play("Idle")
-	food_ui.show_collection()
+	food_ui.sheet.set_found(food_state.found);food_ui.show_collection()
 
 func _close_food_collection() -> void:
 	if mode!="FOOD_COLLECTION":return
@@ -323,26 +404,14 @@ func _build_phone() -> void:
 	for mesh in phone.find_children("*","GeometryInstance3D",true,false):mesh.gi_mode=GeometryInstance3D.GI_MODE_DYNAMIC
 	phone_ui=Phone2048.new();add_child(phone_ui);phone_ui.close_requested.connect(_close_phone)
 
-func _phone_near(seat: String) -> bool:
-	if phone_table.is_empty() or _room_at(player.position)!="living":return false
-	var low:=vec(phone_table.bounds_min);var high:=vec(phone_table.bounds_max)
-	var point:=Vector2(player.position.x,player.position.z)
-	var distance:=point.distance_to(Vector2(clampf(point.x,low.x,high.x),clampf(point.y,low.z,high.z)))
-	if distance>.65:return false
-	if seat.is_empty():return true
-	var seat_point:=vec(seats[seat].approach)
-	return distance<point.distance_to(Vector2(seat_point.x,seat_point.z))
-
 func _open_phone() -> void:
-	if not navigation_active:return
-	interaction_restore_allowed=pointer_locked and app_focused
+	if mode!="CLOSEUP":return
+	closeup.root.hide()
 	mode="PHONE_2048";_release_pointer(true);_play("Idle");phone_ui.show_game()
 
 func _close_phone() -> void:
 	if mode!="PHONE_2048":return
-	phone_ui.hide_game();mode="EXPLORE"
-	if interaction_restore_allowed and app_focused:_request_capture()
-	interaction_restore_allowed=false;awaiting_movement_release=true
+	phone_ui.hide_game();mode="CLOSEUP";closeup.root.show();closeup.refresh()
 
 func _birthday_action(target: String) -> void:
 	if target=="cake_fridge":
@@ -795,6 +864,10 @@ func _input(event: InputEvent) -> void:
 		return
 	if event is InputEventKey:
 		var code: int = event.physical_keycode if event.physical_keycode else event.keycode
+		if code==KEY_F:
+			if not event.pressed:interaction_held=false
+			elif interaction_held or event.echo:get_viewport().set_input_as_handled();return
+			else:interaction_held=true
 		if code == KEY_ESCAPE:
 			if not event.pressed:
 				escape_held = false
@@ -815,7 +888,13 @@ func _input(event: InputEvent) -> void:
 		if event.echo and mode=="PHONE_2048":
 			get_viewport().set_input_as_handled();return
 		if not event.pressed or event.echo: return
-		if mode=="FOOD_COLLECTION":
+		if mode=="FOOD_RESET":
+			if code==KEY_ESCAPE:reset_dialog.hide();_close_food_reset();get_viewport().set_input_as_handled()
+			return
+		if mode=="CLOSEUP":
+			if app_focused:closeup.handle_key(code)
+			get_viewport().set_input_as_handled();return
+		if mode in ["FOOD_COLLECTION","FOOD_DETAIL"]:
 			food_ui.handle_key(code,event.shift_pressed)
 			get_viewport().set_input_as_handled();return
 		if mode=="ALBUM":
@@ -853,7 +932,7 @@ func _input(event: InputEvent) -> void:
 			if target in ["cake_fridge","cake_table"]:_birthday_action(target)
 			elif target=="letters":_open_letters("READING")
 			elif target=="album":_open_album()
-			elif target=="phone_2048":_open_phone()
+			elif target.begins_with("closeup_"):_open_closeup(target.trim_prefix("closeup_"))
 			else:_enter_target_action(_nearest_seat())
 			get_viewport().set_input_as_handled()
 		elif code==KEY_G and mode in ["EXPLORE","SEATED"]:
@@ -869,7 +948,8 @@ func _input(event: InputEvent) -> void:
 			elif event.button_index == MOUSE_BUTTON_WHEEL_DOWN: target_zoom = minf(1.15, target_zoom + 0.05)
 
 func _process(delta: float) -> void:
-	notice_time = maxf(0, notice_time - delta)
+	# Discovery feedback becomes visible on return from its covering detail layer.
+	if mode!="FOOD_DETAIL":notice_time = maxf(0, notice_time - delta)
 	var now := Time.get_ticks_usec()
 	if last_frame_usec > 0:
 		frame_ms.append(float(now - last_frame_usec) / 1000.0)
@@ -881,8 +961,9 @@ func _process(delta: float) -> void:
 	resume_button.disabled = capture_requested
 	resume_button.text = "继续游览" if ever_started else "开始游览"
 	bag_button.visible=mode=="EXPLORE"
+	food_settings.visible=mode=="EXPLORE" and not pointer_locked
 	food_button.visible=food_state.active() and mode in ["EXPLORE","SEATED"] and not auto_moving and camera_blend_elapsed>=.45
-	help_panel.visible=mode not in ["READING","INVENTORY","CEREMONY","PHONE_2048","ALBUM","FOOD_COLLECTION"]
+	help_panel.visible=mode not in ["READING","INVENTORY","CEREMONY","PHONE_2048","ALBUM","FOOD_COLLECTION","CLOSEUP","FOOD_DETAIL","FOOD_RESET"]
 	if mode == "EXPLORE":
 		help_text.text = "WASD / 方向键移动   鼠标左右移动观察   滚轮缩放   Esc 显示光标" if navigation_active else "点击继续游览，鼠标左右移动观察" if ever_started else "点击开始游览，鼠标左右移动观察"
 	elif mode=="READING":
@@ -896,7 +977,7 @@ func _process(delta: float) -> void:
 	elif navigation_active and not awaiting_movement_release and not interaction_target.is_empty():
 		if interaction_target in ["cake_fridge","cake_table"]:prompt.text=birthday.prompt_for(interaction_target)
 		elif interaction_target=="album":prompt.text="F 翻开时间画册"
-		elif interaction_target=="phone_2048":prompt.text="F 玩手机 · 2048"
+		elif interaction_target.begins_with("closeup_"):prompt.text="F 查看"+str(closeup.region(interaction_target.trim_prefix("closeup_")).name)
 		else:prompt.text = "F 翻开情书文集" if interaction_target=="letters" else "F 坐下 · " + str(seats[interaction_target].label)
 	else:
 		prompt.text = ""
@@ -913,6 +994,8 @@ func _record_navigation_frame() -> void:
 	JavaScriptBridge.eval("window.__navigation_frames = window.__navigation_frames || []; window.__navigation_frames.push(" + JSON.stringify(sample) + "); if(window.__navigation_frames.length > 1800) window.__navigation_frames.shift();", true)
 
 func _update_camera(delta: float, snap := false) -> void:
+	if mode in ["CLOSEUP","FOOD_DETAIL"] or (mode=="PHONE_2048" and not closeup.current.is_empty()):
+		camera.transform=closeup.camera_transform;return
 	if mode=="CEREMONY":
 		if not birthday.ceremony_paused:camera.transform=camera.transform.interpolate_with(birthday.ceremony_camera,1.0-exp(-delta*3.0))
 		_update_visibility();return
@@ -920,7 +1003,7 @@ func _update_camera(delta: float, snap := false) -> void:
 		var desired:=Transform3D(Basis.IDENTITY,vec(prop_data.camera_position)).looking_at(vec(prop_data.camera_target),Vector3.UP)
 		camera.transform=camera.transform.interpolate_with(desired,1.0-exp(-delta*8.0))
 		_update_visibility();return
-	if mode in ["INVENTORY","PHONE_2048","ALBUM","FOOD_COLLECTION"]:return
+	if mode in ["INVENTORY","PHONE_2048","ALBUM","FOOD_COLLECTION","CLOSEUP","FOOD_DETAIL","FOOD_RESET"]:return
 	var alpha := 1.0 if snap else 1.0 - exp(-delta * 8.0)
 	camera_yaw = target_camera_yaw
 	zoom = lerpf(zoom, target_zoom, alpha)
@@ -1111,7 +1194,7 @@ func snapshot() -> Dictionary:
 	var mean := 0.0
 	for value in frame_ms:
 		mean += value / maxf(1, frame_ms.size())
-	return {"food_collection": {"visible":food_ui.root.visible,"count":food_state.found.size(),"selected":food_ui.sheet.selected_id,"detail":food_ui.detail_id,"items":food_state.catalog.size(),"button":[food_button.position.x,food_button.position.y,food_button.size.x,food_button.size.y],"close":[food_ui.close_button.global_position.x,food_ui.close_button.global_position.y,food_ui.close_button.size.x,food_ui.close_button.size.y]}, "version": 2, "bones": _bone_points(), "frame_samples": frame_ms.size(), "draw_calls": Performance.get_monitor(Performance.RENDER_TOTAL_DRAW_CALLS_IN_FRAME), "objects": Performance.get_monitor(Performance.RENDER_TOTAL_OBJECTS_IN_FRAME), "triangles": Performance.get_monitor(Performance.RENDER_TOTAL_PRIMITIVES_IN_FRAME), "process_ms": Performance.get_monitor(Performance.TIME_PROCESS) * 1000, "physics_ms": Performance.get_monitor(Performance.TIME_PHYSICS_PROCESS) * 1000, "active_room": _room_at(player.position), "house_rooms": house_layout.keys(),
+	return {"closeup":{"region":closeup.current.get("id",""),"selected":closeup.selected_id(),"visible":closeup.visible,"save_error":food_state.save_error},"food_collection": {"visible":food_ui.root.visible,"count":food_state.found.size(),"selected":food_ui.sheet.selected_id,"detail":food_ui.detail_id,"items":food_state.catalog.size(),"button":[food_button.position.x,food_button.position.y,food_button.size.x,food_button.size.y],"close":[food_ui.close_button.global_position.x,food_ui.close_button.global_position.y,food_ui.close_button.size.x,food_ui.close_button.size.y]}, "version": 2, "bones": _bone_points(), "frame_samples": frame_ms.size(), "draw_calls": Performance.get_monitor(Performance.RENDER_TOTAL_DRAW_CALLS_IN_FRAME), "objects": Performance.get_monitor(Performance.RENDER_TOTAL_OBJECTS_IN_FRAME), "triangles": Performance.get_monitor(Performance.RENDER_TOTAL_PRIMITIVES_IN_FRAME), "process_ms": Performance.get_monitor(Performance.TIME_PROCESS) * 1000, "physics_ms": Performance.get_monitor(Performance.TIME_PHYSICS_PROCESS) * 1000, "active_room": _room_at(player.position), "house_rooms": house_layout.keys(),
 		"x": player.position.x, "y": player.position.y, "z": player.position.z,
 		"mode": mode, "seat_id": seat_id, "target": interaction_target, "animation": animation, "clip": animation_player.current_animation,
 		"avatar_scale": [avatar.scale.x, avatar.scale.y, avatar.scale.z], "avatar_yaw": avatar.rotation.y,
@@ -1126,6 +1209,7 @@ func snapshot() -> Dictionary:
 		"seats": scene_data.seats, "cycles": completed_cycles, "transition_collisions": transition_collisions, "frame_mean_ms": mean,
 		"frame_p95_ms": sorted[int(sorted.size() * 0.95)] if not sorted.is_empty() else 0,
 		"room_meshes": room_meshes.size(), "lightmap": _lightmap_state(), "album": album_ui.snapshot() if album_ui else {}, "letters": letters_ui.snapshot() if letters_ui else {}, "birthday": birthday.snapshot() if birthday else {}, "phone": phone_ui.snapshot() if phone_ui else {}}
+
 
 
 

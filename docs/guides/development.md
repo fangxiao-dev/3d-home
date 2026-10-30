@@ -41,6 +41,9 @@ Godot 编辑工程为 `godot/project.godot`；房屋和人物源文件分别为 
 # 茶几手机变更：独立重建
 ./scripts/Build.ps1 -RebuildPhone
 
+# 外层美食陈设变更：独立重建
+./scripts/Build.ps1 -RebuildFoodProps
+
 # 时间画册：独立重建实体资产
 ./scripts/Build.ps1 -RebuildAlbum
 

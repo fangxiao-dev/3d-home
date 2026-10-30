@@ -1,5 +1,7 @@
 extends CanvasLayer
 signal close_requested
+signal detail_closed
+var standalone:=false
 const Sheet=preload("res://food_collection_sheet.gd")
 const FONT=preload("res://assets/NotoSansSC-Reading.ttf")
 var root:Control
@@ -62,7 +64,7 @@ func _layout()->void:
 	var viewport:=get_viewport().get_visible_rect().size;root.size=viewport
 	var factor:float=minf(viewport.x*.88/1000,viewport.y*.84/620)
 	book.scale=Vector2.ONE*factor;book.position=(viewport-Vector2(1000,620)*factor)/2
-	blur.position=book.position;blur.size=Vector2(1000,620)*factor
+	blur.position=Vector2.ZERO if standalone else book.position;blur.size=viewport if standalone else Vector2(1000,620)*factor
 	var narrow:=viewport.x<650
 	detail.size=Vector2(minf(780,viewport.x*.88),minf(410 if not narrow else 570,viewport.y*.86))
 	detail.position=(viewport-detail.size)/2
@@ -77,7 +79,7 @@ func _layout()->void:
 	draft_note.position=Vector2(text_x,text_y+238);draft_note.size=Vector2(text_width,44)
 
 func show_collection()->void:
-	root.show();_layout()
+	standalone=false;book.show();root.show();_layout()
 	# Reopening preserves the chosen sticker, but an initial open shows only artwork.
 	if not sheet.selected_id.is_empty():sheet.focus_item(sheet.selected_id)
 
@@ -85,8 +87,12 @@ func hide_collection()->void:
 	if not detail_id.is_empty():hide_detail()
 	root.hide()
 
+func show_external_detail(id:String)->bool:
+	if not sheet.items.has(id):return false
+	standalone=true;root.show();book.hide();show_detail(id);return true
+
 func show_detail(id:String)->void:
-	if not sheet.items.has(id):return
+	if not sheet.items.has(id) or (not standalone and not sheet.found.has(id)):return
 	detail_id=id;sheet.selected_id=id
 	var item:Dictionary=sheet.items[id]
 	detail_image.texture=sheet.textures[id];detail_title.text=item.name;description.text=item.description
@@ -97,7 +103,9 @@ func show_detail(id:String)->void:
 func hide_detail()->void:
 	if detail_id.is_empty():return
 	var id:=detail_id;detail_id="";detail.hide();blur.hide();backdrop.hide()
-	close_button.disabled=false;sheet.set_interactive(true);sheet.focus_item(id)
+	close_button.disabled=false;sheet.set_interactive(true)
+	if standalone:root.hide();standalone=false;detail_closed.emit()
+	else:sheet.focus_item(id)
 
 func handle_key(code:int,shift:bool=false)->void:
 	if not detail_id.is_empty():

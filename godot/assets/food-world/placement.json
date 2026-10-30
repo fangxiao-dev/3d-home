@@ -1,0 +1,126 @@
+{
+  "props": [
+    {
+      "id": "mcspicy-burger",
+      "region": "coffee",
+      "offset": [
+        -0.19,
+        0.002,
+        0.25
+      ],
+      "yaw": 0,
+      "position": [
+        -1.11,
+        0.532,
+        -2.4
+      ],
+      "support_height": 0.531
+    },
+    {
+      "id": "coconut-latte",
+      "region": "coffee",
+      "offset": [
+        0.22,
+        0.002,
+        0.22
+      ],
+      "yaw": 0.15,
+      "position": [
+        -0.7,
+        0.532,
+        -2.43
+      ],
+      "support_height": 0.531
+    },
+    {
+      "id": "hot-dry-noodles",
+      "region": "kitchen",
+      "offset": [
+        -0.12,
+        0.002,
+        -0.02
+      ],
+      "yaw": 0,
+      "position": [
+        -2.02,
+        0.9074,
+        8.78
+      ],
+      "support_height": 0.9064
+    },
+    {
+      "id": "pad-krapao",
+      "region": "kitchen",
+      "offset": [
+        0.25,
+        0.002,
+        -0.02
+      ],
+      "yaw": 0,
+      "position": [
+        -1.65,
+        0.9074,
+        8.78
+      ],
+      "support_height": 0.9064
+    },
+    {
+      "id": "pocky",
+      "region": "cabinet",
+      "offset": [
+        0.18,
+        0.002,
+        -0.24
+      ],
+      "yaw": -1.5707963267948966,
+      "position": [
+        1.52,
+        0.916,
+        3.41
+      ],
+      "support_height": 0.915
+    },
+    {
+      "id": "coconut-rolls",
+      "region": "cabinet",
+      "offset": [
+        0.18,
+        0.002,
+        0.22
+      ],
+      "yaw": -1.5707963267948966,
+      "position": [
+        1.52,
+        0.916,
+        3.87
+      ],
+      "support_height": 0.915
+    }
+  ],
+  "assets": {
+    "pocky": {
+      "meshes": 4,
+      "triangles": 2812
+    },
+    "coconut-rolls": {
+      "meshes": 5,
+      "triangles": 7464
+    },
+    "hot-dry-noodles": {
+      "meshes": 7,
+      "triangles": 14084
+    },
+    "pad-krapao": {
+      "meshes": 8,
+      "triangles": 10380
+    },
+    "mcspicy-burger": {
+      "meshes": 6,
+      "triangles": 7576
+    },
+    "coconut-latte": {
+      "meshes": 5,
+      "triangles": 4680
+    }
+  }
+}

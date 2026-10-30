@@ -11,7 +11,7 @@ func verify()->void:
 		state.found.clear();check(state.discover(item.id) and state.active(),"any stable id activates")
 		check(not state.discover(item.id) and state.found.size()==1,"repeat id idempotent")
 		check(not state.discover(item.image),"image filename is not a discovery id")
-	var scene=load("res://playroom.tscn").instantiate();root.add_child(scene);await process_frame;await process_frame
+	var scene=load("res://playroom.tscn").instantiate();scene.food_collection_preview_complete=true;root.add_child(scene);await process_frame;await process_frame
 	var ui=scene.food_ui
 	check(scene.food_state.found.size()==18 and scene.food_button.visible,"preview 18/icon")
 	key(scene,KEY_G);await process_frame

@@ -1,9 +1,9 @@
-param([switch]$RebuildModel, [switch]$RebuildCharacter, [switch]$RebuildProps, [switch]$RebuildCake, [switch]$RebuildPhone, [switch]$RebuildAlbum, [switch]$RebuildAll, [switch]$BakeLighting, [switch]$SkipChecks)
+param([switch]$RebuildModel, [switch]$RebuildCharacter, [switch]$RebuildProps, [switch]$RebuildCake, [switch]$RebuildPhone, [switch]$RebuildAlbum, [switch]$RebuildFoodProps, [switch]$RebuildAll, [switch]$BakeLighting, [switch]$SkipChecks)
 $ErrorActionPreference = 'Stop'
 $projectRoot = Split-Path -Parent $PSScriptRoot
 $godotInfo = Get-Content -LiteralPath (Join-Path $projectRoot 'work/godot-setup.json') -Raw | ConvertFrom-Json
 $godotExe = Join-Path $projectRoot $godotInfo.release.console_executable
-if ($RebuildAll) { $RebuildModel = $true; $RebuildCharacter = $true; $RebuildProps = $true; $RebuildCake = $true; $RebuildPhone = $true; $RebuildAlbum = $true; $BakeLighting = $true }
+if ($RebuildAll) { $RebuildModel = $true; $RebuildCharacter = $true; $RebuildProps = $true; $RebuildCake = $true; $RebuildPhone = $true; $RebuildAlbum = $true; $RebuildFoodProps = $true; $BakeLighting = $true }
 if ($RebuildModel) {
     $BakeLighting = $true
     $blenderInfo = Get-Content -LiteralPath (Join-Path $projectRoot 'work/blender-setup.json') -Raw | ConvertFrom-Json
@@ -36,6 +36,11 @@ if ($RebuildAlbum) {
     & $blenderInfo.executable --background --python-exit-code 1 --python (Join-Path $projectRoot 'blender/build_album.py')
     if ($LASTEXITCODE -ne 0) { throw 'Album build failed.' }
 }
+if ($RebuildFoodProps) {
+    $blenderInfo = Get-Content -LiteralPath (Join-Path $projectRoot 'work/blender-setup.json') -Raw | ConvertFrom-Json
+    & $blenderInfo.executable --background --python-exit-code 1 --python (Join-Path $projectRoot 'blender/build_food_world.py')
+    if ($LASTEXITCODE -ne 0) { throw 'Food world prop build failed.' }
+}
 $webPath = Join-Path $projectRoot 'outputs/web'
 New-Item -ItemType Directory -Path $webPath -Force | Out-Null
 & $godotExe --headless --path $gamePath --editor --import
@@ -67,6 +72,10 @@ if ($LASTEXITCODE -ne 0) { throw 'Phone 2048 verification failed.' }
 if ($LASTEXITCODE -ne 0) { throw 'Time album verification failed.' }
 & $godotExe --headless --fixed-fps 60 --path $gamePath --script (Join-Path $projectRoot 'tests/Verify-FoodCollection.gd')
 if ($LASTEXITCODE -ne 0) { throw 'Food collection verification failed.' }
+& $godotExe --headless --fixed-fps 60 --path $gamePath --script (Join-Path $projectRoot 'tests/Verify-FoodCloseup.gd')
+if ($LASTEXITCODE -ne 0) { throw 'Food discovery close-up verification failed.' }
+& $godotExe --headless --fixed-fps 60 --path $gamePath --script (Join-Path $projectRoot 'tests/Verify-FoodWorldProps.gd')
+if ($LASTEXITCODE -ne 0) { throw 'Food world props verification failed.' }
 }
 & $godotExe --headless --path $gamePath --export-release Web (Join-Path $webPath 'index.html')
 if ($LASTEXITCODE -ne 0) { throw 'Godot Web export failed.' }

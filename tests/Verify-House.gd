@@ -100,10 +100,9 @@ func verify() -> void:
 	await visit("hallway", Vector3(0.8, 0, 1))
 	await visit("dining", Vector3(0.8, 0, 3))
 	await walk(Vector3(0.8, 0, 5.7))
-	Input.action_press("walk_down")
-	for i in range(150): await physics_frame
-	release()
-	check(scene.player.position.z < 6.6, "Kitchen boundary failed")
+	await walk(Vector3(0,0,6.1))
+	await visit("kitchen",Vector3(0,0,7.8))
+	await walk(Vector3(0,0,6.1))
 	await walk(Vector3(0.8, 0, 1))
 	await walk(Vector3(3.25, 0, 1))
 	await visit("wash", Vector3(3.25, 0, 2.9))

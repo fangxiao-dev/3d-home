@@ -1,36 +1,11 @@
-"""Photo-led, display-only kitchen in Blender world coordinates.
+"""Photo-led, accessible kitchen in Blender world coordinates.
 
 The kitchen is a shallow room at the south end of the dining room.  Its
 north edge is owned by dining, so the only north-side geometry here is the
-closed, glazed entrance.  The fitted cabinets stay on the perimeter and keep
+open entrance frame.  The fitted cabinets stay on the perimeter and keep
 the view from the dining room open to the cooktop, sink, corner worktop, and
 window.
 """
-
-
-def _entrance_glass_material(api):
-    """Create the low-alpha material used by the closed kitchen entrance."""
-    material = api.env['material'](
-        'Kitchen entrance glass', (.68, .82, .80), .20, 0.0, .05
-    )
-    rgba = (.68, .82, .80, .15)
-    material.diffuse_color = rgba
-    material.use_nodes = True
-    nodes = getattr(material, 'node_tree', None)
-    principled = nodes.nodes.get('Principled BSDF') if nodes else None
-    if principled is not None:
-        principled.inputs['Base Color'].default_value = rgba
-        principled.inputs['Alpha'].default_value = .15
-    # Blender 4.5 renamed the material blend setting.  DITHERED is the
-    # exporter-compatible transparent surface mode for this low-alpha pane.
-    try:
-        material.surface_render_method = 'DITHERED'
-    except (AttributeError, TypeError):
-        pass
-    material['gltf_alpha_mode'] = 'BLEND'
-    material['alpha'] = .15
-    api.m['glass'] = material
-    return material
 
 
 def _lower_cabinet(api, name, center, size, front):
@@ -90,7 +65,7 @@ def _upper_cabinet(api, name, center, size, front):
 
 
 def build(api):
-    """Build the closed entrance and recognizable kitchen work zones."""
+    """Build the open entrance and recognizable kitchen work zones."""
     x0, x1, y0, y1 = api.bounds
     height = 3.30
 
@@ -103,38 +78,16 @@ def build(api):
         'south': ((-1.90, 1.25),),
     })
 
-    # The kitchen is display-only: the portal is visually transparent but a
-    # solid pane closes the whole dining-to-kitchen opening.
-    glass = _entrance_glass_material(api)
+    # Open portal: retain only the outer frame, with no pane or central mullions.
     entrance_left, entrance_right = -1.70, .90
-    entrance_y = y1
-    entrance_bottom, entrance_top = .06, 2.78
-    entrance_mid = (entrance_bottom + entrance_top) / 2
-    api.box('entrance glass',
-            ((entrance_left + entrance_right) / 2, entrance_y + .018,
-             entrance_mid),
-            (entrance_right - entrance_left, .025,
-             entrance_top - entrance_bottom),
-            'glass', .002, True, 'north')
-
-    # Pale metal perimeter and a restrained grid echo the photographed glass
-    # door without turning the threshold into visual clutter.
-    frame_y = entrance_y + .045
+    frame_y = y1 + .045
     for x in (entrance_left, entrance_right):
         api.box('entrance metal frame upright', (x, frame_y, 1.42),
                 (.055, .08, 2.84), 'trim', .008, False, 'north')
-    for z in (entrance_bottom, entrance_top):
-        api.box('entrance metal frame rail',
-                ((entrance_left + entrance_right) / 2, frame_y, z),
-                (entrance_right - entrance_left + .055, .08, .055),
-                'trim', .008, False, 'north')
-    api.box('entrance metal frame mullion',
-            ((entrance_left + entrance_right) / 2, frame_y, entrance_mid),
-            (.035, .065, entrance_top - entrance_bottom),
-            'trim', .006, False, 'north')
-    for x in (-.83, .03):
-        api.box('entrance metal frame crossbar', (x, frame_y, 1.40),
-                (.035, .065, 2.58), 'trim', .006, False, 'north')
+    api.box('entrance metal frame top',
+            ((entrance_left + entrance_right) / 2, frame_y, 2.78),
+            (entrance_right - entrance_left + .055, .08, .055),
+            'trim', .008, False, 'north')
 
     # South window: lower wall, corner piers, and a bright glazed pane preserve
     # a real boundary for the room while giving the kitchen its daylight cue.

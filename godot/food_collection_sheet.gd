@@ -8,12 +8,22 @@ var buttons:Dictionary={}
 var selected_id:=""
 var hovered_id:=""
 var interactive:=true
+var found:Dictionary={}
+var silhouettes:Dictionary={}
 
 func setup(catalog:Array,layout:Array)->void:
 	placements=layout
 	for item in catalog:
 		items[item.id]=item
 		textures[item.id]=load("res://content/food-collection/images/"+item.image)
+		var silhouette:Image=textures[item.id].get_image()
+		if silhouette.is_compressed():silhouette.decompress()
+		silhouette.resize(256, maxi(1,int(256.0*silhouette.get_height()/silhouette.get_width())), Image.INTERPOLATE_LANCZOS)
+		for y in silhouette.get_height():
+			for x in silhouette.get_width():
+				var alpha:=silhouette.get_pixel(x,y).a
+				silhouette.set_pixel(x,y,Color(.72,.65,.55,alpha*.19))
+		silhouettes[item.id]=ImageTexture.create_from_image(silhouette)
 	for placement in placements:
 		var id:String=placement.id
 		var button:=Button.new()
@@ -33,14 +43,18 @@ func setup(catalog:Array,layout:Array)->void:
 
 func set_interactive(value:bool)->void:
 	interactive=value;hovered_id=""
-	for button in buttons.values():button.disabled=not value
+	for button in buttons.values():button.disabled=not value or not found.has(buttons.find_key(button))
 	queue_redraw()
 
+func set_found(ids:Dictionary)->void:
+	found=ids;set_interactive(interactive)
+
 func focus_item(id:String)->void:
-	if buttons.has(id):selected_id=id;buttons[id].grab_focus();queue_redraw()
+	if buttons.has(id) and found.has(id):selected_id=id;buttons[id].grab_focus();queue_redraw()
 
 func cycle_focus(step:int)->void:
-	var ids:Array=placements.map(func(p):return p.id)
+	var ids:Array=placements.filter(func(p):return found.has(p.id)).map(func(p):return p.id)
+	if ids.is_empty():return
 	var current:int=ids.find(selected_id)
 	if current<0 and step<0:current=0
 	focus_item(ids[posmod(current+step,ids.size())])
@@ -61,10 +75,10 @@ func _draw()->void:
 		var factor:float=float(p.w)/float(bounds[2])
 		draw_set_transform(Vector2(p.x,p.y),deg_to_rad(float(p.angle)))
 		var corner:=Vector2(-float(p.w)/2,-float(p.h)/2)-Vector2(bounds[0],bounds[1])*factor
-		draw_texture_rect(textures[p.id],Rect2(corner,Vector2(p.imageWidth,p.imageHeight)*factor),false)
+		draw_texture_rect(textures[p.id] if found.has(p.id) else silhouettes[p.id],Rect2(corner,Vector2(p.imageWidth,p.imageHeight)*factor),false)
 	draw_set_transform(Vector2.ZERO)
 	var id:=active_label()
-	if not id.is_empty():
+	if not id.is_empty() and found.has(id):
 		for p in placements:
 			if p.id!=id:continue
 			var text:String=items[id].name

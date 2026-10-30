@@ -60,7 +60,7 @@ func check_legal_target(scene: Node3D, point: Vector3, target_id: String) -> voi
 	query.collision_mask = player.collision_mask
 	check(scene.get_world_3d().direct_space_state.intersect_shape(query).is_empty(), "Interaction point overlaps furniture: " + str(point))
 	player.position = point
-	check(scene.call("_nearest_interaction") == target_id, "F target mismatch at " + str(point))
+	check(scene.call("_nearest_interaction") == ("closeup_fridge" if target_id=="cake_fridge" else target_id), "F target mismatch at " + str(point))
 
 func verify_targets_and_f_preparation() -> void:
 	var scene: Node3D = await new_scene()
@@ -82,11 +82,14 @@ func verify_targets_and_f_preparation() -> void:
 	check(scene.get("birthday").call("target_at", Vector3.ZERO, "kitchen").is_empty(), "Cake target leaked outside dining room")
 
 	player.position = Vector3(0.75, 0.01, 5.5)
-	check(scene.call("_nearest_interaction") == "cake_fridge", "Fridge F affordance was not discoverable")
+	check(scene.call("_nearest_interaction") == "closeup_fridge", "Fridge F affordance was not discoverable")
 	key(scene, KEY_F)
+	check(scene.mode=="CLOSEUP","Fridge opens Close-up")
+	key(scene,KEY_ENTER)
 	check(scene.get("birthday").get("cake_state") == "carried", "F did not take cake from fridge")
-	key(scene, KEY_F)
-	check(scene.get("birthday").get("cake_state") == "carried", "Repeated fridge F reset cake progress")
+	key(scene, KEY_ENTER)
+	check(scene.get("birthday").get("cake_state") == "carried", "Repeated cake button reset cake progress")
+	key(scene,KEY_ESCAPE);await prepare_navigation(scene)
 	player.position = Vector3(0, 0.01, 4.18)
 	check(scene.call("_nearest_interaction") == "cake_table", "Table F affordance was not discoverable")
 	key(scene, KEY_F)

@@ -1,0 +1,259 @@
+[
+  {
+    "id": "coffee",
+    "name": "茶几",
+    "room": "living",
+    "anchor": [
+      -0.92,
+      0.58,
+      -2.65
+    ],
+    "reach": 1.15,
+    "items": [
+      {
+        "id": "subway",
+        "position": [
+          -2,
+          -0.7
+        ],
+        "width": 1.45
+      },
+      {
+        "id": "mcspicy-burger",
+        "position": [
+          0,
+          -0.7
+        ],
+        "width": 1.45
+      },
+      {
+        "id": "spicy-wings",
+        "position": [
+          2,
+          -0.7
+        ],
+        "width": 1.45
+      },
+      {
+        "id": "coconut-latte",
+        "position": [
+          -1.8,
+          2.0
+        ],
+        "width": 1.1
+      },
+      {
+        "id": "street-snack",
+        "position": [
+          0.25,
+          2.0
+        ],
+        "width": 1.45
+      },
+      {
+        "id": "phone",
+        "position": [
+          2.1,
+          2.0
+        ],
+        "width": 1.45
+      }
+    ],
+    "camera_position": [
+      0,
+      6.8,
+      9.5
+    ],
+    "camera_target": [
+      0,
+      0.5,
+      0.5
+    ]
+  },
+  {
+    "id": "cabinet",
+    "name": "零食柜",
+    "room": "dining",
+    "anchor": [
+      1.34,
+      0.9,
+      3.65
+    ],
+    "reach": 1.15,
+    "items": [
+      {
+        "id": "chocolate-muffin",
+        "position": [
+          -1.7,
+          -0.7
+        ],
+        "width": 1.45
+      },
+      {
+        "id": "pineapple-bun",
+        "position": [
+          1.1,
+          -0.7
+        ],
+        "width": 1.45
+      },
+      {
+        "id": "pocky",
+        "position": [
+          -1.3,
+          2.0
+        ],
+        "width": 1.1
+      },
+      {
+        "id": "coconut-rolls",
+        "position": [
+          1.7,
+          2.0
+        ],
+        "width": 1.45
+      }
+    ],
+    "camera_position": [
+      0,
+      6.8,
+      9.5
+    ],
+    "camera_target": [
+      0,
+      0.5,
+      0.5
+    ]
+  },
+  {
+    "id": "kitchen",
+    "name": "厨房左侧台面",
+    "room": "kitchen",
+    "anchor": [
+      -1.9,
+      1.04,
+      8.8
+    ],
+    "reach": 1.25,
+    "items": [
+      {
+        "id": "pad-krapao",
+        "position": [
+          -2,
+          -0.7
+        ],
+        "width": 1.45
+      },
+      {
+        "id": "bullfrog",
+        "position": [
+          0,
+          -0.7
+        ],
+        "width": 1.45
+      },
+      {
+        "id": "sweet-sour-ribs",
+        "position": [
+          2,
+          -0.7
+        ],
+        "width": 1.45
+      },
+      {
+        "id": "fufu",
+        "position": [
+          -1.8,
+          2.0
+        ],
+        "width": 1.45
+      },
+      {
+        "id": "hot-dry-noodles",
+        "position": [
+          0.25,
+          2.0
+        ],
+        "width": 1.45
+      }
+    ],
+    "camera_position": [
+      0,
+      6.8,
+      9.5
+    ],
+    "camera_target": [
+      0,
+      0.5,
+      0.5
+    ]
+  },
+  {
+    "id": "fridge",
+    "name": "冰箱",
+    "room": "dining",
+    "anchor": [
+      1.08,
+      1,
+      5.5
+    ],
+    "reach": 1.15,
+    "items": [
+      {
+        "id": "ice-cream-sandwich",
+        "position": [
+          -2.4,
+          -0.15
+        ],
+        "width": 0.8925,
+        "shelf": 1.4
+      },
+      {
+        "id": "durian",
+        "position": [
+          -0.85,
+          -0.15
+        ],
+        "width": 1.275,
+        "shelf": 1.4
+      },
+      {
+        "id": "lava-cake",
+        "position": [
+          0.85,
+          -0.15
+        ],
+        "width": 0.935,
+        "shelf": 1.4
+      },
+      {
+        "id": "iced-cola",
+        "position": [
+          2.4,
+          -0.15
+        ],
+        "width": 0.697,
+        "shelf": 1.4
+      },
+      {
+        "id": "cake",
+        "position": [
+          0.65,
+          1.75
+        ],
+        "width": 1.45,
+        "shelf": -0.1
+      }
+    ],
+    "camera_position": [
+      0,
+      3.6,
+      12.5
+    ],
+    "camera_target": [
+      0,
+      1.25,
+      -0.1
+    ]
+  }
+]
