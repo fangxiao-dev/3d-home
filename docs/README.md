@@ -8,6 +8,7 @@
 | 理解技术与资源流程 | [架构概览](architecture.md) |
 | 启动、开发、测试或查问题 | [操作与开发指南](guides/README.md) |
 | 查重要选择及依据 | [决策入口](decisions/README.md) |
+| 回看小屋一步步成长的故事和画面 | [小屋成长记](project-journey/README.md) |
 | 找照片、人物背景和原始素材 | [参考资料入口](../references/README.md) |
 | 追溯旧阶段与验证原件 | [历史档案](archive/README.md) |
 
